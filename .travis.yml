@@ -1,0 +1,14 @@
+---
+notifications:
+  email: false
+sudo: false
+language: ruby
+before_install: rm Gemfile.lock || true
+script:
+  - 'rubocop'
+matrix:
+  fast_finish: true
+  include:
+  - rvm: 1.9.3
+  - rvm: 2.1.7
+  - rvm: 2.2.0
