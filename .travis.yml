@@ -6,7 +6,7 @@ language: ruby
 cache: bundler
 before_install: rm Gemfile.lock || true
 script:
-  - 'rubocop'
+  - 'bundle exec rubocop'
 matrix:
   fast_finish: true
   include:
