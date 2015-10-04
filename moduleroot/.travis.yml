@@ -3,6 +3,7 @@ notifications:
   email: false
 sudo: false
 language: ruby
+cache: bundler
 bundler_args: --without system_tests
 before_install: rm Gemfile.lock || true
 script:
