@@ -17,7 +17,7 @@ matrix:
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes"
   - rvm: 2.1.6
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes"
-  - rvm: 2.2.0
+  - rvm: 2.2.3
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes"
 deploy:
   provider: puppetforge
