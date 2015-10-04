@@ -50,7 +50,8 @@ task test: [
   :metadata_lint,
   :lint,
   :syntax,
-  :spec
+  :rubocop,
+  :spec,
 ]
 
 Blacksmith::RakeTask.new do |t|
