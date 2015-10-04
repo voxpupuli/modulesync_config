@@ -7,3 +7,6 @@ AllCops:
 Metrics/LineLength:
   Max: 120
 
+# dealbreaker:
+Style/TrailingComma:
+  Enabled: false
