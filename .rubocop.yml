@@ -1,0 +1,8 @@
+AllCops:
+  Exclude:
+    - moduleroot/spec/spec_helper.rb
+
+# Configuration parameters: AllowURI, URISchemes.
+Metrics/LineLength:
+  Max: 120
+
