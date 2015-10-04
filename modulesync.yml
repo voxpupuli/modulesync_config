@@ -2,3 +2,4 @@
 git_base: 'git@github.com:'
 namespace: puppet-community
 branch: modulesync
+message: "Update from puppet-community modulesync_configs"
