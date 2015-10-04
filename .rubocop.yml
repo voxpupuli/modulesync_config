@@ -1,6 +1,7 @@
 AllCops:
   Exclude:
     - moduleroot/spec/spec_helper.rb
+    - vendor/**/*
 
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
