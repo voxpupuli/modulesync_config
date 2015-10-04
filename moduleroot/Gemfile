@@ -21,8 +21,8 @@ group :test do
   gem "puppetlabs_spec_helper"
   gem "metadata-json-lint"
   gem "rspec-puppet-facts"
-  gem "rspec", "< 3.2.0", { "platforms" => ["ruby_18"] }
-  gem "puppet-blacksmith", "> 3.3.0", { "platforms" => ["ruby_19", "ruby_20", "ruby_21", "ruby_22"] }
+  gem "rspec"
+  gem "puppet-blacksmith"
 end
 
 group :development do
