@@ -1,0 +1,4 @@
+---
+git_base: 'git@github.com:'
+namespace: puppet-community
+branch: modulesync
