@@ -22,7 +22,7 @@ deploy:
   provider: puppetforge
   user: puppet
   password:
-    secure: "<%= @secure -%>"
+    secure: "<%= @configs['secure'] -%>"
   on:
     tags: true
     # all_branches is required to use tags
