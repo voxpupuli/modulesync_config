@@ -12,3 +12,21 @@
     env: PUPPET_GEM_VERSION="~> 3.0" FUTURE_PARSER="yes"
   - rvm: 2.1.6
     env: PUPPET_GEM_VERSION="~> 4.0" STRICT_VARIABLES="yes"
+Gemfile:
+  required:
+    ':test':
+      - gem: rake
+      - gem: rspec-puppet
+        git: https://github.com/rodjek/rspec-puppet.git
+      - gem: puppetlabs_spec_helper
+      - gem: metadata-json-lint
+      - gem: rspec-puppet-facts
+      - gem: rspec
+      - gem: puppet-blacksmith
+      - gem: rubocop
+    ':development':
+      - gem: travis
+      - gem: travis-lint
+      - gem: guard-rake
+    ':system_tests':
+      - gem: beaker-rspec
