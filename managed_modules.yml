@@ -3,3 +3,6 @@
 - puppet-collectd
 - puppet-module-amanda
 - puppet-jira
+- puppet-stash
+- puppet-confluence
+- puppet-mysql_java_connector
