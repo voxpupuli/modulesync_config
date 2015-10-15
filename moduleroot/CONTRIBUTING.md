@@ -5,6 +5,8 @@ will likely make it into a release a little quicker.
 
 ## Contributing
 
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms. [Contributor Code of Conduct](http://contributor-covenant.org/version/1/2/0/).
+
 1. Fork the repo.
 
 1. Create a separate branch for your change.
