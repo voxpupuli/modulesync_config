@@ -6,3 +6,4 @@
 - puppet-stash
 - puppet-confluence
 - puppet-mysql_java_connector
+- puppet-rundeck
