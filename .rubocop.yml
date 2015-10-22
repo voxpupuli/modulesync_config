@@ -1,4 +1,6 @@
 AllCops:
+  Include:
+    - ./**/*.rb
   Exclude:
     - moduleroot/spec/spec_helper.rb
     - vendor/**/*
