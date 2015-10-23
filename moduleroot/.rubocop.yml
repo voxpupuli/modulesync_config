@@ -3,6 +3,9 @@ AllCops:
     - vendor/**/*
     - pkg/**/*
     - spec/fixtures/**/*
+    <%- @configs['AllCops']['Exclude'].each do |x| -%>
+    - <%= x %>
+    <%- end -%>
 
 # Configuration parameters: AllowURI, URISchemes.
 Metrics/LineLength:
