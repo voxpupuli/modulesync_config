@@ -7,6 +7,8 @@ cache: bundler
 bundler_args: --without system_tests
 addons:
   apt:
+    sources:
+      - augeas
     packages:
       - libaugeas-dev
 before_install: rm Gemfile.lock || true
