@@ -10,6 +10,15 @@ def location_for(place, fake_version = nil)
   end
 end
 
+if facterversion = ENV['FACTER_GEM_VERSION']
+gem 'facter', facterversion.to_s, :require => false, :groups => [:test]
+else
+gem 'facter', :require => false, :groups => [:test]
+end
+
+ENV['PUPPET_VERSION'].nil? ? puppetversion = '3.8.4' : puppetversion = ENV['PUPPET_VERSION'].to_s
+gem 'puppet', puppetversion, :require => false, :groups => [:test]
+
 <% groups = {} -%>
 <% (@configs['required'].keys + ((@configs['optional'] || {}).keys)).uniq.each do |key| -%>
 <%   groups[key] = (@configs['required'][key] || []) + ((@configs['optional'] || {})[key] || []) -%>
@@ -45,17 +54,4 @@ group <%= group %> do
 end
 
 <% end -%>
-
-if facterversion = ENV['FACTER_GEM_VERSION']
-  gem 'facter', facterversion, :require => false
-else
-  gem 'facter', :require => false
-end
-
-if puppetversion = ENV['PUPPET_GEM_VERSION']
-  gem 'puppet', puppetversion, :require => false
-else
-  gem 'puppet', 3.8.0, :require => false
-end
-
 # vim:ft=ruby

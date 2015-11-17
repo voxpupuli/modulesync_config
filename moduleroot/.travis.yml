@@ -5,12 +5,24 @@ sudo: false
 language: ruby
 cache: bundler
 bundler_args: --without system_tests
+<%- if !@configs.nil? and @configs.has_key?('addons') -%>
 addons:
+  <%- if @configs['addons'].has_key?('apt') -%>
   apt:
+    <%- if @configs['addons']['apt'].has_key?('sources') -%>
     sources:
-      - augeas
+      <%- @configs['addons']['apt']['sources'].each do |x| -%>
+      - <%= x %>
+      <%- end -%>
+    <%- end -%>
+    <%- if @configs['addons']['apt'].has_key?('packages') -%>
     packages:
-      - libaugeas-dev
+      <%- @configs['addons']['apt']['packages'].each do |x| -%>
+      - <%= x %>
+      <%- end -%>
+    <%- end -%>
+  <%- end -%>
+<%- end -%>
 before_install: rm Gemfile.lock || true
 script:
   - 'bundle exec rake $CHECK'

@@ -18,17 +18,12 @@ Gemfile:
       - gem: rake
       - gem: rspec-puppet
         git: https://github.com/rodjek/rspec-puppet.git
-      - gem: puppetlabs_spec_helper
       - gem: metadata-json-lint
       - gem: rspec-puppet-facts
       - gem: rspec
       - gem: puppet-blacksmith
       - gem: rubocop
       - gem: rspec-puppet-utils
-      - gem: puppet
-        version: ENV['PUPPET_VERSION'] || '~> 3.8.0'
-      - gem: rspec-puppet-augeas
-      - gem: ruby-augeas
       - gem: puppetlabs_spec_helper
       - gem: puppet-lint-absolute_classname-check
       - gem: puppet-lint-leading_zero-check
