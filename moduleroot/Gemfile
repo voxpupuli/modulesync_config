@@ -1,4 +1,4 @@
-source ENV['GEM_SOURCE'] || 'https://rubygems.org'
+source ENV['GEM_SOURCE'] || "https://rubygems.org"
 
 def location_for(place, fake_version = nil)
   if place =~ /^(git[:@][^#]*)#(.*)/
@@ -9,15 +9,6 @@ def location_for(place, fake_version = nil)
     [place, { :require => false }]
   end
 end
-
-if facterversion = ENV['FACTER_GEM_VERSION']
-gem 'facter', facterversion.to_s, :require => false, :groups => [:test]
-else
-gem 'facter', :require => false, :groups => [:test]
-end
-
-ENV['PUPPET_VERSION'].nil? ? puppetversion = '3.8.4' : puppetversion = ENV['PUPPET_VERSION'].to_s
-gem 'puppet', puppetversion, :require => false, :groups => [:test]
 
 <% groups = {} -%>
 <% (@configs['required'].keys + ((@configs['optional'] || {}).keys)).uniq.each do |key| -%>
@@ -54,4 +45,15 @@ group <%= group %> do
 end
 
 <% end -%>
+
+
+if facterversion = ENV['FACTER_GEM_VERSION']
+gem 'facter', facterversion.to_s, :require => false, :groups => [:test]
+else
+gem 'facter', :require => false, :groups => [:test]
+end
+
+ENV['PUPPET_VERSION'].nil? ? puppetversion = '3.8.4' : puppetversion = ENV['PUPPET_VERSION'].to_s
+gem 'puppet', puppetversion, :require => false, :groups => [:test]
+
 # vim:ft=ruby
