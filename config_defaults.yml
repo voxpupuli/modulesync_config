@@ -18,6 +18,8 @@ Gemfile:
       - gem: rake
       - gem: rspec-puppet
         git: https://github.com/rodjek/rspec-puppet.git
+      - gem: puppet-lint
+        git: https://github.com/rodjek/puppet-lint.git
       - gem: metadata-json-lint
       - gem: rspec-puppet-facts
       - gem: rspec
