@@ -1,12 +1,13 @@
 ---
-- puppet-extlib
+- puppet-archive
 - puppet-collectd
-- puppet-module-amanda
-- puppet-jira
-- puppet-stash
 - puppet-confluence
+- puppet-dotnet
+- puppet-extlib
+- puppet-jira
+- puppet-kafka
+- puppet-mcollective
+- puppet-module-amanda
 - puppet-mysql_java_connector
 - puppet-rundeck
-- puppet-mcollective
-- puppet-archive
-- puppet-dotnet
+- puppet-stash
