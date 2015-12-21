@@ -12,7 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 group :test do
   gem 'rake'
