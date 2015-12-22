@@ -1,6 +1,8 @@
 ---
 .travis.yml:
   includes:
+  - rvm: 1.9.3
+    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.1.7
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.1.7
