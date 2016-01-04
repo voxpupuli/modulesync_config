@@ -23,6 +23,7 @@ Gemfile:
       - gem: rspec-puppet-facts
       - gem: rspec
       - gem: puppet-blacksmith
+        git: https://github.com/puppet-community/puppet-blacksmith.git
       - gem: rubocop
       - gem: rspec-puppet-utils
       - gem: puppetlabs_spec_helper
