@@ -9,5 +9,6 @@
 - puppet-mcollective
 - puppet-module-amanda
 - puppet-mysql_java_connector
+- puppet-nodejs
 - puppet-rundeck
 - puppet-stash
