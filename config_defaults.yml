@@ -23,7 +23,9 @@ Gemfile:
       - gem: rspec-puppet-facts
       - gem: rspec
       - gem: puppet-blacksmith
-        git: https://github.com/puppet-community/puppet-blacksmith.git
+        git: https://github.com/voxpupuli/puppet-blacksmith.git
+      - gem: voxpupuli-release
+        git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: rubocop
       - gem: rspec-puppet-utils
       - gem: puppetlabs_spec_helper
