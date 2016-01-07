@@ -1,5 +1,5 @@
 ---
 git_base: 'git@github.com:'
-namespace: puppet-community
+namespace: voxpupuli
 branch: modulesync
-message: "Update from puppet-community modulesync_configs"
+message: "Update from voxpupuli modulesync_config"
