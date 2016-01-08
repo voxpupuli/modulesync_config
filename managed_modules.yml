@@ -12,3 +12,4 @@
 - puppet-nodejs
 - puppet-rundeck
 - puppet-stash
+- puppet-unattended_upgrades
