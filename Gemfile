@@ -16,7 +16,7 @@ source "https://rubygems.org"
 
 group :test do
   gem 'rake'
-  gem 'rubocop'
+  gem 'rubocop', '0.35.0'
 end
 
 group :development do
