@@ -2,6 +2,7 @@
 - puppet-archive
 - puppet-collectd
 - puppet-confluence
+- puppet-corosync
 - puppet-dotnet
 - puppet-extlib
 - puppet-jira
