@@ -48,6 +48,7 @@ Gemfile:
       - gem: beaker
       - gem: beaker-rspec
       - gem: beaker-puppet_install_helper
+        require: false
 Rakefile:
   default_disabled_lint_checks:
   - 'relative'
