@@ -15,6 +15,7 @@
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
   allow_failures:
   - rvm: 2.3.0
+    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
 Gemfile:
   required:
     ':test':
