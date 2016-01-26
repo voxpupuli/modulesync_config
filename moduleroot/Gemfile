@@ -21,6 +21,7 @@ group <%= group %> do
 <%            { -%>
 <%              'gem'     => gem['gem'], -%>
 <%              'version' => gem['version'], -%>
+<%              'require' => gem['require'], -%>
 <%              'git'     => gem['git'], -%>
 <%              'branch'  => gem['branch'], -%>
 <%              'length'  => gem['gem'].length + (("', '".length if gem['version']) || 0) + gem['version'].to_s.length -%>
