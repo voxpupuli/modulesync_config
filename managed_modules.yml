@@ -4,6 +4,7 @@
 - puppet-confluence
 - puppet-dotnet
 - puppet-extlib
+- puppet-gluster
 - puppet-jira
 - puppet-kafka
 - puppet-mcollective
