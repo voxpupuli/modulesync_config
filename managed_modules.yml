@@ -5,6 +5,7 @@
 - puppet-dotnet
 - puppet-extlib
 - puppet-gluster
+- puppet-iis
 - puppet-jira
 - puppet-kafka
 - puppet-mcollective
