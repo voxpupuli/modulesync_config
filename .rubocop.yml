@@ -3,6 +3,7 @@ AllCops:
     - ./**/*.rb
   Exclude:
     - moduleroot/spec/spec_helper.rb
+    - moduleroot/spec/classes/coverage_spec.rb
     - vendor/**/*
     - modules/**/*
 
