@@ -1,4 +1,4 @@
-#  Copyright 2015 Puppet Community
+#  Copyright 2016 VoxPupuli
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -17,9 +17,13 @@ source "https://rubygems.org"
 group :test do
   gem 'rake'
   gem 'rubocop', '0.37.0'
+  gem 'rspec'
+  gem 'voxpupuli-release', git: 'git://github.com/voxpupuli/voxpupuli-release-gem.git'
+  gem 'puppetlabs_spec_helper'
 end
 
 group :development do
   gem 'travis'
   gem 'travis-lint'
+  gem 'guard-rake'
 end

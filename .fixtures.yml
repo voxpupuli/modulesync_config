@@ -1,0 +1,7 @@
+fixtures:
+  repositories:
+    pmd:
+      repo: 'git://github.com/pmd/pmd.git'
+      ref: 'pmd_releases/5.4.1'
+    puppeteer:
+      repo: 'git://github.com/tushartushar/Puppeteer'
