@@ -36,7 +36,7 @@ Gemfile:
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: rubocop
-        version: '0.35.0'
+        version: '0.37.2'
       - gem: rspec-puppet-utils
       - gem: puppetlabs_spec_helper
       - gem: puppet-lint-absolute_classname-check
