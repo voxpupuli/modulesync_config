@@ -6,6 +6,7 @@
 - puppet-corosync
 - puppet-dotnet
 - puppet-extlib
+- puppet-ghost
 - puppet-gluster
 - puppet-iis
 - puppet-jira
