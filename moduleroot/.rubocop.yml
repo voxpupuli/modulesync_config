@@ -37,7 +37,9 @@ Metrics/ClassLength:
 
 # dealbreaker:
 Style/TrailingCommaInArguments:
-  Enabled: false
+  EnforcedStyleForMultiline: comma
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
 Style/ClosingParenthesisIndentation:
   Enabled: false
 
