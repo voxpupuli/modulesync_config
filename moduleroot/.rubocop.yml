@@ -38,6 +38,8 @@ Metrics/ClassLength:
 # dealbreaker:
 Style/TrailingCommaInArguments:
   Enabled: false
+Style/TrailingCommaInLiteral:
+  Enabled: false
 Style/ClosingParenthesisIndentation:
   Enabled: false
 
