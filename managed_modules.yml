@@ -18,3 +18,4 @@
 - puppet-rundeck
 - puppet-stash
 - puppet-unattended_upgrades
+- puppet-windows_firewall
