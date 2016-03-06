@@ -16,6 +16,7 @@
 - puppet-mysql_java_connector
 - puppet-nodejs
 - puppet-rundeck
+- puppet-sslcert
 - puppet-stash
 - puppet-unattended_upgrades
 - puppet-windows_firewall
