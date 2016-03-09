@@ -24,6 +24,7 @@ Gemfile:
   required:
     ':test':
       - gem: rake
+        version: '< 11'
       - gem: rspec-puppet
         git: https://github.com/rodjek/rspec-puppet.git
       - gem: puppet-lint
