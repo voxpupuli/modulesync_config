@@ -24,7 +24,6 @@ Gemfile:
   required:
     ':test':
       - gem: rake
-        version: '< 11'
       - gem: rspec-puppet
         git: https://github.com/rodjek/rspec-puppet.git
       - gem: puppet-lint
@@ -37,7 +36,7 @@ Gemfile:
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: rubocop
-        version: '0.37.2'
+        version: '0.38.0'
       - gem: rspec-puppet-utils
       - gem: puppetlabs_spec_helper
       - gem: puppet-lint-absolute_classname-check
