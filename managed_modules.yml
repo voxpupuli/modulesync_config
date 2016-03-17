@@ -13,6 +13,7 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-module-amanda
+- puppet-module-puppetboard
 - puppet-mysql_java_connector
 - puppet-nodejs
 - puppet-rundeck
