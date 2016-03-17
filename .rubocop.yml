@@ -14,7 +14,3 @@ Metrics/LineLength:
 # dealbreaker:
 Style/TrailingCommaInArguments:
   Enabled: false
-
-# we still support ruby 1.8
-Style/HashSyntax:
-  Enabled: false
