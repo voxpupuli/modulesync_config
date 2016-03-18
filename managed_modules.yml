@@ -18,6 +18,7 @@
 - puppet-nodejs
 - puppet-rundeck
 - puppet-sslcert
+- puppet-staging
 - puppet-stash
 - puppet-unattended_upgrades
 - puppet-windows_firewall
