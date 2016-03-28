@@ -21,4 +21,5 @@
 - puppet-staging
 - puppet-stash
 - puppet-unattended_upgrades
+- puppet-windows_autoupdate
 - puppet-windows_firewall
