@@ -3,13 +3,13 @@
   includes:
   - rvm: 1.9.3
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
-  - rvm: 2.1.8
+  - rvm: 2.1.9
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 1.9.3
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test FUTURE_PARSER=yes
-  - rvm: 2.1.8
+  - rvm: 2.1.9
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test FUTURE_PARSER=yes
-  - rvm: 2.1.8
+  - rvm: 2.1.9
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.2.4
     env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
