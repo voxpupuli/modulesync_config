@@ -24,4 +24,5 @@
 - puppet-windows_autoupdate
 - puppet-windows_eventlog
 - puppet-windows_firewall
+- puppet-windows_power
 - puppet-windowsfeature
