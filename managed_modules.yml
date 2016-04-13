@@ -17,6 +17,7 @@
 - puppet-mysql_java_connector
 - puppet-nodejs
 - puppet-rundeck
+- puppet-squid
 - puppet-sslcert
 - puppet-staging
 - puppet-stash
