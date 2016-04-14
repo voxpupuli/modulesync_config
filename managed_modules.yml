@@ -1,6 +1,7 @@
 ---
 - puppet-alternatives
 - puppet-archive
+- puppet-bacula
 - puppet-collectd
 - puppet-confluence
 - puppet-corosync
