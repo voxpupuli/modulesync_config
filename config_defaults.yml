@@ -28,6 +28,8 @@ Gemfile:
         git: https://github.com/rodjek/rspec-puppet.git
       - gem: puppet-lint
         git: https://github.com/rodjek/puppet-lint.git
+      - gem: puppet-strings
+        git: https://github.com/puppetlabs/puppetlabs-strings.git
       - gem: metadata-json-lint
       - gem: rspec-puppet-facts
       - gem: rspec
