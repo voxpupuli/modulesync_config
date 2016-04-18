@@ -4,6 +4,7 @@
 - puppet-collectd
 - puppet-confluence
 - puppet-corosync
+- puppet-dhcp
 - puppet-dotnet
 - puppet-extlib
 - puppet-ghost
