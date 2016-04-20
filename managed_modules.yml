@@ -12,6 +12,7 @@
 - puppet-gluster
 - puppet-iis
 - puppet-jira
+- puppet-jolokia
 - puppet-kafka
 - puppet-mcollective
 - puppet-module-amanda
