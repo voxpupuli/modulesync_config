@@ -3,6 +3,7 @@ AllCops:
     - ./**/*.rb
   Exclude:
     - vendor/**/*
+    - .vendor/**/*
     - pkg/**/*
     - spec/fixtures/**/*
     <%- if !@configs.nil? and @configs.has_key?('AllCops') and @configs['AllCops'].has_key?('Exclude') -%>
