@@ -19,6 +19,7 @@ PuppetLint.configuration.send('<%= check %>')
 exclude_paths = %w(
   pkg/**/*
   vendor/**/*
+  .vendor/**/*
   spec/**/*
 )
 PuppetLint.configuration.ignore_paths = exclude_paths
