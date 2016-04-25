@@ -18,13 +18,15 @@ end
 <% groups.each do |group, gems| -%>
 group <%= group %> do
 <% maxlen = gems.map! do |gem| -%>
+<%            gem['platforms'].map!{|a| a.to_sym} unless gem['platforms'].nil? -%>
 <%            { -%>
-<%              'gem'     => gem['gem'], -%>
-<%              'version' => gem['version'], -%>
-<%              'require' => gem['require'], -%>
-<%              'git'     => gem['git'], -%>
-<%              'branch'  => gem['branch'], -%>
-<%              'length'  => gem['gem'].length + (("', '".length if gem['version']) || 0) + gem['version'].to_s.length -%>
+<%              'gem'       => gem['gem'], -%>
+<%              'version'   => gem['version'], -%>
+<%              'platforms' => gem['platforms'], -%>
+<%              'require'   => gem['require'], -%>
+<%              'git'       => gem['git'], -%>
+<%              'branch'    => gem['branch'], -%>
+<%              'length'    => gem['gem'].length + (("', '".length if gem['version']) || 0) + gem['version'].to_s.length -%>
 <%            } -%>
 <%          end.map do |gem| -%>
 <%            gem['length'] -%>
@@ -40,7 +42,7 @@ group <%= group %> do
     gem 'beaker-rspec',  :require => false
   end
 <% else -%>
-  gem '<%= gem['gem'] %>'<%= ", '#{gem['version']}'" if gem['version'] %>, <%= ' ' * (maxlen - gem['length']) %> :require => false<%= ", :git => '#{gem['git']}'" if gem['git'] %><%= ", :branch => '#{gem['branch']}'" if gem['branch'] %>
+  gem '<%= gem['gem'] %>'<%= ", '#{gem['version']}'" if gem['version'] %>, <%= ' ' * (maxlen - gem['length']) %> :require => false<%= ", :git => '#{gem['git']}'" if gem['git'] %><%= ", :branch => '#{gem['branch']}'" if gem['branch'] %><%= ", :platforms => #{gem['platforms']}" if gem['platforms'] %>
 <% end -%>
 <% end -%>
 end
