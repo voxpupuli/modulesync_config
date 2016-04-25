@@ -49,7 +49,6 @@ Gemfile:
     ':development':
       - gem: travis
       - gem: travis-lint
-      - gem: guard-rake
     ':system_tests':
       - gem: beaker
       - gem: beaker-rspec
