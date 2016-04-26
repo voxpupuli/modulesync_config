@@ -30,10 +30,10 @@ RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
 end
 
-desc 'Run metadata_lint, lint, syntax, and spec tests.'
+<% targets = @configs['default_enabled_rake_targets']  - ( @configs['extra_disabled_rake_targets'] || [] ) -%>
+desc 'Run tests <%= targets.join(', ') %>'
 task test: [
-  :metadata_lint,
-  :lint,
-  :syntax,
-  :spec,
+<% targets.each do |t| -%>
+  :<%= t %>,
+<% end -%>
 ]
