@@ -7,6 +7,7 @@
 - puppet-corosync
 - puppet-dhcp
 - puppet-dotnet
+- puppet-etherpad
 - puppet-extlib
 - puppet-ghost
 - puppet-gluster
