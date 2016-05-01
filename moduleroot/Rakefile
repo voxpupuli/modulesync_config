@@ -8,12 +8,8 @@ require 'rubocop/rake_task'
 require 'puppet-strings/rake_tasks'
 
 RuboCop::RakeTask.new(:rubocop) do |task|
-    # only show the files with failures
-    task.formatters = ['files']
-    # don't abort rake on failure
-    task.fail_on_error = false
-    # These make the rubocop experience maybe slightly less terrible
-    task.options = ['-D', '-S', '-E']
+  # These make the rubocop experience maybe slightly less terrible
+  task.options = ['-D', '-S', '-E']
 end
 
 PuppetLint.configuration.log_format = '%{path}:%{linenumber}:%{check}:%{KIND}:%{message}'
