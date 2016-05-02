@@ -20,6 +20,7 @@
 - puppet-module-puppetboard
 - puppet-mysql_java_connector
 - puppet-nodejs
+- puppet-puppetserver
 - puppet-rundeck
 - puppet-squid
 - puppet-sslcert
