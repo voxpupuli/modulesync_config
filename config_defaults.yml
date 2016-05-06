@@ -21,24 +21,13 @@
 Gemfile:
   required:
     ':test':
-      - gem: rake
+      - gem: puppetlabs_spec_helper
       - gem: rspec-puppet
         git: https://github.com/rodjek/rspec-puppet.git
+      - gem: rspec-puppet-facts
+      - gem: rspec-puppet-utils
       - gem: puppet-lint
         git: https://github.com/rodjek/puppet-lint.git
-      - gem: puppet-strings
-        git: https://github.com/puppetlabs/puppetlabs-strings.git
-      - gem: metadata-json-lint
-      - gem: rspec-puppet-facts
-      - gem: rspec
-      - gem: puppet-blacksmith
-        git: https://github.com/voxpupuli/puppet-blacksmith.git
-      - gem: voxpupuli-release
-        git: https://github.com/voxpupuli/voxpupuli-release-gem.git
-      - gem: rubocop
-        version: '~> 0.39'
-      - gem: rspec-puppet-utils
-      - gem: puppetlabs_spec_helper
       - gem: puppet-lint-absolute_classname-check
       - gem: puppet-lint-leading_zero-check
       - gem: puppet-lint-trailing_comma-check
@@ -46,6 +35,15 @@ Gemfile:
       - gem: puppet-lint-classes_and_types_beginning_with_digits-check
       - gem: puppet-lint-unquoted_string-check
       - gem: puppet-lint-variable_contains_upcase
+      - gem: metadata-json-lint
+      - gem: puppet-blacksmith
+        git: https://github.com/voxpupuli/puppet-blacksmith.git
+      - gem: voxpupuli-release
+        git: https://github.com/voxpupuli/voxpupuli-release-gem.git
+      - gem: puppet-strings
+        git: https://github.com/puppetlabs/puppetlabs-strings.git
+      - gem: rubocop
+        version: '~> 0.39'
     ':development':
       - gem: travis
       - gem: travis-lint
