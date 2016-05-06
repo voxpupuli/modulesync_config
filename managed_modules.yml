@@ -32,3 +32,4 @@
 - puppet-windows_firewall
 - puppet-windows_power
 - puppet-windowsfeature
+- puppet-zabbix
