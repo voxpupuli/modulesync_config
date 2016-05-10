@@ -72,3 +72,7 @@ Style/BlockDelimiters:
 
 Style/MultilineBlockLayout:
   Enabled: False
+
+# Rspec
+RSpec/DescribeClass:
+  Enabled: False
