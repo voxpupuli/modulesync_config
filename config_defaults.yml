@@ -43,6 +43,7 @@ Gemfile:
       - gem: puppet-strings
         git: https://github.com/puppetlabs/puppetlabs-strings.git
       - gem: rubocop-rspec
+        version: '~> 1.4'
     ':development':
       - gem: travis
       - gem: travis-lint
