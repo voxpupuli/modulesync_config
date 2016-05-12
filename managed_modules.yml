@@ -17,7 +17,7 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-module-amanda
-- puppet-module-puppetboard
+- puppet-puppetboard
 - puppet-msoffice
 - puppet-mysql_java_connector
 - puppet-network
