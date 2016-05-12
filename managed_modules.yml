@@ -16,7 +16,7 @@
 - puppet-jolokia
 - puppet-kafka
 - puppet-mcollective
-- puppet-module-amanda
+- puppet-amanda
 - puppet-puppetboard
 - puppet-msoffice
 - puppet-mysql_java_connector
