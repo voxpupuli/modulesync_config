@@ -3,7 +3,7 @@ HOSTS:
     roles:
       - master
     platform: debian-8-amd64
-    box: puppetlabs/debian-8.2-64-nocm
+    box: puppetlabs/debian-8.2-64-puppet
     hypervisor: vagrant
 CONFIG:
   type: foss
