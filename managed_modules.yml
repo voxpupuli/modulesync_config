@@ -16,8 +16,9 @@
 - puppet-jolokia
 - puppet-kafka
 - puppet-mcollective
-- puppet-module-amanda
-- puppet-module-puppetboard
+- puppet-amanda
+- puppet-puppetboard
+- puppet-msoffice
 - puppet-mysql_java_connector
 - puppet-network
 - puppet-nodejs
@@ -28,6 +29,7 @@
 - puppet-staging
 - puppet-stash
 - puppet-unattended_upgrades
+- puppet-visualstudio
 - puppet-windows_autoupdate
 - puppet-windows_eventlog
 - puppet-windows_firewall
