@@ -4,3 +4,4 @@ include RspecPuppetFacts
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
  <%= line %>
 <%- end -%>
+# vim: syntax=ruby

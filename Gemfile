@@ -1,4 +1,4 @@
-#  Copyright 2015 Puppet Community
+#  Copyright 2016 Vox Pupuli
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
 #  you may not use this file except in compliance with the License.
@@ -24,3 +24,4 @@ group :development do
   gem 'travis'
   gem 'travis-lint'
 end
+# vim: syntax=ruby

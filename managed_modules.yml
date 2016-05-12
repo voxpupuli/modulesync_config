@@ -36,3 +36,5 @@
 - puppet-windows_power
 - puppet-windowsfeature
 - puppet-zabbix
+...
+# vim: syntax=yaml

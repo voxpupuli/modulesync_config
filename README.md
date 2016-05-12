@@ -29,3 +29,4 @@ $ msync update -f {module_name} --noop
 $ cd modules/{module_name}
 # edit then git commit/push
 ```
+# vim: syntax=markdown

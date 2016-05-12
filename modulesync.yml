@@ -3,3 +3,5 @@ git_base: 'git@github.com:'
 namespace: voxpupuli
 branch: modulesync
 message: "Update from voxpupuli modulesync_config"
+...
+# vim: syntax=yaml
