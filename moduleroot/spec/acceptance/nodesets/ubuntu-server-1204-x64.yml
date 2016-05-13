@@ -3,7 +3,7 @@ HOSTS:
     roles:
       - master
     platform: ubuntu-12.04-amd64
-    box: puppetlabs/ubuntu-12.04-64-nocm
+    box: puppetlabs/ubuntu-12.04-64-puppet
     hypervisor: vagrant
 CONFIG:
   type: foss
