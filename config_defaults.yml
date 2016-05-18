@@ -65,5 +65,5 @@ Rakefile:
   - 'lint'
   - 'syntax'
   - 'spec'
-
 ...
+# vim: syntax=yaml

@@ -37,3 +37,4 @@ task test: [
   :<%= t %>,
 <% end -%>
 ]
+# vim: syntax=ruby
