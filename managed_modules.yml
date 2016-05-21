@@ -11,7 +11,10 @@
 - puppet-extlib
 - puppet-ghost
 - puppet-gluster
+- puppet-graphite_powershell
+- puppet-hiera
 - puppet-iis
+- puppet-jenkins_job_builder
 - puppet-jira
 - puppet-jolokia
 - puppet-kafka
