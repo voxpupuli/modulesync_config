@@ -3,6 +3,7 @@
 - puppet-archive
 - puppet-bacula
 - puppet-collectd
+- puppet-community_kickstarts
 - puppet-confluence
 - puppet-corosync
 - puppet-dhcp
