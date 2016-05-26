@@ -50,6 +50,9 @@ Style/TrailingCommaInLiteral:
 Style/ClosingParenthesisIndentation:
   Enabled: false
 
+Style/BlockDelimiters:
+  Enabled: true
+
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
 Style/RegexpLiteral:
