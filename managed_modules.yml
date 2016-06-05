@@ -11,6 +11,7 @@
 - puppet-download_file
 - puppet-etherpad
 - puppet-extlib
+- puppet-filemapper
 - puppet-ghost
 - puppet-gluster
 - puppet-graphite_powershell
