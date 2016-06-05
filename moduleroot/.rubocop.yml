@@ -56,8 +56,12 @@ Style/BlockDelimiters:
 
 Lint/AmbiguousRegexpLiteral:
   Enabled: true
+
+# based on https://github.com/voxpupuli/modulesync_config/issues/168
 Style/RegexpLiteral:
+  EnforcedStyle: percent_r
   Enabled: true
+
 Style/WordArray:
   Enabled: true
 
