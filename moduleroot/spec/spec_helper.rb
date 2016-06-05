@@ -5,7 +5,7 @@ include RspecPuppetFacts
 RSpec.configure do |c|
   c.default_facts = {
     <%- @configs['default_facts'].each do |k, v| -%>
-    <%= k %>: <%= v %>
+    <%= k %>: <%= v %>,
     <%- end unless @configs['default_facts'].empty? -%>
   }
 end
