@@ -1,5 +1,6 @@
 ---
 - puppet-alternatives
+- puppet-amanda
 - puppet-archive
 - puppet-bacula
 - puppet-collectd
@@ -22,12 +23,11 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-minecraft
-- puppet-amanda
-- puppet-puppetboard
 - puppet-msoffice
 - puppet-mysql_java_connector
 - puppet-network
 - puppet-nodejs
+- puppet-puppetboard
 - puppet-puppetserver
 - puppet-rundeck
 - puppet-squid
