@@ -452,7 +452,7 @@ Style/RescueModifier:
 
 # based on https://github.com/voxpupuli/modulesync_config/issues/168
 Style/RegexpLiteral:
-	EnforcedStyle: percent_r
+  EnforcedStyle: percent_r
   Enabled: true
 
 Lint/UnderscorePrefixedVariableName:
