@@ -10,6 +10,7 @@
 - puppet-dhcp
 - puppet-dotnet
 - puppet-download_file
+- puppet-drbd
 - puppet-etherpad
 - puppet-extlib
 - puppet-filemapper
