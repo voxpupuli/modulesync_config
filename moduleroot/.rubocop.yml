@@ -267,7 +267,7 @@ Style/DeprecatedHashMethods:
   Enabled: true
 
 Style/DotPosition:
-  Enabled: true
+  EnforcedStyle: trailing
 
 Style/DoubleNegation:
   Enabled: true
