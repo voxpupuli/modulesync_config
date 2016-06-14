@@ -25,6 +25,7 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-minecraft
+- puppet-mumble
 - puppet-msoffice
 - puppet-mysql_java_connector
 - puppet-nagios_providers
