@@ -16,6 +16,7 @@
 - puppet-filemapper
 - puppet-gerrit
 - puppet-ghost
+- puppet-git_resource
 - puppet-gluster
 - puppet-graphite_powershell
 - puppet-hiera
