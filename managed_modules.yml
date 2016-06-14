@@ -20,6 +20,7 @@
 - puppet-git_resource
 - puppet-gluster
 - puppet-graphite_powershell
+- puppet-healthcheck
 - puppet-hiera
 - puppet-iis
 - puppet-jenkins_job_builder
