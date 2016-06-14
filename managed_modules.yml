@@ -27,6 +27,7 @@
 - puppet-minecraft
 - puppet-msoffice
 - puppet-mysql_java_connector
+- puppet-nagios_providers
 - puppet-network
 - puppet-nodejs
 - puppet-puppetboard
