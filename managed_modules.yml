@@ -13,10 +13,14 @@
 - puppet-drbd
 - puppet-etherpad
 - puppet-extlib
+- puppet-facette
 - puppet-filemapper
+- puppet-gerrit
 - puppet-ghost
+- puppet-git_resource
 - puppet-gluster
 - puppet-graphite_powershell
+- puppet-healthcheck
 - puppet-hiera
 - puppet-iis
 - puppet-jenkins_job_builder
@@ -25,8 +29,10 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-minecraft
+- puppet-mumble
 - puppet-msoffice
 - puppet-mysql_java_connector
+- puppet-nagios_providers
 - puppet-network
 - puppet-nodejs
 - puppet-puppetboard
