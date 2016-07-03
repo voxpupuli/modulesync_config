@@ -9,7 +9,8 @@ RSpec.configure do |c|
     <%- end unless @configs['default_facts'].empty? -%>
   }
 end
+
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
- <%= line %>
+<%= line %>
 <%- end -%>
 # vim: syntax=ruby
