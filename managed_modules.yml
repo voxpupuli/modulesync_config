@@ -37,6 +37,7 @@
 - puppet-nodejs
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-rhsm
 - puppet-rundeck
 - puppet-squid
 - puppet-sslcert
