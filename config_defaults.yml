@@ -35,6 +35,10 @@ Gemfile:
       - gem: metadata-json-lint
       - gem: puppet-blacksmith
         git: https://github.com/voxpupuli/puppet-blacksmith.git
+        # puppet-blacksmith requires rest-client, but rest-client 2.x requires
+        # Ruby 2.0 or above
+      - gem: rest-client
+        version: '~> 1.8'
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: puppet-strings
