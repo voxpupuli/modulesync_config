@@ -34,7 +34,6 @@ Gemfile:
       - gem: puppet-lint-variable_contains_upcase
       - gem: metadata-json-lint
       - gem: puppet-blacksmith
-        git: https://github.com/voxpupuli/puppet-blacksmith.git
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: puppet-strings
