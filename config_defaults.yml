@@ -40,6 +40,8 @@ Gemfile:
         git: https://github.com/puppetlabs/puppetlabs-strings.git
       - gem: rubocop-rspec
         version: '~> 1.5'
+        ruby-operator: '>='
+        ruby-version: '2.0.0'
     ':development':
       - gem: travis
       - gem: travis-lint
