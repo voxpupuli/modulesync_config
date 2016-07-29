@@ -44,7 +44,7 @@ group <%= group %> do
     gem 'beaker-rspec',  :require => false
   end
 <% else -%>
-  gem '<%= gem['gem'] %>'<%= ", '#{gem['version']}'" if gem['version'] %>, <%= ' ' * (maxlen - gem['length']) %> :require => false<%= ", :git => '#{gem['git']}'" if gem['git'] %><%= ", :branch => '#{gem['branch']}'" if gem['branch'] %><%= ", :platforms => #{gem['platforms']}" if gem['platforms'] %><%= " if RUBY_VERSION #{gem['ruby-operator']} #{gem['ruby-version']}" if (gem['ruby-operator'] && gem['ruby-version']) %>
+  gem '<%= gem['gem'] %>'<%= ", '#{gem['version']}'" if gem['version'] %>, <%= ' ' * (maxlen - gem['length']) %> :require => false<%= ", :git => '#{gem['git']}'" if gem['git'] %><%= ", :branch => '#{gem['branch']}'" if gem['branch'] %><%= ", :platforms => #{gem['platforms']}" if gem['platforms'] %><%= " if RUBY_VERSION #{gem['ruby-operator']} '#{gem['ruby-version']}'" if (gem['ruby-operator'] && gem['ruby-version']) %>
 <% end -%>
 <% end -%>
 end
