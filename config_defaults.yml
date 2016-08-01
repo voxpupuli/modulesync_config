@@ -41,7 +41,7 @@ Gemfile:
       - gem: rubocop-rspec
         version: '~> 1.5'
         ruby-operator: '>='
-        ruby-version: '2.0.0'
+        ruby-version: '2.3.0'
       - gem: json_pure
         version: '<= 2.0.1'
         ruby-operator: '<'
