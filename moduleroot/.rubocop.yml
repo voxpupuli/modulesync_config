@@ -322,7 +322,7 @@ Style/TrailingCommaInArguments:
   Enabled: true
 
 Style/TrailingCommaInLiteral:
-  Enabled: true
+  Enabled: false
 
 Style/GlobalVars:
   Enabled: true
