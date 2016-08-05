@@ -8,7 +8,7 @@ RSpec.configure do |c|
     facterversion: Facter.version
   }
   default_facts += YAML.read_file('default_facts.yml') if File.exist?('default_facts.yml')
-  default_facts += YAML.read_file('default_facts.yml') if File.exist?('default_module_facts.yml')
+  default_facts += YAML.read_file('default_module_facts.yml') if File.exist?('default_module_facts.yml')
   c.default_facts = default_facts
 end
 
