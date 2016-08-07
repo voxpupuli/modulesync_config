@@ -508,3 +508,6 @@ RSpec/DescribeClass:
 # Example length is not necessarily an indicator of code quality
 RSpec/ExampleLength:
   Enabled: False
+
+RSpec/NamedSubject:
+  Enabled: False
