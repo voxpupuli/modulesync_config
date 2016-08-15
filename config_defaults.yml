@@ -67,8 +67,6 @@ Rakefile:
   - 'disable_single_quote_string_with_variables'
   default_enabled_rake_targets:
   - 'metadata_lint'
-  - 'lint'
-  - 'syntax'
-  - 'spec'
+  - 'release_checks'
 ...
 # vim: syntax=yaml
