@@ -43,6 +43,7 @@
 - puppet-sslcert
 - puppet-staging
 - puppet-stash
+- puppet-splunk
 - puppet-unattended_upgrades
 - puppet-visualstudio
 - puppet-windows_autoupdate
