@@ -53,6 +53,8 @@ notifications:
   email: false
 deploy:
   provider: puppetforge
+  deploy:
+    branch: ha-bug-puppet-forge
   user: puppet
   password:
     secure: "<%= @configs['secure'] -%>"
