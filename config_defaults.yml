@@ -36,8 +36,6 @@ Gemfile:
       - gem: puppet-lint-classes_and_types_beginning_with_digits-check
       - gem: puppet-lint-unquoted_string-check
       - gem: puppet-lint-variable_contains_upcase
-      - gem: puppet-lint
-        version: '2.0.0'
       - gem: metadata-json-lint
       - gem: puppet-blacksmith
       - gem: voxpupuli-release
