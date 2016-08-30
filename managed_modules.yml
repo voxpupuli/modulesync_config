@@ -36,10 +36,12 @@
 - puppet-nagios_providers
 - puppet-network
 - puppet-nodejs
+- puppet-nginx
 - puppet-puppetboard
 - puppet-puppetserver
 - puppet-rhsm
 - puppet-rundeck
+- puppet-selinux
 - puppet-squid
 - puppet-sslcert
 - puppet-staging
