@@ -9,10 +9,12 @@ Module sync configurations for Vox Pupuli Modules
 Installation:
 
 ```bash
-$ git clone https://github.com/voxpupuli/modulesync_config.git
-$ cd modulesync_config
-$ bundle install
-$ bundle exec msync update --help
+git clone https://github.com/voxpupuli/modulesync_config.git
+cd modulesync_config
+git tag -l
+git checkout X.X.X # checkout latest tag
+bundle install
+bundle exec msync update --help
 ```
 
 Examples
@@ -20,13 +22,13 @@ Examples
 
 module sync one specific module:
 ```
-msync update -f {module_name}
+bundle exec msync update -f {module_name} --message "modulesync {git-tag}"
 ```
 
 module sync one module and review changes before submitting changes:
-```
-$ msync update -f {module_name} --noop
-$ cd modules/{module_name}
+```bash
+bundle exec msync update -f {module_name} --noop
+cd modules/{module_name}
 # edit then git commit/push
 ```
 # vim: syntax=markdown
