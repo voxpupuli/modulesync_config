@@ -38,6 +38,7 @@
 - puppet-network
 - puppet-nodejs
 - puppet-nginx
+- puppet-php
 - puppet-puppetboard
 - puppet-puppetserver
 - puppet-rhsm
