@@ -31,6 +31,7 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-minecraft
+- puppet-mrepo
 - puppet-mumble
 - puppet-msoffice
 - puppet-mysql_java_connector
