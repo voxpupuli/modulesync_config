@@ -42,7 +42,7 @@ Gemfile:
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: puppet-strings
-        git: https://github.com/puppetlabs/puppetlabs-strings.git
+        version: '0.4.0'
       - gem: rubocop-rspec
         version: '~> 1.6'
         ruby-operator: '>='
