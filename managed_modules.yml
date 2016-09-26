@@ -14,11 +14,13 @@
 - puppet-etherpad
 - puppet-extlib
 - puppet-facette
+- puppet-fetchcrl
 - puppet-filemapper
 - puppet-gerrit
 - puppet-ghost
 - puppet-git_resource
 - puppet-gluster
+- puppet-googleauthenticator
 - puppet-graphite_powershell
 - puppet-healthcheck
 - puppet-hiera
@@ -29,20 +31,26 @@
 - puppet-kafka
 - puppet-mcollective
 - puppet-minecraft
+- puppet-mrepo
 - puppet-mumble
 - puppet-msoffice
 - puppet-mysql_java_connector
 - puppet-nagios_providers
 - puppet-network
 - puppet-nodejs
+- puppet-nginx
+- puppet-php
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-rhsm
 - puppet-rundeck
+- puppet-selinux
 - puppet-sftp_jail
 - puppet-squid
 - puppet-sslcert
 - puppet-staging
 - puppet-stash
+- puppet-splunk
 - puppet-unattended_upgrades
 - puppet-visualstudio
 - puppet-windows_autoupdate
@@ -50,6 +58,7 @@
 - puppet-windows_firewall
 - puppet-windows_power
 - puppet-windowsfeature
+- puppet-yum
 - puppet-zabbix
 ...
 # vim: syntax=yaml

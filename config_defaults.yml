@@ -5,20 +5,27 @@
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 1.9.3
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" FUTURE_PARSER="yes" CHECK=test
-  - rvm: 2.1
+  - rvm: 2.1.9
     env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
-  - rvm: 2.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
-  - rvm: 2.2
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+  - rvm: 2.1.9
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
+  - rvm: 2.2.5
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
   - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=rubocop
+    env: PUPPET_VERSION="~> 4.0" CHECK=build DEPLOY_TO_FORGE=yes
   - rvm: 2.3.1
-    env: PUPPET_VERSION="~> 4.0" STRICT_VARIABLES="yes" CHECK=test
+    env: PUPPET_VERSION="~> 4.0" CHECK=rubocop
+  - rvm: 2.3.1
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
+  - rvm: 2.4.0-preview1
+    env: PUPPET_VERSION="~> 4.0" CHECK=test
+  allow_failures:
+    - rvm: 2.4.0-preview1
 Gemfile:
   required:
     ':test':
       - gem: puppetlabs_spec_helper
+        version: '~> 1.2.2'
       - gem: rspec-puppet
         git: https://github.com/rodjek/rspec-puppet.git
       - gem: rspec-puppet-facts
@@ -32,13 +39,18 @@ Gemfile:
       - gem: puppet-lint-variable_contains_upcase
       - gem: metadata-json-lint
       - gem: puppet-blacksmith
-        git: https://github.com/voxpupuli/puppet-blacksmith.git
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: puppet-strings
-        git: https://github.com/puppetlabs/puppetlabs-strings.git
+        version: '0.4.0'
       - gem: rubocop-rspec
-        version: '~> 1.5'
+        version: '~> 1.6'
+        ruby-operator: '>='
+        ruby-version: '2.3.0'
+      - gem: json_pure
+        version: '<= 2.0.1'
+        ruby-operator: '<'
+        ruby-version: '2.0.0'
     ':development':
       - gem: travis
       - gem: travis-lint
@@ -56,17 +68,6 @@ Rakefile:
   - 'disable_single_quote_string_with_variables'
   default_enabled_rake_targets:
   - 'metadata_lint'
-  - 'lint'
-  - 'syntax'
-  - 'spec'
-spec/spec_helper.rb:
-  default_facts:
-    concat_basedir: "'/tmp'"
-    is_pe: false
-    selinux_config_mode: "'disabled'"
-    puppetversion: Puppet.version
-    facterversion: Facter.version
-    ipaddress: "'172.16.254.254'"
-    macaddress: "'AA:AA:AA:AA:AA:AA'"
+  - 'release_checks'
 ...
 # vim: syntax=yaml
