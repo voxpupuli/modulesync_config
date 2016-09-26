@@ -45,6 +45,7 @@
 - puppet-rhsm
 - puppet-rundeck
 - puppet-selinux
+- puppet-sftp_jail
 - puppet-squid
 - puppet-sslcert
 - puppet-staging
