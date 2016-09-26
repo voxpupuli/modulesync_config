@@ -38,6 +38,7 @@
 - puppet-puppetboard
 - puppet-puppetserver
 - puppet-rundeck
+- puppet-sftp_jail
 - puppet-squid
 - puppet-sslcert
 - puppet-staging
