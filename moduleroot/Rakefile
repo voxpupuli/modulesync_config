@@ -24,6 +24,11 @@ exclude_paths = %w(
   vendor/**/*
   .vendor/**/*
   spec/**/*
+<%- if @configs['exclude_paths'] -%>
+<%-   @configs['exclude_paths'].each do |path|-%>
+  <%= path %>
+<%-   end -%>
+<%- end -%>
 )
 PuppetLint.configuration.ignore_paths = exclude_paths
 PuppetSyntax.exclude_paths = exclude_paths
