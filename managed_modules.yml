@@ -39,6 +39,7 @@
 - puppet-network
 - puppet-nodejs
 - puppet-nginx
+- puppet-nsclient
 - puppet-php
 - puppet-puppetboard
 - puppet-puppetserver
