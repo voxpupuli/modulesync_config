@@ -3,6 +3,7 @@
 - puppet-amanda
 - puppet-archive
 - puppet-bacula
+- puppet-boolean
 - puppet-collectd
 - puppet-community_kickstarts
 - puppet-confluence
@@ -52,6 +53,7 @@
 - puppet-staging
 - puppet-stash
 - puppet-splunk
+- puppet-tea
 - puppet-unattended_upgrades
 - puppet-visualstudio
 - puppet-windows_autoupdate
