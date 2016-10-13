@@ -59,6 +59,7 @@ Gemfile:
       - gem: guard-rake
     ':system_tests':
       - gem: beaker-rspec
+      - gem: serverspec
       - gem: beaker-puppet_install_helper
         require: false
 Rakefile:
