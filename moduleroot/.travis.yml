@@ -41,6 +41,15 @@ matrix:
 <%   @configs['extras'].each do |extra| -%>
   - rvm: <%= extra['rvm'] %>
     env: <%= extra['env'] %>
+<%     if extra['services'] -%>
+    services: <%= extra['services'] %>
+<%     end -%>
+<%     if extra['sudo'] -%>
+    sudo: <%= extra['sudo'] %>
+<%     end -%>
+<%     if extra['bundler_args'] -%>
+    bundler_args: <%= extra['bundler_args'] %>
+<%     end -%>
 <%   end -%>
 <% end -%>
 <% if @configs['allow_failures'] -%>
