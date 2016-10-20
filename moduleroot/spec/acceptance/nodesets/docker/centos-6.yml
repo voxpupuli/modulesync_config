@@ -21,4 +21,3 @@ CONFIG:
   log_level: debug
 ...
 # vim: syntax=yaml
-
