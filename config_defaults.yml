@@ -56,6 +56,8 @@ Gemfile:
       - gem: mocha
         version: '>= 1.2.1'
       - gem: coveralls
+        ruby-operator: '>='
+        ruby-version: '2.0.0'
     ':development':
       - gem: travis
       - gem: travis-lint
