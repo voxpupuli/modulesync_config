@@ -27,7 +27,7 @@ Gemfile:
       - gem: puppetlabs_spec_helper
         version: '~> 1.2.2'
       - gem: rspec-puppet
-        git: https://github.com/rodjek/rspec-puppet.git
+        version: '~> 2.5'
       - gem: rspec-puppet-facts
       - gem: rspec-puppet-utils
       - gem: puppet-lint-absolute_classname-check
