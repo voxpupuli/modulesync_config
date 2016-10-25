@@ -12,6 +12,7 @@ log/
 .idea/
 *.iml
 .*.sw
+.yardoc/
 <% if ! @configs['paths'].nil? -%>
 <% @configs['paths'].each do |path| -%>
 <%= path %>
