@@ -58,6 +58,9 @@ Gemfile:
       - gem: coveralls
         ruby-operator: '>='
         ruby-version: '2.0.0'
+      - gem: simplecov-console
+        ruby-operator: '>='
+        ruby-version: '2.0.0'
     ':development':
       - gem: travis
       - gem: travis-lint
