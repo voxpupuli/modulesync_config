@@ -11,7 +11,7 @@ coverage/
 log/
 .idea/
 *.iml
-.*.sw
+.*.sw?
 .yardoc/
 <% if ! @configs['paths'].nil? -%>
 <% @configs['paths'].each do |path| -%>
