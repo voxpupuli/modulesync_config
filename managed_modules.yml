@@ -49,6 +49,7 @@
 - puppet-r10k
 - puppet-selinux
 - puppet-sftp_jail
+- puppet-smokeping
 - puppet-splunk
 - puppet-squid
 - puppet-sslcert
