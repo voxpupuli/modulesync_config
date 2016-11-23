@@ -30,6 +30,7 @@
 - puppet-jira
 - puppet-jolokia
 - puppet-kafka
+- puppet-make
 - puppet-mcollective
 - puppet-minecraft
 - puppet-mrepo
