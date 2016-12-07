@@ -22,6 +22,7 @@
 - puppet-git_resource
 - puppet-gluster
 - puppet-googleauthenticator
+- puppet-grafana
 - puppet-graphite_powershell
 - puppet-healthcheck
 - puppet-hiera
@@ -45,9 +46,9 @@
 - puppet-php
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-r10k
 - puppet-rhsm
 - puppet-rundeck
-- puppet-r10k
 - puppet-selinux
 - puppet-sftp_jail
 - puppet-smokeping
