@@ -60,6 +60,7 @@
 - puppet-tea
 - puppet-unattended_upgrades
 - puppet-visualstudio
+- puppet-windows-env
 - puppet-windows_autoupdate
 - puppet-windows_eventlog
 - puppet-windows_firewall
