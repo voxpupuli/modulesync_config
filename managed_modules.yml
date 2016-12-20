@@ -60,6 +60,7 @@
 - puppet-stash
 - puppet-tea
 - puppet-unattended_upgrades
+- puppet-virtualbox
 - puppet-visualstudio
 - puppet-windows-env
 - puppet-windows_autoupdate
@@ -68,7 +69,6 @@
 - puppet-windows_power
 - puppet-windowsfeature
 - puppet-yum
-- puppet-virtalbox
 - puppet-zabbix
 ...
 # vim: syntax=yaml
