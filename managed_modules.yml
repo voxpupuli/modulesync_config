@@ -48,6 +48,7 @@
 - puppet-puppetboard
 - puppet-puppetserver
 - puppet-r10k
+- puppet-report_hipchat
 - puppet-rhsm
 - puppet-rundeck
 - puppet-selinux
