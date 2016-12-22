@@ -61,6 +61,8 @@ Gemfile:
       - gem: simplecov-console
         ruby-operator: '>='
         ruby-version: '2.0.0'
+      - gem: safe_yaml
+        version: '~> 1.0.4'
     ':development':
       - gem: travis
       - gem: travis-lint
