@@ -46,7 +46,7 @@ Gemfile:
       - gem: puppet-strings
         version: '~> 0.99.0'
       - gem: rubocop-rspec
-        version: '~> 1.6'
+        version: '~> 1.9.0'
         ruby-operator: '>='
         ruby-version: '2.3.0'
       - gem: json_pure
