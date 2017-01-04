@@ -515,3 +515,10 @@ RSpec/ExampleLength:
 
 RSpec/NamedSubject:
   Enabled: False
+<%- if !@configs.nil? and @configs.has_key?('ExtraCops') -%>
+
+<%- @configs['ExtraCops'].each do |cop, value| -%>
+<%= cop %>:
+  <%= value %>
+<%- end -%>
+<%- end -%>
