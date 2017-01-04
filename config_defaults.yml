@@ -1,12 +1,6 @@
 ---
 .travis.yml:
   includes:
-  - rvm: 1.9.3
-    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
-  - rvm: 1.9.3
-    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" FUTURE_PARSER="yes" CHECK=test
-  - rvm: 2.1.9
-    env: PUPPET_VERSION="~> 3.0" STRICT_VARIABLES="yes" CHECK=test
   - rvm: 2.1.9
     env: PUPPET_VERSION="~> 4.0" CHECK=test
   - rvm: 2.2.6
@@ -54,11 +48,7 @@ Gemfile:
       - gem: mocha
         version: '>= 1.2.1'
       - gem: coveralls
-        ruby-operator: '>='
-        ruby-version: '2.0.0'
       - gem: simplecov-console
-        ruby-operator: '>='
-        ruby-version: '2.0.0'
     ':development':
       - gem: travis
       - gem: travis-lint
