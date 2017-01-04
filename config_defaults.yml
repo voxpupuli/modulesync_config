@@ -41,10 +41,8 @@ Gemfile:
       - gem: puppet-blacksmith
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
-      # we need to pin strings. not sure if 1.0.0 brings another breaking change.
-      # our Rakefile isn't compatible with older strings releases
       - gem: puppet-strings
-        version: '~> 0.99.0'
+        version: '~> 1.0.0'
       - gem: rubocop-rspec
         version: '~> 1.9.0'
         ruby-operator: '>='
