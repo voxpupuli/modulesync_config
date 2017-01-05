@@ -41,10 +41,6 @@ Gemfile:
         version: '~> 1.9.0'
         ruby-operator: '>='
         ruby-version: '2.3.0'
-      - gem: json_pure
-        version: '<= 2.0.1'
-        ruby-operator: '<'
-        ruby-version: '2.0.0'
       - gem: mocha
         version: '>= 1.2.1'
       - gem: coveralls
