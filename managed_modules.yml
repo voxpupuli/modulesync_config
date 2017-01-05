@@ -1,6 +1,7 @@
 ---
 - puppet-alternatives
 - puppet-amanda
+- puppet-autofs
 - puppet-archive
 - puppet-bacula
 - puppet-boolean
