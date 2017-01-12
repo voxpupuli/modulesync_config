@@ -45,6 +45,17 @@ Gemfile:
         version: '>= 1.2.1'
       - gem: coveralls
       - gem: simplecov-console
+      - gem: github_changelog_generator
+        version: '~> 1.13.0'
+        ruby-operator: '<'
+        ruby-version: '2.2.2'
+      - gem: rack
+        version: '~> 1.0'
+        ruby-operator: '<'
+        ruby-version: '2.2.2'
+      - gem: github_changelog_generator
+        ruby-operator: '>='
+        ruby-version: '2.2.2'
     ':development':
       - gem: travis
       - gem: travis-lint
