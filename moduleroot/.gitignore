@@ -12,7 +12,7 @@ log/
 .idea/
 .dependencies/
 .librarian/
-.Puppetfile.lock
+Puppetfile.lock
 *.iml
 .*.sw?
 .yardoc/
