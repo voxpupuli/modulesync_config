@@ -35,6 +35,7 @@ Gemfile:
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: puppet-strings
         version: '~> 1.0.0'
+      - gem: redcarpet
       - gem: rubocop-rspec
         version: '~> 1.9.0'
         ruby-operator: '>='
