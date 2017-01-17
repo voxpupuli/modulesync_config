@@ -43,8 +43,13 @@ Gemfile:
         git: https://github.com/voxpupuli/voxpupuli-release-gem.git
       - gem: puppet-strings
         version: '~> 1.0.0'
+      - gem: redcarpet
+      - gem: rubocop
+        version: '~> 0.47.0'
+        ruby-operator: '>='
+        ruby-version: '2.3.0'
       - gem: rubocop-rspec
-        version: '~> 1.9.0'
+        version: '~> 1.10.0'
         ruby-operator: '>='
         ruby-version: '2.3.0'
       - gem: json_pure
