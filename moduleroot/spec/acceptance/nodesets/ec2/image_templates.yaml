@@ -1,0 +1,14 @@
+# This file is managed via modulesync
+# https://github.com/voxpupuli/modulesync
+# https://github.com/voxpupuli/modulesync_config
+#
+# see also: https://github.com/puppetlabs/beaker/blob/master/docs/how_to/hypervisors/ec2.md
+#
+# Hint: image IDs (ami-*) for the same image are different per location.
+#
+AMI:
+  # Amazon Linux AMI 2016.09.1 (HVM), SSD Volume Type 
+  amazonlinux-2016091-eu-central-1:
+    :image:
+      :aio: ami-af0fc0c0
+    :region: eu-central-1
