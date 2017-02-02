@@ -12,3 +12,23 @@ AMI:
     :image:
       :aio: ami-af0fc0c0
     :region: eu-central-1
+  # Red Hat Enterprise Linux 7.3 (HVM), SSD Volume Type
+  rhel-73-eu-central-1:
+    :image:
+      :aio: ami-e4c63e8b
+    :region: eu-central-1
+  # SUSE Linux Enterprise Server 12 SP2 (HVM), SSD Volume Type
+  sles-12sp2-eu-central-1:
+    :image:
+      :aio: ami-c425e4ab
+    :region: eu-central-1
+  # Ubuntu Server 16.04 LTS (HVM), SSD Volume Type
+  ubuntu-1604-eu-central-1:
+    :image:
+      :aio: ami-fe408091
+    :region: eu-central-1
+  # Microsoft Windows Server 2016 Base
+  windows-2016-base-eu-central-1:
+    :image:
+      :aio: ami-88ec20e7
+    :region: eu-central-1
