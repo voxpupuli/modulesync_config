@@ -30,6 +30,9 @@ RSpec.configure do |c|
   <%- if @configs['mock_with'] -%>
   c.mock_with <%= @configs['mock_with'] %>
   <%- end -%>
+  <%- if @configs['hiera_config'] -%>
+  c.hiera_config = <%= @configs['hiera_config'] %>
+  <%- end -%>
 end
 
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
