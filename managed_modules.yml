@@ -46,6 +46,7 @@
 - puppet-nodejs
 - puppet-nsclient
 - puppet-php
+- puppet-proxysql
 - puppet-prometheus
 - puppet-puppetboard
 - puppet-puppetserver
