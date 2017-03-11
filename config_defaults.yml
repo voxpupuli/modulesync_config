@@ -42,7 +42,7 @@ Gemfile:
         ruby-operator: '>='
         ruby-version: '2.3.0'
       - gem: rubocop-rspec
-        version: '~> 1.10.0'
+        version: '~> 1.13.0'
         ruby-operator: '>='
         ruby-version: '2.3.0'
       - gem: mocha
