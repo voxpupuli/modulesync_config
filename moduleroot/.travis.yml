@@ -3,7 +3,6 @@ sudo: false
 dist: trusty
 language: ruby
 cache: bundler
-bundler_args: --without system_tests development
 <%- if !@configs.nil? and @configs.has_key?('addons') -%>
 addons:
   <%- if @configs['addons'].has_key?('apt') -%>
@@ -34,29 +33,40 @@ script:
 matrix:
   fast_finish: true
   include:
+<% if @configs['docker_sets'] -%>
+<%   @configs['docker_sets'].each do |set| -%>
+<%     job = @configs['docker_defaults'].merge(set['options'] || {}) -%>
+  - rvm: <%= job['rvm'] %>
+<%     job.keys.sort.each do |k| -%>
+<%     next if k == 'rvm' -%>
+    <%= k %>: <%= job[k].gsub(/@@SET@@/, set['set']) %>
+<%     end -%>
+<%   end -%>
+<% end -%>
 <% @configs['includes'].each do |include| -%>
   - rvm: <%= include['rvm'] %>
-    env: <%= include['env'] %>
+<%   include.keys.sort.each do |k| -%>
+<%     next if k == 'rvm' -%>
+    <%= k %>: <%= include[k] %>
+<%   end -%>
 <% end -%>
 <% if @configs['extras'] -%>
 <%   @configs['extras'].each do |extra| -%>
   - rvm: <%= extra['rvm'] %>
-    env: <%= extra['env'] %>
-<%     if extra['services'] -%>
-    services: <%= extra['services'] %>
-<%     end -%>
-<%     if extra['sudo'] -%>
-    sudo: <%= extra['sudo'] %>
-<%     end -%>
-<%     if extra['bundler_args'] -%>
-    bundler_args: <%= extra['bundler_args'] %>
+<%     extra.keys.sort.each do |k| -%>
+<%       next if k == 'rvm' -%>
+    <%= k %>: <%= extra[k] %>
 <%     end -%>
 <%   end -%>
 <% end -%>
 <% if @configs['allow_failures'] -%>
-<%   @configs['allow_failures'].each do |allow_failures| -%>
   allow_failures:
-    - rvm: <%= allow_failures['rvm'] %>
+<%   @configs['allow_failures'].each do |allow_failure| -%>
+    - rvm: <%= allow_failure['rvm'] %>
+<%     allow_failure.keys.sort.each do |k| -%>
+<%       next if k == 'rvm' -%>
+      <%= k %>: <%= job[k] %>
+<%     end -%>
 <%   end -%>
 <% end -%>
 branches:

@@ -1,18 +1,33 @@
 ---
 .travis.yml:
+  docker_sets:
+  docker_defaults:
+    # values will replace @@SET@@ with the docker_sets' value
+    rvm: 2.1.9
+    sudo: required
+    dist: trusty
+    services: docker
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_set=@@SET@@ CHECK=beaker
+    bundler_args: --without development
   includes:
   - rvm: 2.1.9
     env: PUPPET_VERSION="~> 4.0" CHECK=test
+    bundler_args: --without system_tests development
   - rvm: 2.2.7
     env: PUPPET_VERSION="~> 4.0" CHECK=test
+    bundler_args: --without system_tests development
   - rvm: 2.3.4
     env: PUPPET_VERSION="~> 4.0" CHECK=test
+    bundler_args: --without system_tests development
   - rvm: 2.4.1
     env: PUPPET_VERSION="~> 4.0" CHECK=test
+    bundler_args: --without system_tests development
   - rvm: 2.4.1
     env: PUPPET_VERSION="~> 4.0" CHECK=rubocop
+    bundler_args: --without system_tests development
   - rvm: 2.4.1
     env: PUPPET_VERSION="~> 4.0" CHECK=build DEPLOY_TO_FORGE=yes
+    bundler_args: --without system_tests development
 Gemfile:
   required:
     ':test':
