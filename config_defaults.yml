@@ -79,8 +79,7 @@ Gemfile:
       - gem: travis-lint
       - gem: guard-rake
       - gem: overcommit
-        ruby-operator: '>='
-        ruby-version: '0.39.1'
+        version: '~> 0.39.1'
     ':system_tests':
       - gem: beaker-rspec
       - gem: serverspec
