@@ -14,7 +14,3 @@ Metrics/LineLength:
 # dealbreaker:
 Style/TrailingCommaInArguments:
   Enabled: false
-
-# Disable warnings on moduleroot/spec/spec_helper.rb and other files
-Security/YAMLLoad:
-  Enabled: false
