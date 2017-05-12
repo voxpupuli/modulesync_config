@@ -78,6 +78,6 @@
 - puppet-windowsfeature
 - puppet-yum
 - puppet-zabbix
-- puppet-zypreppo
+- puppet-zypprepo
 ...
 # vim: syntax=yaml
