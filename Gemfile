@@ -14,11 +14,6 @@
 
 source "https://rubygems.org"
 
-group :test do
-  gem 'rake'
-  gem 'rubocop', '~> 0.46.0'
-end
-
 group :development do
   gem 'travis'
   gem 'travis-lint'
