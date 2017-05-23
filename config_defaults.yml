@@ -74,6 +74,7 @@ Gemfile:
       - gem: github_changelog_generator
         ruby-operator: '>='
         ruby-version: '2.2.2'
+      - gem: parallel_tests
     ':development':
       - gem: travis
       - gem: travis-lint
