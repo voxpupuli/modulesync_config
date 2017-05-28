@@ -76,13 +76,21 @@ branches:
 notifications:
   email: false
 deploy:
-  provider: puppetforge
-  user: puppet
-  password:
-    secure: "<%= @configs['secure'] -%>"
-  on:
-    tags: true
-    # all_branches is required to use tags
-    all_branches: true
-    # Only publish the build marked with "DEPLOY_TO_FORGE"
-    condition: "$DEPLOY_TO_FORGE = yes"
+  - provider: puppetforge
+    user: puppet
+    password:
+      secure: "<%= @configs['secure'] -%>"
+    on:
+      tags: true
+      # all_branches is required to use tags
+      all_branches: true
+      # Only publish the build marked with "DEPLOY_TO_FORGE"
+      condition: "$DEPLOY_TO_FORGE = yes"
+  - provider: releases
+    api_key: 
+      secure: "GITHUB OAUTH TOKEN"
+    file: "pkg/*.tar.gz"
+    skip_cleanup: true
+    on:
+      tags: true
+      condition: "$DEPLOY_TO_FORGE = yes"
