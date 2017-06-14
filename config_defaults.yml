@@ -47,7 +47,7 @@ Gemfile:
       - gem: metadata-json-lint
       - gem: puppet-blacksmith
       - gem: voxpupuli-release
-        git: https://github.com/voxpupuli/voxpupuli-release-gem.git
+        git: https://github.com/voxpupuli/voxpupuli-release-gem
       - gem: puppet-strings
         version: '~> 1.0'
       - gem: redcarpet
