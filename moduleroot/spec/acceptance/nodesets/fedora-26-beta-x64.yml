@@ -1,0 +1,18 @@
+---
+# This file is managed via modulesync
+# https://github.com/voxpupuli/modulesync
+# https://github.com/voxpupuli/modulesync_config
+#
+# platform is fedora 25 because there is no
+# puppet-agent for fedora 26 by 2017-06-14
+HOSTS:
+  fedora-26-beta-x64:
+    roles:
+      - master
+    platform: fedora-25-x86_64
+    box: fedora/beta-26-cloud-base
+    hypervisor: vagrant
+CONFIG:
+  type: aio
+...
+# vim: syntax=yaml
