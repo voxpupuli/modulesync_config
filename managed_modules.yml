@@ -47,6 +47,7 @@
 - puppet-network
 - puppet-nginx
 - puppet-nodejs
+- puppet-nscd
 - puppet-nsclient
 - puppet-php
 - puppet-proxysql
