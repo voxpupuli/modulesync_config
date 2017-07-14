@@ -23,6 +23,9 @@
     env: PUPPET_VERSION="~> 4.0" CHECK=test
     bundler_args: --without system_tests development
   - rvm: 2.4.1
+    env: PUPPET_VERSION="~> 5.0" CHECK=test
+    bundler_args: --without system_tests development
+  - rvm: 2.4.1
     env: PUPPET_VERSION="~> 4.0" CHECK=rubocop
     bundler_args: --without system_tests development
   - rvm: 2.4.1
