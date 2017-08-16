@@ -68,6 +68,7 @@
 - puppet-sslcertificate
 - puppet-staging
 - puppet-stash
+- puppet-system
 - puppet-tea
 - puppet-tvheadend
 - puppet-unattended_upgrades
