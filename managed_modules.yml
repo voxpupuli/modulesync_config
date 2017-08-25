@@ -55,6 +55,7 @@
 - puppet-prometheus_reporter
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-rabbitmq
 - puppet-r10k
 - puppet-report_hipchat
 - puppet-rhsm
