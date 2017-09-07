@@ -3,7 +3,7 @@
   docker_sets:
   docker_defaults:
     # values will replace @@SET@@ with the docker_sets' value
-    rvm: 2.1.9
+    rvm: 2.4.1
     sudo: required
     dist: trusty
     services: docker
