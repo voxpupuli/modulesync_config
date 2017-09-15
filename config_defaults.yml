@@ -31,7 +31,6 @@ Gemfile:
         version: '~> 2.5'
       - gem: rspec-puppet-facts
       - gem: rspec-puppet-utils
-      - gem: puppet-lint-absolute_classname-check
       - gem: puppet-lint-leading_zero-check
       - gem: puppet-lint-trailing_comma-check
       - gem: puppet-lint-version_comparison-check
