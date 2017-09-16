@@ -75,6 +75,7 @@ Gemfile:
       - gem: overcommit
         version: '>= 0.39.1'
     ':system_tests':
+      - gem: winrm
       - gem: beaker-rspec
       - gem: serverspec
       - gem: beaker-puppet_install_helper
