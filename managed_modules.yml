@@ -67,6 +67,7 @@
 - puppet-squid
 - puppet-ssh_keygen
 - puppet-sslcertificate
+- puppet-stackify
 - puppet-staging
 - puppet-stash
 - puppet-system
