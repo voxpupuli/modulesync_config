@@ -3,7 +3,7 @@
   docker_sets:
   docker_defaults:
     # values will replace @@SET@@ with the docker_sets' value
-    rvm: 2.4.1
+    rvm: 2.4.2
     sudo: required
     dist: trusty
     services: docker
@@ -13,13 +13,13 @@
   - rvm: 2.1.9
     env: PUPPET_VERSION="~> 4.0" CHECK=test
     bundler_args: --without system_tests development
-  - rvm: 2.4.1
+  - rvm: 2.4.2
     env: PUPPET_VERSION="~> 5.0" CHECK=test_with_coveralls
     bundler_args: --without system_tests development
-  - rvm: 2.4.1
+  - rvm: 2.4.2
     env: PUPPET_VERSION="~> 5.0" CHECK=rubocop
     bundler_args: --without system_tests development
-  - rvm: 2.4.1
+  - rvm: 2.4.2
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
     bundler_args: --without system_tests development
 Gemfile:
