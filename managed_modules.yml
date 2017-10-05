@@ -50,6 +50,7 @@
 - puppet-nodejs
 - puppet-nscd
 - puppet-nsclient
+- puppet-openvpn
 - puppet-php
 - puppet-proxysql
 - puppet-prometheus
