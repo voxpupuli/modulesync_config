@@ -71,10 +71,6 @@ Gemfile:
         require: false
     ':release':
       - gem: github_changelog_generator
-        version: '~> 1.13.0'
-        ruby-operator: '<'
-        ruby-version: '2.2.2'
-      - gem: github_changelog_generator
         ruby-operator: '>='
         ruby-version: '2.2.2'
       - gem: puppet-blacksmith
