@@ -19,6 +19,7 @@ build/
 /.yardoc/
 /_yardoc/
 /doc/
+/docs/
 /rdoc/
 
 ## Environment normalisation:
