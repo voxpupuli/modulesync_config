@@ -12,6 +12,7 @@ AllCops:
     - Gemfile
     - Rakefile
     - Guardfile
+    - Vagrantfile
     <%- if !@configs.nil? and @configs.has_key?('AllCops') and @configs['AllCops'].has_key?('Exclude') -%>
     <%- @configs['AllCops']['Exclude'].each do |x| -%>
     - <%= x %>
