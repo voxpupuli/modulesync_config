@@ -39,6 +39,7 @@
 - puppet-mcollective
 - puppet-minecraft
 - puppet-misp
+- puppet-mongodb
 - puppet-mrepo
 - puppet-msoffice
 - puppet-mumble
