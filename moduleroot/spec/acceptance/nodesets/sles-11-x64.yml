@@ -1,0 +1,13 @@
+---
+# This file is managed via modulesync
+# https://github.com/voxpupuli/modulesync
+# https://github.com/voxpupuli/modulesync_config
+HOSTS:
+  sles-11-x64:
+    roles:
+      - default
+    platform: sles-11-x64
+    box: suse/sles11sp3
+    hypervisor: vagrant
+CONFIG:
+  type: foss
