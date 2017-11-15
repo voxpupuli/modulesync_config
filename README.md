@@ -46,9 +46,8 @@ find modules/* -maxdepth 0 -type d | while read module; do
   cd $module
   git status
   git checkout master
-  git pull
-  git fetch origin --prune
-  git branch -d modulesync
+  git pull --prune
+  git branch -D modulesync
   cd ..
   cd ..
 done
