@@ -30,6 +30,12 @@ exclude_paths = %w(
 PuppetLint.configuration.ignore_paths = exclude_paths
 PuppetSyntax.exclude_paths = exclude_paths
 
+desc 'Auto-correct puppet-lint offenses'
+task 'lint:auto_correct' do
+  PuppetLint.configuration.fix = true
+  Rake::Task[:lint].invoke
+end
+
 desc 'Run acceptance tests'
 RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
