@@ -41,7 +41,12 @@ bundle exec msync update --message "modulesync $(git describe)"
 Now you can use [hub](https://github.com/github/hub) to create pull requests.
 
 ```bash
-version=$(git describe); for module in modules/* ; do ( cd $modules && hub pull-request -m "modulesync ${version}" ) ; done
+version=$(git describe)
+for module in modules/* ; do
+  pushd $module
+  hub pull-request -m "modulesync ${version}"
+  popd
+done
 ```
 
 ### Clean up old mess before syncing
