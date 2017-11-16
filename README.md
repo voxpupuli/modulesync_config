@@ -9,8 +9,7 @@ Module sync configurations for Vox Pupuli Modules
 ```bash
 git clone https://github.com/voxpupuli/modulesync_config.git
 cd modulesync_config
-git tag -l
-git checkout X.X.X # checkout latest tag
+git checkout $(git tag --list | tail -n 1) # checkout latest tag
 bundle install
 bundle exec msync update --help
 ```
@@ -20,7 +19,7 @@ bundle exec msync update --help
 ### module sync one specific module
 
 ```bash
-bundle exec msync update -f {module_name} --message "modulesync {git-tag}"
+bundle exec msync update -f {module_name} --message "modulesync $(git describe)"
 ```
 
 ### module sync one module and review changes before submitting changes
@@ -33,22 +32,27 @@ cd modules/{module_name}
 
 ### Syncing all modules
 
-This will sync everything in the `managed_modules.yml`
+This will sync everything in the `managed_modules.yml`.
 
 ```bash
-bundle exec msync update --message "modulesync $(date +%Y-%m-%d)"
+bundle exec msync update --message "modulesync $(git describe)"
+```
+
+Now you can use [hub](https://github.com/github/hub) to create pull requests.
+
+```bash
+for module in modules/* ; do ( cd $modules && hub pull-request -m "modulesync $(git describe)" ) ; done
 ```
 
 ### Clean up old mess before syncing
 
 ```bash
-find modules/* -maxdepth 0 -type d | while read module; do
-  cd $module
+for module in modules/* ; do
+  pushd $module
   git status
   git checkout master
   git pull --prune
   git branch -D modulesync
-  cd ..
-  cd ..
+  popd
 done
 ```
