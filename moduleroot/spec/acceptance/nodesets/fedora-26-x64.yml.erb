@@ -3,13 +3,11 @@
 # https://github.com/voxpupuli/modulesync
 # https://github.com/voxpupuli/modulesync_config
 #
-# platform is fedora 25 because there is no
-# puppet-agent for fedora 26 by 2017-08-09
 HOSTS:
   fedora-26-x64:
     roles:
       - master
-    platform: fedora-25-x86_64
+    platform: fedora-26-x86_64
     box: fedora/26-cloud-base
     hypervisor: vagrant
 CONFIG:
