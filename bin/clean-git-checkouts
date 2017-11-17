@@ -1,0 +1,12 @@
+#!/bin/sh
+
+for module in modules/* ; do
+  pushd $module
+  git status
+  git reset --hard
+  git clean -fx
+  git checkout master
+  git pull --prune
+  git branch -D modulesync
+  popd
+done
