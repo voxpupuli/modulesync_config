@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+import os
+import json
+
+# Note range is exclusive so the last number is not in the list
+UNSUPPORTED = {
+    'CentOS': [str(i) for i in range(3, 6)],
+    'Debian': [str(i) for i in range(3, 8)],
+    'Fedora': [str(i) for i in range(3, 25)],
+    'RedHat': [str(i) for i in range(3, 5)],
+    'Ubuntu': {str(i) + m for i in range(4, 17) for m in ('.04', '.10')} - {'14.04', '16.04'},
+}
+
+for mod in os.listdir('modules'):
+    filename = os.path.join('modules', mod, 'metadata.json')
+
+    print('Reading {}'.format(filename))
+
+    with open(filename) as fp:
+        metadata = json.load(fp)
+
+    updated = False
+
+    for operatingsystem in metadata.get('operatingsystem_support', []):
+        for release in UNSUPPORTED.get(operatingsystem['operatingsystem'], []):
+            try:
+                index = operatingsystem['operatingsystemrelease'].index(release)
+            except (KeyError, ValueError):
+                pass
+            else:
+                print('Removing {}-{}'.format(operatingsystem['operatingsystem'], release))
+                del operatingsystem['operatingsystemrelease'][index]
+                updated = True
+
+    if updated:
+        print('Writing {}'.format(filename))
+        with open(filename, 'w') as fp:
+            fp.write(json.dumps(metadata, indent=2) + "\n")
