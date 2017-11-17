@@ -66,8 +66,8 @@ task 'beaker_sets', [:directory] do |t, args|
 
   metadata = JSON.load(File.read('metadata.json'))
 
-  metadata['operatingsystem_support'].each do |os|
-    os['operatingsystemrelease'].each do |release|
+  (metadata['operatingsystem_support'] || []).each do |os|
+    (os['operatingsystemrelease'] || []).each do |release|
       if directory
         beaker_set = "#{directory}/#{os['operatingsystem'].downcase}-#{release}"
       else
