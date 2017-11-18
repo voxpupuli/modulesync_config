@@ -48,6 +48,20 @@ RSpec.configure do |c|
   <%- end -%>
 end
 
+on_supported_os.each do |_os, facts|
+  systemd_fact = case facts[:os]['family']
+                 when 'Archlinux'
+                   true
+                 when 'RedHat'
+                   facts[:os]['release']['major'].to_i >= 7 ? true : false
+                 when 'Debian'
+                   facts[:os]['release']['major'].to_i >= 8 ? true : false
+                 else
+                   false
+                 end
+  add_custom_fact :systemd, systemd_fact
+end
+
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
 <%= line %>
 <%- end -%>
