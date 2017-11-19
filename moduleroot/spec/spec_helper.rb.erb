@@ -20,6 +20,14 @@ if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
   end
 end
 
+metadata = JSON.load File.read('metadata.json')
+metadata["dependencies"].each do |dependency|
+  if dependency["name"]
+    filename = "facts/#{dependency["name"]}"
+    require_relative filename if File.exists?("spec/#{filename}.rb")
+  end
+end
+
 <% if @configs['augeasproviders'] -%>
 # Setup augeasproviders
 require 'pathname'
