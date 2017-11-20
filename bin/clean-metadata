@@ -3,11 +3,16 @@ import os
 import json
 
 # Note range is exclusive so the last number is not in the list
+UNSUPPORTED_EL = {str(i) for i in range(3, 6)}
 UNSUPPORTED = {
-    'CentOS': [str(i) for i in range(3, 6)],
-    'Debian': [str(i) for i in range(3, 8)],
-    'Fedora': [str(i) for i in range(3, 25)],
-    'RedHat': [str(i) for i in range(3, 5)],
+    'CentOS': UNSUPPORTED_EL,
+    'Debian': {str(i) for i in range(3, 8)},
+    'Fedora': {str(i) for i in range(3, 25)},
+    'OracleLinux': UNSUPPORTED_EL,
+    'RedHat': UNSUPPORTED_EL,
+    'SLED': {'9', '10'},
+    'SLES': {'9', '10'},
+    'Scientific': UNSUPPORTED_EL,
     'Ubuntu': {str(i) + m for i in range(4, 17) for m in ('.04', '.10')} - {'14.04', '16.04'},
 }
 
@@ -22,15 +27,16 @@ for mod in os.listdir('modules'):
     updated = False
 
     for operatingsystem in metadata.get('operatingsystem_support', []):
-        for release in UNSUPPORTED.get(operatingsystem['operatingsystem'], []):
-            try:
-                index = operatingsystem['operatingsystemrelease'].index(release)
-            except (KeyError, ValueError):
-                pass
-            else:
-                print('Removing {}-{}'.format(operatingsystem['operatingsystem'], release))
-                del operatingsystem['operatingsystemrelease'][index]
-                updated = True
+        releases = set(operatingsystem.get('operatingsystemrelease', []))
+        for release in releases & UNSUPPORTED.get(operatingsystem['operatingsystem'], set()):
+            print('Removing {}-{}'.format(operatingsystem['operatingsystem'], release))
+            operatingsystem['operatingsystemrelease'].remove(release)
+            updated = True
+
+        if operatingsystem.get('operatingsystemrelease') == []:
+            print('Removing {}'.format(operatingsystem['operatingsystem']))
+            metadata['operatingsystem_support'].remove(operatingsystem)
+            updated = True
 
     if updated:
         print('Writing {}'.format(filename))
