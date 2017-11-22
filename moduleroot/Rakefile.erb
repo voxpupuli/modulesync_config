@@ -60,6 +60,34 @@ task test_with_coveralls: [:test] do
   end
 end
 
+desc "Create the fixtures directory"
+task :prep_nodesets do
+  # Needed until beaker-rspec gains an option to set the nodeset dir
+  begin
+    require 'voxpupuli/nodesets'
+    nodeset_dir = Voxpupuli::Nodesets::NODESETS_DIR
+  rescue LoadError
+    nodeset_dir = nil
+  end
+
+  if nodeset_dir
+    target = File.expand_path(File.join(Dir.pwd, 'spec', 'acceptance', 'nodesets'))
+    unless File.symlink?(target)
+      if File.exists?(target)
+        logger.error("#{target} already exists")
+        exit 1
+      else
+        logger.info("Creating symlink from #{nodeset_dir} to #{target}")
+        FileUtils::ln_sf(nodeset_dir, target)
+      end
+    end
+  else
+    logger.warn("Failed to load nodeset dir")
+  end
+end
+Rake::Task[:beaker].enhance [:prep_nodesets]
+Rake::Task[:acceptance].enhance [:prep_nodesets]
+
 desc "Print supported beaker sets"
 task 'beaker_sets', [:directory] do |t, args|
   directory = args[:directory]
