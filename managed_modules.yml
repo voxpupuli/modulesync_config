@@ -60,6 +60,7 @@
 - puppet-report_hipchat
 - puppet-r10k
 - puppet-rhsm
+- puppet-rsyslog
 - puppet-rundeck
 - puppet-selinux
 - puppet-sftp_jail
