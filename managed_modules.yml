@@ -9,6 +9,7 @@
 - puppet-community_kickstarts
 - puppet-confluence
 - puppet-corosync
+- puppet-cron
 - puppet-dhcp
 - puppet-dotnet
 - puppet-download_file
