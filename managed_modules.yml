@@ -52,6 +52,7 @@
 - puppet-nsclient
 - puppet-openvpn
 - puppet-php
+- puppet-posix_acl
 - puppet-proxysql
 - puppet-prometheus
 - puppet-prometheus_reporter
