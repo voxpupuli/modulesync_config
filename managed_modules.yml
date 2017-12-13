@@ -22,6 +22,7 @@
 - puppet-gerrit
 - puppet-ghost
 - puppet-git_resource
+- puppet-gitlab
 - puppet-gluster
 - puppet-googleauthenticator
 - puppet-grafana
