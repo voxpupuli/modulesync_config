@@ -1,8 +1,8 @@
 ---
 - puppet-alternatives
 - puppet-amanda
-- puppet-autofs
 - puppet-archive
+- puppet-autofs
 - puppet-boolean
 - puppet-cassandra
 - puppet-collectd
@@ -22,6 +22,7 @@
 - puppet-gerrit
 - puppet-ghost
 - puppet-git_resource
+- puppet-gitlab
 - puppet-gluster
 - puppet-googleauthenticator
 - puppet-grafana
@@ -34,8 +35,8 @@
 - puppet-jolokia
 - puppet-kafka
 - puppet-letsencrypt
-- puppet-logrotate
 - puppet-lldpd
+- puppet-logrotate
 - puppet-make
 - puppet-mcollective
 - puppet-minecraft
@@ -53,14 +54,14 @@
 - puppet-openvpn
 - puppet-php
 - puppet-posix_acl
-- puppet-proxysql
 - puppet-prometheus
 - puppet-prometheus_reporter
+- puppet-proxysql
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-r10k
 - puppet-rabbitmq
 - puppet-report_hipchat
-- puppet-r10k
 - puppet-rhsm
 - puppet-rsyslog
 - puppet-rundeck
@@ -80,8 +81,8 @@
 - puppet-unattended_upgrades
 - puppet-virtualbox
 - puppet-visualstudio
-- puppet-windows_env
 - puppet-windows_autoupdate
+- puppet-windows_env
 - puppet-windows_eventlog
 - puppet-windows_firewall
 - puppet-windows_power
