@@ -28,16 +28,6 @@ script:
 matrix:
   fast_finish: true
   include:
-<% if @configs['docker_sets'] -%>
-<%   @configs['docker_sets'].each do |set| -%>
-<%     job = @configs['docker_defaults'].merge(set['options'] || {}) -%>
-  - rvm: <%= job['rvm'] %>
-<%     job.keys.sort.each do |k| -%>
-<%     next if k == 'rvm' -%>
-    <%= k %>: <%= job[k].gsub(/@@SET@@/, set['set']) %>
-<%     end -%>
-<%   end -%>
-<% end -%>
 <% @configs['includes'].each do |include| -%>
   - rvm: <%= include['rvm'] %>
 <%   include.keys.sort.each do |k| -%>
@@ -51,6 +41,16 @@ matrix:
 <%     extra.keys.sort.each do |k| -%>
 <%       next if k == 'rvm' -%>
     <%= k %>: <%= extra[k] %>
+<%     end -%>
+<%   end -%>
+<% end -%>
+<% if @configs['docker_sets'] -%>
+<%   @configs['docker_sets'].each do |set| -%>
+<%     job = @configs['docker_defaults'].merge(set['options'] || {}) -%>
+  - rvm: <%= job['rvm'] %>
+<%     job.keys.sort.each do |k| -%>
+<%     next if k == 'rvm' -%>
+    <%= k %>: <%= job[k].gsub(/@@SET@@/, set['set']) %>
 <%     end -%>
 <%   end -%>
 <% end -%>
