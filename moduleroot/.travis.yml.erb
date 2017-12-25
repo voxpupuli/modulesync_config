@@ -22,12 +22,7 @@ addons:
   <%- end -%>
 <%- end -%>
 before_install:
-  - bundle -v
-  - rm Gemfile.lock || true
-  - gem update --system
-  - gem update bundler
-  - gem --version
-  - bundle -v
+  - rm -f Gemfile.lock
 script:
   - 'bundle exec rake $CHECK'
 matrix:
