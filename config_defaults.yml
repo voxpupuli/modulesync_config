@@ -62,6 +62,7 @@ Gemfile:
       - gem: guard-rake
       - gem: overcommit
         version: '>= 0.39.1'
+      - gem: pdk
     ':system_tests':
       - gem: winrm
       - gem: beaker-rspec
