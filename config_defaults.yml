@@ -71,6 +71,7 @@ Gemfile:
         require: false
     ':release':
       - gem: github_changelog_generator
+        git: https://github.com/skywinder/github-changelog-generator
         ruby-operator: '>='
         ruby-version: '2.2.2'
       - gem: puppet-blacksmith
