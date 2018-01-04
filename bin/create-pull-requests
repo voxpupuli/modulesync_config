@@ -7,7 +7,7 @@ fi
 
 version=$(git describe)
 for module in modules/* ; do
-  pushd "$module" > /dev/null || exit
+  pushd "$module" > /dev/null
   hub pull-request -m "modulesync ${version}"
-  popd > /dev/null || exit
+  popd > /dev/null
 done
