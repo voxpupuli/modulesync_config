@@ -29,7 +29,7 @@ Gemfile:
   required:
     ':test':
       - gem: puppetlabs_spec_helper
-        version: '~> 2.5.0'
+        version: '~> 2.6.0'
       - gem: rspec-puppet
         version: '~> 2.5'
       - gem: rspec-puppet-facts
