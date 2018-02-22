@@ -17,6 +17,7 @@
 - puppet-etherpad
 - puppet-extlib
 - puppet-facette
+- puppet-ferm
 - puppet-fetchcrl
 - puppet-filemapper
 - puppet-gerrit
