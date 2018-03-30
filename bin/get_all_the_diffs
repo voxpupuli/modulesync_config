@@ -90,5 +90,5 @@ puts '==========================================================================
 puts "We need to add the following modules to plumbing: #{missing_in_plumbing.join(', ')}" if missing_in_plumbing.count > 0
 puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
 puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}"
-puts "Afterwars we really need to release: #{really_need_an_inital_release.join(', ')}"
+puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}"
 puts '=============================================================================================================================================================='
