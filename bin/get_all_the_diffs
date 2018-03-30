@@ -23,6 +23,9 @@ repos -= LEGACY_OR_BROKEN_NOBODY_KNOWS
 puts "get all manged modules"
 modulesync_repos = YAML.load(File.read('managed_modules.yml'))
 
+# get all modules we have in plumbing
+plumbing_modules = YAML.load(open('https://raw.githubusercontent.com/voxpupuli/plumbing/master/share/modules')).split(' ')
+
 # get all modules that we have on github but are currently not managed by modulesync_config
 not_synced_repos = repos.select{|repo| !modulesync_repos.include?(repo)}
 
@@ -42,6 +45,9 @@ really_need_an_initial_modulesync = not_synced_repos.reject{|repo| LEGACY_OR_BRO
 
 # get all modules that really need an initial release
 really_need_an_inital_release = really_unreleased_modules.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+
+# get all modules that need to added to plumbing
+missing_in_plumbing = repos.reject{|repo| plumbing_modules.include?(repo)}
 
 # update git and get the latest release
 `git fetch --all --prune`
@@ -81,7 +87,8 @@ puts "the following modules got added to our modulesync config but were never sy
 puts '=============================================================================================================================================================='
 puts "We don't care about #{LEGACY_OR_BROKEN_NOBODY_KNOWS.join(', ')}"
 puts '=============================================================================================================================================================='
+puts "We need to add the following modules to plumbing: #{missing_in_plumbing.join(', ')}" if missing_in_plumbing.count > 0
 puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
 puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}"
-puts "Afterwars we really need to release: #{really_need_an_inital_release.join(', ')}"
+puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}"
 puts '=============================================================================================================================================================='
