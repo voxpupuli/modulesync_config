@@ -21,6 +21,7 @@
 - puppet-etherpad
 - puppet-extlib
 - puppet-facette
+- puppet-fail2ban
 - puppet-ferm
 - puppet-fetchcrl
 - puppet-filemapper
