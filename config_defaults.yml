@@ -51,7 +51,7 @@ Gemfile:
         ruby-operator: '>='
         ruby-version: '2.3.0'
       - gem: mocha
-        version: '>= 1.2.1'
+        version: '~> 1.4.0'
       - gem: coveralls
       - gem: simplecov-console
       - gem: rack
