@@ -1,4 +1,6 @@
-#!/bin/bash -e
+#!/bin/sh
+
+set -e
 
 if ! which hub > /dev/null 2>&1 ; then
   echo "Command hub not found"
@@ -7,7 +9,7 @@ fi
 
 version=$(git describe)
 for module in modules/* ; do
-  pushd "$module" > /dev/null
+  (cd "$module"
   hub pull-request -m "modulesync ${version}"
-  popd > /dev/null
+  )
 done

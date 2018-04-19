@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
 for module in modules/* ; do
-  echo -n "$module "
+  printf "%s" "$module "
   git --git-dir "${module}/.git" log "$(git --git-dir "${module}/.git" describe --tags --abbrev=0)"..HEAD --oneline | wc -l
 done
