@@ -1,5 +1,7 @@
 #!/bin/sh
 
+set -e
+
 for module in modules/* ; do
   (cd $module
   git status
