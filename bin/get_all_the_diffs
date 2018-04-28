@@ -76,7 +76,7 @@ modulesync_repos.each do |repo|
   begin
     response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml")
   rescue OpenURI::HTTPError
-    puts "something is fucked up with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
+    puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
     modules_that_were_added_but_never_synced << repo
     next
   end
@@ -84,7 +84,7 @@ modulesync_repos.each do |repo|
   begin
     response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml")
   rescue OpenURI::HTTPError
-    puts "something is fucked up with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
+    puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
     modules_that_have_missing_secrets << repo
     next
   end
@@ -92,7 +92,7 @@ modulesync_repos.each do |repo|
   begin
     response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json")
   rescue OpenURI::HTTPError
-    puts "something is fucked up with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json"
+    puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json"
     next
   end
   metadatas[repo] = JSON.load(response)
