@@ -54,9 +54,13 @@ missing_in_plumbing = repos.reject{|repo| plumbing_modules.include?(repo)}
 tags = `git tag -l`
 latest_release  = tags.lines.last.strip
 
-# get the current modulesync version for all repos
+# get all the content of all .msync.yml, .sync.yml and metadata.json files
 modules_that_were_added_but_never_synced = []
-versions = modulesync_repos.each do |repo|
+modules_that_have_missing_secrets = []
+msyncs = {}
+syncs = {}
+metadatas = {}
+modulesync_repos.each do |repo|
   begin
     response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml")
   rescue OpenURI::HTTPError
@@ -64,14 +68,35 @@ versions = modulesync_repos.each do |repo|
     modules_that_were_added_but_never_synced << repo
     next
   end
-  sync = YAML.load(response)
-  version = sync['modulesync_config_version']
-  { repo => version }
+  msyncs[repo] = YAML.load(response)
+  begin
+    response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml")
+  rescue OpenURI::HTTPError
+    puts "something is fucked up with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml"
+    modules_that_have_missing_secrets << repo
+    next
+  end
+  syncs[repo] = YAML.load(response)
+  begin
+    response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json")
+  rescue OpenURI::HTTPError
+    puts "something is fucked up with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json"
+    next
+  end
+  metadatas[repo] = JSON.load(response)
+end
+
+# get the current modulesync version for all repos
+versions = {}
+msyncs.each do |repo, msync|
+  versions[repo] = msync['modulesync_config_version']
 end
 
 # get all repos that are on an outdated version of modulesync_config
-need_another_sync = versions.each do |repo, version|
-  repo if Gem::Version.new(latest_release) >= Gem::Version.new(version)
+need_another_sync = []
+versions.each do |repo|
+  # index 0 is the module name, index 1 is the used modulesync_config version
+  need_another_sync << repo[0] if Gem::Version.new(latest_release) >= Gem::Version.new(repo[1])
 end
 
 # generate some output
