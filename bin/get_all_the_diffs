@@ -10,6 +10,18 @@ require 'yaml'
 # ToDo: Archive repos that we migrate away
 LEGACY_OR_BROKEN_NOBODY_KNOWS = ['puppet-bacula', 'puppet-nagios_providers', 'puppet-iis', 'puppet-syntax', 'puppet-blacksmith', 'puppet-mode']
 
+# define some versions that we want to match against
+PUPPET_SUPPORT_RANGE = '>= 4.10.0 < 6.0.0'
+# Ubuntu 18.04 got released, but Puppet doesn't work yet on it
+# https://tickets.puppetlabs.com/browse/PA-1869
+# https://github.com/camptocamp/facterdb/pull/82#event-1600066178
+UBUNTU_SUPPORT_RANGE = ['14.04', '16.04']
+DEBIAN_SUPPORT_RANGE = ['8', '9']
+CENTOS_SUPPORT_RANGE = ['6', '7']
+
+# Do you want debug output?
+DEBUG = false
+
 # get all modules we own from github
 # use poor mans pagination solution
 puts "get data from the github API"
@@ -92,6 +104,45 @@ msyncs.each do |repo, msync|
   versions[repo] = msync['modulesync_config_version']
 end
 
+# ToDo: get all modules that dont have a secret in .sync.yml
+
+# ToDo: get all modules with outdated Puppet versions
+modules_without_puppet_version_range = []
+modules_with_incorrect_puppet_version_range = []
+modules_without_operatingsystems_support = []
+supports_wrong_ubuntu_version = []
+supports_wrong_debian_version = []
+supports_wrong_centos_version = []
+metadatas.each do |repo, metadata|
+  # check if Puppet version range is correct
+  begin
+    version_requirement = metadata['requirements'][0]['version_requirement']
+    puts "repo #{repo} has version requirement #{version_requirement}, but it should be #{PUPPET_SUPPORT_RANGE}" if (PUPPET_SUPPORT_RANGE != version_requirement && DEBUG)
+    modules_with_incorrect_puppet_version_range << repo
+  # it's possible that the version range isn't present at all in the metadata.json
+  rescue NoMethodError
+    modules_without_puppet_version_range << repo
+  end
+
+  # check Ubuntu range
+  begin
+  metadata['operatingsystem_support'].each do |os|
+    case os['operatingsystem']
+    when 'Ubuntu'
+      supports_wrong_ubuntu_version << repo if os['operatingsystemrelease'] != UBUNTU_SUPPORT_RANGE
+    when 'Debian'
+      supports_wrong_debian_version << repo if os['operatingsystemrelease'] != DEBIAN_SUPPORT_RANGE
+    when 'CentOS', 'RedHat'
+      supports_wrong_centos_version << repo if os['operatingsystemrelease'] != CENTOS_SUPPORT_RANGE
+    end
+  end
+  rescue NoMethodError
+    modules_without_operatingsystems_support << repo
+  end
+end
+# we have a list of CentOS and RedHat in this array, we need to clean it up
+supports_wrong_centos_version.sort.uniq!
+
 # get all repos that are on an outdated version of modulesync_config
 need_another_sync = []
 versions.each do |repo|
@@ -115,5 +166,10 @@ puts '==========================================================================
 puts "We need to add the following modules to plumbing: #{missing_in_plumbing.join(', ')}" if missing_in_plumbing.count > 0
 puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
 puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}"
+puts "We need to check Puppets version_requirement on these modules because it is not equal to #{PUPPET_SUPPORT_RANGE}: #{modules_with_incorrect_puppet_version_range.join(', ')}" if modules_with_incorrect_puppet_version_range.count > 0
+puts "We need to add Puppets version_requirement to: #{modules_without_puppet_version_range.join(', ')}" if modules_without_puppet_version_range.count > 0
+puts "We need to adjust the list of operatingsystemrelease for Debian to #{DEBIAN_SUPPORT_RANGE} on: #{supports_wrong_debian_version.join(', ')}"
+puts "We need to adjust the list of operatingsystemrelease for Ubuntu to #{UBUNTU_SUPPORT_RANGE} on: #{supports_wrong_ubuntu_version.join(', ')}"
+puts "We need to adjust the list of operatingsystemrelease for CentOS to #{CENTOS_SUPPORT_RANGE} on: #{supports_wrong_centos_version.join(', ')}"
 puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}"
 puts '=============================================================================================================================================================='
