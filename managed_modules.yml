@@ -90,6 +90,7 @@
 - puppet-unattended_upgrades
 - puppet-virtualbox
 - puppet-visualstudio
+- puppet-wget
 - puppet-windows_autoupdate
 - puppet-windows_env
 - puppet-windows_eventlog
