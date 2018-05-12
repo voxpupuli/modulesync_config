@@ -68,6 +68,7 @@
 - puppet-proxysql
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-python
 - puppet-r10k
 - puppet-rabbitmq
 - puppet-report_hipchat
