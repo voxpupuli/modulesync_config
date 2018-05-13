@@ -7,7 +7,7 @@
     sudo: required
     dist: trusty
     services: docker
-    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_set=@@SET@@ CHECK=beaker
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_setfile=@@SET@@{hypervisor=docker} CHECK=beaker
     bundler_args: --without development release
   includes:
   - rvm: 2.1.9
@@ -69,6 +69,8 @@ Gemfile:
       - gem: winrm
       - gem: beaker-rspec
       - gem: serverspec
+      - gem: beaker-hostgenerator
+        version: '>= 1.1.10'
       - gem: beaker-puppet_install_helper
       - gem: beaker-module_install_helper
         require: false
