@@ -6,9 +6,9 @@ for module in modules/* ; do
   (cd $module
   git status
   git reset --hard
-  git clean -fx
+  git clean -dfx
   git checkout master
   git pull --prune
-  git branch -D modulesync
+  git branch -D modulesync || true
   )
 done
