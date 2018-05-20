@@ -44,6 +44,13 @@ Now you can use [hub](https://github.com/github/hub) to create pull requests.
 ./bin/create-pull-requests
 ```
 
+You can now also create pull requests with modulesync directly:
+
+```bash
+export GITHUB_TOKEN=token
+bundle exec msync update --message "modulesync $(git describe)" --pr --pr-labels modulesync --pr-title "modulesync $(git describe)"
+```
+
 ### Clean up old mess before syncing
 
 ```bash
