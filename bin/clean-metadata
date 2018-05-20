@@ -8,7 +8,7 @@ UNSUPPORTED_EL = {str(i) for i in range(3, 6)}
 UNSUPPORTED = {
     'CentOS': UNSUPPORTED_EL,
     'Debian': {str(i) for i in range(3, 8)},
-    'Fedora': {str(i) for i in range(3, 25)},
+    'Fedora': {str(i) for i in range(3, 26)},
     'OracleLinux': UNSUPPORTED_EL,
     'RedHat': UNSUPPORTED_EL,
     'SLED': {'9', '10'},
