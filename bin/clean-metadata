@@ -3,6 +3,7 @@ import os
 import json
 
 # Note range is exclusive so the last number is not in the list
+PUPPET_VERSION = '>= 4.10.0 < 6.0.0'
 UNSUPPORTED_EL = {str(i) for i in range(3, 6)}
 UNSUPPORTED = {
     'CentOS': UNSUPPORTED_EL,
@@ -25,6 +26,11 @@ for mod in os.listdir('modules'):
         metadata = json.load(fp)
 
     updated = False
+
+    for req in metadata.get('requirements', []):
+        if req['name'] == 'puppet' and req['version_requirement'] != PUPPET_VERSION:
+            req['version_requirement'] = PUPPET_VERSION
+            updated = True
 
     for operatingsystem in metadata.get('operatingsystem_support', []):
         releases = set(operatingsystem.get('operatingsystemrelease', []))
