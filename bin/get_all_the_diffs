@@ -158,20 +158,20 @@ puts "We got #{repos.count} modules in our github org"
 puts "We got #{modulesync_repos.count} in our modulesync config"
 puts "We released #{forge_releases.count} modules to forge.puppet.com"
 puts '=============================================================================================================================================================='
-puts "The following modules are missing in our modulesync config: #{not_synced_repos.join(', ')}"
-puts "The following modules are in modulesync config but not released to the forge: #{unreleased_modules.join(', ')}"
-puts "The following modules are in our github org but unreleased: #{really_unreleased_modules.join(', ')}"
-puts "the following modules got added to our modulesync config but were never synced: #{modules_that_were_added_but_never_synced.join(', ')}"
-puts '=============================================================================================================================================================='
-puts "We don't care about #{LEGACY_OR_BROKEN_NOBODY_KNOWS.join(', ')}"
+puts "The following modules are missing in our modulesync config: #{not_synced_repos.join(', ')}" if not_synced_repos.count > 0
+puts "The following modules are in modulesync config but not released to the forge: #{unreleased_modules.join(', ')}" if unreleased_modules.count > 0
+puts "The following modules are in our github org but unreleased: #{really_unreleased_modules.join(', ')}" if really_unreleased_modules.count > 0
+puts "the following modules got added to our modulesync config but were never synced: #{modules_that_were_added_but_never_synced.join(', ')}" if modules_that_were_added_but_never_synced.count > 0
+puts '==============================================================================================================================================================' if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
+puts "We don't care about #{LEGACY_OR_BROKEN_NOBODY_KNOWS.join(', ')}" if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
 puts '=============================================================================================================================================================='
 puts "We need to add the following modules to plumbing: #{missing_in_plumbing.join(', ')}" if missing_in_plumbing.count > 0
 puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
-puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}"
+puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}" if need_another_sync.count > 0
 puts "We need to check Puppets version_requirement on these modules because it is not equal to #{PUPPET_SUPPORT_RANGE}: #{modules_with_incorrect_puppet_version_range.join(', ')}" if modules_with_incorrect_puppet_version_range.count > 0
 puts "We need to add Puppets version_requirement to: #{modules_without_puppet_version_range.join(', ')}" if modules_without_puppet_version_range.count > 0
-puts "We need to adjust the list of operatingsystemrelease for Debian to #{DEBIAN_SUPPORT_RANGE} on: #{supports_wrong_debian_version.join(', ')}"
-puts "We need to adjust the list of operatingsystemrelease for Ubuntu to #{UBUNTU_SUPPORT_RANGE} on: #{supports_wrong_ubuntu_version.join(', ')}"
-puts "We need to adjust the list of operatingsystemrelease for CentOS to #{CENTOS_SUPPORT_RANGE} on: #{supports_wrong_centos_version.join(', ')}"
-puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}"
+puts "We need to adjust the list of operatingsystemrelease for Debian to #{DEBIAN_SUPPORT_RANGE} on: #{supports_wrong_debian_version.join(', ')}" if supports_wrong_debian_version.count > 0
+puts "We need to adjust the list of operatingsystemrelease for Ubuntu to #{UBUNTU_SUPPORT_RANGE} on: #{supports_wrong_ubuntu_version.join(', ')}" if supports_wrong_ubuntu_version.count > 0
+puts "We need to adjust the list of operatingsystemrelease for CentOS to #{CENTOS_SUPPORT_RANGE} on: #{supports_wrong_centos_version.join(', ')}" if supports_wrong_centos_version.count > 0
+puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
 puts '=============================================================================================================================================================='
