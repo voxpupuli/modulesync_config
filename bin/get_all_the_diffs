@@ -110,9 +110,13 @@ end
 modules_without_puppet_version_range = []
 modules_with_incorrect_puppet_version_range = []
 modules_without_operatingsystems_support = []
-supports_wrong_ubuntu_version = []
-supports_wrong_debian_version = []
-supports_wrong_centos_version = []
+supports_eol_ubuntu = []
+supports_eol_debian = []
+supports_eol_centos = []
+doesnt_support_latest_ubuntu = []
+doesnt_support_latest_debian = []
+doesnt_support_latest_centos = []
+
 metadatas.each do |repo, metadata|
   # check if Puppet version range is correct
   begin
@@ -131,11 +135,14 @@ metadatas.each do |repo, metadata|
   metadata['operatingsystem_support'].each do |os|
     case os['operatingsystem']
     when 'Ubuntu'
-      supports_wrong_ubuntu_version << repo if os['operatingsystemrelease'] != UBUNTU_SUPPORT_RANGE
+      supports_eol_ubuntu << repo if os['operatingsystemrelease'].min < UBUNTU_SUPPORT_RANGE.min
+      doesnt_support_latest_ubuntu << repo if os['operatingsystemrelease'].max < UBUNTU_SUPPORT_RANGE.max
     when 'Debian'
-      supports_wrong_debian_version << repo if os['operatingsystemrelease'] != DEBIAN_SUPPORT_RANGE
+      supports_eol_debian << repo if os['operatingsystemrelease'].min < DEBIAN_SUPPORT_RANGE.min
+      doesnt_support_latest_debian << repo if os['operatingsystemrelease'].max < DEBIAN_SUPPORT_RANGE.max
     when 'CentOS', 'RedHat'
-      supports_wrong_centos_version << repo if os['operatingsystemrelease'] != CENTOS_SUPPORT_RANGE
+      supports_eol_centos << repo if os['operatingsystemrelease'].min <  CENTOS_SUPPORT_RANGE.min
+      doesnt_support_latest_centos << repo if os['operatingsystemrelease'].max <  CENTOS_SUPPORT_RANGE.max
     end
   end
   rescue NoMethodError
@@ -143,7 +150,8 @@ metadatas.each do |repo, metadata|
   end
 end
 # we have a list of CentOS and RedHat in this array, we need to clean it up
-supports_wrong_centos_version.sort!.uniq!
+supports_eol_centos.sort!.uniq!
+doesnt_support_latest_centos.sort!.uniq!
 
 # get all repos that are on an outdated version of modulesync_config
 need_another_sync = []
@@ -170,8 +178,11 @@ puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesyn
 puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}" if need_another_sync.count > 0
 puts "We need to check Puppets version_requirement on these modules because it is not equal to #{PUPPET_SUPPORT_RANGE}: #{modules_with_incorrect_puppet_version_range.join(', ')}" if modules_with_incorrect_puppet_version_range.count > 0
 puts "We need to add Puppets version_requirement to: #{modules_without_puppet_version_range.join(', ')}" if modules_without_puppet_version_range.count > 0
-puts "We need to adjust the list of operatingsystemrelease for Debian to #{DEBIAN_SUPPORT_RANGE} on: #{supports_wrong_debian_version.join(', ')}" if supports_wrong_debian_version.count > 0
-puts "We need to adjust the list of operatingsystemrelease for Ubuntu to #{UBUNTU_SUPPORT_RANGE} on: #{supports_wrong_ubuntu_version.join(', ')}" if supports_wrong_ubuntu_version.count > 0
-puts "We need to adjust the list of operatingsystemrelease for CentOS to #{CENTOS_SUPPORT_RANGE} on: #{supports_wrong_centos_version.join(', ')}" if supports_wrong_centos_version.count > 0
+puts "We need to remove EOL Debian on: #{supports_eol_debian.join(', ')}" if supports_eol_debian.count > 0
+puts "We need to remove EOL Ubuntu on: #{supports_eol_ubuntu.join(', ')}" if supports_eol_ubuntu.count > 0
+puts "We need to remove EOL CentOS on: #{supports_eol_centos.join(', ')}" if supports_eol_centos.count > 0
+puts "We need to add support for Ubuntu #{UBUNTU_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_debian.count > 0
+puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
+puts "We need to add support for CentOS #{CENTOS_SUPPORT_RANGE.max} to: #{doesnt_support_latest_centos.join(', ')}" if doesnt_support_latest_centos.count > 0
 puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
 puts '=============================================================================================================================================================='
