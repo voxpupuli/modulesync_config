@@ -186,3 +186,4 @@ puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt
 puts "We need to add support for CentOS #{CENTOS_SUPPORT_RANGE.max} to: #{doesnt_support_latest_centos.join(', ')}" if doesnt_support_latest_centos.count > 0
 puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
 puts '=============================================================================================================================================================='
+puts 'Note: You can cleanup EOL operating systems with our ./bin/clean-metadata script'
