@@ -74,6 +74,14 @@ Gemfile:
       - gem: beaker-puppet_install_helper
       - gem: beaker-module_install_helper
         require: false
+      - gem: rbnacl
+        version: '~> 4'
+        ruby-operator: '>='
+        ruby-version: '2.2.6'
+      - gem: rbnacl-libsodium
+        ruby-operator: '>='
+        ruby-version: '2.2.6'
+      - gem: bcrypt_pbkdf
     ':release':
       - gem: github_changelog_generator
         git: https://github.com/skywinder/github-changelog-generator
