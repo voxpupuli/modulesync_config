@@ -15,7 +15,7 @@ PUPPET_SUPPORT_RANGE = '>= 4.10.0 < 6.0.0'
 # Ubuntu 18.04 got released, but Puppet doesn't work yet on it
 # https://tickets.puppetlabs.com/browse/PA-1869
 # https://github.com/camptocamp/facterdb/pull/82#event-1600066178
-UBUNTU_SUPPORT_RANGE = ['14.04', '16.04']
+UBUNTU_SUPPORT_RANGE = ['14.04', '16.04', '18.04']
 DEBIAN_SUPPORT_RANGE = ['8', '9']
 CENTOS_SUPPORT_RANGE = ['6', '7']
 
@@ -182,7 +182,7 @@ puts "We need to remove EOL Debian on: #{supports_eol_debian.join(', ')}" if sup
 puts "We need to remove EOL Ubuntu on: #{supports_eol_ubuntu.join(', ')}" if supports_eol_ubuntu.count > 0
 puts "We need to remove EOL CentOS on: #{supports_eol_centos.join(', ')}" if supports_eol_centos.count > 0
 puts "We need to add support for Ubuntu #{UBUNTU_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_debian.count > 0
-puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
+puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_ubuntu.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
 puts "We need to add support for CentOS #{CENTOS_SUPPORT_RANGE.max} to: #{doesnt_support_latest_centos.join(', ')}" if doesnt_support_latest_centos.count > 0
 puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
 puts '=============================================================================================================================================================='
