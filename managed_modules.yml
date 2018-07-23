@@ -29,7 +29,7 @@
 - puppet-ghost
 - puppet-git_resource
 - puppet-gitlab
-- puppet-gitlab-ci-runner
+- puppet-gitlab_ci_runner
 - puppet-gluster
 - puppet-googleauthenticator
 - puppet-grafana
