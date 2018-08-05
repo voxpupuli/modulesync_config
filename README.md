@@ -11,7 +11,7 @@ git clone https://github.com/voxpupuli/modulesync_config.git
 cd modulesync_config
 git checkout $(git tag --list | tail -n 1) # checkout latest tag
 bundle install
-bundle exec msync update --help
+bundle exec msync help update
 ```
 
 ## Examples
