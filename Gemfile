@@ -19,6 +19,6 @@ group :development do
   gem 'travis-lint'
 end
 
-gem 'modulesync'
+gem 'modulesync', git: 'https://github.com/voxpupuli/modulesync.git'
 
 # vim: syntax=ruby
