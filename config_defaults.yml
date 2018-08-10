@@ -75,7 +75,7 @@ Gemfile:
       - gem: beaker-module_install_helper
         require: false
       - gem: rbnacl
-        version: '~> 4'
+        version: '>= 4'
         ruby-operator: '>='
         ruby-version: '2.2.6'
       - gem: rbnacl-libsodium
