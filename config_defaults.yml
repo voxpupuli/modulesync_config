@@ -87,7 +87,7 @@ Gemfile:
       - gem: bcrypt_pbkdf
     ':release':
       - gem: github_changelog_generator
-        git: https://github.com/skywinder/github-changelog-generator
+        git: https://github.com/github-changelog-generator/github-changelog-generator
         ruby-operator: '>='
         ruby-version: '2.2.2'
       - gem: puppet-blacksmith
