@@ -7,6 +7,7 @@
 - puppet-autofs
 - puppet-bird
 - puppet-boolean
+- puppet-caddy
 - puppet-cassandra
 - puppet-collectd
 - puppet-community_kickstarts
