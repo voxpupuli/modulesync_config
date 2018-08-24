@@ -1,0 +1,56 @@
+#!/usr/bin/env ruby
+require 'semantic_puppet'
+require 'json'
+
+def normalize_name(name)
+  name.tr('-', '/')
+end
+
+def bump_dependency(filename, module_name, upper_bound)
+  metadata = JSON.load(File.read(filename))
+
+  raise Exception.new("Unable to find dependencies") unless metadata['dependencies'].is_a?(Array)
+
+  dependency = metadata['dependencies'].detect { |dep| normalize_name(dep['name']) == module_name }
+
+  raise Exception.new("Dependency #{module_name} not found") unless dependency
+
+  old = dependency['version_requirement']
+
+  requirement = SemanticPuppet::VersionRange.parse(old)
+
+  return [old, old] if requirement.end == upper_bound
+
+  new = ">= #{requirement.begin} < #{upper_bound}"
+
+  dependency['version_requirement'] = new
+  File.open(filename, 'w') do
+    |file| file.write(JSON.pretty_generate(metadata) + "\n")
+  end
+
+  [old, new]
+end
+
+def main
+  if ARGV.length < 3
+    puts "Usage: $0 dependency upper_bound metadata_path [metadata_path]"
+    exit 1
+  end
+
+  module_name, upper_bound, *paths = ARGV
+  module_name = normalize_name(module_name)
+  paths.each do |path|
+    begin
+      old, new = bump_dependency(path, module_name, upper_bound)
+      if old != new
+        puts "Updated #{path}: '#{old}' to '#{new}'"
+      else
+        puts "#{path} already matches #{upper_bound}"
+      end
+    rescue Exception => e
+      puts "Failed to update #{path}: #{e}"
+    end
+  end
+end
+
+main
