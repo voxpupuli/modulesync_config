@@ -70,6 +70,7 @@
 - puppet-proxysql
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-puppet_webhook
 - puppet-python
 - puppet-r10k
 - puppet-rabbitmq
