@@ -81,6 +81,7 @@
 - puppet-selinux
 - puppet-sftp_jail
 - puppet-smokeping
+- puppet-snmp
 - puppet-splunk
 - puppet-squid
 - puppet-ssh_keygen
