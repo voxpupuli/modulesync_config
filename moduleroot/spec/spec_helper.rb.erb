@@ -1,3 +1,6 @@
+# This file is managed via modulesync
+# https://github.com/voxpupuli/modulesync
+# https://github.com/voxpupuli/modulesync_config
 <%- if @configs['mock_with'] -%>
 RSpec.configure do |c|
   c.mock_with <%= @configs['mock_with'] %>
@@ -7,10 +10,6 @@ end
 require 'puppetlabs_spec_helper/module_spec_helper'
 require 'rspec-puppet-facts'
 include RspecPuppetFacts
-
-# This file is managed via modulesync
-# https://github.com/voxpupuli/modulesync
-# https://github.com/voxpupuli/modulesync_config
 
 <% if @configs['augeasproviders'] -%>
 # Setup augeasproviders
