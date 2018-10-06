@@ -55,8 +55,8 @@ RSpec.configure do |c|
     RSpec::Puppet::Coverage.report!
   end
 end
-
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
+
 <%= line %>
 <%- end -%>
 # vim: syntax=ruby
