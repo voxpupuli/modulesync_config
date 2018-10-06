@@ -50,6 +50,11 @@ RSpec.configure do |c|
   <%- if @configs['hiera_config'] -%>
   c.hiera_config = <%= @configs['hiera_config'] %>
   <%- end -%>
+
+  # Coverage generation
+  c.after(:suite) do
+    RSpec::Puppet::Coverage.report!
+  end
 end
 
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
