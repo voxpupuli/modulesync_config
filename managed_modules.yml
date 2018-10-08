@@ -94,6 +94,7 @@
 - puppet-trusted_ca
 - puppet-tvheadend
 - puppet-unattended_upgrades
+- puppet-vault_lookup
 - puppet-virtualbox
 - puppet-visualstudio
 - puppet-wget
