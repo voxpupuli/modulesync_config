@@ -70,6 +70,12 @@ Gemfile:
         ruby-operator: '<'
         ruby-version: '2.2.2'
       - gem: parallel_tests
+        version: '2.24.0'
+        ruby-operator: '<'
+        ruby-version: '2.2.0'
+      - gem: parallel_tests
+        ruby-operator: '>='
+        ruby-version: '2.2.0'
     ':development':
       - gem: travis
       - gem: travis-lint
