@@ -60,6 +60,7 @@
 - puppet-network
 - puppet-nginx
 - puppet-nodejs
+- puppet-nrpe
 - puppet-nscd
 - puppet-nsclient
 - puppet-openvpn
