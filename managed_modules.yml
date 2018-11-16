@@ -92,6 +92,7 @@
 - puppet-strongswan
 - puppet-system
 - puppet-tea
+- puppet-telegraf
 - puppet-trusted_ca
 - puppet-tvheadend
 - puppet-unattended_upgrades
