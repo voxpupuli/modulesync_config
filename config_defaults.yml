@@ -88,7 +88,7 @@ Gemfile:
         version: '>= 6'
       - gem: serverspec
       - gem: beaker-hostgenerator
-        version: '>= 1.1.10'
+        version: '>= 1.1.22'
       - gem: beaker-docker
       - gem: beaker-puppet
       - gem: beaker-puppet_install_helper
@@ -122,5 +122,23 @@ Rakefile:
   default_enabled_rake_targets:
   - 'metadata_lint'
   - 'release_checks'
+spec/acceptance/nodesets/centos-6-x64.yml:
+  delete: true
+spec/acceptance/nodesets/centos-66-x64-pe.yml:
+  delete: true
+spec/acceptance/nodesets/centos-7-x64.yml:
+  delete: true
+spec/acceptance/nodesets/debian-82-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-25-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-26-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-27-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ubuntu-server-1404-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ubuntu-server-1604-x64.yml:
+  delete: true
 ...
 # vim: syntax=yaml
