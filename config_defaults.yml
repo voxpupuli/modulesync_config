@@ -124,19 +124,33 @@ Rakefile:
   - 'release_checks'
 spec/classes/coverage_spec.rb:
   delete: true
+spec/acceptance/nodesets/centos-511-x64.yml:
+  delete: true
 spec/acceptance/nodesets/centos-6-x64.yml:
+  delete: true
+spec/acceptance/nodesets/centos-66-x64.yml:
   delete: true
 spec/acceptance/nodesets/centos-66-x64-pe.yml:
   delete: true
 spec/acceptance/nodesets/centos-7-x64.yml:
   delete: true
+spec/acceptance/nodesets/centos-72-x64.yml:
+  delete: true
+spec/acceptance/nodesets/debian-78-x64.yml:
+  delete: true
 spec/acceptance/nodesets/debian-82-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-20-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-24-x64.yml:
   delete: true
 spec/acceptance/nodesets/fedora-25-x64.yml:
   delete: true
 spec/acceptance/nodesets/fedora-26-x64.yml:
   delete: true
 spec/acceptance/nodesets/fedora-27-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ubuntu-server-1204-x64.yml:
   delete: true
 spec/acceptance/nodesets/ubuntu-server-1404-x64.yml:
   delete: true
