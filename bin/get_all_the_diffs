@@ -3,6 +3,7 @@
 require 'json'
 require 'open-uri'
 require 'yaml'
+require 'puppet_forge'
 
 # we removed the following modules from our modulesync_config / hide it because they are not Puppet modules but match the puppet- pattern
 # The modules in the list are broken, unfinished or got migrated (yes, that really happens from time to time)
@@ -43,8 +44,17 @@ not_synced_repos = repos.select{|repo| !modulesync_repos.include?(repo)}
 
 # get all forge releases
 puts "get data from the forge API" if DEBUG
-forge_response = JSON.load(open('https://forgeapi.puppetlabs.com:443/v3/modules?owner=puppet&limit=200'))
-forge_releases = forge_response['results'].map{|release| release['slug']}
+PuppetForge.user_agent = "VoxPupuli/0.1 get_all_diffs script"
+
+vp = PuppetForge::User.find('puppet')
+mods = vp.modules
+forge_releases = mods
+while not mods.next_url.nil?
+  mods = mods.next
+  puts "we discovered another #{mods.count} modules on the forge" if DEBUG
+  forge_releases.concat(mods.map{|mod| "puppet-#{mod}" })
+  puts "we are now at #{forge_releases.count} modules from the forge" if DEBUG
+end
 
 # get all modules that are in modulesync_config but not released
 unreleased_modules = modulesync_repos.reject{|repo| forge_releases.include?(repo)}
