@@ -4,6 +4,7 @@ require 'json'
 require 'open-uri'
 require 'yaml'
 require 'puppet_forge'
+require 'octokit'
 
 # we removed the following modules from our modulesync_config / hide it because they are not Puppet modules but match the puppet- pattern
 # The modules in the list are broken, unfinished or got migrated (yes, that really happens from time to time)
@@ -26,10 +27,11 @@ DEBUG = false
 # get all modules we own from github
 # use poor mans pagination solution
 puts "get data from the github API" if DEBUG
-github_data1 = JSON.load(open('https://api.github.com/orgs/voxpupuli/repos?per_page=100&page=1'))
-github_data2 = JSON.load(open('https://api.github.com/orgs/voxpupuli/repos?per_page=100&page=2'))
-repos = github_data1.map{|repo| repo['name']} + github_data2.map{|repo| repo['name']}
-repos = repos.select{|repo| repo =~ /^puppet-/}.reject{|repo| repo =~ /^puppet-lint/}
+client = Octokit::Client.new
+client.auto_paginate = true
+gh_repos = client.repos('voxpupuli')
+repos = []
+gh_repos.each{|repo| repos << repo[:name] if repo[:name] =~ /^puppet-(?!lint)/}
 repos -= LEGACY_OR_BROKEN_NOBODY_KNOWS
 
 # get all managed modules from our modulesync_config
