@@ -119,6 +119,8 @@ Rakefile:
   default_enabled_rake_targets:
   - 'metadata_lint'
   - 'release_checks'
+spec/default_facts.yml:
+  delete: true
 spec/classes/coverage_spec.rb:
   delete: true
 spec/acceptance/nodesets/centos-511-x64.yml:
