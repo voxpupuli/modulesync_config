@@ -116,6 +116,7 @@ Rakefile:
   default_enabled_rake_targets:
   - 'metadata_lint'
   - 'release_checks'
+  - 'reference'
 spec/default_facts.yml:
   delete: true
 spec/classes/coverage_spec.rb:

@@ -41,6 +41,11 @@ RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
 end
 
+desc 'Generate REFERENCE.md'
+task :reference do
+  sh 'puppet strings generate --format markdown'
+end
+
 <% targets = @configs['default_enabled_rake_targets']  - ( @configs['extra_disabled_rake_targets'] || [] ) -%>
 desc 'Run tests <%= targets.join(', ') %>'
 task test: [
