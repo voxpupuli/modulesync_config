@@ -1,3 +1,4 @@
+# rubocop:disable Style/Not, Style/NegatedIf, Metrics/LineLength, Style/InverseMethods, Style/Next, Style/RegexpLiteral
 require 'puppetlabs_spec_helper/rake_tasks'
 
 # load optional tasks for releases
@@ -39,6 +40,24 @@ end
 desc 'Run acceptance tests'
 RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
+end
+
+desc 'Check for trailing whitespace'
+task :trailing_whitespace do
+  puts "\nChecking for trailing whitespace"
+  Dir.glob('**/*.md', File::FNM_DOTMATCH).sort.each do |f|
+    if not f =~ /^(modules\/|acceptance\/|\.?vendor\/|spec\/fixtures\/|pkg\/|REFERENCE.md)/
+      puts "  #{f}"
+      cnt = 0
+      File.foreach(f) do |line|
+        cnt += 1
+        if line =~ /\s\n$/
+          puts "  #{f} has trailing whitespace on line #{cnt}"
+          exit 1
+        end
+      end
+    end
+  end
 end
 
 <% targets = @configs['default_enabled_rake_targets']  - ( @configs['extra_disabled_rake_targets'] || [] ) -%>
