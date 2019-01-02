@@ -56,3 +56,13 @@ bundle exec msync update --message "modulesync $(git describe)" --pr --pr-labels
 ```bash
 ./bin/clean-git-checkouts
 ```
+
+## Contribution
+
+We currently require all commits to be signed with gpg, so please configure
+your git client properly. Let us know if you need some help. We're also
+reachable via our IRC channel `#voxpupuli` on freenode.
+
+If you provide a patch that effects our modules, please test it on a single
+module and link the pull request from that specific module to the PR on
+the `modulesync_config` repository.
