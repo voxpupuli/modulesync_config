@@ -21,7 +21,7 @@ addons:
   <%- end -%>
 <%- end -%>
 before_install:
-  - rm -f Gemfile.lock
+  - ./prepare_travis.sh
 script:
   - 'bundle exec rake $CHECK'
 matrix:
