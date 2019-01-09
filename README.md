@@ -11,7 +11,7 @@ git clone https://github.com/voxpupuli/modulesync_config.git
 cd modulesync_config
 git checkout $(git tag --list | tail -n 1) # checkout latest tag
 bundle install
-bundle exec msync update --help
+bundle exec msync help update
 ```
 
 ## Examples
@@ -44,8 +44,25 @@ Now you can use [hub](https://github.com/github/hub) to create pull requests.
 ./bin/create-pull-requests
 ```
 
+You can now also create pull requests with modulesync directly:
+
+```bash
+export GITHUB_TOKEN=token
+bundle exec msync update --message "modulesync $(git describe)" --pr --pr-labels modulesync --pr-title "modulesync $(git describe)"
+```
+
 ### Clean up old mess before syncing
 
 ```bash
 ./bin/clean-git-checkouts
 ```
+
+## Contribution
+
+We currently require all commits to be signed with gpg, so please configure
+your git client properly. Let us know if you need some help. We're also
+reachable via our IRC channel `#voxpupuli` on freenode.
+
+If you provide a patch that effects our modules, please test it on a single
+module and link the pull request from that specific module to the PR on
+the `modulesync_config` repository.

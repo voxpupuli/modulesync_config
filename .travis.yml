@@ -1,6 +1,4 @@
 ---
-notifications:
-  email: false
 sudo: false
 language: ruby
 rvm: 2.3.3
@@ -11,3 +9,10 @@ script:
 branches:
   only:
   - master
+notifications:
+  email: false
+  irc:
+    on_success: always
+    on_failure: always
+    channels:
+      - "chat.freenode.org#voxpupuli-notifications"

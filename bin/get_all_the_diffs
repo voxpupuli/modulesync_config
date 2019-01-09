@@ -1,0 +1,193 @@
+#!/usr/bin/env ruby
+
+require 'json'
+require 'open-uri'
+require 'yaml'
+require 'puppet_forge'
+require 'octokit'
+
+# we removed the following modules from our modulesync_config / hide it because they are not Puppet modules but match the puppet- pattern
+# The modules in the list are broken, unfinished or got migrated (yes, that really happens from time to time)
+# ToDo: extend this list with repos that are archived on github
+# ToDo: Archive repos that we migrate away
+LEGACY_OR_BROKEN_NOBODY_KNOWS = ['puppet-bacula', 'puppet-nagios_providers', 'puppet-iis', 'puppet-syntax', 'puppet-blacksmith', 'puppet-mode']
+
+# define some versions that we want to match against
+PUPPET_SUPPORT_RANGE = '>= 4.10.0 < 7.0.0'
+# Ubuntu 18.04 got released, but Puppet doesn't work yet on it
+# https://tickets.puppetlabs.com/browse/PA-1869
+# https://github.com/camptocamp/facterdb/pull/82#event-1600066178
+UBUNTU_SUPPORT_RANGE = ['14.04', '16.04', '18.04']
+DEBIAN_SUPPORT_RANGE = ['8', '9']
+CENTOS_SUPPORT_RANGE = ['6', '7']
+
+# Do you want debug output?
+DEBUG = false
+
+# get all modules we own from github
+# use poor mans pagination solution
+puts "get data from the github API" if DEBUG
+client = Octokit::Client.new
+client.auto_paginate = true
+gh_repos = client.repos('voxpupuli')
+repos = []
+gh_repos.each{|repo| repos << repo[:name] if repo[:name] =~ /^puppet-(?!lint)/}
+repos -= LEGACY_OR_BROKEN_NOBODY_KNOWS
+
+# get all managed modules from our modulesync_config
+puts "get all manged modules" if DEBUG
+modulesync_repos = YAML.load(File.read('managed_modules.yml'))
+
+# get all modules we have in plumbing
+plumbing_modules = YAML.load(open('https://raw.githubusercontent.com/voxpupuli/plumbing/master/share/modules')).split(' ')
+
+# get all modules that we have on github but are currently not managed by modulesync_config
+not_synced_repos = repos.select{|repo| !modulesync_repos.include?(repo)}
+
+# get all forge releases
+puts "get data from the forge API" if DEBUG
+PuppetForge.user_agent = "VoxPupuli/0.1 get_all_diffs script"
+vp = PuppetForge::User.find('puppet')
+forge_releases = vp.modules.unpaginated.map(&:slug)
+
+# get all modules that are in modulesync_config but not released
+unreleased_modules = modulesync_repos.reject{|repo| forge_releases.include?(repo)}
+
+# get all modules we own but are unreleased
+really_unreleased_modules = repos.reject{|repo| forge_releases.include?(repo)}
+
+# get all modules that require a modulesync
+really_need_an_initial_modulesync = not_synced_repos.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+
+# get all modules that really need an initial release
+really_need_an_inital_release = really_unreleased_modules.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+
+# get all modules that need to added to plumbing
+missing_in_plumbing = repos.reject{|repo| plumbing_modules.include?(repo)}
+
+# update git and get the latest release
+`git fetch --all --prune`
+tags = `git tag -l`
+latest_release  = tags.lines.last.strip
+
+# get all the content of all .msync.yml, .sync.yml and metadata.json files
+modules_that_were_added_but_never_synced = []
+modules_that_have_missing_secrets = []
+msyncs = {}
+syncs = {}
+metadatas = {}
+modulesync_repos.each do |repo|
+  begin
+    response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml")
+  rescue OpenURI::HTTPError
+    puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
+    modules_that_were_added_but_never_synced << repo
+    next
+  end
+  msyncs[repo] = YAML.load(response)
+  begin
+    response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml")
+  rescue OpenURI::HTTPError
+    puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
+    modules_that_have_missing_secrets << repo
+    next
+  end
+  syncs[repo] = YAML.load(response)
+  begin
+    response = open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json")
+  rescue OpenURI::HTTPError
+    puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json"
+    next
+  end
+  metadatas[repo] = JSON.load(response)
+end
+
+# get the current modulesync version for all repos
+versions = {}
+msyncs.each do |repo, msync|
+  versions[repo] = msync['modulesync_config_version']
+end
+
+# ToDo: get all modules that dont have a secret in .sync.yml
+
+# ToDo: get all modules with outdated Puppet versions
+modules_without_puppet_version_range = []
+modules_with_incorrect_puppet_version_range = []
+modules_without_operatingsystems_support = []
+supports_eol_ubuntu = []
+supports_eol_debian = []
+supports_eol_centos = []
+doesnt_support_latest_ubuntu = []
+doesnt_support_latest_debian = []
+doesnt_support_latest_centos = []
+
+metadatas.each do |repo, metadata|
+  # check if Puppet version range is correct
+  begin
+    version_requirement = metadata['requirements'][0]['version_requirement']
+    if PUPPET_SUPPORT_RANGE != version_requirement
+      puts "repo #{repo} has version requirement #{version_requirement}, but it should be #{PUPPET_SUPPORT_RANGE}" if DEBUG
+      modules_with_incorrect_puppet_version_range << repo
+    end
+  # it's possible that the version range isn't present at all in the metadata.json
+  rescue NoMethodError
+    modules_without_puppet_version_range << repo
+  end
+
+  # check Ubuntu range
+  begin
+  metadata['operatingsystem_support'].each do |os|
+    case os['operatingsystem']
+    when 'Ubuntu'
+      supports_eol_ubuntu << repo if os['operatingsystemrelease'].min < UBUNTU_SUPPORT_RANGE.min
+      doesnt_support_latest_ubuntu << repo if os['operatingsystemrelease'].max < UBUNTU_SUPPORT_RANGE.max
+    when 'Debian'
+      supports_eol_debian << repo if os['operatingsystemrelease'].min < DEBIAN_SUPPORT_RANGE.min
+      doesnt_support_latest_debian << repo if os['operatingsystemrelease'].max < DEBIAN_SUPPORT_RANGE.max
+    when 'CentOS', 'RedHat'
+      supports_eol_centos << repo if os['operatingsystemrelease'].min <  CENTOS_SUPPORT_RANGE.min
+      doesnt_support_latest_centos << repo if os['operatingsystemrelease'].max <  CENTOS_SUPPORT_RANGE.max
+    end
+  end
+  rescue NoMethodError
+    modules_without_operatingsystems_support << repo
+  end
+end
+# we have a list of CentOS and RedHat in this array, we need to clean it up
+supports_eol_centos.sort!.uniq!
+doesnt_support_latest_centos.sort!.uniq!
+
+# get all repos that are on an outdated version of modulesync_config
+need_another_sync = []
+versions.each do |repo|
+  # index 0 is the module name, index 1 is the used modulesync_config version
+  need_another_sync << repo[0] if Gem::Version.new(latest_release) >= Gem::Version.new(repo[1])
+end
+
+# generate some output
+puts '=============================================================================================================================================================='
+puts "We got #{repos.count} modules in our github org"
+puts "We got #{modulesync_repos.count} in our modulesync config"
+puts "We released #{forge_releases.count} modules to forge.puppet.com"
+puts '=============================================================================================================================================================='
+puts "The following modules are missing in our modulesync config: #{not_synced_repos.join(', ')}" if not_synced_repos.count > 0
+puts "The following modules are in modulesync config but not released to the forge: #{unreleased_modules.join(', ')}" if unreleased_modules.count > 0
+puts "The following modules are in our github org but unreleased: #{really_unreleased_modules.join(', ')}" if really_unreleased_modules.count > 0
+puts "the following modules got added to our modulesync config but were never synced: #{modules_that_were_added_but_never_synced.join(', ')}" if modules_that_were_added_but_never_synced.count > 0
+puts '==============================================================================================================================================================' if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
+puts "We don't care about #{LEGACY_OR_BROKEN_NOBODY_KNOWS.join(', ')}" if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
+puts '=============================================================================================================================================================='
+puts "We need to add the following modules to plumbing: #{missing_in_plumbing.join(', ')}" if missing_in_plumbing.count > 0
+puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
+puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}" if need_another_sync.count > 0
+puts "We need to check Puppets version_requirement on these modules because it is not equal to #{PUPPET_SUPPORT_RANGE}: #{modules_with_incorrect_puppet_version_range.join(', ')}" if modules_with_incorrect_puppet_version_range.count > 0
+puts "We need to add Puppets version_requirement to: #{modules_without_puppet_version_range.join(', ')}" if modules_without_puppet_version_range.count > 0
+puts "We need to remove EOL Debian on: #{supports_eol_debian.join(', ')}" if supports_eol_debian.count > 0
+puts "We need to remove EOL Ubuntu on: #{supports_eol_ubuntu.join(', ')}" if supports_eol_ubuntu.count > 0
+puts "We need to remove EOL CentOS on: #{supports_eol_centos.join(', ')}" if supports_eol_centos.count > 0
+puts "We need to add support for Ubuntu #{UBUNTU_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_debian.count > 0
+puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_ubuntu.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
+puts "We need to add support for CentOS #{CENTOS_SUPPORT_RANGE.max} to: #{doesnt_support_latest_centos.join(', ')}" if doesnt_support_latest_centos.count > 0
+puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
+puts '=============================================================================================================================================================='
+puts 'Note: You can cleanup EOL operating systems with our ./bin/clean-metadata script'

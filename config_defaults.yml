@@ -3,33 +3,41 @@
   docker_sets:
   docker_defaults:
     # values will replace @@SET@@ with the docker_sets' value
-    rvm: 2.4.2
+  - rvm: 2.5.3
     sudo: required
-    dist: trusty
     services: docker
-    env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_set=@@SET@@ CHECK=beaker
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_IS_PE=no BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true BEAKER_setfile=@@SET@@ BEAKER_HYPERVISOR=docker CHECK=beaker
+    bundler_args: --without development release
+  - rvm: 2.5.3
+    sudo: required
+    services: docker
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_IS_PE=no BEAKER_PUPPET_COLLECTION=puppet6 BEAKER_debug=true BEAKER_setfile=@@SET@@ BEAKER_HYPERVISOR=docker CHECK=beaker
+    bundler_args: --without development release
+  - rvm: 2.5.3
+    sudo: required
+    services: docker
+    env: PUPPET_INSTALL_TYPE=agent BEAKER_IS_PE=no BEAKER_PUPPET_COLLECTION=puppet6-nightly BEAKER_debug=true BEAKER_setfile=@@SET@@ BEAKER_HYPERVISOR=docker CHECK=beaker
     bundler_args: --without development release
   includes:
-  - rvm: 2.1.9
-    env: PUPPET_VERSION="~> 4.0" CHECK=test PARALLEL_TEST_PROCESSORS=16
+  - rvm: 2.4.4
+    env: PUPPET_VERSION="~> 5.0" CHECK=test
     bundler_args: --without system_tests development release
-  - rvm: 2.4.2
-    env: PUPPET_VERSION="~> 5.0" CHECK=test_with_coveralls
+  - rvm: 2.5.3
+    env: PUPPET_VERSION="~> 6.0" CHECK=test_with_coveralls
     bundler_args: --without system_tests development release
-  - rvm: 2.4.2
-    env: PUPPET_VERSION="~> 5.0" CHECK=rubocop
+  - rvm: 2.5.3
+    env: PUPPET_VERSION="~> 6.0" CHECK=rubocop
     bundler_args: --without system_tests development release
-  - rvm: 2.4.2
+  - rvm: 2.4.4
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
     bundler_args: --without system_tests development release
 Gemfile:
   required:
     ':test':
       - gem: puppetlabs_spec_helper
-        version: '~> 2.5.0'
-      - gem: rspec-puppet
-        version: '~> 2.5'
+        version: '>= 2.11.0'
       - gem: rspec-puppet-facts
+        version: '>= 1.8.0'
       - gem: rspec-puppet-utils
       - gem: puppet-lint-leading_zero-check
       - gem: puppet-lint-trailing_comma-check
@@ -48,7 +56,7 @@ Gemfile:
         ruby-operator: '>='
         ruby-version: '2.3.0'
       - gem: mocha
-        version: '>= 1.2.1'
+        version: '~> 1.4.0'
       - gem: coveralls
       - gem: simplecov-console
       - gem: rack
@@ -56,6 +64,12 @@ Gemfile:
         ruby-operator: '<'
         ruby-version: '2.2.2'
       - gem: parallel_tests
+        version: '2.24.0'
+        ruby-operator: '<'
+        ruby-version: '2.2.0'
+      - gem: parallel_tests
+        ruby-operator: '>='
+        ruby-version: '2.2.0'
     ':development':
       - gem: travis
       - gem: travis-lint
@@ -66,19 +80,33 @@ Gemfile:
     ':system_tests':
       - gem: winrm
       - gem: beaker-rspec
+        version: '>= 6'
       - gem: serverspec
+      - gem: beaker-hostgenerator
+        version: '>= 1.1.22'
+      - gem: beaker-docker
+      - gem: beaker-puppet
       - gem: beaker-puppet_install_helper
       - gem: beaker-module_install_helper
         require: false
+      - gem: rbnacl
+        version: '>= 4'
+        ruby-operator: '>='
+        ruby-version: '2.2.6'
+      - gem: rbnacl-libsodium
+        ruby-operator: '>='
+        ruby-version: '2.2.6'
+      - gem: bcrypt_pbkdf
     ':release':
       - gem: github_changelog_generator
+        git: https://github.com/github-changelog-generator/github-changelog-generator
         ruby-operator: '>='
         ruby-version: '2.2.2'
       - gem: puppet-blacksmith
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem
       - gem: puppet-strings
-        version: '~> 1.0'
+        version: '>= 1.0'
 Rakefile:
   default_disabled_lint_checks:
   - 'relative'
@@ -89,5 +117,41 @@ Rakefile:
   default_enabled_rake_targets:
   - 'metadata_lint'
   - 'release_checks'
+spec/default_facts.yml:
+  delete: true
+spec/classes/coverage_spec.rb:
+  delete: true
+spec/acceptance/nodesets/centos-511-x64.yml:
+  delete: true
+spec/acceptance/nodesets/centos-6-x64.yml:
+  delete: true
+spec/acceptance/nodesets/centos-66-x64.yml:
+  delete: true
+spec/acceptance/nodesets/centos-66-x64-pe.yml:
+  delete: true
+spec/acceptance/nodesets/centos-7-x64.yml:
+  delete: true
+spec/acceptance/nodesets/centos-72-x64.yml:
+  delete: true
+spec/acceptance/nodesets/debian-78-x64.yml:
+  delete: true
+spec/acceptance/nodesets/debian-82-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-20-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-24-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-25-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-26-x64.yml:
+  delete: true
+spec/acceptance/nodesets/fedora-27-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ubuntu-server-1204-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ubuntu-server-1404-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ubuntu-server-1604-x64.yml:
+  delete: true
 ...
 # vim: syntax=yaml

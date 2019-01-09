@@ -1,6 +1,5 @@
 ---
-sudo: false
-dist: trusty
+dist: xenial
 language: ruby
 cache: bundler
 <%- if !@configs.nil? and @configs.has_key?('addons') -%>
@@ -22,7 +21,7 @@ addons:
   <%- end -%>
 <%- end -%>
 before_install:
-  - rm -f Gemfile.lock
+  - sh ./.travis/setup.sh
 script:
   - 'bundle exec rake $CHECK'
 matrix:
@@ -46,11 +45,13 @@ matrix:
 <% end -%>
 <% if @configs['docker_sets'] -%>
 <%   @configs['docker_sets'].each do |set| -%>
-<%     job = @configs['docker_defaults'].merge(set['options'] || {}) -%>
+<%     @configs['docker_defaults'].each do |template| # this is now an array of hashes -%>
+<%       job = template.merge(set['options'] || {}) -%>
   - rvm: <%= job['rvm'] %>
-<%     job.keys.sort.each do |k| -%>
-<%     next if k == 'rvm' -%>
+<%       job.keys.sort.each do |k| -%>
+<%       next if k == 'rvm' -%>
     <%= k %>: <%= job[k].gsub(/@@SET@@/, set['set']) %>
+<%       end -%>
 <%     end -%>
 <%   end -%>
 <% end -%>
