@@ -21,7 +21,7 @@ addons:
   <%- end -%>
 <%- end -%>
 before_install:
-  - ./prepare_travis.sh
+  - sh ./.travis/setup.sh
 script:
   - 'bundle exec rake $CHECK'
 matrix:
