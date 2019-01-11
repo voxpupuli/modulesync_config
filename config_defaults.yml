@@ -114,7 +114,6 @@ Rakefile:
   - 'disable_documentation'
   - 'disable_single_quote_string_with_variables'
   default_enabled_rake_targets:
-  - 'metadata_lint'
   - 'release_checks'
 spec/default_facts.yml:
   delete: true
