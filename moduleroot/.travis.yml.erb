@@ -21,7 +21,9 @@ addons:
   <%- end -%>
 <%- end -%>
 before_install:
-  - sh ./.travis/setup.sh
+  - gem update --system
+  - gem update bundler
+  - bundle --version
 script:
   - 'bundle exec rake $CHECK'
 matrix:
