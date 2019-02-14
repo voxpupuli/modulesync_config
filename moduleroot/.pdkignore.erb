@@ -1,0 +1,30 @@
+.*.sw[op]
+.DS_Store
+.git/
+.metadata
+.ruby-version
+.yardoc
+.yardwarns
+*.iml
+/.bundle/
+/.idea/
+/.vagrant/
+/bin/
+/convert_report.txt
+/coverage/
+/doc/
+/Gemfile.local
+/Gemfile.lock
+/junit/
+/log/
+/pkg/
+/spec/fixtures/manifests/
+/spec/fixtures/modules/
+/tmp/
+/update_report.txt
+/vendor/
+<% if ! @configs['paths'].nil? -%>
+<% @configs['paths'].each do |path| -%>
+<%= path %>
+<% end -%>
+<% end -%>

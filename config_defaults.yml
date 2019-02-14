@@ -1,4 +1,20 @@
 ---
+.pdkignore:
+  paths:
+    - '/.fixtures.yml'
+    - '/.gitattributes'
+    - '/.gitignore'
+    - '/.gitlab-ci.yml'
+    - '/.pdkignore'
+    - '/.rspec'
+    - '/.rubocop.yml'
+    - '/.travis.yml'
+    - '/.yardopts'
+    - '/appveyor.yml'
+    - '/Dockerfile'
+    - '/Gemfile'
+    - '/Rakefile'
+    - '/spec/'
 .travis.yml:
   docker_sets:
   docker_defaults:
