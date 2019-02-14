@@ -34,22 +34,6 @@ puts 'augeasproviders: setting Puppet[:libdir] to work around broken type autolo
 Puppet[:libdir] = "#{Puppet[:modulepath]}/augeasproviders_core/lib"
 
 <% end -%>
-if Dir.exist?(File.expand_path('../../lib', __FILE__))
-  require 'coveralls'
-  require 'simplecov'
-  require 'simplecov-console'
-  SimpleCov.formatters = [
-    SimpleCov::Formatter::HTMLFormatter,
-    SimpleCov::Formatter::Console
-  ]
-  SimpleCov.start do
-    track_files 'lib/**/*.rb'
-    add_filter '/spec'
-    add_filter '/vendor'
-    add_filter '/.vendor'
-  end
-end
-
 RSpec.configure do |c|
   <%- if @configs['hiera_config'] -%>
   c.hiera_config = <%= @configs['hiera_config'] %>
