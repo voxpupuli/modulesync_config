@@ -149,5 +149,6 @@ spec/acceptance/nodesets/ubuntu-server-1604-x64.yml:
   delete: true
 spec/spec_helper.rb:
   mock_with: ':rspec'
+  strict_level: ":warning"
 ...
 # vim: syntax=yaml
