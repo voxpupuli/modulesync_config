@@ -1,14 +1,61 @@
-source ENV['GEM_SOURCE'] || "https://rubygems.org"
-
-def location_for(place, fake_version = nil)
-  if place =~ /^(git[:@][^#]*)#(.*)/
-    [fake_version, { :git => $1, :branch => $2, :require => false }].compact
-  elsif place =~ /^file:\/\/(.*)/
-    ['>= 0', { :path => File.expand_path($1), :require => false }]
+<%
+def gem_length(gem)
+  if gem['from_env']
+    version_len = " *location_for(ENV['#{gem['from_env']}'])".length + ((" || '#{gem['version']}'".length if gem['version']) || 0)
   else
-    [place, { :require => false }]
+    version_len = (", '#{gem['version']}'".length if gem['version']) || 0
+  end
+
+  gem['gem'].length + version_len
+end
+
+def gem_spec(gem, max_len)
+  output = "\"#{gem['gem']}\""
+
+  if gem['version']
+    if gem['from_env']
+      output += ", *location_for(ENV['#{gem['from_env']}'] || '#{gem['version']}')"
+    else
+      output += ", '#{gem['version']}'"
+    end
+  end
+
+  options = []
+  options << "require: false" if gem['from_env'].nil?
+  options << "git: '#{gem['git']}'" unless gem['git'].nil?
+  options << "branch: '#{gem['branch']}'" unless gem['branch'].nil?
+  options << "ref: '#{gem['ref']}'" unless gem['ref'].nil?
+  options << "platforms: #{gem['platforms'].inspect}" unless gem['platforms'].nil?
+
+  unless options.empty?
+    output += ', '
+    output += ' ' * (max_len - gem['length'])
+
+    output += options.join(', ')
+  end
+
+  output += " if #{gem['condition']}" unless gem['condition'].nil?
+
+  output
+end
+-%>
+source ENV['GEM_SOURCE'] || 'https://rubygems.org'
+
+def location_for(place_or_version, fake_version = nil)
+  git_url_regex = %r{\A(?<url>(https?|git)[:@][^#]*)(#(?<branch>.*))?}
+  file_url_regex = %r{\Afile:\/\/(?<path>.*)}
+
+  if place_or_version && (git_url = place_or_version.match(git_url_regex))
+    [fake_version, { git: git_url[:url], branch: git_url[:branch], require: false }].compact
+  elsif place_or_version && (file_url = place_or_version.match(file_url_regex))
+    ['>= 0', { path: File.expand_path(file_url[:path]), require: false }]
+  else
+    [place_or_version, { require: false }]
   end
 end
+
+ruby_version_segments = Gem::Version.new(RUBY_VERSION.dup).segments
+minor_version = ruby_version_segments[0..1].join('.')
 
 <% groups = {} -%>
 <% (@configs['required'].keys + ((@configs['optional'] || {}).keys)).uniq.each do |key| -%>
@@ -17,38 +64,26 @@ end
 <% -%>
 <% groups.each do |group, gems| -%>
 group <%= group %> do
-<% maxlen = gems.map! do |gem| -%>
-<%            gem['platforms'].map!{|a| a.to_sym} unless gem['platforms'].nil? -%>
-<%            { -%>
-<%              'gem'           => gem['gem'], -%>
-<%              'version'       => gem['version'], -%>
-<%              'platforms'     => gem['platforms'], -%>
-<%              'require'       => gem['require'], -%>
-<%              'git'           => gem['git'], -%>
-<%              'branch'        => gem['branch'], -%>
-<%              'ruby-version'  => gem['ruby-version'], -%>
-<%              'ruby-operator' => gem['ruby-operator'], -%>
-<%              'length'        => gem['gem'].length + (("', '".length if gem['version']) || 0) + gem['version'].to_s.length -%>
-<%            } -%>
-<%          end.map do |gem| -%>
-<%            gem['length'] -%>
-<%          end.max -%>
-<% gems.each do |gem| -%>
-<% if gem['gem'] == 'beaker-rspec' -%>
-  if beaker_version = ENV['BEAKER_VERSION']
-    gem 'beaker', *location_for(beaker_version)
-  else
-    gem 'beaker', '>= 4.2.0', :require => false
-  end
-  if beaker_rspec_version = ENV['BEAKER_RSPEC_VERSION']
-    gem 'beaker-rspec', *location_for(beaker_rspec_version)
-  else
-    gem 'beaker-rspec',  :require => false
-  end
-<% else -%>
-  gem '<%= gem['gem'] %>'<%= ", '#{gem['version']}'" if gem['version'] %>, <%= ' ' * (maxlen - gem['length']) %> :require => false<%= ", :git => '#{gem['git']}'" if gem['git'] %><%= ", :branch => '#{gem['branch']}'" if gem['branch'] %><%= ", :platforms => #{gem['platforms']}" if gem['platforms'] %><%= " if RUBY_VERSION #{gem['ruby-operator']} '#{gem['ruby-version']}'" if (gem['ruby-operator'] && gem['ruby-version']) %>
-<% end -%>
-<% end -%>
+<%
+     gems.map! do |gem|
+       {
+         'gem'           => gem['gem'],
+         'version'       => gem['version'],
+         'platforms'     => gem['platforms'].nil? ? nil : Array[*gem['platforms']].map(&:to_sym),
+         'git'           => gem['git'],
+         'branch'        => gem['branch'],
+         'ref'           => gem['ref'],
+         'length'        => gem_length(gem),
+         'from_env'      => gem['from_env'],
+         'condition'     => gem['condition'],
+       }
+     end
+
+     maxlen = gems.map { |r| r['length'] }.max
+-%>
+<%   gems.each do |gem| -%>
+  gem <%= gem_spec(gem, maxlen) %>
+<%   end -%>
 end
 
 <% end -%>
