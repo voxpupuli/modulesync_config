@@ -1,23 +1,23 @@
-pkg/
-Gemfile.lock
-Gemfile.local
-vendor/
-.vendor/
-spec/fixtures/manifests/
-spec/fixtures/modules/
-.vagrant/
-.bundle/
+/pkg/
+/Gemfile.local
+/Gemfile.lock
+/.vendor/
+/vendor/
+/spec/fixtures/manifests/
+/spec/fixtures/modules/
+/.vagrant/
+/.bundle/
 .ruby-version
-coverage/
-log/
-.idea/
-.dependencies/
-.librarian/
-Puppetfile.lock
+/coverage/
+/log/
+/.idea/
+/.dependencies/
+/.librarian/
+/Puppetfile.lock
 *.iml
 .*.sw?
-.yardoc/
-Guardfile
+/.yardoc/
+/Guardfile
 <% if ! @configs['paths'].nil? -%>
 <% @configs['paths'].each do |path| -%>
 <%= path %>
