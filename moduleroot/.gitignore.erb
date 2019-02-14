@@ -1,5 +1,10 @@
-.*.sw?
+.*.sw[op]
+.DS_Store
+.git/
+.metadata
 .ruby-version
+.yardoc
+.yardwarns
 *.iml
 /.bundle/
 /.dependencies/
@@ -8,15 +13,21 @@
 /.vagrant/
 /.vendor/
 /.yardoc/
+/bin/
+/convert_report.txt
 /coverage/
+/doc/
 /Gemfile.local
 /Gemfile.lock
 /Guardfile
+/junit/
 /log/
 /pkg/
 /Puppetfile.lock
 /spec/fixtures/manifests/
 /spec/fixtures/modules/
+/tmp/
+/update_report.txt
 /vendor/
 <% if ! @configs['paths'].nil? -%>
 <% @configs['paths'].each do |path| -%>
