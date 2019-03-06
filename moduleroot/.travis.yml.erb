@@ -80,7 +80,11 @@ notifications:
       - "chat.freenode.org#voxpupuli-notifications"
 deploy:
   provider: puppetforge
+<% if ! @configs['user'].nil? -%>
+  user: <%= @configs['user'] %>
+<% else -%>
   user: puppet
+<% end -%>
   password:
     secure: "<%= @configs['secure'] -%>"
   on:
