@@ -28,6 +28,7 @@
   - rvm: 2.4.4
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
     bundler_args: --without system_tests development release
+  user: puppet
 Gemfile:
   required:
     ':test':
@@ -85,6 +86,7 @@ Gemfile:
       - gem: puppet-strings
         version: '>= 1.0'
 Rakefile:
+  config.user: voxpupuli
   default_disabled_lint_checks:
   - 'relative'
   - 'disable_140chars'
