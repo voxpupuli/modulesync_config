@@ -28,6 +28,12 @@
   - rvm: 2.4.4
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
     bundler_args: --without system_tests development release
+  email: false
+  irc:
+    on_success: always
+    on_failure: always
+    channels:
+    - "chat.freenode.org#voxpupuli-notifications"
   user: puppet
 Gemfile:
   required:

@@ -72,12 +72,16 @@ branches:
   - master
   - /^v\d/
 notifications:
-  email: false
+  email: <%= @configs['email'] %>
+<% if @configs['irc'] -%>
   irc:
-    on_success: always
-    on_failure: always
+    on_success: <%= @configs['irc']['on_success'] %>
+    on_failure: <%= @configs['irc']['on_failure'] %>
     channels:
-      - "chat.freenode.org#voxpupuli-notifications"
+<%   @configs['irc']['channels'].each do |channel| -%>
+      - "<%= channel %>"
+<%   end -%>
+<% end -%>
 deploy:
   provider: puppetforge
   user: <%= @configs['user'] %>
