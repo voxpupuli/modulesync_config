@@ -43,6 +43,7 @@
 - puppet-jira
 - puppet-jolokia
 - puppet-kafka
+- puppet-keepalived
 - puppet-letsencrypt
 - puppet-lldpd
 - puppet-logrotate
@@ -75,6 +76,7 @@
 - puppet-python
 - puppet-r10k
 - puppet-rabbitmq
+- puppet-redis
 - puppet-report_hipchat
 - puppet-rhsm
 - puppet-rsyslog
