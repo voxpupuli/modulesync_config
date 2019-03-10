@@ -1,5 +1,33 @@
 # Changelog
 
+## [2.6.0](https://github.com/voxpupuli/modulesync_config/tree/2.6.0) (2019-03-09)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.5.0...2.6.0)
+
+**Implemented enhancements:**
+
+- Make parameters config.user / user configurable [\#555](https://github.com/voxpupuli/modulesync_config/pull/555) ([dhoppe](https://github.com/dhoppe))
+
+**Fixed bugs:**
+
+- fix bundler commands in github template [\#546](https://github.com/voxpupuli/modulesync_config/pull/546) ([bastelfreak](https://github.com/bastelfreak))
+- prefix travis script with sh [\#540](https://github.com/voxpupuli/modulesync_config/pull/540) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Add `keepalived` and `redis` modules [\#558](https://github.com/voxpupuli/modulesync_config/pull/558) ([alexjfisher](https://github.com/alexjfisher))
+- Make notifications configurable [\#557](https://github.com/voxpupuli/modulesync_config/pull/557) ([dhoppe](https://github.com/dhoppe))
+- Update the version of Ruby [\#554](https://github.com/voxpupuli/modulesync_config/pull/554) ([dhoppe](https://github.com/dhoppe))
+- Set lowest supported Puppet version 4.10.0-\>5.5.8 [\#553](https://github.com/voxpupuli/modulesync_config/pull/553) ([bastelfreak](https://github.com/bastelfreak))
+- add script to update all local modules [\#552](https://github.com/voxpupuli/modulesync_config/pull/552) ([bastelfreak](https://github.com/bastelfreak))
+- enable relative class check [\#549](https://github.com/voxpupuli/modulesync_config/pull/549) ([bastelfreak](https://github.com/bastelfreak))
+- cleanup travis.sh helper [\#548](https://github.com/voxpupuli/modulesync_config/pull/548) ([bastelfreak](https://github.com/bastelfreak))
+- purge unneeded sudo setting from travis config [\#547](https://github.com/voxpupuli/modulesync_config/pull/547) ([bastelfreak](https://github.com/bastelfreak))
+- cleanup Gemfile in modules [\#545](https://github.com/voxpupuli/modulesync_config/pull/545) ([bastelfreak](https://github.com/bastelfreak))
+- bump default Puppet version to 6.X [\#544](https://github.com/voxpupuli/modulesync_config/pull/544) ([bastelfreak](https://github.com/bastelfreak))
+- Remove duplicate metadata\_lint check [\#542](https://github.com/voxpupuli/modulesync_config/pull/542) ([ekohl](https://github.com/ekohl))
+- \(GH-151\) Implement whitespace checks for markdown [\#541](https://github.com/voxpupuli/modulesync_config/pull/541) ([ekohl](https://github.com/ekohl))
+
 ## [2.5.0](https://github.com/voxpupuli/modulesync_config/tree/2.5.0) (2019-01-09)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.4.0...2.5.0)
@@ -11,6 +39,7 @@
 
 **Merged pull requests:**
 
+- release 2.5.0 [\#539](https://github.com/voxpupuli/modulesync_config/pull/539) ([bastelfreak](https://github.com/bastelfreak))
 - remove leading spaces before Fixes [\#538](https://github.com/voxpupuli/modulesync_config/pull/538) ([Dan33l](https://github.com/Dan33l))
 - Move travis setup script into a subdirectory [\#537](https://github.com/voxpupuli/modulesync_config/pull/537) ([ekohl](https://github.com/ekohl))
 - switch to latest ruby for puppet6 + support latest bundler release [\#535](https://github.com/voxpupuli/modulesync_config/pull/535) ([bastelfreak](https://github.com/bastelfreak))
