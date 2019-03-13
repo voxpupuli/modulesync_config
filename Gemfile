@@ -20,6 +20,10 @@ group :development do
   gem 'pry'
 end
 
+group :release do
+  gem 'github_changelog_generator',  :require => false, :git => 'https://github.com/github-changelog-generator/github-changelog-generator'
+end
+
 gem 'puppet_forge', '>= 2.2.9'
 gem 'modulesync', '>= 0.10.0'
 gem "octokit", "~> 4.0"
