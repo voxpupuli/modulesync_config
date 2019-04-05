@@ -90,7 +90,7 @@ Gemfile:
       - gem: voxpupuli-release
         git: https://github.com/voxpupuli/voxpupuli-release-gem
       - gem: puppet-strings
-        version: '>= 1.0'
+        version: '>= 2.0'
 Rakefile:
   config.user: voxpupuli
   default_disabled_lint_checks:
