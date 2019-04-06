@@ -40,13 +40,8 @@ RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
 end
 
-<% targets = @configs['default_enabled_rake_targets']  - ( @configs['extra_disabled_rake_targets'] || [] ) -%>
-desc 'Run tests <%= targets.join(', ') %>'
-task test: [
-<% targets.each do |t| -%>
-  :<%= t %>,
-<% end -%>
-]
+desc 'Run tests'
+task test: [:release_checks]
 
 namespace :check do
   desc 'Check for trailing whitespace'
