@@ -1,5 +1,19 @@
 # Changelog
 
+## [2.7.0](https://github.com/voxpupuli/modulesync_config/tree/2.7.0) (2019-04-06)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.6.0...2.7.0)
+
+**Merged pull requests:**
+
+- disable acceptance tests on puppet6-nightly [\#566](https://github.com/voxpupuli/modulesync_config/pull/566) ([bastelfreak](https://github.com/bastelfreak))
+- Clean Rakefile.erb [\#565](https://github.com/voxpupuli/modulesync_config/pull/565) ([ekohl](https://github.com/ekohl))
+- Add default mocking framework [\#563](https://github.com/voxpupuli/modulesync_config/pull/563) ([dhoppe](https://github.com/dhoppe))
+- add GCG to Gemfile [\#561](https://github.com/voxpupuli/modulesync_config/pull/561) ([bastelfreak](https://github.com/bastelfreak))
+- Add a script to set Travis secrets [\#560](https://github.com/voxpupuli/modulesync_config/pull/560) ([ekohl](https://github.com/ekohl))
+- update CHANGELOG.md [\#559](https://github.com/voxpupuli/modulesync_config/pull/559) ([bastelfreak](https://github.com/bastelfreak))
+- Add a reference task to generate REFERENCE.md [\#543](https://github.com/voxpupuli/modulesync_config/pull/543) ([ekohl](https://github.com/ekohl))
+
 ## [2.6.0](https://github.com/voxpupuli/modulesync_config/tree/2.6.0) (2019-03-09)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.5.0...2.6.0)
