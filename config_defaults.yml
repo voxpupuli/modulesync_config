@@ -93,6 +93,7 @@ Gemfile:
         version: '>= 2.2'
 Rakefile:
   config.user: voxpupuli
+  exclude_paths: []
   puppet_lint_checks: []
   puppet_strings_patterns: []
 spec/default_facts.yml:
