@@ -93,12 +93,7 @@ Gemfile:
         version: '>= 2.2'
 Rakefile:
   config.user: voxpupuli
-  default_disabled_lint_checks:
-  - 'relative'
-  - 'disable_140chars'
-  - 'disable_class_inherits_from_params_class'
-  - 'disable_documentation'
-  - 'disable_single_quote_string_with_variables'
+  puppet_lint_checks: []
   puppet_strings_patterns: []
 spec/default_facts.yml:
   delete: true
