@@ -71,8 +71,7 @@ task :reference, [:debug, :backtrace] do |t, args|
   Rake::Task['strings:generate:reference'].invoke(patterns, args[:debug], args[:backtrace])
 end
 
-begin
-  require 'github_changelog_generator/task'
+if Bundler.rubygems.find_name('github_changelog_generator').any?
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
     version = (Blacksmith::Modulefile.new).version
     config.future_release = "v#{version}" if version =~ /^\d+\.\d+.\d+$/
@@ -83,6 +82,12 @@ begin
     metadata = JSON.load(File.read(metadata_json))
     config.project = metadata['name']
   end
-rescue LoadError
+else
+  desc 'Generate a Changelog from GitHub'
+  task :changelog do
+    raise <<EOM
+The changelog tasks depends on the github_changelog_generator gem.
+EOM
+  end
 end
 # vim: syntax=ruby
