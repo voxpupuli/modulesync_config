@@ -8,6 +8,7 @@
 - puppet-bareos
 - puppet-bird
 - puppet-boolean
+- puppet-borg
 - puppet-caddy
 - puppet-cassandra
 - puppet-check_mk
