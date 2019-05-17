@@ -57,6 +57,21 @@ bundle exec msync update --message "modulesync $(git describe)" --pr --pr-labels
 ./bin/clean-git-checkouts
 ```
 
+### Get a list of open todos
+
+We have a nice script to detect a bunch of maintenance jobs in our modules. For
+example wrong puppet version constraints or missing support for new operating
+systems:
+
+```bash
+bundle install --path --without development
+export GITHUB_TOKEN=token
+bundle exec bin/get_all_the_diffs
+```
+
+You can also pass `DEBUG=true` as an environment variable to te script. to get
+a bit more output.
+
 ## Contribution
 
 We currently require all commits to be signed with gpg, so please configure
