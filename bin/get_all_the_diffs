@@ -22,7 +22,7 @@ DEBIAN_SUPPORT_RANGE = ['8', '9']
 CENTOS_SUPPORT_RANGE = ['6', '7']
 
 # Do you want debug output?
-DEBUG = false
+DEBUG = ENV['DEBUG'] ||= false
 
 # get all modules we own from github
 # use poor mans pagination solution
