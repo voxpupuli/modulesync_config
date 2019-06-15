@@ -87,6 +87,7 @@
 - puppet-sftp_jail
 - puppet-smokeping
 - puppet-snmp
+- puppet-spiped
 - puppet-splunk
 - puppet-squid
 - puppet-ssh_keygen
