@@ -160,7 +160,7 @@ created virtual machines will be in `.vagrant/beaker_vagrant_files`.
 Beaker also supports docker containers. We also use that in our automated CI
 pipeline at [travis-ci](http://travis-ci.org). To use that instead of Vagrant:
 
-```
+```sh
 PUPPET_INSTALL_TYPE=agent BEAKER_IS_PE=no BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_debug=true BEAKER_setfile=debian9-64{hypervisor=docker} BEAKER_destroy=yes bundle exec rake beaker
 ```
 
