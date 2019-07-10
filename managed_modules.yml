@@ -114,6 +114,7 @@
 - puppet-windows_power
 - puppet-windowsfeature
 - puppet-winlogbeat
+- puppet-xmlfile
 - puppet-yum
 - puppet-zabbix
 - puppet-zypprepo
