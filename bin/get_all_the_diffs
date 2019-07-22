@@ -18,7 +18,7 @@ PUPPET_SUPPORT_RANGE = '>= 5.5.8 < 7.0.0'
 # https://tickets.puppetlabs.com/browse/PA-1869
 # https://github.com/camptocamp/facterdb/pull/82#event-1600066178
 UBUNTU_SUPPORT_RANGE = ['16.04', '18.04']
-DEBIAN_SUPPORT_RANGE = ['8', '9']
+DEBIAN_SUPPORT_RANGE = ['8', '9', '10']
 CENTOS_SUPPORT_RANGE = ['6', '7']
 
 # Do you want debug output?
