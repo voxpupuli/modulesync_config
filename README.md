@@ -81,3 +81,11 @@ reachable via our IRC channel `#voxpupuli` on freenode.
 If you provide a patch that effects our modules, please test it on a single
 module and link the pull request from that specific module to the PR on
 the `modulesync_config` repository.
+
+## Do a new release
+
+This is as simple as:
+
+```sh
+bundle exec github_changelog_generator --future-release 2.8.0 -u voxpupuli -p modulesync_config -t *yourgithubtoken*
+```

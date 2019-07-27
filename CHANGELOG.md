@@ -1,5 +1,27 @@
 # Changelog
 
+## [2.8.0](https://github.com/voxpupuli/modulesync_config/tree/2.8.0) (2019-07-27)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.7.0...2.8.0)
+
+**Merged pull requests:**
+
+- Filters out the configured bundler path [\#583](https://github.com/voxpupuli/modulesync_config/pull/583) ([logicminds](https://github.com/logicminds))
+- add puppet-lint-topscope-variable-check gem [\#582](https://github.com/voxpupuli/modulesync_config/pull/582) ([bastelfreak](https://github.com/bastelfreak))
+- Add Debian 10 to list of supported OSes [\#581](https://github.com/voxpupuli/modulesync_config/pull/581) ([bastelfreak](https://github.com/bastelfreak))
+- CONTRIBUTING.md: speedup gem installation [\#580](https://github.com/voxpupuli/modulesync_config/pull/580) ([bastelfreak](https://github.com/bastelfreak))
+- Adds puppet-xmlfile to list of managed modules [\#579](https://github.com/voxpupuli/modulesync_config/pull/579) ([logicminds](https://github.com/logicminds))
+- Ensure newline at EOF for .yml files. [\#578](https://github.com/voxpupuli/modulesync_config/pull/578) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Add missing language specifier to code fence in CONTRIBUTING.md.erb [\#577](https://github.com/voxpupuli/modulesync_config/pull/577) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Add puppet-openvmtools to managed\_modules.yml [\#576](https://github.com/voxpupuli/modulesync_config/pull/576) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Remove extra blank line at EOF of LICENSE file. [\#575](https://github.com/voxpupuli/modulesync_config/pull/575) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Add puppet-spiped [\#573](https://github.com/voxpupuli/modulesync_config/pull/573) ([alexjfisher](https://github.com/alexjfisher))
+- drop Ubuntu 14.04 from get\_all\_the\_diffs script [\#572](https://github.com/voxpupuli/modulesync_config/pull/572) ([bastelfreak](https://github.com/bastelfreak))
+- add a debug flag to get\_all\_the\_diffs [\#571](https://github.com/voxpupuli/modulesync_config/pull/571) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-borg [\#570](https://github.com/voxpupuli/modulesync_config/pull/570) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-bareos [\#569](https://github.com/voxpupuli/modulesync_config/pull/569) ([alexjfisher](https://github.com/alexjfisher))
+- Add puppet-check\_mk [\#568](https://github.com/voxpupuli/modulesync_config/pull/568) ([alexjfisher](https://github.com/alexjfisher))
+
 ## [2.7.0](https://github.com/voxpupuli/modulesync_config/tree/2.7.0) (2019-04-06)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.6.0...2.7.0)
@@ -53,7 +75,6 @@
 
 **Merged pull requests:**
 
-- release 2.5.0 [\#539](https://github.com/voxpupuli/modulesync_config/pull/539) ([bastelfreak](https://github.com/bastelfreak))
 - remove leading spaces before Fixes [\#538](https://github.com/voxpupuli/modulesync_config/pull/538) ([Dan33l](https://github.com/Dan33l))
 - Move travis setup script into a subdirectory [\#537](https://github.com/voxpupuli/modulesync_config/pull/537) ([ekohl](https://github.com/ekohl))
 - switch to latest ruby for puppet6 + support latest bundler release [\#535](https://github.com/voxpupuli/modulesync_config/pull/535) ([bastelfreak](https://github.com/bastelfreak))
