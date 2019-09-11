@@ -12,6 +12,11 @@ require 'rspec-puppet-facts'
 require 'bundler'
 include RspecPuppetFacts
 
+if ENV['DEBUG']
+  Puppet::Util::Log.level = :debug
+  Puppet::Util::Log.newdestination(:console)
+end
+
 if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
   facts = YAML.load(File.read(File.join(__dir__, 'default_module_facts.yml')))
   if facts
