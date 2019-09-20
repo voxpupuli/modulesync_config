@@ -60,8 +60,9 @@ end
 RSpec.configure do |c|
   <%- if @configs['hiera_config'] -%>
   c.hiera_config = <%= @configs['hiera_config'] %>
-
   <%- end -%>
+  c.default_facter_version = ENV['FACTERDB_FACTS_VERSION'] || '<%= @configs['facterdb_facts_version'] %>'
+
   # Coverage generation
   c.after(:suite) do
     RSpec::Puppet::Coverage.report!
