@@ -29,6 +29,7 @@
 - puppet-ferm
 - puppet-fetchcrl
 - puppet-filemapper
+- puppet-firewalld
 - puppet-gerrit
 - puppet-ghost
 - puppet-git_resource
