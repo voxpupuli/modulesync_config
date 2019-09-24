@@ -37,7 +37,7 @@ Gemfile:
       - gem: puppetlabs_spec_helper
         version: '>= 2.14.0'
       - gem: rspec-puppet-facts
-        version: '>= 1.8.0'
+        version: '>= 1.9.5'
       - gem: rspec-puppet-utils
       - gem: puppet-lint-leading_zero-check
       - gem: puppet-lint-trailing_comma-check
@@ -130,5 +130,6 @@ spec/acceptance/nodesets/ubuntu-server-1604-x64.yml:
   delete: true
 spec/spec_helper.rb:
   mock_with: ':rspec'
+  facterdb_facts_version: '3.9'
 ...
 # vim: syntax=yaml
