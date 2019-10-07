@@ -25,6 +25,7 @@
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
     bundler_args: --without system_tests development release
   email: false
+  webhooks: https://voxpupu.li/incoming/travis
   irc:
     on_success: always
     on_failure: always
