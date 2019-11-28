@@ -83,7 +83,8 @@ Gemfile:
       - gem: bcrypt_pbkdf
     ':release':
       - gem: github_changelog_generator
-        git: https://github.com/github-changelog-generator/github-changelog-generator
+        git: https://github.com/voxpupuli/github-changelog-generator
+        branch: voxpupuli_essential_fixes
       - gem: puppet-blacksmith
       - gem: voxpupuli-release
       - gem: puppet-strings
