@@ -25,6 +25,6 @@ group :release do
 end
 
 gem 'puppet_forge', '>= 2.2.9'
-gem 'modulesync', '>= 0.10.0'
+gem 'modulesync', '>= 1.0.0'
 gem "octokit", "~> 4.0"
 # vim: syntax=ruby

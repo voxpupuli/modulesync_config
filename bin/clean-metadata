@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import os
+import glob
 import json
 
 # Note range is exclusive so the last number is not in the list
@@ -17,9 +17,7 @@ UNSUPPORTED = {
     'Ubuntu': {str(i) + m for i in range(4, 18) for m in ('.04', '.10')} - {'16.04'},
 }
 
-for mod in os.listdir('modules'):
-    filename = os.path.join('modules', mod, 'metadata.json')
-
+for filename in glob.glob('modules/*/*/metadata.json'):
     print('Reading {}'.format(filename))
 
     with open(filename) as fp:

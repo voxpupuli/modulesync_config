@@ -1,6 +1,6 @@
 #!/bin/sh
 
-for module in modules/* ; do
+for module in modules/*/* ; do
   (
   cd "${module}" || exit
   echo "${module}"
