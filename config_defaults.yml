@@ -48,6 +48,7 @@ Gemfile:
       - gem: puppet-lint-absolute_classname-check
       - gem: puppet-lint-topscope-variable-check
       - gem: puppet-lint-legacy_facts-check
+      - gem: puppet-lint-anchor-check
       - gem: metadata-json-lint
       - gem: redcarpet
       - gem: rubocop
