@@ -8,7 +8,6 @@ rescue LoadError
 end
 
 PuppetLint.configuration.log_format = '%{path}:%{line}:%{check}:%{KIND}:%{message}'
-PuppetLint.configuration.absolute_classname_reverse = true
 <% @configs['puppet_lint_checks'].each do |check| -%>
 PuppetLint.configuration.send('<%= check %>')
 <% end -%>

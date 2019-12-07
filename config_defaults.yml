@@ -46,6 +46,7 @@ Gemfile:
       - gem: puppet-lint-unquoted_string-check
       - gem: puppet-lint-variable_contains_upcase
       - gem: puppet-lint-absolute_classname-check
+        version: '>= 2.0.0'
       - gem: puppet-lint-topscope-variable-check
       - gem: puppet-lint-legacy_facts-check
       - gem: puppet-lint-anchor-check
