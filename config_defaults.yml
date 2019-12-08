@@ -46,6 +46,7 @@ Gemfile:
       - gem: puppet-lint-unquoted_string-check
       - gem: puppet-lint-variable_contains_upcase
       - gem: puppet-lint-absolute_classname-check
+        version: '>= 2.0.0'
       - gem: puppet-lint-topscope-variable-check
       - gem: puppet-lint-legacy_facts-check
       - gem: puppet-lint-anchor-check
@@ -92,8 +93,6 @@ Gemfile:
         version: '>= 2.2'
 Rakefile:
   config.user: voxpupuli
-  exclude_paths: []
-  puppet_lint_checks: []
   puppet_strings_patterns: []
 spec/default_facts.yml:
   delete: true
