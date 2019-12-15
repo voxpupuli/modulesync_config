@@ -73,6 +73,7 @@ branches:
   - /^v\d/
 notifications:
   email: <%= @configs['email'] %>
+  webhooks: <%= @configs['webhooks'] %>
 <% if @configs['irc'] -%>
   irc:
     on_success: <%= @configs['irc']['on_success'] %>
