@@ -130,6 +130,12 @@ spec/acceptance/nodesets/ubuntu-server-1404-x64.yml:
   delete: true
 spec/acceptance/nodesets/ubuntu-server-1604-x64.yml:
   delete: true
+spec/acceptance/nodesets/windows-2008R2-serverstandard-x64.yml:
+  delete: true
+spec/acceptance/nodesets/windows-2012-serverstandard-x64.yml:
+  delete: true
+spec/acceptance/nodesets/windows-2012R2-serverstandard-x64.yml:
+  delete: true
 spec/spec_helper.rb:
   mock_with: ':rspec'
 ...
