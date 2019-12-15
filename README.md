@@ -57,6 +57,21 @@ bundle exec msync update --message "modulesync $(git describe)" --pr --pr-labels
 ./bin/clean-git-checkouts
 ```
 
+### Get a list of open todos
+
+We have a nice script to detect a bunch of maintenance jobs in our modules. For
+example wrong puppet version constraints or missing support for new operating
+systems:
+
+```bash
+bundle install --path --without development
+export GITHUB_TOKEN=token
+bundle exec bin/get_all_the_diffs
+```
+
+You can also pass `DEBUG=true` as an environment variable to te script. to get
+a bit more output.
+
 ## Contribution
 
 We currently require all commits to be signed with gpg, so please configure
@@ -66,3 +81,11 @@ reachable via our IRC channel `#voxpupuli` on freenode.
 If you provide a patch that effects our modules, please test it on a single
 module and link the pull request from that specific module to the PR on
 the `modulesync_config` repository.
+
+## Do a new release
+
+This is as simple as:
+
+```sh
+bundle exec github_changelog_generator --future-release 2.8.0 -u voxpupuli -p modulesync_config -t *yourgithubtoken*
+```

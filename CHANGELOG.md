@@ -1,15 +1,122 @@
-# Change Log
+# Changelog
 
-## [Unreleased](https://github.com/voxpupuli/modulesync_config/tree/HEAD)
+## [2.9.0](https://github.com/voxpupuli/modulesync_config/tree/2.9.0) (2019-12-06)
 
-[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.4.0...HEAD)
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.8.0...2.9.0)
+
+**Implemented enhancements:**
+
+- add ability to see puppet debug log via env [\#587](https://github.com/voxpupuli/modulesync_config/pull/587) ([foxxx0](https://github.com/foxxx0))
+
+**Fixed bugs:**
+
+- mock facter version based on puppet version [\#600](https://github.com/voxpupuli/modulesync_config/pull/600) ([bastelfreak](https://github.com/bastelfreak))
+- default to 3.9.0, not 3.9 facter version [\#598](https://github.com/voxpupuli/modulesync_config/pull/598) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Remove parameter facterdb\_facts\_version [\#608](https://github.com/voxpupuli/modulesync_config/pull/608) ([dhoppe](https://github.com/dhoppe))
+- enhance CONTRIBUTING.md [\#607](https://github.com/voxpupuli/modulesync_config/pull/607) ([bastelfreak](https://github.com/bastelfreak))
+- Update the EOL distributions [\#606](https://github.com/voxpupuli/modulesync_config/pull/606) ([ekohl](https://github.com/ekohl))
+- Work with Modulesync 1.0.0 [\#605](https://github.com/voxpupuli/modulesync_config/pull/605) ([ekohl](https://github.com/ekohl))
+- Fix a typo in CONTRIBUTING.md [\#603](https://github.com/voxpupuli/modulesync_config/pull/603) ([ekohl](https://github.com/ekohl))
+- Use voxpupuli fixes branch of GHCG [\#602](https://github.com/voxpupuli/modulesync_config/pull/602) ([ekohl](https://github.com/ekohl))
+- Add puppet-lint-anchor-check [\#601](https://github.com/voxpupuli/modulesync_config/pull/601) ([alexjfisher](https://github.com/alexjfisher))
+- drop BEAKER\_IS\_PE=no beaker argument [\#599](https://github.com/voxpupuli/modulesync_config/pull/599) ([bastelfreak](https://github.com/bastelfreak))
+- docker: add missing `rake` subcommand [\#597](https://github.com/voxpupuli/modulesync_config/pull/597) ([bastelfreak](https://github.com/bastelfreak))
+- Fix-up CHANGELOG.md line endings [\#595](https://github.com/voxpupuli/modulesync_config/pull/595) ([alexjfisher](https://github.com/alexjfisher))
+- Add new module puppet-mlocate [\#594](https://github.com/voxpupuli/modulesync_config/pull/594) ([traylenator](https://github.com/traylenator))
+- travis: switch base OS from xenial to bionic [\#591](https://github.com/voxpupuli/modulesync_config/pull/591) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-ipset module [\#590](https://github.com/voxpupuli/modulesync_config/pull/590) ([bastelfreak](https://github.com/bastelfreak))
+- Use 3.9 as default facterlib facts version [\#589](https://github.com/voxpupuli/modulesync_config/pull/589) ([alexjfisher](https://github.com/alexjfisher))
+- Add `firewalld` to list of managed modules [\#588](https://github.com/voxpupuli/modulesync_config/pull/588) ([alexjfisher](https://github.com/alexjfisher))
+- add puppet-lint-legacy\_fact-check plugin [\#586](https://github.com/voxpupuli/modulesync_config/pull/586) ([bastelfreak](https://github.com/bastelfreak))
+- use latest voxpupuli-release gem [\#585](https://github.com/voxpupuli/modulesync_config/pull/585) ([bastelfreak](https://github.com/bastelfreak))
+
+## [2.8.0](https://github.com/voxpupuli/modulesync_config/tree/2.8.0) (2019-07-27)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.7.0...2.8.0)
+
+**Merged pull requests:**
+
+- release 2.8.0 [\#584](https://github.com/voxpupuli/modulesync_config/pull/584) ([bastelfreak](https://github.com/bastelfreak))
+- Filters out the configured bundler path [\#583](https://github.com/voxpupuli/modulesync_config/pull/583) ([logicminds](https://github.com/logicminds))
+- add puppet-lint-topscope-variable-check gem [\#582](https://github.com/voxpupuli/modulesync_config/pull/582) ([bastelfreak](https://github.com/bastelfreak))
+- Add Debian 10 to list of supported OSes [\#581](https://github.com/voxpupuli/modulesync_config/pull/581) ([bastelfreak](https://github.com/bastelfreak))
+- CONTRIBUTING.md: speedup gem installation [\#580](https://github.com/voxpupuli/modulesync_config/pull/580) ([bastelfreak](https://github.com/bastelfreak))
+- Adds puppet-xmlfile to list of managed modules [\#579](https://github.com/voxpupuli/modulesync_config/pull/579) ([logicminds](https://github.com/logicminds))
+- Ensure newline at EOF for .yml files. [\#578](https://github.com/voxpupuli/modulesync_config/pull/578) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Add missing language specifier to code fence in CONTRIBUTING.md.erb [\#577](https://github.com/voxpupuli/modulesync_config/pull/577) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Add puppet-openvmtools to managed\_modules.yml [\#576](https://github.com/voxpupuli/modulesync_config/pull/576) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Remove extra blank line at EOF of LICENSE file. [\#575](https://github.com/voxpupuli/modulesync_config/pull/575) ([pillarsdotnet](https://github.com/pillarsdotnet))
+- Add puppet-spiped [\#573](https://github.com/voxpupuli/modulesync_config/pull/573) ([alexjfisher](https://github.com/alexjfisher))
+- drop Ubuntu 14.04 from get\_all\_the\_diffs script [\#572](https://github.com/voxpupuli/modulesync_config/pull/572) ([bastelfreak](https://github.com/bastelfreak))
+- add a debug flag to get\_all\_the\_diffs [\#571](https://github.com/voxpupuli/modulesync_config/pull/571) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-borg [\#570](https://github.com/voxpupuli/modulesync_config/pull/570) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-bareos [\#569](https://github.com/voxpupuli/modulesync_config/pull/569) ([alexjfisher](https://github.com/alexjfisher))
+- Add puppet-check\_mk [\#568](https://github.com/voxpupuli/modulesync_config/pull/568) ([alexjfisher](https://github.com/alexjfisher))
+
+## [2.7.0](https://github.com/voxpupuli/modulesync_config/tree/2.7.0) (2019-04-06)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.6.0...2.7.0)
+
+**Merged pull requests:**
+
+- release 2.7.0 [\#567](https://github.com/voxpupuli/modulesync_config/pull/567) ([bastelfreak](https://github.com/bastelfreak))
+- disable acceptance tests on puppet6-nightly [\#566](https://github.com/voxpupuli/modulesync_config/pull/566) ([bastelfreak](https://github.com/bastelfreak))
+- Clean Rakefile.erb [\#565](https://github.com/voxpupuli/modulesync_config/pull/565) ([ekohl](https://github.com/ekohl))
+- Add default mocking framework [\#563](https://github.com/voxpupuli/modulesync_config/pull/563) ([dhoppe](https://github.com/dhoppe))
+- add GCG to Gemfile [\#561](https://github.com/voxpupuli/modulesync_config/pull/561) ([bastelfreak](https://github.com/bastelfreak))
+- Add a script to set Travis secrets [\#560](https://github.com/voxpupuli/modulesync_config/pull/560) ([ekohl](https://github.com/ekohl))
+- update CHANGELOG.md [\#559](https://github.com/voxpupuli/modulesync_config/pull/559) ([bastelfreak](https://github.com/bastelfreak))
+- Add a reference task to generate REFERENCE.md [\#543](https://github.com/voxpupuli/modulesync_config/pull/543) ([ekohl](https://github.com/ekohl))
+
+## [2.6.0](https://github.com/voxpupuli/modulesync_config/tree/2.6.0) (2019-03-09)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.5.0...2.6.0)
+
+**Implemented enhancements:**
+
+- Make parameters config.user / user configurable [\#555](https://github.com/voxpupuli/modulesync_config/pull/555) ([dhoppe](https://github.com/dhoppe))
+
+**Fixed bugs:**
+
+- fix bundler commands in github template [\#546](https://github.com/voxpupuli/modulesync_config/pull/546) ([bastelfreak](https://github.com/bastelfreak))
+- prefix travis script with sh [\#540](https://github.com/voxpupuli/modulesync_config/pull/540) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Add `keepalived` and `redis` modules [\#558](https://github.com/voxpupuli/modulesync_config/pull/558) ([alexjfisher](https://github.com/alexjfisher))
+- Make notifications configurable [\#557](https://github.com/voxpupuli/modulesync_config/pull/557) ([dhoppe](https://github.com/dhoppe))
+- Update the version of Ruby [\#554](https://github.com/voxpupuli/modulesync_config/pull/554) ([dhoppe](https://github.com/dhoppe))
+- Set lowest supported Puppet version 4.10.0-\>5.5.8 [\#553](https://github.com/voxpupuli/modulesync_config/pull/553) ([bastelfreak](https://github.com/bastelfreak))
+- add script to update all local modules [\#552](https://github.com/voxpupuli/modulesync_config/pull/552) ([bastelfreak](https://github.com/bastelfreak))
+- enable relative class check [\#549](https://github.com/voxpupuli/modulesync_config/pull/549) ([bastelfreak](https://github.com/bastelfreak))
+- cleanup travis.sh helper [\#548](https://github.com/voxpupuli/modulesync_config/pull/548) ([bastelfreak](https://github.com/bastelfreak))
+- purge unneeded sudo setting from travis config [\#547](https://github.com/voxpupuli/modulesync_config/pull/547) ([bastelfreak](https://github.com/bastelfreak))
+- cleanup Gemfile in modules [\#545](https://github.com/voxpupuli/modulesync_config/pull/545) ([bastelfreak](https://github.com/bastelfreak))
+- bump default Puppet version to 6.X [\#544](https://github.com/voxpupuli/modulesync_config/pull/544) ([bastelfreak](https://github.com/bastelfreak))
+- Remove duplicate metadata\_lint check [\#542](https://github.com/voxpupuli/modulesync_config/pull/542) ([ekohl](https://github.com/ekohl))
+- \(GH-151\) Implement whitespace checks for markdown [\#541](https://github.com/voxpupuli/modulesync_config/pull/541) ([ekohl](https://github.com/ekohl))
+
+## [2.5.0](https://github.com/voxpupuli/modulesync_config/tree/2.5.0) (2019-01-09)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.4.0...2.5.0)
 
 **Closed issues:**
 
 - YAML test [\#393](https://github.com/voxpupuli/modulesync_config/issues/393)
+- changelog [\#226](https://github.com/voxpupuli/modulesync_config/issues/226)
 
 **Merged pull requests:**
 
+- release 2.5.0 [\#539](https://github.com/voxpupuli/modulesync_config/pull/539) ([bastelfreak](https://github.com/bastelfreak))
+- remove leading spaces before Fixes [\#538](https://github.com/voxpupuli/modulesync_config/pull/538) ([Dan33l](https://github.com/Dan33l))
+- Move travis setup script into a subdirectory [\#537](https://github.com/voxpupuli/modulesync_config/pull/537) ([ekohl](https://github.com/ekohl))
+- switch to latest ruby for puppet6 + support latest bundler release [\#535](https://github.com/voxpupuli/modulesync_config/pull/535) ([bastelfreak](https://github.com/bastelfreak))
+- enable IRC notifications for builds [\#534](https://github.com/voxpupuli/modulesync_config/pull/534) ([bastelfreak](https://github.com/bastelfreak))
+- mention GPG-signed commits [\#533](https://github.com/voxpupuli/modulesync_config/pull/533) ([bastelfreak](https://github.com/bastelfreak))
+- \(GH-226\) Add CHANGELOG [\#531](https://github.com/voxpupuli/modulesync_config/pull/531) ([ghoneycutt](https://github.com/ghoneycutt))
 - switch acceptance tests from trusty to xenial [\#529](https://github.com/voxpupuli/modulesync_config/pull/529) ([bastelfreak](https://github.com/bastelfreak))
 - add dependencies for get\_all\_diffs script; refactor GitHub API handling [\#528](https://github.com/voxpupuli/modulesync_config/pull/528) ([bastelfreak](https://github.com/bastelfreak))
 - rework forge API handling [\#527](https://github.com/voxpupuli/modulesync_config/pull/527) ([bastelfreak](https://github.com/bastelfreak))
@@ -18,6 +125,7 @@
 - Refactor default fact loading [\#522](https://github.com/voxpupuli/modulesync_config/pull/522) ([ekohl](https://github.com/ekohl))
 
 ## [2.4.0](https://github.com/voxpupuli/modulesync_config/tree/2.4.0) (2018-12-25)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.3.0...2.4.0)
 
 **Fixed bugs:**
@@ -31,6 +139,7 @@
 - release 2.3.1 [\#521](https://github.com/voxpupuli/modulesync_config/pull/521) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [2.3.0](https://github.com/voxpupuli/modulesync_config/tree/2.3.0) (2018-12-01)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.2.0...2.3.0)
 
 **Merged pull requests:**
@@ -48,6 +157,7 @@
 - release 2.2.0 [\#509](https://github.com/voxpupuli/modulesync_config/pull/509) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [2.2.0](https://github.com/voxpupuli/modulesync_config/tree/2.2.0) (2018-10-13)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.1.0...2.2.0)
 
 **Merged pull requests:**
@@ -58,6 +168,7 @@
 - Add puppet-trusted\_ca [\#504](https://github.com/voxpupuli/modulesync_config/pull/504) ([ekohl](https://github.com/ekohl))
 
 ## [2.1.0](https://github.com/voxpupuli/modulesync_config/tree/2.1.0) (2018-10-06)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.0.0...2.1.0)
 
 **Merged pull requests:**
@@ -72,6 +183,7 @@
 - add puppet-puppet\_webhook [\#487](https://github.com/voxpupuli/modulesync_config/pull/487) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [2.0.0](https://github.com/voxpupuli/modulesync_config/tree/2.0.0) (2018-09-05)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.6...2.0.0)
 
 **Merged pull requests:**
@@ -83,6 +195,7 @@
 - Added validate to list of bundle prepush rake targets [\#492](https://github.com/voxpupuli/modulesync_config/pull/492) ([danquack](https://github.com/danquack))
 
 ## [1.9.6](https://github.com/voxpupuli/modulesync_config/tree/1.9.6) (2018-08-12)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.5...1.9.6)
 
 **Merged pull requests:**
@@ -90,6 +203,7 @@
 - add support for latest beaker versions [\#491](https://github.com/voxpupuli/modulesync_config/pull/491) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.9.5](https://github.com/voxpupuli/modulesync_config/tree/1.9.5) (2018-08-10)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.4...1.9.5)
 
 **Closed issues:**
@@ -103,6 +217,7 @@
 - Fix how to use it exec msync documentation [\#488](https://github.com/voxpupuli/modulesync_config/pull/488) ([tuxmea](https://github.com/tuxmea))
 
 ## [1.9.4](https://github.com/voxpupuli/modulesync_config/tree/1.9.4) (2018-07-24)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.3...1.9.4)
 
 **Fixed bugs:**
@@ -116,6 +231,7 @@
 - add puppet-gitlab-ci-runner to managed modules [\#482](https://github.com/voxpupuli/modulesync_config/pull/482) ([LongLiveCHIEF](https://github.com/LongLiveCHIEF))
 
 ## [1.9.3](https://github.com/voxpupuli/modulesync_config/tree/1.9.3) (2018-07-14)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.2...1.9.3)
 
 **Closed issues:**
@@ -133,6 +249,7 @@
 - restructure content fetching from github [\#465](https://github.com/voxpupuli/modulesync_config/pull/465) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.9.2](https://github.com/voxpupuli/modulesync_config/tree/1.9.2) (2018-05-20)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.1...1.9.2)
 
 **Fixed bugs:**
@@ -157,6 +274,7 @@
 - Use beaker-hostgenerator for docker acceptance tests [\#453](https://github.com/voxpupuli/modulesync_config/pull/453) ([ekohl](https://github.com/ekohl))
 
 ## [1.9.1](https://github.com/voxpupuli/modulesync_config/tree/1.9.1) (2018-04-10)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.9.0...1.9.1)
 
 **Merged pull requests:**
@@ -168,6 +286,7 @@
 - enhance contrib section for gem handling [\#455](https://github.com/voxpupuli/modulesync_config/pull/455) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.9.0](https://github.com/voxpupuli/modulesync_config/tree/1.9.0) (2018-03-24)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.8.1...1.9.0)
 
 **Merged pull requests:**
@@ -175,6 +294,7 @@
 - Update PR Template to help autoclose issues. [\#457](https://github.com/voxpupuli/modulesync_config/pull/457) ([TraGicCode](https://github.com/TraGicCode))
 
 ## [1.8.1](https://github.com/voxpupuli/modulesync_config/tree/1.8.1) (2018-03-19)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.8.0...1.8.1)
 
 **Fixed bugs:**
@@ -189,6 +309,7 @@
 - add ferm to list of managed modules [\#452](https://github.com/voxpupuli/modulesync_config/pull/452) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.8.0](https://github.com/voxpupuli/modulesync_config/tree/1.8.0) (2018-02-13)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.7.0...1.8.0)
 
 **Merged pull requests:**
@@ -200,6 +321,7 @@
 - Update Fedora 25, 26 and add Fedora 27 nodeset [\#421](https://github.com/voxpupuli/modulesync_config/pull/421) ([vinzent](https://github.com/vinzent))
 
 ## [1.7.0](https://github.com/voxpupuli/modulesync_config/tree/1.7.0) (2018-01-25)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.6.0...1.7.0)
 
 **Merged pull requests:**
@@ -210,6 +332,7 @@
 - fetch changelog generator from git [\#441](https://github.com/voxpupuli/modulesync_config/pull/441) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.6.0](https://github.com/voxpupuli/modulesync_config/tree/1.6.0) (2018-01-03)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.5.0...1.6.0)
 
 **Implemented enhancements:**
@@ -239,6 +362,7 @@
 - Added developer handy lint:auto\_correct rake task [\#418](https://github.com/voxpupuli/modulesync_config/pull/418) ([TraGicCode](https://github.com/TraGicCode))
 
 ## [1.5.0](https://github.com/voxpupuli/modulesync_config/tree/1.5.0) (2017-11-16)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.4.1...1.5.0)
 
 **Merged pull requests:**
@@ -251,6 +375,7 @@
 - add PARALLEL\_TEST\_PROCESSORS=16 for puppet4 [\#411](https://github.com/voxpupuli/modulesync_config/pull/411) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.4.1](https://github.com/voxpupuli/modulesync_config/tree/1.4.1) (2017-11-02)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.4.0...1.4.1)
 
 **Merged pull requests:**
@@ -260,6 +385,7 @@
 - require at least beaker 3.9.0 [\#408](https://github.com/voxpupuli/modulesync_config/pull/408) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [1.4.0](https://github.com/voxpupuli/modulesync_config/tree/1.4.0) (2017-10-26)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.3.0...1.4.0)
 
 **Merged pull requests:**
@@ -272,6 +398,7 @@
 - add puppet-mongodb [\#400](https://github.com/voxpupuli/modulesync_config/pull/400) ([wyardley](https://github.com/wyardley))
 
 ## [1.3.0](https://github.com/voxpupuli/modulesync_config/tree/1.3.0) (2017-10-19)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.2.0...1.3.0)
 
 **Closed issues:**
@@ -292,6 +419,7 @@
 - Add debian9 docker nodeset [\#388](https://github.com/voxpupuli/modulesync_config/pull/388) ([ekohl](https://github.com/ekohl))
 
 ## [1.2.0](https://github.com/voxpupuli/modulesync_config/tree/1.2.0) (2017-09-29)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.1.0...1.2.0)
 
 **Closed issues:**
@@ -313,6 +441,7 @@
 - fix indentation back \(per @tampakrap\) [\#377](https://github.com/voxpupuli/modulesync_config/pull/377) ([wyardley](https://github.com/wyardley))
 
 ## [1.1.0](https://github.com/voxpupuli/modulesync_config/tree/1.1.0) (2017-09-15)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.0.0...1.1.0)
 
 **Merged pull requests:**
@@ -330,6 +459,7 @@
 - Add 'wont-fix' to config.exclude\_labels [\#365](https://github.com/voxpupuli/modulesync_config/pull/365) ([alexjfisher](https://github.com/alexjfisher))
 
 ## [1.0.0](https://github.com/voxpupuli/modulesync_config/tree/1.0.0) (2017-08-01)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.21.3...1.0.0)
 
 **Implemented enhancements:**
@@ -355,6 +485,7 @@
 - add logrotate module [\#352](https://github.com/voxpupuli/modulesync_config/pull/352) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.21.3](https://github.com/voxpupuli/modulesync_config/tree/0.21.3) (2017-05-23)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.21.2...0.21.3)
 
 **Merged pull requests:**
@@ -366,6 +497,7 @@
 - Run a noop run on travis to check syntax and diffs [\#344](https://github.com/voxpupuli/modulesync_config/pull/344) ([DavidS](https://github.com/DavidS))
 
 ## [0.21.2](https://github.com/voxpupuli/modulesync_config/tree/0.21.2) (2017-05-10)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.21.1...0.21.2)
 
 **Closed issues:**
@@ -375,19 +507,21 @@
 **Merged pull requests:**
 
 - Disable RSpec/BeforeAfterAll for acceptance tests [\#347](https://github.com/voxpupuli/modulesync_config/pull/347) ([alexjfisher](https://github.com/alexjfisher))
+- Rename all templates to `.erb` [\#342](https://github.com/voxpupuli/modulesync_config/pull/342) ([DavidS](https://github.com/DavidS))
 
 ## [0.21.1](https://github.com/voxpupuli/modulesync_config/tree/0.21.1) (2017-05-04)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.21.0...0.21.1)
 
 **Merged pull requests:**
 
-- Rename all templates to `.erb` [\#342](https://github.com/voxpupuli/modulesync_config/pull/342) ([DavidS](https://github.com/DavidS))
 - disable Style/IndentHeredoc [\#341](https://github.com/voxpupuli/modulesync_config/pull/341) ([bastelfreak](https://github.com/bastelfreak))
 - add puppet-prometheus\_reporter [\#340](https://github.com/voxpupuli/modulesync_config/pull/340) ([bastelfreak](https://github.com/bastelfreak))
 - add locales to the ubuntu16.04 docker image [\#339](https://github.com/voxpupuli/modulesync_config/pull/339) ([bastelfreak](https://github.com/bastelfreak))
 - Ignore Guardfile when doing rubocop checks [\#338](https://github.com/voxpupuli/modulesync_config/pull/338) ([juniorsysadmin](https://github.com/juniorsysadmin))
 
 ## [0.21.0](https://github.com/voxpupuli/modulesync_config/tree/0.21.0) (2017-04-15)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.20.1...0.21.0)
 
 **Implemented enhancements:**
@@ -413,6 +547,7 @@
 - bump rubocop 0.47.0-\>0.47.1 [\#326](https://github.com/voxpupuli/modulesync_config/pull/326) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.20.1](https://github.com/voxpupuli/modulesync_config/tree/0.20.1) (2017-03-10)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.20.0...0.20.1)
 
 **Merged pull requests:**
@@ -424,31 +559,35 @@
 - Add augeasproviders\_core setup to spec\_helper.rb [\#321](https://github.com/voxpupuli/modulesync_config/pull/321) ([domcleal](https://github.com/domcleal))
 
 ## [0.20.0](https://github.com/voxpupuli/modulesync_config/tree/0.20.0) (2017-02-11)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.11...0.20.0)
+
+**Breaking changes:**
+
+- Remove puppetlabs centos 6 and 7 beaker nodesets [\#312](https://github.com/voxpupuli/modulesync_config/pull/312) ([vinzent](https://github.com/vinzent))
 
 **Merged pull requests:**
 
 - fix module publishing [\#320](https://github.com/voxpupuli/modulesync_config/pull/320) ([mcrauwel](https://github.com/mcrauwel))
 - bump puppetlabs\_spec\_helper + add needed dependency [\#319](https://github.com/voxpupuli/modulesync_config/pull/319) ([bastelfreak](https://github.com/bastelfreak))
-
-## [0.16.11](https://github.com/voxpupuli/modulesync_config/tree/0.16.11) (2017-02-10)
-[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.10...0.16.11)
-
-**Merged pull requests:**
-
 - Add RBENV's .ruby-version file to gitignore [\#318](https://github.com/voxpupuli/modulesync_config/pull/318) ([dhollinger](https://github.com/dhollinger))
 - Enable Hiera in spec tests [\#317](https://github.com/voxpupuli/modulesync_config/pull/317) ([lamawithonel](https://github.com/lamawithonel))
 - Update Fedora 25 beaker nodeset [\#316](https://github.com/voxpupuli/modulesync_config/pull/316) ([vinzent](https://github.com/vinzent))
 - Add more beaker ec2 nodesets [\#315](https://github.com/voxpupuli/modulesync_config/pull/315) ([vinzent](https://github.com/vinzent))
 - Add Amazon Linux EC2 example beaker nodeset [\#314](https://github.com/voxpupuli/modulesync_config/pull/314) ([vinzent](https://github.com/vinzent))
 - Add CentOS 6 and 7 beaker nodesets [\#313](https://github.com/voxpupuli/modulesync_config/pull/313) ([vinzent](https://github.com/vinzent))
-- Remove puppetlabs centos 6 and 7 beaker nodesets [\#312](https://github.com/voxpupuli/modulesync_config/pull/312) ([vinzent](https://github.com/vinzent))
 - Serverspec port tests require the ss utility on centos 7 [\#311](https://github.com/voxpupuli/modulesync_config/pull/311) ([vinzent](https://github.com/vinzent))
 
+## [0.16.11](https://github.com/voxpupuli/modulesync_config/tree/0.16.11) (2017-02-10)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.10...0.16.11)
+
 ## [0.16.10](https://github.com/voxpupuli/modulesync_config/tree/0.16.10) (2017-01-18)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.19.3...0.16.10)
 
 ## [0.19.3](https://github.com/voxpupuli/modulesync_config/tree/0.19.3) (2017-01-18)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.9...0.19.3)
 
 **Merged pull requests:**
@@ -456,9 +595,11 @@
 - disable YAMLLoad on rubocop [\#309](https://github.com/voxpupuli/modulesync_config/pull/309) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.16.9](https://github.com/voxpupuli/modulesync_config/tree/0.16.9) (2017-01-18)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.19.2...0.16.9)
 
 ## [0.19.2](https://github.com/voxpupuli/modulesync_config/tree/0.19.2) (2017-01-18)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.8...0.19.2)
 
 **Merged pull requests:**
@@ -466,9 +607,11 @@
 - Revert to using YAML.load, disable relevant cop [\#308](https://github.com/voxpupuli/modulesync_config/pull/308) ([rnelson0](https://github.com/rnelson0))
 
 ## [0.16.8](https://github.com/voxpupuli/modulesync_config/tree/0.16.8) (2017-01-17)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.19.1...0.16.8)
 
 ## [0.19.1](https://github.com/voxpupuli/modulesync_config/tree/0.19.1) (2017-01-17)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.19.0...0.19.1)
 
 **Fixed bugs:**
@@ -482,6 +625,7 @@
 - Changes for puppet strings [\#304](https://github.com/voxpupuli/modulesync_config/pull/304) ([vinzent](https://github.com/vinzent))
 
 ## [0.19.0](https://github.com/voxpupuli/modulesync_config/tree/0.19.0) (2017-01-12)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.18.0...0.19.0)
 
 **Merged pull requests:**
@@ -490,6 +634,7 @@
 - Gitignore rubymine files [\#302](https://github.com/voxpupuli/modulesync_config/pull/302) ([dhollinger](https://github.com/dhollinger))
 
 ## [0.18.0](https://github.com/voxpupuli/modulesync_config/tree/0.18.0) (2017-01-12)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.17.0...0.18.0)
 
 **Merged pull requests:**
@@ -499,7 +644,12 @@
 - remove duplicate modulesync from Gemfile [\#299](https://github.com/voxpupuli/modulesync_config/pull/299) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.17.0](https://github.com/voxpupuli/modulesync_config/tree/0.17.0) (2017-01-11)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.7...0.17.0)
+
+**Breaking changes:**
+
+- BREAKING: Drop legacy Puppet3/Ruby/ubuntu12.04 in travis [\#297](https://github.com/voxpupuli/modulesync_config/pull/297) ([bastelfreak](https://github.com/bastelfreak))
 
 **Closed issues:**
 
@@ -508,9 +658,9 @@
 **Merged pull requests:**
 
 - add autofs to managed\_modules.yml [\#298](https://github.com/voxpupuli/modulesync_config/pull/298) ([bastelfreak](https://github.com/bastelfreak))
-- BREAKING: Drop legacy Puppet3/Ruby/ubuntu12.04 in travis [\#297](https://github.com/voxpupuli/modulesync_config/pull/297) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.16.7](https://github.com/voxpupuli/modulesync_config/tree/0.16.7) (2017-01-04)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.6...0.16.7)
 
 **Merged pull requests:**
@@ -522,6 +672,7 @@
 - Bump ruby 2.4 to release version [\#290](https://github.com/voxpupuli/modulesync_config/pull/290) ([juniorsysadmin](https://github.com/juniorsysadmin))
 
 ## [0.16.6](https://github.com/voxpupuli/modulesync_config/tree/0.16.6) (2016-12-23)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.5...0.16.6)
 
 **Closed issues:**
@@ -533,6 +684,7 @@
 - build on master and tags [\#289](https://github.com/voxpupuli/modulesync_config/pull/289) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.16.5](https://github.com/voxpupuli/modulesync_config/tree/0.16.5) (2016-12-21)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.4...0.16.5)
 
 **Merged pull requests:**
@@ -540,6 +692,7 @@
 - Add new puppet-report\_hipchat module [\#286](https://github.com/voxpupuli/modulesync_config/pull/286) ([bbriggs](https://github.com/bbriggs))
 
 ## [0.16.4](https://github.com/voxpupuli/modulesync_config/tree/0.16.4) (2016-12-21)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.3...0.16.4)
 
 **Closed issues:**
@@ -558,6 +711,7 @@
 - Only CI test 'push' builds on master. [\#277](https://github.com/voxpupuli/modulesync_config/pull/277) ([rnelson0](https://github.com/rnelson0))
 
 ## [0.16.3](https://github.com/voxpupuli/modulesync_config/tree/0.16.3) (2016-11-30)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.2...0.16.3)
 
 **Closed issues:**
@@ -570,6 +724,7 @@
 - Rename sslcert to sslcertificate [\#273](https://github.com/voxpupuli/modulesync_config/pull/273) ([alexjfisher](https://github.com/alexjfisher))
 
 ## [0.16.2](https://github.com/voxpupuli/modulesync_config/tree/0.16.2) (2016-11-24)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.1...0.16.2)
 
 **Merged pull requests:**
@@ -577,9 +732,11 @@
 - Improve simplecov [\#272](https://github.com/voxpupuli/modulesync_config/pull/272) ([alexjfisher](https://github.com/alexjfisher))
 
 ## [0.16.1](https://github.com/voxpupuli/modulesync_config/tree/0.16.1) (2016-11-23)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.16.0...0.16.1)
 
 ## [0.16.0](https://github.com/voxpupuli/modulesync_config/tree/0.16.0) (2016-11-23)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.15.0...0.16.0)
 
 **Merged pull requests:**
@@ -597,6 +754,7 @@
 - Fix several markdown issues [\#251](https://github.com/voxpupuli/modulesync_config/pull/251) ([dhoppe](https://github.com/dhoppe))
 
 ## [0.15.0](https://github.com/voxpupuli/modulesync_config/tree/0.15.0) (2016-11-02)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.14.1...0.15.0)
 
 **Closed issues:**
@@ -613,6 +771,7 @@
 - Fix Docker nodesets [\#250](https://github.com/voxpupuli/modulesync_config/pull/250) ([dhoppe](https://github.com/dhoppe))
 
 ## [0.14.1](https://github.com/voxpupuli/modulesync_config/tree/0.14.1) (2016-10-20)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.14.0...0.14.1)
 
 **Merged pull requests:**
@@ -621,6 +780,7 @@
 - Add docker nodesets for acceptance tests [\#248](https://github.com/voxpupuli/modulesync_config/pull/248) ([Yuav](https://github.com/Yuav))
 
 ## [0.14.0](https://github.com/voxpupuli/modulesync_config/tree/0.14.0) (2016-10-20)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.13.3...0.14.0)
 
 **Merged pull requests:**
@@ -629,6 +789,7 @@
 - Add support for explicit mock frameworks [\#246](https://github.com/voxpupuli/modulesync_config/pull/246) ([dhoppe](https://github.com/dhoppe))
 
 ## [0.13.3](https://github.com/voxpupuli/modulesync_config/tree/0.13.3) (2016-10-19)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.13.2...0.13.3)
 
 **Merged pull requests:**
@@ -636,6 +797,7 @@
 - require at least mocha 1.2.1 [\#245](https://github.com/voxpupuli/modulesync_config/pull/245) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.13.2](https://github.com/voxpupuli/modulesync_config/tree/0.13.2) (2016-10-19)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.13.1...0.13.2)
 
 **Merged pull requests:**
@@ -646,6 +808,7 @@
 - Add support for additional parameters [\#241](https://github.com/voxpupuli/modulesync_config/pull/241) ([dhoppe](https://github.com/dhoppe))
 
 ## [0.13.1](https://github.com/voxpupuli/modulesync_config/tree/0.13.1) (2016-10-11)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.13.0...0.13.1)
 
 **Merged pull requests:**
@@ -653,6 +816,7 @@
 - pin mocha to 1.1.0 [\#240](https://github.com/voxpupuli/modulesync_config/pull/240) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.13.0](https://github.com/voxpupuli/modulesync_config/tree/0.13.0) (2016-10-11)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.8...0.13.0)
 
 **Merged pull requests:**
@@ -667,6 +831,7 @@
 - add a note about rubocop checks, since they're enforced [\#232](https://github.com/voxpupuli/modulesync_config/pull/232) ([wyardley](https://github.com/wyardley))
 
 ## [0.12.8](https://github.com/voxpupuli/modulesync_config/tree/0.12.8) (2016-09-26)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.7...0.12.8)
 
 **Merged pull requests:**
@@ -674,6 +839,7 @@
 - Add sftp\_jail to managed\_modules [\#231](https://github.com/voxpupuli/modulesync_config/pull/231) ([bbriggs](https://github.com/bbriggs))
 
 ## [0.12.7](https://github.com/voxpupuli/modulesync_config/tree/0.12.7) (2016-09-19)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.6...0.12.7)
 
 **Closed issues:**
@@ -686,6 +852,7 @@
 - Don't run rubocop on files in `files` [\#225](https://github.com/voxpupuli/modulesync_config/pull/225) ([alexjfisher](https://github.com/alexjfisher))
 
 ## [0.12.6](https://github.com/voxpupuli/modulesync_config/tree/0.12.6) (2016-09-13)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.5...0.12.6)
 
 **Merged pull requests:**
@@ -694,6 +861,7 @@
 - add php module [\#223](https://github.com/voxpupuli/modulesync_config/pull/223) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.12.5](https://github.com/voxpupuli/modulesync_config/tree/0.12.5) (2016-08-31)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.4...0.12.5)
 
 **Merged pull requests:**
@@ -702,6 +870,7 @@
 - update our docs [\#221](https://github.com/voxpupuli/modulesync_config/pull/221) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.12.4](https://github.com/voxpupuli/modulesync_config/tree/0.12.4) (2016-08-30)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.3...0.12.4)
 
 **Merged pull requests:**
@@ -714,6 +883,7 @@
 - Use puppetlabs\_spec\_helper's release\_checks task [\#210](https://github.com/voxpupuli/modulesync_config/pull/210) ([3flex](https://github.com/3flex))
 
 ## [0.12.3](https://github.com/voxpupuli/modulesync_config/tree/0.12.3) (2016-08-24)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.2...0.12.3)
 
 **Merged pull requests:**
@@ -722,6 +892,7 @@
 - Add puppet-fetchcrl module [\#213](https://github.com/voxpupuli/modulesync_config/pull/213) ([traylenator](https://github.com/traylenator))
 
 ## [0.12.2](https://github.com/voxpupuli/modulesync_config/tree/0.12.2) (2016-08-19)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.1...0.12.2)
 
 **Merged pull requests:**
@@ -730,6 +901,7 @@
 - add splunk [\#211](https://github.com/voxpupuli/modulesync_config/pull/211) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.12.1](https://github.com/voxpupuli/modulesync_config/tree/0.12.1) (2016-08-15)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.12.0...0.12.1)
 
 **Merged pull requests:**
@@ -737,6 +909,7 @@
 - \(Re-\)enable Style/ClosingParenthesisIndentation cop [\#209](https://github.com/voxpupuli/modulesync_config/pull/209) ([3flex](https://github.com/3flex))
 
 ## [0.12.0](https://github.com/voxpupuli/modulesync_config/tree/0.12.0) (2016-08-08)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.11.1...0.12.0)
 
 **Merged pull requests:**
@@ -747,6 +920,7 @@
 - 0.11.1 got released [\#205](https://github.com/voxpupuli/modulesync_config/pull/205) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.11.1](https://github.com/voxpupuli/modulesync_config/tree/0.11.1) (2016-08-02)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.11.0...0.11.1)
 
 **Merged pull requests:**
@@ -754,6 +928,7 @@
 - fix rubocop-rspec [\#204](https://github.com/voxpupuli/modulesync_config/pull/204) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.11.0](https://github.com/voxpupuli/modulesync_config/tree/0.11.0) (2016-07-29)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.10.1...0.11.0)
 
 **Closed issues:**
@@ -766,9 +941,11 @@
 - Enhance fact mocking [\#202](https://github.com/voxpupuli/modulesync_config/pull/202) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.10.1](https://github.com/voxpupuli/modulesync_config/tree/0.10.1) (2016-07-29)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.10.0...0.10.1)
 
 ## [0.10.0](https://github.com/voxpupuli/modulesync_config/tree/0.10.0) (2016-07-29)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.9.1...0.10.0)
 
 **Merged pull requests:**
@@ -780,6 +957,7 @@
 - bump version on HEAD [\#194](https://github.com/voxpupuli/modulesync_config/pull/194) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.9.1](https://github.com/voxpupuli/modulesync_config/tree/0.9.1) (2016-07-08)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.9.0...0.9.1)
 
 **Implemented enhancements:**
@@ -792,6 +970,7 @@
 - rename cop to PreferredHashMethods [\#188](https://github.com/voxpupuli/modulesync_config/pull/188) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.9.0](https://github.com/voxpupuli/modulesync_config/tree/0.9.0) (2016-06-29)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.8.1...0.9.0)
 
 **Closed issues:**
@@ -804,6 +983,7 @@
 - Fix github templates [\#185](https://github.com/voxpupuli/modulesync_config/pull/185) ([roidelapluie](https://github.com/roidelapluie))
 
 ## [0.8.1](https://github.com/voxpupuli/modulesync_config/tree/0.8.1) (2016-06-24)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.8.0...0.8.1)
 
 **Merged pull requests:**
@@ -812,6 +992,7 @@
 - Add missing modules [\#181](https://github.com/voxpupuli/modulesync_config/pull/181) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.8.0](https://github.com/voxpupuli/modulesync_config/tree/0.8.0) (2016-06-13)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.7.0...0.8.0)
 
 **Fixed bugs:**
@@ -839,6 +1020,7 @@
 - Default facts [\#169](https://github.com/voxpupuli/modulesync_config/pull/169) ([jyaworski](https://github.com/jyaworski))
 
 ## [0.7.0](https://github.com/voxpupuli/modulesync_config/tree/0.7.0) (2016-05-26)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.6.4...0.7.0)
 
 **Merged pull requests:**
@@ -848,6 +1030,7 @@
 - add puppet-download\_file [\#164](https://github.com/voxpupuli/modulesync_config/pull/164) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.6.4](https://github.com/voxpupuli/modulesync_config/tree/0.6.4) (2016-05-26)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.6.3...0.6.4)
 
 **Merged pull requests:**
@@ -855,6 +1038,7 @@
 - Bump rrspec [\#163](https://github.com/voxpupuli/modulesync_config/pull/163) ([jyaworski](https://github.com/jyaworski))
 
 ## [0.6.3](https://github.com/voxpupuli/modulesync_config/tree/0.6.3) (2016-05-21)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.6.2...0.6.3)
 
 **Merged pull requests:**
@@ -863,6 +1047,7 @@
 - add missing modules [\#161](https://github.com/voxpupuli/modulesync_config/pull/161) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [0.6.2](https://github.com/voxpupuli/modulesync_config/tree/0.6.2) (2016-05-20)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.6.1...0.6.2)
 
 **Closed issues:**
@@ -877,6 +1062,7 @@
 - Add vim modelines to everything. Fixes \#150 [\#156](https://github.com/voxpupuli/modulesync_config/pull/156) ([jyaworski](https://github.com/jyaworski))
 
 ## [0.6.1](https://github.com/voxpupuli/modulesync_config/tree/0.6.1) (2016-05-10)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.6.0...0.6.1)
 
 **Closed issues:**
@@ -897,6 +1083,7 @@
 - Allow rake target 'test' to be configured [\#132](https://github.com/voxpupuli/modulesync_config/pull/132) ([traylenator](https://github.com/traylenator))
 
 ## [0.6.0](https://github.com/voxpupuli/modulesync_config/tree/0.6.0) (2016-05-06)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.5.1...0.6.0)
 
 **Closed issues:**
@@ -912,6 +1099,7 @@
 - Add -D -E -S as rubocop options [\#137](https://github.com/voxpupuli/modulesync_config/pull/137) ([jyaworski](https://github.com/jyaworski))
 
 ## [0.5.1](https://github.com/voxpupuli/modulesync_config/tree/0.5.1) (2016-04-28)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.5.0...0.5.1)
 
 **Merged pull requests:**
@@ -920,6 +1108,7 @@
 - Add module puppet-etherpad [\#133](https://github.com/voxpupuli/modulesync_config/pull/133) ([dhoppe](https://github.com/dhoppe))
 
 ## [0.5.0](https://github.com/voxpupuli/modulesync_config/tree/0.5.0) (2016-04-26)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.4.0...0.5.0)
 
 **Closed issues:**
@@ -949,6 +1138,7 @@
 - Add puppet-windows\_power [\#109](https://github.com/voxpupuli/modulesync_config/pull/109) ([juniorsysadmin](https://github.com/juniorsysadmin))
 
 ## [0.4.0](https://github.com/voxpupuli/modulesync_config/tree/0.4.0) (2016-03-29)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.3.0...0.4.0)
 
 **Merged pull requests:**
@@ -958,6 +1148,7 @@
 - Bump rubocop version to 0.39 [\#104](https://github.com/voxpupuli/modulesync_config/pull/104) ([jyaworski](https://github.com/jyaworski))
 
 ## [0.3.0](https://github.com/voxpupuli/modulesync_config/tree/0.3.0) (2016-03-24)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.2.0...0.3.0)
 
 **Closed issues:**
@@ -978,6 +1169,7 @@
 - Update rubocop to 0.38.0, unpin rake [\#94](https://github.com/voxpupuli/modulesync_config/pull/94) ([jyaworski](https://github.com/jyaworski))
 
 ## [0.2.0](https://github.com/voxpupuli/modulesync_config/tree/0.2.0) (2016-03-09)
+
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0.1.0...0.2.0)
 
 **Closed issues:**
@@ -991,6 +1183,9 @@
 - Add puppet-sslcert to managed\_modules.yml [\#91](https://github.com/voxpupuli/modulesync_config/pull/91) ([juniorsysadmin](https://github.com/juniorsysadmin))
 
 ## [0.1.0](https://github.com/voxpupuli/modulesync_config/tree/0.1.0) (2016-03-02)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/0727714d059e6622809568b395d1445f61676d7f...0.1.0)
+
 **Implemented enhancements:**
 
 - update our rspec configs based on puppetlabs' template [\#16](https://github.com/voxpupuli/modulesync_config/issues/16)
@@ -1079,4 +1274,4 @@
 
 
 
-\* *This Change Log was automatically generated by [github_changelog_generator](https://github.com/skywinder/Github-Changelog-Generator)*
+\* *This Changelog was automatically generated by [github_changelog_generator](https://github.com/github-changelog-generator/github-changelog-generator)*

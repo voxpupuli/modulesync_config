@@ -1,5 +1,5 @@
 ---
-dist: xenial
+dist: bionic
 language: ruby
 cache: bundler
 <%- if !@configs.nil? and @configs.has_key?('addons') -%>
@@ -21,7 +21,9 @@ addons:
   <%- end -%>
 <%- end -%>
 before_install:
-  - ./prepare_travis.sh
+  - gem update --system
+  - gem update bundler
+  - bundle --version
 script:
   - 'bundle exec rake $CHECK'
 matrix:
@@ -70,15 +72,19 @@ branches:
   - master
   - /^v\d/
 notifications:
-  email: false
+  email: <%= @configs['email'] %>
+<% if @configs['irc'] -%>
   irc:
-    on_success: always
-    on_failure: always
+    on_success: <%= @configs['irc']['on_success'] %>
+    on_failure: <%= @configs['irc']['on_failure'] %>
     channels:
-      - "chat.freenode.org#voxpupuli-notifications"
+<%   @configs['irc']['channels'].each do |channel| -%>
+      - "<%= channel %>"
+<%   end -%>
+<% end -%>
 deploy:
   provider: puppetforge
-  user: puppet
+  user: <%= @configs['user'] %>
   password:
     secure: "<%= @configs['secure'] -%>"
   on:

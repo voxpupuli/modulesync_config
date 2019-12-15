@@ -5,10 +5,13 @@
 - puppet-appd_db_agent
 - puppet-archive
 - puppet-autofs
+- puppet-bareos
 - puppet-bird
 - puppet-boolean
+- puppet-borg
 - puppet-caddy
 - puppet-cassandra
+- puppet-check_mk
 - puppet-collectd
 - puppet-community_kickstarts
 - puppet-confluence
@@ -26,6 +29,7 @@
 - puppet-ferm
 - puppet-fetchcrl
 - puppet-filemapper
+- puppet-firewalld
 - puppet-gerrit
 - puppet-ghost
 - puppet-git_resource
@@ -38,11 +42,13 @@
 - puppet-healthcheck
 - puppet-hiera
 - puppet-homeassistant
+- puppet-ipset
 - puppet-jenkins
 - puppet-jenkins_job_builder
 - puppet-jira
 - puppet-jolokia
 - puppet-kafka
+- puppet-keepalived
 - puppet-letsencrypt
 - puppet-lldpd
 - puppet-logrotate
@@ -51,6 +57,7 @@
 - puppet-metche
 - puppet-minecraft
 - puppet-misp
+- puppet-mlocate
 - puppet-module
 - puppet-mongodb
 - puppet-mrepo
@@ -63,6 +70,7 @@
 - puppet-nrpe
 - puppet-nscd
 - puppet-nsclient
+- puppet-openvmtools
 - puppet-openvpn
 - puppet-php
 - puppet-posix_acl
@@ -74,6 +82,7 @@
 - puppet-python
 - puppet-r10k
 - puppet-rabbitmq
+- puppet-redis
 - puppet-report_hipchat
 - puppet-rhsm
 - puppet-rsyslog
@@ -82,6 +91,7 @@
 - puppet-sftp_jail
 - puppet-smokeping
 - puppet-snmp
+- puppet-spiped
 - puppet-splunk
 - puppet-squid
 - puppet-ssh_keygen
@@ -107,6 +117,7 @@
 - puppet-windows_power
 - puppet-windowsfeature
 - puppet-winlogbeat
+- puppet-xmlfile
 - puppet-yum
 - puppet-zabbix
 - puppet-zypprepo
