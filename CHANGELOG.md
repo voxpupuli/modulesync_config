@@ -1,11 +1,45 @@
 # Changelog
 
+## [2.9.0](https://github.com/voxpupuli/modulesync_config/tree/2.9.0) (2019-12-06)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.8.0...2.9.0)
+
+**Implemented enhancements:**
+
+- add ability to see puppet debug log via env [\#587](https://github.com/voxpupuli/modulesync_config/pull/587) ([foxxx0](https://github.com/foxxx0))
+
+**Fixed bugs:**
+
+- mock facter version based on puppet version [\#600](https://github.com/voxpupuli/modulesync_config/pull/600) ([bastelfreak](https://github.com/bastelfreak))
+- default to 3.9.0, not 3.9 facter version [\#598](https://github.com/voxpupuli/modulesync_config/pull/598) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Remove parameter facterdb\_facts\_version [\#608](https://github.com/voxpupuli/modulesync_config/pull/608) ([dhoppe](https://github.com/dhoppe))
+- enhance CONTRIBUTING.md [\#607](https://github.com/voxpupuli/modulesync_config/pull/607) ([bastelfreak](https://github.com/bastelfreak))
+- Update the EOL distributions [\#606](https://github.com/voxpupuli/modulesync_config/pull/606) ([ekohl](https://github.com/ekohl))
+- Work with Modulesync 1.0.0 [\#605](https://github.com/voxpupuli/modulesync_config/pull/605) ([ekohl](https://github.com/ekohl))
+- Fix a typo in CONTRIBUTING.md [\#603](https://github.com/voxpupuli/modulesync_config/pull/603) ([ekohl](https://github.com/ekohl))
+- Use voxpupuli fixes branch of GHCG [\#602](https://github.com/voxpupuli/modulesync_config/pull/602) ([ekohl](https://github.com/ekohl))
+- Add puppet-lint-anchor-check [\#601](https://github.com/voxpupuli/modulesync_config/pull/601) ([alexjfisher](https://github.com/alexjfisher))
+- drop BEAKER\_IS\_PE=no beaker argument [\#599](https://github.com/voxpupuli/modulesync_config/pull/599) ([bastelfreak](https://github.com/bastelfreak))
+- docker: add missing `rake` subcommand [\#597](https://github.com/voxpupuli/modulesync_config/pull/597) ([bastelfreak](https://github.com/bastelfreak))
+- Fix-up CHANGELOG.md line endings [\#595](https://github.com/voxpupuli/modulesync_config/pull/595) ([alexjfisher](https://github.com/alexjfisher))
+- Add new module puppet-mlocate [\#594](https://github.com/voxpupuli/modulesync_config/pull/594) ([traylenator](https://github.com/traylenator))
+- travis: switch base OS from xenial to bionic [\#591](https://github.com/voxpupuli/modulesync_config/pull/591) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-ipset module [\#590](https://github.com/voxpupuli/modulesync_config/pull/590) ([bastelfreak](https://github.com/bastelfreak))
+- Use 3.9 as default facterlib facts version [\#589](https://github.com/voxpupuli/modulesync_config/pull/589) ([alexjfisher](https://github.com/alexjfisher))
+- Add `firewalld` to list of managed modules [\#588](https://github.com/voxpupuli/modulesync_config/pull/588) ([alexjfisher](https://github.com/alexjfisher))
+- add puppet-lint-legacy\_fact-check plugin [\#586](https://github.com/voxpupuli/modulesync_config/pull/586) ([bastelfreak](https://github.com/bastelfreak))
+- use latest voxpupuli-release gem [\#585](https://github.com/voxpupuli/modulesync_config/pull/585) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [2.8.0](https://github.com/voxpupuli/modulesync_config/tree/2.8.0) (2019-07-27)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.7.0...2.8.0)
 
 **Merged pull requests:**
 
+- release 2.8.0 [\#584](https://github.com/voxpupuli/modulesync_config/pull/584) ([bastelfreak](https://github.com/bastelfreak))
 - Filters out the configured bundler path [\#583](https://github.com/voxpupuli/modulesync_config/pull/583) ([logicminds](https://github.com/logicminds))
 - add puppet-lint-topscope-variable-check gem [\#582](https://github.com/voxpupuli/modulesync_config/pull/582) ([bastelfreak](https://github.com/bastelfreak))
 - Add Debian 10 to list of supported OSes [\#581](https://github.com/voxpupuli/modulesync_config/pull/581) ([bastelfreak](https://github.com/bastelfreak))
@@ -28,6 +62,7 @@
 
 **Merged pull requests:**
 
+- release 2.7.0 [\#567](https://github.com/voxpupuli/modulesync_config/pull/567) ([bastelfreak](https://github.com/bastelfreak))
 - disable acceptance tests on puppet6-nightly [\#566](https://github.com/voxpupuli/modulesync_config/pull/566) ([bastelfreak](https://github.com/bastelfreak))
 - Clean Rakefile.erb [\#565](https://github.com/voxpupuli/modulesync_config/pull/565) ([ekohl](https://github.com/ekohl))
 - Add default mocking framework [\#563](https://github.com/voxpupuli/modulesync_config/pull/563) ([dhoppe](https://github.com/dhoppe))
@@ -75,6 +110,7 @@
 
 **Merged pull requests:**
 
+- release 2.5.0 [\#539](https://github.com/voxpupuli/modulesync_config/pull/539) ([bastelfreak](https://github.com/bastelfreak))
 - remove leading spaces before Fixes [\#538](https://github.com/voxpupuli/modulesync_config/pull/538) ([Dan33l](https://github.com/Dan33l))
 - Move travis setup script into a subdirectory [\#537](https://github.com/voxpupuli/modulesync_config/pull/537) ([ekohl](https://github.com/ekohl))
 - switch to latest ruby for puppet6 + support latest bundler release [\#535](https://github.com/voxpupuli/modulesync_config/pull/535) ([bastelfreak](https://github.com/bastelfreak))
@@ -471,6 +507,7 @@
 **Merged pull requests:**
 
 - Disable RSpec/BeforeAfterAll for acceptance tests [\#347](https://github.com/voxpupuli/modulesync_config/pull/347) ([alexjfisher](https://github.com/alexjfisher))
+- Rename all templates to `.erb` [\#342](https://github.com/voxpupuli/modulesync_config/pull/342) ([DavidS](https://github.com/DavidS))
 
 ## [0.21.1](https://github.com/voxpupuli/modulesync_config/tree/0.21.1) (2017-05-04)
 
@@ -478,7 +515,6 @@
 
 **Merged pull requests:**
 
-- Rename all templates to `.erb` [\#342](https://github.com/voxpupuli/modulesync_config/pull/342) ([DavidS](https://github.com/DavidS))
 - disable Style/IndentHeredoc [\#341](https://github.com/voxpupuli/modulesync_config/pull/341) ([bastelfreak](https://github.com/bastelfreak))
 - add puppet-prometheus\_reporter [\#340](https://github.com/voxpupuli/modulesync_config/pull/340) ([bastelfreak](https://github.com/bastelfreak))
 - add locales to the ubuntu16.04 docker image [\#339](https://github.com/voxpupuli/modulesync_config/pull/339) ([bastelfreak](https://github.com/bastelfreak))

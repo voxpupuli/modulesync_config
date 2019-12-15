@@ -57,6 +57,7 @@
 - puppet-metche
 - puppet-minecraft
 - puppet-misp
+- puppet-mlocate
 - puppet-module
 - puppet-mongodb
 - puppet-mrepo

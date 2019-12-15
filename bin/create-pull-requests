@@ -7,8 +7,8 @@ if ! which hub > /dev/null ; then
 fi
 
 version=$(git describe)
-for module in modules/* ; do
+for module in modules/*/* ; do
   (cd "$module"
-  hub pull-request -m "modulesync ${version}"
+  hub pull-request -m "modulesync ${version}" -l "modulesync"
   )
 done
