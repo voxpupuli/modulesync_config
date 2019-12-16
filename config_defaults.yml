@@ -139,5 +139,7 @@ spec/acceptance/nodesets/windows-2012R2-serverstandard-x64.yml:
   delete: true
 spec/spec_helper.rb:
   mock_with: ':rspec'
+CONTRIBUTING.md:
+  delete: true
 ...
 # vim: syntax=yaml
