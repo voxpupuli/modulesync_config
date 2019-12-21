@@ -1,5 +1,34 @@
 # Changelog
 
+## [2.10.0](https://github.com/voxpupuli/modulesync_config/tree/2.10.0) (2019-12-22)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.9.0...2.10.0)
+
+**Implemented enhancements:**
+
+- delete CONTRIBUTING.md in all repos [\#619](https://github.com/voxpupuli/modulesync_config/pull/619) ([bastelfreak](https://github.com/bastelfreak))
+- Rubocop: set target version to 2.1 [\#618](https://github.com/voxpupuli/modulesync_config/pull/618) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Skip command gem update [\#617](https://github.com/voxpupuli/modulesync_config/pull/617) ([dhoppe](https://github.com/dhoppe))
+- Fix Travis CI pipeline [\#616](https://github.com/voxpupuli/modulesync_config/pull/616) ([dhoppe](https://github.com/dhoppe))
+
+**Closed issues:**
+
+- Further tidy up `exclude` and `ignore` paths in Rakefile [\#592](https://github.com/voxpupuli/modulesync_config/issues/592)
+
+**Merged pull requests:**
+
+- add rkhunter to managed modules [\#620](https://github.com/voxpupuli/modulesync_config/pull/620) ([bastelfreak](https://github.com/bastelfreak))
+- Delete EOL windows nodesets [\#615](https://github.com/voxpupuli/modulesync_config/pull/615) ([bastelfreak](https://github.com/bastelfreak))
+- Use same ruby version as latest Puppet 6 \(2.5.7\) [\#614](https://github.com/voxpupuli/modulesync_config/pull/614) ([ghoneycutt](https://github.com/ghoneycutt))
+- Drop EOL Windows server 2008/2012 nodesets [\#613](https://github.com/voxpupuli/modulesync_config/pull/613) ([bastelfreak](https://github.com/bastelfreak))
+- Update lint config. [\#611](https://github.com/voxpupuli/modulesync_config/pull/611) ([ekohl](https://github.com/ekohl))
+- Add label to pull request [\#610](https://github.com/voxpupuli/modulesync_config/pull/610) ([dhoppe](https://github.com/dhoppe))
+- travis: send notifications to voxpupu.li [\#596](https://github.com/voxpupuli/modulesync_config/pull/596) ([bastelfreak](https://github.com/bastelfreak))
+- bump rubocop target version 1.9-\>2.4 [\#536](https://github.com/voxpupuli/modulesync_config/pull/536) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [2.9.0](https://github.com/voxpupuli/modulesync_config/tree/2.9.0) (2019-12-06)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.8.0...2.9.0)
@@ -15,6 +44,7 @@
 
 **Merged pull requests:**
 
+- release 2.9.0 [\#609](https://github.com/voxpupuli/modulesync_config/pull/609) ([dhoppe](https://github.com/dhoppe))
 - Remove parameter facterdb\_facts\_version [\#608](https://github.com/voxpupuli/modulesync_config/pull/608) ([dhoppe](https://github.com/dhoppe))
 - enhance CONTRIBUTING.md [\#607](https://github.com/voxpupuli/modulesync_config/pull/607) ([bastelfreak](https://github.com/bastelfreak))
 - Update the EOL distributions [\#606](https://github.com/voxpupuli/modulesync_config/pull/606) ([ekohl](https://github.com/ekohl))
@@ -507,7 +537,6 @@
 **Merged pull requests:**
 
 - Disable RSpec/BeforeAfterAll for acceptance tests [\#347](https://github.com/voxpupuli/modulesync_config/pull/347) ([alexjfisher](https://github.com/alexjfisher))
-- Rename all templates to `.erb` [\#342](https://github.com/voxpupuli/modulesync_config/pull/342) ([DavidS](https://github.com/DavidS))
 
 ## [0.21.1](https://github.com/voxpupuli/modulesync_config/tree/0.21.1) (2017-05-04)
 
@@ -515,6 +544,7 @@
 
 **Merged pull requests:**
 
+- Rename all templates to `.erb` [\#342](https://github.com/voxpupuli/modulesync_config/pull/342) ([DavidS](https://github.com/DavidS))
 - disable Style/IndentHeredoc [\#341](https://github.com/voxpupuli/modulesync_config/pull/341) ([bastelfreak](https://github.com/bastelfreak))
 - add puppet-prometheus\_reporter [\#340](https://github.com/voxpupuli/modulesync_config/pull/340) ([bastelfreak](https://github.com/bastelfreak))
 - add locales to the ubuntu16.04 docker image [\#339](https://github.com/voxpupuli/modulesync_config/pull/339) ([bastelfreak](https://github.com/bastelfreak))
