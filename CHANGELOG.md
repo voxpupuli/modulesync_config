@@ -1,6 +1,18 @@
 # Changelog
 
-## [2.10.0](https://github.com/voxpupuli/modulesync_config/tree/2.10.0) (2019-12-22)
+## [2.10.1](https://github.com/voxpupuli/modulesync_config/tree/2.10.1) (2019-12-31)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.10.0...2.10.1)
+
+**Fixed bugs:**
+
+- fix facter version for local Puppet 6 tests [\#622](https://github.com/voxpupuli/modulesync_config/pull/622) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- release 2.10.0 [\#621](https://github.com/voxpupuli/modulesync_config/pull/621) ([bastelfreak](https://github.com/bastelfreak))
+
+## [2.10.0](https://github.com/voxpupuli/modulesync_config/tree/2.10.0) (2019-12-21)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.9.0...2.10.0)
 
