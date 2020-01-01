@@ -32,13 +32,14 @@
 - puppet-firewalld
 - puppet-gerrit
 - puppet-ghost
-- puppet-git_resource
 - puppet-gitlab
 - puppet-gitlab_ci_runner
+- puppet-git_resource
 - puppet-gluster
 - puppet-googleauthenticator
 - puppet-grafana
 - puppet-graphite_powershell
+- puppet-groupmembership
 - puppet-healthcheck
 - puppet-hiera
 - puppet-homeassistant
