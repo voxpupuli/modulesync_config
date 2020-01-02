@@ -44,6 +44,7 @@
 - puppet-hiera
 - puppet-homeassistant
 - puppet-ipset
+- puppet-jail
 - puppet-jenkins
 - puppet-jenkins_job_builder
 - puppet-jira
@@ -72,15 +73,19 @@
 - puppet-nrpe
 - puppet-nscd
 - puppet-nsclient
+- puppet-nsd
 - puppet-openvmtools
 - puppet-openvpn
 - puppet-php
+- puppet-pkgng
 - puppet-posix_acl
+- puppet-poudriere
 - puppet-prometheus
 - puppet-prometheus_reporter
 - puppet-proxysql
 - puppet-puppetboard
 - puppet-puppetserver
+- puppet-pxe
 - puppet-python
 - puppet-r10k
 - puppet-rabbitmq
@@ -109,6 +114,7 @@
 - puppet-trusted_ca
 - puppet-tvheadend
 - puppet-unattended_upgrades
+- puppet-unbound
 - puppet-vault_lookup
 - puppet-virtualbox
 - puppet-visualstudio
@@ -116,9 +122,9 @@
 - puppet-windows_autoupdate
 - puppet-windows_env
 - puppet-windows_eventlog
+- puppet-windowsfeature
 - puppet-windows_firewall
 - puppet-windows_power
-- puppet-windowsfeature
 - puppet-winlogbeat
 - puppet-xmlfile
 - puppet-yum
