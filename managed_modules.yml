@@ -22,6 +22,7 @@
 - puppet-download_file
 - puppet-drbd
 - puppet-dropbear
+- puppet-earlyoom
 - puppet-etherpad
 - puppet-extlib
 - puppet-facette
