@@ -1,5 +1,8 @@
 ---
 .travis.yml:
+  before_install:
+    - yes | gem update --system
+    - bundle --version
   docker_sets:
   docker_defaults:
     # values will replace @@SET@@ with the docker_sets' value
