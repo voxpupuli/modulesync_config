@@ -20,9 +20,12 @@ addons:
     <%- end -%>
   <%- end -%>
 <%- end -%>
+<%- if @configs['before_install'] -%>
 before_install:
-  - yes | gem update --system
-  - bundle --version
+<% @configs['before_install'].each do |bi| -%>
+  - <%= bi %>
+<% end -%>
+<%- end -%>
 script:
   - 'bundle exec rake $CHECK'
 matrix:
