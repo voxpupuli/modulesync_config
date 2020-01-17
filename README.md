@@ -9,7 +9,7 @@ Module sync configurations for Vox Pupuli Modules
 ```bash
 git clone https://github.com/voxpupuli/modulesync_config.git
 cd modulesync_config
-git checkout $(git tag --list | tail -n 1) # checkout latest tag
+git checkout $(git tag --list | sort -V | tail -n1) # checkout latest tag
 bundle install
 bundle exec msync help update
 ```
