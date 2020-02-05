@@ -1,5 +1,32 @@
 # Changelog
 
+## [2.11.0](https://github.com/voxpupuli/modulesync_config/tree/2.11.0) (2020-02-05)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.10.1...2.11.0)
+
+**Implemented enhancements:**
+
+- Add ed25519 gem [\#627](https://github.com/voxpupuli/modulesync_config/pull/627) ([octomike](https://github.com/octomike))
+
+**Fixed bugs:**
+
+- Fix command to get latest tag [\#633](https://github.com/voxpupuli/modulesync_config/pull/633) ([dhoppe](https://github.com/dhoppe))
+
+**Closed issues:**
+
+- Implement topscope-variable-check [\#486](https://github.com/voxpupuli/modulesync_config/issues/486)
+
+**Merged pull requests:**
+
+- Revert rubocop TargetRubyVersion back to 1.9 [\#634](https://github.com/voxpupuli/modulesync_config/pull/634) ([alexjfisher](https://github.com/alexjfisher))
+- Make 'before\_install' in .travis.yml configurable [\#631](https://github.com/voxpupuli/modulesync_config/pull/631) ([baurmatt](https://github.com/baurmatt))
+- State centos8 as working docker container [\#630](https://github.com/voxpupuli/modulesync_config/pull/630) ([traylenator](https://github.com/traylenator))
+- Add module puppet-earlyoom [\#629](https://github.com/voxpupuli/modulesync_config/pull/629) ([dhoppe](https://github.com/dhoppe))
+- update CONTRIBUTING.md with current beaker nodesets [\#628](https://github.com/voxpupuli/modulesync_config/pull/628) ([bastelfreak](https://github.com/bastelfreak))
+- Include more modules for management [\#626](https://github.com/voxpupuli/modulesync_config/pull/626) ([xaque208](https://github.com/xaque208))
+- Include group-ldapquery for management [\#625](https://github.com/voxpupuli/modulesync_config/pull/625) ([xaque208](https://github.com/xaque208))
+- Include group-membership for management [\#624](https://github.com/voxpupuli/modulesync_config/pull/624) ([xaque208](https://github.com/xaque208))
+
 ## [2.10.1](https://github.com/voxpupuli/modulesync_config/tree/2.10.1) (2019-12-31)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.10.0...2.10.1)
@@ -10,6 +37,7 @@
 
 **Merged pull requests:**
 
+- release 2.10.1 [\#623](https://github.com/voxpupuli/modulesync_config/pull/623) ([bastelfreak](https://github.com/bastelfreak))
 - release 2.10.0 [\#621](https://github.com/voxpupuli/modulesync_config/pull/621) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [2.10.0](https://github.com/voxpupuli/modulesync_config/tree/2.10.0) (2019-12-21)
