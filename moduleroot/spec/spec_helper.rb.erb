@@ -11,8 +11,14 @@ RSpec.configure do |c|
   c.hiera_config = <%= @configs['hiera_config'] %>
   <%- end -%>
 end
-
 <%- end -%>
+
+# puppetlabs_spec_helper will set up coverage if the env variable is set.
+# We want to do this if lib exists and it hasn't been explicitly set.
+if Dir.exist?(File.expand_path('../../lib', __FILE__))
+  ENV['COVERAGE'] ||= 'yes'
+end
+
 require 'voxpupuli/test/spec_helper'
 
 if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
@@ -38,23 +44,6 @@ puts 'augeasproviders: setting Puppet[:libdir] to work around broken type autolo
 Puppet[:libdir] = "#{Puppet[:modulepath]}/augeasproviders_core/lib"
 
 <% end -%>
-if Dir.exist?(File.expand_path('../../lib', __FILE__))
-  require 'coveralls'
-  require 'simplecov'
-  require 'simplecov-console'
-  SimpleCov.formatters = [
-    SimpleCov::Formatter::HTMLFormatter,
-    SimpleCov::Formatter::Console
-  ]
-  SimpleCov.start do
-    track_files 'lib/**/*.rb'
-    add_filter '/spec'
-    add_filter '/vendor'
-    add_filter '/.vendor'
-    add_filter Bundler.configured_bundle_path.path
-  end
-end
-
 <%- [@configs['spec_overrides']].flatten.compact.each do |line| -%>
 
 <%= line %>
