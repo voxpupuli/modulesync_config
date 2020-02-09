@@ -55,7 +55,6 @@ Gemfile:
       - gem: puppet-lint-legacy_facts-check
       - gem: puppet-lint-anchor-check
       - gem: metadata-json-lint
-      - gem: redcarpet
       - gem: rubocop
         version: '~> 0.49.1'
       - gem: rubocop-rspec
