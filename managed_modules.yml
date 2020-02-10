@@ -96,6 +96,7 @@
 - puppet-rkhunter
 - puppet-rsyslog
 - puppet-rundeck
+- puppet-rvm
 - puppet-selinux
 - puppet-sftp_jail
 - puppet-smokeping
