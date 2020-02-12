@@ -84,6 +84,7 @@
 - puppet-prometheus
 - puppet-prometheus_reporter
 - puppet-proxysql
+- puppet-prosody
 - puppet-puppetboard
 - puppet-puppetserver
 - puppet-pxe
