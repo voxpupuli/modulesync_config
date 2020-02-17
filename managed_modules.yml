@@ -23,6 +23,7 @@
 - puppet-drbd
 - puppet-dropbear
 - puppet-earlyoom
+- puppet-epel
 - puppet-etherpad
 - puppet-extlib
 - puppet-facette
