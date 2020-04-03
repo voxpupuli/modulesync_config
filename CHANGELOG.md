@@ -1,5 +1,21 @@
 # Changelog
 
+## [2.12.0](https://github.com/voxpupuli/modulesync_config/tree/2.12.0) (2020-04-03)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.11.0...2.12.0)
+
+**Fixed bugs:**
+
+- Ignore trailing whitespace in CHANGELOG.md since it is auto generated. [\#641](https://github.com/voxpupuli/modulesync_config/pull/641) ([ghoneycutt](https://github.com/ghoneycutt))
+
+**Merged pull requests:**
+
+- README section helpful for external contributors [\#643](https://github.com/voxpupuli/modulesync_config/pull/643) ([trevor-vaughan](https://github.com/trevor-vaughan))
+- Add puppet-epel [\#642](https://github.com/voxpupuli/modulesync_config/pull/642) ([alexjfisher](https://github.com/alexjfisher))
+- Add module puppet-prosody [\#640](https://github.com/voxpupuli/modulesync_config/pull/640) ([mmoll](https://github.com/mmoll))
+- Drop `redcarpet` gem [\#638](https://github.com/voxpupuli/modulesync_config/pull/638) ([bastelfreak](https://github.com/bastelfreak))
+- Use voxpupuli-test [\#612](https://github.com/voxpupuli/modulesync_config/pull/612) ([ekohl](https://github.com/ekohl))
+
 ## [2.11.0](https://github.com/voxpupuli/modulesync_config/tree/2.11.0) (2020-02-05)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.10.1...2.11.0)
@@ -18,6 +34,7 @@
 
 **Merged pull requests:**
 
+- release 2.11.0 [\#636](https://github.com/voxpupuli/modulesync_config/pull/636) ([bastelfreak](https://github.com/bastelfreak))
 - Revert rubocop TargetRubyVersion back to 1.9 [\#634](https://github.com/voxpupuli/modulesync_config/pull/634) ([alexjfisher](https://github.com/alexjfisher))
 - Make 'before\_install' in .travis.yml configurable [\#631](https://github.com/voxpupuli/modulesync_config/pull/631) ([baurmatt](https://github.com/baurmatt))
 - State centos8 as working docker container [\#630](https://github.com/voxpupuli/modulesync_config/pull/630) ([traylenator](https://github.com/traylenator))
