@@ -1,15 +1,10 @@
 # This file is managed via modulesync
 # https://github.com/voxpupuli/modulesync
 # https://github.com/voxpupuli/modulesync_config
-<%- if @configs['mock_with'] || @configs['hiera_config'] -%>
+<%- if @configs['mock_with'] -%>
 
 RSpec.configure do |c|
-  <%- if @configs['mock_with'] -%>
   c.mock_with <%= @configs['mock_with'] %>
-  <%- end -%>
-  <%- if @configs['hiera_config'] -%>
-  c.hiera_config = <%= @configs['hiera_config'] %>
-  <%- end -%>
 end
 <%- end -%>
 
@@ -18,6 +13,12 @@ end
 ENV['COVERAGE'] ||= 'yes' if Dir.exist?(File.expand_path('../../lib', __FILE__))
 
 require 'voxpupuli/test/spec_helper'
+<%- if @configs['hiera_config'] -%>
+
+RSpec.configure do |c|
+  c.hiera_config = <%= @configs['hiera_config'] %>
+end
+<%- end -%>
 
 if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
   facts = YAML.load(File.read(File.join(__dir__, 'default_module_facts.yml')))
