@@ -1,0 +1,71 @@
+#!/usr/bin/env python3
+import os
+from argparse import ArgumentParser
+
+from github import Github
+
+
+def verify_pull_request(title, pull_request, required_status, merge):
+    description = f"{title} ({pull_request.title})"
+
+    if pull_request.merged:
+        print(f"{description} is merged")
+        return
+
+    if not pull_request.state == 'open':
+        print(f"{description} is {pull_request.state}")
+        return
+
+    if not pull_request.mergeable:
+        print(f"{description} is not mergeable")
+        return
+
+    reviews = pull_request.get_reviews()
+    if not [review for review in reviews if review.state != 'PENDING']:
+        print(f"{description} has no reviews")
+        return
+
+    commit = list(pull_request.get_commits())[-1]
+    combined_status = commit.get_combined_status()
+    if combined_status.state != 'success':
+        print(f"{description} CI status is {combined_status.state}")
+        return
+
+    if required_status:
+        # Travis can not a required status on GH because that blocks other workflows
+        if not any(status.context == required_status for status in combined_status.statuses):
+            print(f"{description} does not have a status from {required_status}")
+            return
+
+    approved = all(review.state in ('APPROVED', 'PENDING') for review in reviews)
+    if not approved:
+        print(f"{description} is not approved")
+        return
+
+    if merge:
+        print(f"Merging {description}")
+        pull_request.merge()
+    else:
+        print(f"{description} can be merged")
+
+
+def main():
+    parser = ArgumentParser()
+    parser.add_argument('pull_request', nargs='+', help="Pass in PRs as user/repo#pr")
+    parser.add_argument('--required-status', help='Require this status context',
+                        default='continuous-integration/travis-ci/pr')
+    parser.add_argument('--merge', help='Actually merge', action='store_true')
+
+    args = parser.parse_args()
+
+    github = Github(os.environ.get('GITHUB_TOKEN'))
+
+    for pull_request in args.pull_request:
+        name, number = pull_request.split('#', 1)
+        repo = github.get_repo(name)
+        pull = repo.get_pull(int(number))
+        verify_pull_request(pull_request, pull, args.required_status, args.merge)
+
+
+if __name__ == '__main__':
+    main()
