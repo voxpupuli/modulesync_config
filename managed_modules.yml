@@ -12,6 +12,7 @@
 - puppet-caddy
 - puppet-cassandra
 - puppet-check_mk
+- puppet-chrony
 - puppet-collectd
 - puppet-community_kickstarts
 - puppet-confluence
