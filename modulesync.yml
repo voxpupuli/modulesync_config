@@ -1,7 +1,7 @@
 ---
 git_base: 'git@github.com:'
-namespace: voxpupuli
+namespace: xaque208
 branch: modulesync
-message: "Update from voxpupuli modulesync_config"
+message: "Update from xaque208 modulesync_config"
 ...
 # vim: syntax=yaml
