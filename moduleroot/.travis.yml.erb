@@ -1,4 +1,5 @@
 ---
+os: linux
 dist: bionic
 language: ruby
 cache: bundler
@@ -28,7 +29,7 @@ before_install:
 <%- end -%>
 script:
   - 'bundle exec rake $CHECK'
-matrix:
+jobs:
   fast_finish: true
   include:
 <% @configs['includes'].each do |include| -%>
@@ -87,7 +88,7 @@ notifications:
 <% end -%>
 deploy:
   provider: puppetforge
-  user: <%= @configs['user'] %>
+  username: <%= @configs['user'] %>
   password:
     secure: "<%= @configs['secure'] -%>"
   on:
