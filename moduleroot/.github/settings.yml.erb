@@ -1,0 +1,52 @@
+<% if @configs['repository'] -%>
+repository:
+<%   @configs['repository'].each do |key, value| -%>
+  <%= key %>: <%= value %>
+<%   end -%>
+<% end -%>
+<% if @configs['labels'] -%>
+
+labels:
+<%   @configs['labels'].each do |label| -%>
+  - name: <%= label['name'] %>
+<%     label.keys.each do |k| -%>
+<%       next if k == 'name' -%>
+    <%= k %>: <%= label[k] %>
+<%     end -%>
+<%   end -%>
+<% end -%>
+<% if @configs['branches'] -%>
+
+branches:
+<%   @configs['branches'].each do |branch| -%>
+  - name: <%= branch['name'] %>
+<%     branch.keys.each do |k| -%>
+<%       next if k == 'name' -%>
+    <%= k %>:
+<%       if branch[k].has_key?('required_pull_request_reviews') -%>
+<%         if branch[k]['required_pull_request_reviews'].nil? -%>
+      required_pull_request_reviews: null
+<%         else -%>
+      required_pull_request_reviews:
+        required_approving_review_count: <%= branch[k]['required_pull_request_reviews']['required_approving_review_count'] %>
+        dismiss_stale_reviews: <%= branch[k]['required_pull_request_reviews']['dismiss_stale_reviews'] %>
+        require_code_owner_reviews: <%= branch[k]['required_pull_request_reviews']['require_code_owner_reviews'] %>
+<%         end -%>
+<%       end -%>
+<%       if branch[k].has_key?('required_status_checks') -%>
+      required_status_checks:
+        strict: <%= branch[k]['required_status_checks']['strict'] %>
+        contexts: <%= branch[k]['required_status_checks']['contexts'] %>
+<%       end -%>
+<%       if branch[k].has_key?('enforce_admins') -%>
+      enforce_admins: <%= branch[k]['enforce_admins'] || 'null' %>
+<%       end -%>
+<%       if branch[k].has_key?('restrictions') -%>
+      restrictions: <%= branch[k]['restrictions'] || 'null' %>
+<%       end -%>
+<%       if branch[k].has_key?('required_signatures') -%>
+      required_signatures: <%= branch[k]['required_signatures'] %>
+<%       end -%>
+<%     end -%>
+<%   end -%>
+<% end -%>
