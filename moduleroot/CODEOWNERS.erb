@@ -1,5 +1,3 @@
-<% if @configs['permissions'] -%>
-<%   @configs['permissions'].each do |key, value| -%>
+<% @configs['permissions']&.each do |key, value| -%>
 <%= key %> <%= value %>
-<%   end -%>
 <% end -%>
