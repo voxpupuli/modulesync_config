@@ -1,1 +1,1 @@
-<%= @configs.slice('repository', 'labels', 'milestones', 'collaborators', 'teams', 'branches').to_yaml %>
+<%= @configs.slice('repository', 'labels', 'milestones', 'collaborators', 'teams', 'branches').to_yaml.gsub(/undef/, 'null') %>
