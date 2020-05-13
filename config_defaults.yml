@@ -70,6 +70,10 @@
     channels:
     - "chat.freenode.org#voxpupuli-notifications"
   user: puppet
+CODEOWNERS:
+  permissions:
+    '.github/settings.yml': '@voxpupuli/project-maintainers'
+    '*': '@voxpupuli/collaborators'
 Gemfile:
   required:
     ':test':

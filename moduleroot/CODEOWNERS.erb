@@ -1,3 +1,5 @@
-.github/settings.yml @voxpupuli/project-maintainers
-
-* @voxpupuli/collaborators
+<% if @configs['permissions'] -%>
+<%   @configs['permissions'].each do |key, value| -%>
+<%= key %> <%= value %>
+<%   end -%>
+<% end -%>
