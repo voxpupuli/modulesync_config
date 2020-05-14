@@ -73,7 +73,6 @@
 CODEOWNERS:
   permissions:
     '.github/settings.yml': '@voxpupuli/project-maintainers'
-    '*': '@voxpupuli/collaborators'
 Gemfile:
   required:
     ':test':
