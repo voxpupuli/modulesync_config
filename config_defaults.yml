@@ -31,6 +31,8 @@
         enforce_admins: undef
         restrictions: undef
         required_signatures: true
+        allow_force_pushes: true
+        allow_deletions: true
 .travis.yml:
   before_install:
     - yes | gem update --system
