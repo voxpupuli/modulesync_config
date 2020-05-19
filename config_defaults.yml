@@ -20,7 +20,7 @@
           contexts: []
         enforce_admins: undef
         restrictions: undef
-        required_signatures: true
+        required_signatures: false
     - name: modulesync
       protection:
         required_pull_request_reviews: undef
