@@ -25,6 +25,7 @@
 - puppet-dropbear
 - puppet-earlyoom
 - puppet-epel
+- puppet-erlang
 - puppet-etherpad
 - puppet-extlib
 - puppet-facette
