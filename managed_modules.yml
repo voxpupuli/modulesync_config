@@ -90,7 +90,6 @@
 - puppet-proxysql
 - puppet-prosody
 - puppet-puppetboard
-- puppet-puppetserver
 - puppet-pxe
 - puppet-python
 - puppet-r10k
