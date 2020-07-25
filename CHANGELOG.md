@@ -1,5 +1,32 @@
 # Changelog
 
+## [3.0.0](https://github.com/voxpupuli/modulesync_config/tree/3.0.0) (2020-07-25)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.12.0...3.0.0)
+
+**Implemented enhancements:**
+
+- require voxpupuli-test 2 or newer [\#660](https://github.com/voxpupuli/modulesync_config/pull/660) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-erlang [\#657](https://github.com/voxpupuli/modulesync_config/pull/657) ([nmaludy](https://github.com/nmaludy))
+- add puppet-mosquitto [\#656](https://github.com/voxpupuli/modulesync_config/pull/656) ([bastelfreak](https://github.com/bastelfreak))
+- Update travis config to please linter [\#653](https://github.com/voxpupuli/modulesync_config/pull/653) ([bastelfreak](https://github.com/bastelfreak))
+- Update voxpupuli-test 1.0.0-\>1.4.0 [\#652](https://github.com/voxpupuli/modulesync_config/pull/652) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Fix typo in version comparison [\#651](https://github.com/voxpupuli/modulesync_config/pull/651) ([bastelfreak](https://github.com/bastelfreak))
+- Set hiera\_config after including the spec helper [\#646](https://github.com/voxpupuli/modulesync_config/pull/646) ([ekohl](https://github.com/ekohl))
+
+**Merged pull requests:**
+
+- Remove puppet-puppetserver from modules [\#659](https://github.com/voxpupuli/modulesync_config/pull/659) ([ekohl](https://github.com/ekohl))
+- Disable RSpec/MultipleExpectations [\#658](https://github.com/voxpupuli/modulesync_config/pull/658) ([alexjfisher](https://github.com/alexjfisher))
+- Add SECURITY.md [\#655](https://github.com/voxpupuli/modulesync_config/pull/655) ([roidelapluie](https://github.com/roidelapluie))
+- Add puppet-chrony to modulesync\_config [\#650](https://github.com/voxpupuli/modulesync_config/pull/650) ([dhoppe](https://github.com/dhoppe))
+- spec\_helper\_acceptance: Add helper to load custom files [\#649](https://github.com/voxpupuli/modulesync_config/pull/649) ([bastelfreak](https://github.com/bastelfreak))
+- Add a script for bulk merging PRs [\#648](https://github.com/voxpupuli/modulesync_config/pull/648) ([ekohl](https://github.com/ekohl))
+- Use voxpupuli-acceptance [\#647](https://github.com/voxpupuli/modulesync_config/pull/647) ([ekohl](https://github.com/ekohl))
+
 ## [2.12.0](https://github.com/voxpupuli/modulesync_config/tree/2.12.0) (2020-04-03)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.11.0...2.12.0)
@@ -10,10 +37,12 @@
 
 **Merged pull requests:**
 
+- Release 2.12.0 [\#645](https://github.com/voxpupuli/modulesync_config/pull/645) ([dhoppe](https://github.com/dhoppe))
 - README section helpful for external contributors [\#643](https://github.com/voxpupuli/modulesync_config/pull/643) ([trevor-vaughan](https://github.com/trevor-vaughan))
 - Add puppet-epel [\#642](https://github.com/voxpupuli/modulesync_config/pull/642) ([alexjfisher](https://github.com/alexjfisher))
 - Add module puppet-prosody [\#640](https://github.com/voxpupuli/modulesync_config/pull/640) ([mmoll](https://github.com/mmoll))
 - Drop `redcarpet` gem [\#638](https://github.com/voxpupuli/modulesync_config/pull/638) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-rvm to modulesync\_config [\#637](https://github.com/voxpupuli/modulesync_config/pull/637) ([bastelfreak](https://github.com/bastelfreak))
 - Use voxpupuli-test [\#612](https://github.com/voxpupuli/modulesync_config/pull/612) ([ekohl](https://github.com/ekohl))
 
 ## [2.11.0](https://github.com/voxpupuli/modulesync_config/tree/2.11.0) (2020-02-05)
@@ -253,13 +282,6 @@
 - Update metadata cleaning script [\#507](https://github.com/voxpupuli/modulesync_config/pull/507) ([ekohl](https://github.com/ekohl))
 - Various improvements to the spec\_helper [\#505](https://github.com/voxpupuli/modulesync_config/pull/505) ([ekohl](https://github.com/ekohl))
 - Add puppet-trusted\_ca [\#504](https://github.com/voxpupuli/modulesync_config/pull/504) ([ekohl](https://github.com/ekohl))
-
-## [2.1.0](https://github.com/voxpupuli/modulesync_config/tree/2.1.0) (2018-10-06)
-
-[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.0.0...2.1.0)
-
-**Merged pull requests:**
-
 - add links to styleguides in the CONTRIBUTING.md [\#503](https://github.com/voxpupuli/modulesync_config/pull/503) ([bastelfreak](https://github.com/bastelfreak))
 - dont require PSH 2.11.X but 2.11 or newer [\#502](https://github.com/voxpupuli/modulesync_config/pull/502) ([bastelfreak](https://github.com/bastelfreak))
 - puppet6 is released, use it with acceptance tests [\#501](https://github.com/voxpupuli/modulesync_config/pull/501) ([Dan33l](https://github.com/Dan33l))
@@ -268,6 +290,10 @@
 - add Puppet 6 support [\#498](https://github.com/voxpupuli/modulesync_config/pull/498) ([bastelfreak](https://github.com/bastelfreak))
 - Add puppet-snmp to managed modules. [\#497](https://github.com/voxpupuli/modulesync_config/pull/497) ([razorsedge](https://github.com/razorsedge))
 - add puppet-puppet\_webhook [\#487](https://github.com/voxpupuli/modulesync_config/pull/487) ([bastelfreak](https://github.com/bastelfreak))
+
+## [2.1.0](https://github.com/voxpupuli/modulesync_config/tree/2.1.0) (2018-10-06)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.0.0...2.1.0)
 
 ## [2.0.0](https://github.com/voxpupuli/modulesync_config/tree/2.0.0) (2018-09-05)
 
@@ -288,6 +314,9 @@
 **Merged pull requests:**
 
 - add support for latest beaker versions [\#491](https://github.com/voxpupuli/modulesync_config/pull/491) ([bastelfreak](https://github.com/bastelfreak))
+- Fix beaker dependencies [\#490](https://github.com/voxpupuli/modulesync_config/pull/490) ([bastelfreak](https://github.com/bastelfreak))
+- install rbnacl 4.x or later [\#489](https://github.com/voxpupuli/modulesync_config/pull/489) ([bastelfreak](https://github.com/bastelfreak))
+- Fix how to use it exec msync documentation [\#488](https://github.com/voxpupuli/modulesync_config/pull/488) ([tuxmea](https://github.com/tuxmea))
 
 ## [1.9.5](https://github.com/voxpupuli/modulesync_config/tree/1.9.5) (2018-08-10)
 
@@ -296,12 +325,6 @@
 **Closed issues:**
 
 - Run acceptance tests on puppet5 \(instead of puppet4\) [\#476](https://github.com/voxpupuli/modulesync_config/issues/476)
-
-**Merged pull requests:**
-
-- Fix beaker dependencies [\#490](https://github.com/voxpupuli/modulesync_config/pull/490) ([bastelfreak](https://github.com/bastelfreak))
-- install rbnacl 4.x or later [\#489](https://github.com/voxpupuli/modulesync_config/pull/489) ([bastelfreak](https://github.com/bastelfreak))
-- Fix how to use it exec msync documentation [\#488](https://github.com/voxpupuli/modulesync_config/pull/488) ([tuxmea](https://github.com/tuxmea))
 
 ## [1.9.4](https://github.com/voxpupuli/modulesync_config/tree/1.9.4) (2018-07-24)
 
@@ -483,17 +506,6 @@
 - remove two more modules \(bacula and report\_hipchat\) from management [\#402](https://github.com/voxpupuli/modulesync_config/pull/402) ([wyardley](https://github.com/wyardley))
 - Disable EndOfLine Rubocop Rule [\#401](https://github.com/voxpupuli/modulesync_config/pull/401) ([TraGicCode](https://github.com/TraGicCode))
 - add puppet-mongodb [\#400](https://github.com/voxpupuli/modulesync_config/pull/400) ([wyardley](https://github.com/wyardley))
-
-## [1.3.0](https://github.com/voxpupuli/modulesync_config/tree/1.3.0) (2017-10-19)
-
-[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.2.0...1.3.0)
-
-**Closed issues:**
-
-- Move gems not needed for `test` rake task to new group. [\#195](https://github.com/voxpupuli/modulesync_config/issues/195)
-
-**Merged pull requests:**
-
 - bump puppetlabs\_spec\_helper 2.2.0-\>2.4.0 [\#399](https://github.com/voxpupuli/modulesync_config/pull/399) ([bastelfreak](https://github.com/bastelfreak))
 - remove puppet-nagios\_providers [\#398](https://github.com/voxpupuli/modulesync_config/pull/398) ([wyardley](https://github.com/wyardley))
 - puppet-iis is deprecated; don't manage it [\#396](https://github.com/voxpupuli/modulesync_config/pull/396) ([wyardley](https://github.com/wyardley))
@@ -504,6 +516,14 @@
 - Disable RSpec/FilePath [\#390](https://github.com/voxpupuli/modulesync_config/pull/390) ([wyardley](https://github.com/wyardley))
 - bump to latest ruby in test matrix [\#389](https://github.com/voxpupuli/modulesync_config/pull/389) ([bastelfreak](https://github.com/bastelfreak))
 - Add debian9 docker nodeset [\#388](https://github.com/voxpupuli/modulesync_config/pull/388) ([ekohl](https://github.com/ekohl))
+
+## [1.3.0](https://github.com/voxpupuli/modulesync_config/tree/1.3.0) (2017-10-19)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/1.2.0...1.3.0)
+
+**Closed issues:**
+
+- Move gems not needed for `test` rake task to new group. [\#195](https://github.com/voxpupuli/modulesync_config/issues/195)
 
 ## [1.2.0](https://github.com/voxpupuli/modulesync_config/tree/1.2.0) (2017-09-29)
 
