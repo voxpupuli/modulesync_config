@@ -103,6 +103,18 @@ spec/acceptance/nodesets/windows-2012-serverstandard-x64.yml:
   delete: true
 spec/acceptance/nodesets/windows-2012R2-serverstandard-x64.yml:
   delete: true
+spec/acceptance/nodesets/ec2/amazonlinux-2016091.yml:
+  delete: true
+spec/acceptance/nodesets/ec2/image_templates.yaml:
+  delete: true
+spec/acceptance/nodesets/ec2/rhel-73-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ec2/sles-12sp2-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ec2/ubuntu-1604-x64.yml:
+  delete: true
+spec/acceptance/nodesets/ec2/windows-2016-base-x64.yml:
+  delete: true
 spec/spec_helper.rb:
   mock_with: false
 spec/spec_helper_acceptance.rb:
