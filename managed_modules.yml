@@ -60,7 +60,6 @@
 - puppet-lldpd
 - puppet-logrotate
 - puppet-make
-- puppet-mcollective
 - puppet-metche
 - puppet-minecraft
 - puppet-misp
