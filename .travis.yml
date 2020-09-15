@@ -8,7 +8,7 @@ script:
   - 'bundle exec msync update --noop --git-base=https://github.com/'
 branches:
   only:
-  - master
+    - master
 notifications:
   email: false
   irc:

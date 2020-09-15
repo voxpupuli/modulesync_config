@@ -1,4 +1,5 @@
 ---
+# yamllint disable rule:line-length rule:truthy
 os: linux
 dist: focal
 language: ruby
@@ -33,18 +34,18 @@ jobs:
   fast_finish: true
   include:
 <% @configs['includes'].each do |include| -%>
-  - rvm: <%= include['rvm'] %>
+    - rvm: <%= include['rvm'] %>
 <%   include.keys.sort.each do |k| -%>
 <%     next if k == 'rvm' -%>
-    <%= k %>: <%= include[k] %>
+      <%= k %>: <%= include[k] %>
 <%   end -%>
 <% end -%>
 <% if @configs['extras'] -%>
 <%   @configs['extras'].each do |extra| -%>
-  - rvm: <%= extra['rvm'] %>
+    - rvm: <%= extra['rvm'] %>
 <%     extra.keys.sort.each do |k| -%>
 <%       next if k == 'rvm' -%>
-    <%= k %>: <%= extra[k] %>
+      <%= k %>: <%= extra[k] %>
 <%     end -%>
 <%   end -%>
 <% end -%>
@@ -52,10 +53,10 @@ jobs:
 <%   @configs['docker_sets'].each do |set| -%>
 <%     @configs['docker_defaults'].each do |template| # this is now an array of hashes -%>
 <%       job = template.merge(set['options'] || {}) -%>
-  - rvm: <%= job['rvm'] %>
+    - rvm: <%= job['rvm'] %>
 <%       job.keys.sort.each do |k| -%>
 <%       next if k == 'rvm' -%>
-    <%= k %>: <%= job[k].gsub(/@@SET@@/, set['set']) %>
+      <%= k %>: <%= job[k].gsub(/@@SET@@/, set['set']) %>
 <%       end -%>
 <%     end -%>
 <%   end -%>
@@ -72,8 +73,8 @@ jobs:
 <% end -%>
 branches:
   only:
-  - master
-  - /^v\d/
+    - master
+    - /^v\d/
 notifications:
   email: <%= @configs['email'] %>
   webhooks: <%= @configs['webhooks'] %>
