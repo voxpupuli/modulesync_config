@@ -47,6 +47,7 @@
 - puppet-healthcheck
 - puppet-hiera
 - puppet-homeassistant
+- puppet-hyperglass
 - puppet-ipset
 - puppet-jail
 - puppet-jenkins
