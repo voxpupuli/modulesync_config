@@ -1,5 +1,27 @@
 # Changelog
 
+## [3.1.0](https://github.com/voxpupuli/modulesync_config/tree/3.1.0) (2020-10-19)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/3.0.0...3.1.0)
+
+**Implemented enhancements:**
+
+- Use Rubocop config from voxpupuli-test [\#667](https://github.com/voxpupuli/modulesync_config/pull/667) ([ekohl](https://github.com/ekohl))
+
+**Merged pull requests:**
+
+- Drop EOL Arch nodeset [\#677](https://github.com/voxpupuli/modulesync_config/pull/677) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-dbbackup [\#676](https://github.com/voxpupuli/modulesync_config/pull/676) ([bastelfreak](https://github.com/bastelfreak))
+- CONTRIBUTING.md: Drop Debian 8; Add Ubuntu 20.04 [\#675](https://github.com/voxpupuli/modulesync_config/pull/675) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-hyperglass module [\#673](https://github.com/voxpupuli/modulesync_config/pull/673) ([bastelfreak](https://github.com/bastelfreak))
+- Resolve yamllint [\#672](https://github.com/voxpupuli/modulesync_config/pull/672) ([jcpunk](https://github.com/jcpunk))
+- replace YAML.load with YAML.safe\_load [\#670](https://github.com/voxpupuli/modulesync_config/pull/670) ([bastelfreak](https://github.com/bastelfreak))
+- dont manage mcollective module [\#669](https://github.com/voxpupuli/modulesync_config/pull/669) ([bastelfreak](https://github.com/bastelfreak))
+- travis: switch build env from bionic to focal [\#668](https://github.com/voxpupuli/modulesync_config/pull/668) ([bastelfreak](https://github.com/bastelfreak))
+- Request code snippets as acceptance tests [\#665](https://github.com/voxpupuli/modulesync_config/pull/665) ([bastelfreak](https://github.com/bastelfreak))
+- Disable Style/BracesAroundHashParameters [\#664](https://github.com/voxpupuli/modulesync_config/pull/664) ([alexjfisher](https://github.com/alexjfisher))
+- Drop all EC2 acceptance nodesets [\#662](https://github.com/voxpupuli/modulesync_config/pull/662) ([ekohl](https://github.com/ekohl))
+
 ## [3.0.0](https://github.com/voxpupuli/modulesync_config/tree/3.0.0) (2020-07-25)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/2.12.0...3.0.0)
@@ -37,7 +59,6 @@
 
 **Merged pull requests:**
 
-- Release 2.12.0 [\#645](https://github.com/voxpupuli/modulesync_config/pull/645) ([dhoppe](https://github.com/dhoppe))
 - README section helpful for external contributors [\#643](https://github.com/voxpupuli/modulesync_config/pull/643) ([trevor-vaughan](https://github.com/trevor-vaughan))
 - Add puppet-epel [\#642](https://github.com/voxpupuli/modulesync_config/pull/642) ([alexjfisher](https://github.com/alexjfisher))
 - Add module puppet-prosody [\#640](https://github.com/voxpupuli/modulesync_config/pull/640) ([mmoll](https://github.com/mmoll))
@@ -63,7 +84,6 @@
 
 **Merged pull requests:**
 
-- release 2.11.0 [\#636](https://github.com/voxpupuli/modulesync_config/pull/636) ([bastelfreak](https://github.com/bastelfreak))
 - Revert rubocop TargetRubyVersion back to 1.9 [\#634](https://github.com/voxpupuli/modulesync_config/pull/634) ([alexjfisher](https://github.com/alexjfisher))
 - Make 'before\_install' in .travis.yml configurable [\#631](https://github.com/voxpupuli/modulesync_config/pull/631) ([baurmatt](https://github.com/baurmatt))
 - State centos8 as working docker container [\#630](https://github.com/voxpupuli/modulesync_config/pull/630) ([traylenator](https://github.com/traylenator))
@@ -80,11 +100,6 @@
 **Fixed bugs:**
 
 - fix facter version for local Puppet 6 tests [\#622](https://github.com/voxpupuli/modulesync_config/pull/622) ([bastelfreak](https://github.com/bastelfreak))
-
-**Merged pull requests:**
-
-- release 2.10.1 [\#623](https://github.com/voxpupuli/modulesync_config/pull/623) ([bastelfreak](https://github.com/bastelfreak))
-- release 2.10.0 [\#621](https://github.com/voxpupuli/modulesync_config/pull/621) ([bastelfreak](https://github.com/bastelfreak))
 
 ## [2.10.0](https://github.com/voxpupuli/modulesync_config/tree/2.10.0) (2019-12-21)
 
@@ -130,7 +145,6 @@
 
 **Merged pull requests:**
 
-- release 2.9.0 [\#609](https://github.com/voxpupuli/modulesync_config/pull/609) ([dhoppe](https://github.com/dhoppe))
 - Remove parameter facterdb\_facts\_version [\#608](https://github.com/voxpupuli/modulesync_config/pull/608) ([dhoppe](https://github.com/dhoppe))
 - enhance CONTRIBUTING.md [\#607](https://github.com/voxpupuli/modulesync_config/pull/607) ([bastelfreak](https://github.com/bastelfreak))
 - Update the EOL distributions [\#606](https://github.com/voxpupuli/modulesync_config/pull/606) ([ekohl](https://github.com/ekohl))
@@ -155,7 +169,6 @@
 
 **Merged pull requests:**
 
-- release 2.8.0 [\#584](https://github.com/voxpupuli/modulesync_config/pull/584) ([bastelfreak](https://github.com/bastelfreak))
 - Filters out the configured bundler path [\#583](https://github.com/voxpupuli/modulesync_config/pull/583) ([logicminds](https://github.com/logicminds))
 - add puppet-lint-topscope-variable-check gem [\#582](https://github.com/voxpupuli/modulesync_config/pull/582) ([bastelfreak](https://github.com/bastelfreak))
 - Add Debian 10 to list of supported OSes [\#581](https://github.com/voxpupuli/modulesync_config/pull/581) ([bastelfreak](https://github.com/bastelfreak))
@@ -178,7 +191,6 @@
 
 **Merged pull requests:**
 
-- release 2.7.0 [\#567](https://github.com/voxpupuli/modulesync_config/pull/567) ([bastelfreak](https://github.com/bastelfreak))
 - disable acceptance tests on puppet6-nightly [\#566](https://github.com/voxpupuli/modulesync_config/pull/566) ([bastelfreak](https://github.com/bastelfreak))
 - Clean Rakefile.erb [\#565](https://github.com/voxpupuli/modulesync_config/pull/565) ([ekohl](https://github.com/ekohl))
 - Add default mocking framework [\#563](https://github.com/voxpupuli/modulesync_config/pull/563) ([dhoppe](https://github.com/dhoppe))
@@ -226,7 +238,6 @@
 
 **Merged pull requests:**
 
-- release 2.5.0 [\#539](https://github.com/voxpupuli/modulesync_config/pull/539) ([bastelfreak](https://github.com/bastelfreak))
 - remove leading spaces before Fixes [\#538](https://github.com/voxpupuli/modulesync_config/pull/538) ([Dan33l](https://github.com/Dan33l))
 - Move travis setup script into a subdirectory [\#537](https://github.com/voxpupuli/modulesync_config/pull/537) ([ekohl](https://github.com/ekohl))
 - switch to latest ruby for puppet6 + support latest bundler release [\#535](https://github.com/voxpupuli/modulesync_config/pull/535) ([bastelfreak](https://github.com/bastelfreak))

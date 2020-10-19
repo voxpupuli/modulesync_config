@@ -114,5 +114,5 @@ the `modulesync_config` repository.
 This is as simple as:
 
 ```sh
-bundle exec github_changelog_generator --future-release 2.8.0 -u voxpupuli -p modulesync_config -t *yourgithubtoken*
+bundle exec github_changelog_generator --future-release *next-version* -u voxpupuli -p modulesync_config --exclude-labels skip-changelog -t *yourgithubtoken*
 ```
