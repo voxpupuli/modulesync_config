@@ -18,6 +18,7 @@
 - puppet-confluence
 - puppet-corosync
 - puppet-cron
+- puppet-dbbackup
 - puppet-dhcp
 - puppet-dotnet
 - puppet-download_file
