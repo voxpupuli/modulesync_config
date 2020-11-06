@@ -37,6 +37,7 @@
       - "chat.freenode.org#voxpupuli-notifications"
   user: puppet
 Gemfile:
+  puppet_version: '~> 6.0'
   required:
     ':test':
       - gem: voxpupuli-test
