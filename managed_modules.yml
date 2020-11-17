@@ -28,6 +28,7 @@
 - puppet-epel
 - puppet-erlang
 - puppet-etherpad
+- puppet-example
 - puppet-extlib
 - puppet-facette
 - puppet-fail2ban
