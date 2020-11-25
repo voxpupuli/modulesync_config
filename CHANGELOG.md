@@ -1,5 +1,31 @@
 # Changelog
 
+## [4.0.0](https://github.com/voxpupuli/modulesync_config/tree/4.0.0) (2020-11-25)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/3.1.0...4.0.0)
+
+**Breaking changes:**
+
+- Switch from Travis CI to Github Actions [\#683](https://github.com/voxpupuli/modulesync_config/pull/683) ([ekohl](https://github.com/ekohl))
+
+**Closed issues:**
+
+- Add puppet-lint github action? [\#671](https://github.com/voxpupuli/modulesync_config/issues/671)
+- Drop gem update for each Travis job [\#632](https://github.com/voxpupuli/modulesync_config/issues/632)
+- Only include the correct nodesets depending on the module's supported O/S [\#385](https://github.com/voxpupuli/modulesync_config/issues/385)
+- Deal with multiple CONTRIBUTING.md [\#252](https://github.com/voxpupuli/modulesync_config/issues/252)
+- Missing spec\_helper\_acceptance.rb ? [\#177](https://github.com/voxpupuli/modulesync_config/issues/177)
+- Add rake task to detect trailing whitespace in markdown files [\#151](https://github.com/voxpupuli/modulesync_config/issues/151)
+
+**Merged pull requests:**
+
+- Extend .pmtignore to trim modules [\#685](https://github.com/voxpupuli/modulesync_config/pull/685) ([ekohl](https://github.com/ekohl))
+- CONTRIBUTING template: fix name of acceptance test rake task [\#684](https://github.com/voxpupuli/modulesync_config/pull/684) ([kenyon](https://github.com/kenyon))
+- Reduce the Gemfile [\#682](https://github.com/voxpupuli/modulesync_config/pull/682) ([ekohl](https://github.com/ekohl))
+- Switch CI to Github Actions [\#681](https://github.com/voxpupuli/modulesync_config/pull/681) ([ekohl](https://github.com/ekohl))
+- Don't ship `spec` directory, `Rakefile` or `Gemfile` in packaged modules [\#680](https://github.com/voxpupuli/modulesync_config/pull/680) ([alexjfisher](https://github.com/alexjfisher))
+- CONTRIBUTING.md: Drop CentOS 6 note [\#679](https://github.com/voxpupuli/modulesync_config/pull/679) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [3.1.0](https://github.com/voxpupuli/modulesync_config/tree/3.1.0) (2020-10-19)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/3.0.0...3.1.0)
