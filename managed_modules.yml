@@ -75,6 +75,7 @@
 - puppet-mumble
 - puppet-mysql_java_connector
 - puppet-network
+- puppet-nftables
 - puppet-nginx
 - puppet-nodejs
 - puppet-nrpe
