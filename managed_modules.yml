@@ -78,6 +78,7 @@
 - puppet-nftables
 - puppet-nginx
 - puppet-nodejs
+- puppet-nomad
 - puppet-nrpe
 - puppet-nscd
 - puppet-nsclient
