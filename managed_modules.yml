@@ -46,6 +46,7 @@
 - puppet-grafana
 - puppet-graphite_powershell
 - puppet-groupmembership
+- puppet-hashi_stack
 - puppet-healthcheck
 - puppet-hiera
 - puppet-homeassistant
