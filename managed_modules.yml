@@ -86,6 +86,7 @@
 - puppet-nsd
 - puppet-openvmtools
 - puppet-openvpn
+- puppet-pbuilder
 - puppet-php
 - puppet-pkgng
 - puppet-posix_acl
