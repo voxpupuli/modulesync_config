@@ -15,8 +15,6 @@
 source "https://rubygems.org"
 
 group :development do
-  gem 'travis'
-  gem 'travis-lint'
   gem 'pry'
 end
 
