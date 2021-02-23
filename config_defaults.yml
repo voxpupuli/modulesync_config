@@ -4,6 +4,7 @@
   beaker_fact_matrix: {}
   excludes: []
   pidfile_workaround: false
+  timeout_minutes: 40
 .travis.yml:
   delete: true
 Gemfile:
