@@ -25,8 +25,7 @@ Gemfile:
       - gem: voxpupuli-acceptance
     ':release':
       - gem: github_changelog_generator
-        git: https://github.com/voxpupuli/github-changelog-generator
-        branch: voxpupuli_essential_fixes
+        version: '>= 1.16.1'
       - gem: puppet-blacksmith
       - gem: voxpupuli-release
       - gem: puppet-strings
