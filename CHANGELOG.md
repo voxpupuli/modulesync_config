@@ -1,5 +1,39 @@
 # Changelog
 
+## [4.1.0](https://github.com/voxpupuli/modulesync_config/tree/4.1.0) (2021-04-03)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/4.0.0...4.1.0)
+
+**Implemented enhancements:**
+
+- changelog\_generator: use upstream release [\#706](https://github.com/voxpupuli/modulesync_config/pull/706) ([bastelfreak](https://github.com/bastelfreak))
+
+**Closed issues:**
+
+- Hash matrix for Github Actions makes excludes impossible [\#691](https://github.com/voxpupuli/modulesync_config/issues/691)
+- 'noop' should be the default [\#644](https://github.com/voxpupuli/modulesync_config/issues/644)
+- Run acceptance tests against all supported operatingsystems [\#428](https://github.com/voxpupuli/modulesync_config/issues/428)
+- add new cops for more space? [\#189](https://github.com/voxpupuli/modulesync_config/issues/189)
+- create a 'awesome-enterprise-wescale-super-config' [\#187](https://github.com/voxpupuli/modulesync_config/issues/187)
+
+**Merged pull requests:**
+
+- add puppet-puppetwebhook [\#705](https://github.com/voxpupuli/modulesync_config/pull/705) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-cvmfs [\#704](https://github.com/voxpupuli/modulesync_config/pull/704) ([traylenator](https://github.com/traylenator))
+- Update the beaker instructions [\#703](https://github.com/voxpupuli/modulesync_config/pull/703) ([ekohl](https://github.com/ekohl))
+- Remove Travis left overs [\#701](https://github.com/voxpupuli/modulesync_config/pull/701) ([ekohl](https://github.com/ekohl))
+- Add puppet-pbuilder [\#700](https://github.com/voxpupuli/modulesync_config/pull/700) ([ekohl](https://github.com/ekohl))
+- moduleroot/Dockerfile.erb: use ruby:2.7 [\#698](https://github.com/voxpupuli/modulesync_config/pull/698) ([kenyon](https://github.com/kenyon))
+- Add puppet-hashi\_stack [\#697](https://github.com/voxpupuli/modulesync_config/pull/697) ([attachmentgenie](https://github.com/attachmentgenie))
+- add newly obtained nomad module [\#696](https://github.com/voxpupuli/modulesync_config/pull/696) ([attachmentgenie](https://github.com/attachmentgenie))
+- remove unroutable ipv6 config [\#694](https://github.com/voxpupuli/modulesync_config/pull/694) ([b4ldr](https://github.com/b4ldr))
+- Introduce default job length of 40 minutes [\#692](https://github.com/voxpupuli/modulesync_config/pull/692) ([traylenator](https://github.com/traylenator))
+- Run rubocop checks in matrix build [\#690](https://github.com/voxpupuli/modulesync_config/pull/690) ([traylenator](https://github.com/traylenator))
+- Add puppet-nftables [\#689](https://github.com/voxpupuli/modulesync_config/pull/689) ([traylenator](https://github.com/traylenator))
+- Use ruby/setup-ruby in workflow testing [\#688](https://github.com/voxpupuli/modulesync_config/pull/688) ([ekohl](https://github.com/ekohl))
+- Drop puppet-report\_hipchat since it's archived [\#687](https://github.com/voxpupuli/modulesync_config/pull/687) ([ekohl](https://github.com/ekohl))
+- drop deprecated wget module [\#663](https://github.com/voxpupuli/modulesync_config/pull/663) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [4.0.0](https://github.com/voxpupuli/modulesync_config/tree/4.0.0) (2020-11-25)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/3.1.0...4.0.0)
@@ -921,7 +955,7 @@
 **Merged pull requests:**
 
 - Add nodeset for Ubuntu 16.04 [\#249](https://github.com/voxpupuli/modulesync_config/pull/249) ([dhoppe](https://github.com/dhoppe))
-- Add docker nodesets for acceptance tests [\#248](https://github.com/voxpupuli/modulesync_config/pull/248) ([Yuav](https://github.com/Yuav))
+- Add docker nodesets for acceptance tests [\#248](https://github.com/voxpupuli/modulesync_config/pull/248) ([jskarpe](https://github.com/jskarpe))
 
 ## [0.14.0](https://github.com/voxpupuli/modulesync_config/tree/0.14.0) (2016-10-20)
 
