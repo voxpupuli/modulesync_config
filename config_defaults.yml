@@ -7,6 +7,8 @@
   timeout_minutes: 40
 .travis.yml:
   delete: true
+Jenkinsfile:
+  delete: true
 Gemfile:
   puppet_version: '~> 6.0'
   required:
