@@ -10,7 +10,7 @@
 Jenkinsfile:
   delete: true
 Gemfile:
-  puppet_version: '~> 6.0'
+  puppet_version: '>= 6.0'
   required:
     ':test':
       - gem: voxpupuli-test
