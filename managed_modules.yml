@@ -85,6 +85,7 @@
 - puppet-nscd
 - puppet-nsclient
 - puppet-nsd
+- puppet-openldap
 - puppet-openvmtools
 - puppet-openvpn
 - puppet-pbuilder
