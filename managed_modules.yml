@@ -123,6 +123,7 @@
 - puppet-stash
 - puppet-strongswan
 - puppet-system
+- puppet-systemd
 - puppet-tea
 - puppet-telegraf
 - puppet-trusted_ca
