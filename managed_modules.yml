@@ -60,6 +60,7 @@
 - puppet-jolokia
 - puppet-kafka
 - puppet-keepalived
+- puppet-kmod
 - puppet-ldapquery
 - puppet-letsencrypt
 - puppet-lldpd
@@ -86,6 +87,7 @@
 - puppet-nsclient
 - puppet-nsd
 - puppet-openldap
+- puppet-openssl
 - puppet-openvmtools
 - puppet-openvpn
 - puppet-pbuilder
