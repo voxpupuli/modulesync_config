@@ -94,6 +94,7 @@
 - puppet-php
 - puppet-pkgng
 - puppet-posix_acl
+- puppet-postfix
 - puppet-poudriere
 - puppet-prometheus
 - puppet-prometheus_reporter
