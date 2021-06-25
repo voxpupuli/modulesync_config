@@ -20,8 +20,8 @@ jobs:
         with:
           ruby-version: '2.7'
           bundler-cache: true
-      - name: Run rake validate
-        run: bundle exec rake validate
+      - name: Run static validations
+        run: bundle exec rake validate lint check
       - name: Run rake rubocop
         run: bundle exec rake rubocop
       - name: Setup Test Matrix
@@ -48,7 +48,7 @@ jobs:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
       - name: Run tests
-        run: bundle exec rake
+        run: bundle exec rake parallel_spec
 <%- if Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
 
   acceptance:
