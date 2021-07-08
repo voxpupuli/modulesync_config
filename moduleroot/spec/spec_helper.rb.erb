@@ -19,6 +19,10 @@ RSpec.configure do |c|
   c.hiera_config = <%= @configs['hiera_config'] %>
 end
 <%- end -%>
+<%- if @configs['add_mocked_facts'] -%>
+
+add_mocked_facts!
+<%- end -%>
 
 if File.exist?(File.join(__dir__, 'default_module_facts.yml'))
   facts = YAML.safe_load(File.read(File.join(__dir__, 'default_module_facts.yml')))

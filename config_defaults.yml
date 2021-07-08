@@ -14,7 +14,7 @@ Gemfile:
   required:
     ':test':
       - gem: voxpupuli-test
-        version: '~> 2.1'
+        version: '~> 2.2'
       - gem: coveralls
       - gem: simplecov-console
     ':development':
@@ -92,6 +92,7 @@ spec/acceptance/nodesets/ec2/ubuntu-1604-x64.yml:
 spec/acceptance/nodesets/ec2/windows-2016-base-x64.yml:
   delete: true
 spec/spec_helper.rb:
+  add_mocked_facts: true
   mock_with: false
 spec/spec_helper_acceptance.rb:
   unmanaged: true
