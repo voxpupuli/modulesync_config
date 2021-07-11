@@ -144,6 +144,7 @@
 - puppet-windows_firewall
 - puppet-windows_power
 - puppet-winlogbeat
+- puppet-wireguard
 - puppet-xmlfile
 - puppet-yum
 - puppet-zabbix
