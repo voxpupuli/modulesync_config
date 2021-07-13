@@ -1,0 +1,52 @@
+---
+# Managed by modulesync - DO NOT EDIT
+# https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
+
+name: Modulesync
+
+on: pull_request
+
+jobs:
+  compare_with_repo:
+    name: 'Compare with config'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Puppet module repository
+        uses: actions/checkout@v2
+        with:
+          path: modules/${{ github.repository }}
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+
+      - name: Set modulesync version
+        run: ruby -ryaml -e 'puts "MSYNC_VER=#{YAML.safe_load(File.read(".msync.yml"))["modulesync_config_version"]}"' >> $GITHUB_ENV
+        working-directory: modules/${{ github.repository }}
+
+      - name: Checkout modulesync configuration repository
+        uses: actions/checkout@v2
+        with:
+          # TODO: is there a modulesync variable for this?
+          repository: voxpupuli/modulesync_config
+          ref: ${{ env.MSYNC_VER }}
+          path: msync_config
+
+      - name: Create a temporary managed modules file
+        run: echo "- $GITHUB_REPOSITORY" > msync_config/pr-managed-modules.yaml
+
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.0'
+          bundler-cache: true
+          working-directory: msync_config
+
+      - name: Run modulesync
+        run: bundle exec msync update --offline --managed-modules-conf=pr-managed-modules.yaml --project-root=../modules
+        working-directory: msync_config
+
+      - name: Check for differences
+        run: git diff --exit-code
+        working-directory: modules/${{ github.repository }}
