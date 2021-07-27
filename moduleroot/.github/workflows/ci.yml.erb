@@ -100,3 +100,14 @@ jobs:
           BEAKER_FACTER_<%= fact.upcase %>: ${{ matrix.<%= fact %> }}
           <%- end -%>
 <%- end -%>
+
+  tests:
+    needs:
+      - unit
+      <%- if Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
+      - acceptance
+      <%- end -%>
+    runs-on: ubuntu-latest
+    name: Test suite
+    steps:
+      - run: echo Test suite completed
