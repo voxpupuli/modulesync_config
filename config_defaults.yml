@@ -17,13 +17,13 @@ Gemfile:
         version: '~> 2.1'
       - gem: coveralls
       - gem: simplecov-console
+      - gem: puppet_metadata
+        version: '~> 0.3.0'
     ':development':
       - gem: guard-rake
       - gem: overcommit
         version: '>= 0.39.1'
     ':system_tests':
-      - gem: puppet_metadata
-        version: '~> 0.3.0'
       - gem: voxpupuli-acceptance
         version: '~> 1.0'
     ':release':
