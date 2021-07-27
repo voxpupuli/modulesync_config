@@ -25,6 +25,7 @@ Gemfile:
       - gem: puppet_metadata
         version: '~> 0.3.0'
       - gem: voxpupuli-acceptance
+        version: '~> 1.0'
     ':release':
       - gem: github_changelog_generator
         version: '>= 1.16.1'
