@@ -98,5 +98,7 @@ spec/spec_helper_acceptance.rb:
   unmanaged: true
 CONTRIBUTING.md:
   delete: true
+.yardopts:
+  delete: true
 ...
 # vim: syntax=yaml
