@@ -29,8 +29,8 @@ Gemfile:
     ':release':
       - gem: github_changelog_generator
         version: '>= 1.16.1'
-      - gem: puppet-blacksmith
       - gem: voxpupuli-release
+        version: '>= 1.0.2'
       - gem: puppet-strings
         version: '>= 2.2'
 Rakefile:
