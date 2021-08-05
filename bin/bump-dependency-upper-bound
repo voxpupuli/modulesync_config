@@ -33,7 +33,7 @@ end
 
 def main
   if ARGV.length < 3
-    puts "Usage: $0 dependency upper_bound metadata_path [metadata_path]"
+    puts "Usage: #{$PROGRAM_NAME} dependency upper_bound metadata_path [metadata_path]"
     exit 1
   end
 
