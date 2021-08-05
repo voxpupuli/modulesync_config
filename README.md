@@ -72,6 +72,51 @@ bundle exec bin/get_all_the_diffs
 You can also pass `DEBUG=true` as an environment variable to the script. to get
 a bit more output.
 
+### Checking all module dependencies against the forge
+
+Ideally speaking all modules are compatible with the latest forge releases. To
+do this manually is tedious so tools have been written.
+
+First off all, make sure all modules are checked out and up to date. For
+example:
+
+```bash
+bundle exec msync update --noop -b update-dependencies
+```
+
+If you already have all checkouts, `./bin/clean-git-checkouts` can also be
+used.
+
+Now it's time to get a list
+```bash
+bundle exec rake metadata_deps
+```
+
+If you see `puppetlabs/stdlib` has made a new major release (we'll use 7.x in
+this example), you need to set the upper bound to 8.0.0:
+
+```bash
+./bin/bump-dependency-upper-bound puppetlabs/stdlib 8.0.0 modules/*/*/metadata.json
+```
+
+You can verify it worked by running `rake metadata_deps` again.
+
+Of course this means nothing until you actually submit the change. To do this
+in bulk:
+```bash
+for module in modules/*/* ; do
+  (
+    cd $module
+    if git diff --exit-code metadata.json ; then
+      git commit -m 'Mark compatible with puppetlabs/stdlib 7.x' metadata.json
+    fi
+  )
+done
+```
+
+Of course you can expand the loop with commands like `git push origin HEAD -u`
+and `hub pull-request --no-edit` to create bulk pull requests.
+
 ## Tips for External Contributors
 
 If you are used to a traditional GitHub Fork and PR model, then you may run into
