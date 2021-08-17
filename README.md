@@ -156,8 +156,6 @@ the `modulesync_config` repository.
 
 ## Do a new release
 
-This is as simple as:
-
-```sh
-bundle exec github_changelog_generator --future-release *next-version* -u voxpupuli -p modulesync_config --exclude-labels skip-changelog -t *yourgithubtoken*
-```
+* Update the version in `moduleroot/.msync.yml.erb`
+* export `GITHUB_CHANGELOG_TOKEN='*your token*'`
+* bundle exec rake changelog

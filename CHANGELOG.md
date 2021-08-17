@@ -1,5 +1,55 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+## [4.2.0](https://github.com/voxpupuli/modulesync_config/tree/4.2.0) (2021-08-17)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/4.1.0...4.2.0)
+
+**Implemented enhancements:**
+
+- cleanup puppet-blacksmith/voxpupuli-release dependencies [\#737](https://github.com/voxpupuli/modulesync_config/pull/737) ([bastelfreak](https://github.com/bastelfreak))
+- Add a dummy test suite task to CI [\#731](https://github.com/voxpupuli/modulesync_config/pull/731) ([ekohl](https://github.com/ekohl))
+- Rakefile updates to reduce gem loading [\#730](https://github.com/voxpupuli/modulesync_config/pull/730) ([ekohl](https://github.com/ekohl))
+
+**Fixed bugs:**
+
+- Limit github\_changelog\_generator to Ruby 2.5+ [\#745](https://github.com/voxpupuli/modulesync_config/pull/745) ([ekohl](https://github.com/ekohl))
+- Rakefile: Use `name` from metadata.json for GCG config.project [\#735](https://github.com/voxpupuli/modulesync_config/pull/735) ([bastelfreak](https://github.com/bastelfreak))
+- Delete legacy .yardopts [\#734](https://github.com/voxpupuli/modulesync_config/pull/734) ([bastelfreak](https://github.com/bastelfreak))
+- spec\_helper.rb: cleanup duplicate newline [\#728](https://github.com/voxpupuli/modulesync_config/pull/728) ([bastelfreak](https://github.com/bastelfreak))
+- fix typo in GitHub actions template [\#719](https://github.com/voxpupuli/modulesync_config/pull/719) ([bastelfreak](https://github.com/bastelfreak))
+
+**Closed issues:**
+
+- puppet-strings prints warnings since the merge of \#722 [\#733](https://github.com/voxpupuli/modulesync_config/issues/733)
+
+**Merged pull requests:**
+
+- voxpupuli-test: Require 2.5 or newer [\#743](https://github.com/voxpupuli/modulesync_config/pull/743) ([bastelfreak](https://github.com/bastelfreak))
+- Add instructions for bulk dependency updates [\#741](https://github.com/voxpupuli/modulesync_config/pull/741) ([ekohl](https://github.com/ekohl))
+- Add metadata\_json\_deps integration [\#740](https://github.com/voxpupuli/modulesync_config/pull/740) ([ekohl](https://github.com/ekohl))
+- Update EOL distros and Puppet version in clean-metadata [\#739](https://github.com/voxpupuli/modulesync_config/pull/739) ([ekohl](https://github.com/ekohl))
+- CONTRIBUTING.md: Replace travis with GHA [\#738](https://github.com/voxpupuli/modulesync_config/pull/738) ([bastelfreak](https://github.com/bastelfreak))
+- Limit to known-good setups from acceptance tests [\#732](https://github.com/voxpupuli/modulesync_config/pull/732) ([smortex](https://github.com/smortex))
+- add new wireguard module [\#726](https://github.com/voxpupuli/modulesync_config/pull/726) ([bastelfreak](https://github.com/bastelfreak))
+- get\_all\_the\_diffs: dont read legacy plumbing repo content [\#725](https://github.com/voxpupuli/modulesync_config/pull/725) ([bastelfreak](https://github.com/bastelfreak))
+- Update get\_all\_the\_diffs to work on Ruby 2 and 3 [\#724](https://github.com/voxpupuli/modulesync_config/pull/724) ([bastelfreak](https://github.com/bastelfreak))
+- use latest github\_changelog\_generator release [\#723](https://github.com/voxpupuli/modulesync_config/pull/723) ([bastelfreak](https://github.com/bastelfreak))
+- Add consistent explanatory comments [\#722](https://github.com/voxpupuli/modulesync_config/pull/722) ([ghoneycutt](https://github.com/ghoneycutt))
+- Setup CI jobs on Ruby3 instead of Ruby 2.7 [\#721](https://github.com/voxpupuli/modulesync_config/pull/721) ([bastelfreak](https://github.com/bastelfreak))
+- puppetlabs\_spec\_helper: Allow 3.x [\#720](https://github.com/voxpupuli/modulesync_config/pull/720) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-postfix to managed modules [\#718](https://github.com/voxpupuli/modulesync_config/pull/718) ([raphink](https://github.com/raphink))
+- Move all static validations to the setup job [\#717](https://github.com/voxpupuli/modulesync_config/pull/717) ([ekohl](https://github.com/ekohl))
+- Release action: limit to voxpupuli org [\#716](https://github.com/voxpupuli/modulesync_config/pull/716) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-openldap [\#715](https://github.com/voxpupuli/modulesync_config/pull/715) ([raphink](https://github.com/raphink))
+- Add puppet-kmod [\#714](https://github.com/voxpupuli/modulesync_config/pull/714) ([raphink](https://github.com/raphink))
+- Add puppet-openssl [\#713](https://github.com/voxpupuli/modulesync_config/pull/713) ([raphink](https://github.com/raphink))
+- Add puppet-systemd [\#712](https://github.com/voxpupuli/modulesync_config/pull/712) ([raphink](https://github.com/raphink))
+- Purge legacy Jenkinsfile in modules [\#711](https://github.com/voxpupuli/modulesync_config/pull/711) ([bastelfreak](https://github.com/bastelfreak))
+- allow all newer puppet gems [\#710](https://github.com/voxpupuli/modulesync_config/pull/710) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-puppet\_summary module [\#709](https://github.com/voxpupuli/modulesync_config/pull/709) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [4.1.0](https://github.com/voxpupuli/modulesync_config/tree/4.1.0) (2021-04-03)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/4.0.0...4.1.0)
@@ -13,7 +63,6 @@
 - Hash matrix for Github Actions makes excludes impossible [\#691](https://github.com/voxpupuli/modulesync_config/issues/691)
 - 'noop' should be the default [\#644](https://github.com/voxpupuli/modulesync_config/issues/644)
 - Run acceptance tests against all supported operatingsystems [\#428](https://github.com/voxpupuli/modulesync_config/issues/428)
-- add new cops for more space? [\#189](https://github.com/voxpupuli/modulesync_config/issues/189)
 - create a 'awesome-enterprise-wescale-super-config' [\#187](https://github.com/voxpupuli/modulesync_config/issues/187)
 
 **Merged pull requests:**
@@ -1371,7 +1420,6 @@
 
 **Closed issues:**
 
-- Support rvm 1.8.7 [\#61](https://github.com/voxpupuli/modulesync_config/issues/61)
 - Add .pmtignore [\#49](https://github.com/voxpupuli/modulesync_config/issues/49)
 - config\_defaults don't declare rvm 1.9.3, but travis.yml uses it for on: deploy  [\#47](https://github.com/voxpupuli/modulesync_config/issues/47)
 -  No such file or directory - ./moduleroot//spec/spec\_helper\_acceptance.rb [\#44](https://github.com/voxpupuli/modulesync_config/issues/44)
