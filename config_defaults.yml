@@ -29,6 +29,8 @@ Gemfile:
     ':release':
       - gem: github_changelog_generator
         version: '>= 1.16.1'
+        ruby-version: '2.5'
+        ruby-operator: '>='
       - gem: voxpupuli-release
         version: '>= 1.0.2'
       - gem: puppet-strings
