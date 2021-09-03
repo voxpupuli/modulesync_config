@@ -31,7 +31,6 @@
 - puppet-etherpad
 - puppet-example
 - puppet-extlib
-- puppet-facette
 - puppet-fail2ban
 - puppet-ferm
 - puppet-fetchcrl
