@@ -32,7 +32,7 @@ Gemfile:
         ruby-version: '2.5'
         ruby-operator: '>='
       - gem: voxpupuli-release
-        version: '>= 1.0.2'
+        version: '>= 1.2.0'
       - gem: puppet-strings
         version: '>= 2.2'
 Rakefile:
