@@ -34,7 +34,7 @@ Gemfile:
       - gem: voxpupuli-release
         version: '>= 1.2.0'
       - gem: puppet-strings
-        version: '>= 2.2'
+        version: '>= 2.8'
 Rakefile:
   config.user: voxpupuli
   puppet_strings_patterns: []
