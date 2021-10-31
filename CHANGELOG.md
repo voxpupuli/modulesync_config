@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.0.0](https://github.com/voxpupuli/modulesync_config/tree/5.0.0) (2021-10-29)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/4.2.0...5.0.0)
+
+**Breaking changes:**
+
+- voxpupuli-test: Require 4.x instead of 3.x [\#752](https://github.com/voxpupuli/modulesync_config/pull/752) ([bastelfreak](https://github.com/bastelfreak))
+- voxpupuli-test: Require 3.x instead of 2.x [\#749](https://github.com/voxpupuli/modulesync_config/pull/749) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- Cancel in-progress/pending workflows of the same branch [\#747](https://github.com/voxpupuli/modulesync_config/pull/747) ([root-expert](https://github.com/root-expert))
+
+**Merged pull requests:**
+
+- voxpupuli-release: Require \>= 1.2.0 [\#753](https://github.com/voxpupuli/modulesync_config/pull/753) ([bastelfreak](https://github.com/bastelfreak))
+- Archive the facette module [\#748](https://github.com/voxpupuli/modulesync_config/pull/748) ([smortex](https://github.com/smortex))
+
 ## [4.2.0](https://github.com/voxpupuli/modulesync_config/tree/4.2.0) (2021-08-17)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/4.1.0...4.2.0)

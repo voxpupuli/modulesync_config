@@ -1,6 +1,6 @@
 # ModuleSync Configs
 
-[![Build Status](https://travis-ci.org/voxpupuli/modulesync_config.svg?branch=master)](https://travis-ci.org/voxpupuli/modulesync_config)
+[![noop run](https://github.com/voxpupuli/modulesync_config/actions/workflows/main.yml/badge.svg)](https://github.com/voxpupuli/modulesync_config/actions/workflows/main.yml)
 
 Module sync configurations for Vox Pupuli Modules
 
