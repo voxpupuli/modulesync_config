@@ -2,7 +2,17 @@
 
 All notable changes to this project will be documented in this file.
 
-## [5.0.0](https://github.com/voxpupuli/modulesync_config/tree/5.0.0) (2021-10-29)
+## [5.0.1](https://github.com/voxpupuli/modulesync_config/tree/5.0.1) (2021-11-01)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.0.0...5.0.1)
+
+With the 5.0.0 release of modulesync_config we stopped official support for Puppet 5 and Ruby 2.4. We now require Puppet 2.5 and Puppet 6.
+
+**Fixed bugs:**
+
+- spec\_helper: Update to rubocop 1.22 [\#755](https://github.com/voxpupuli/modulesync_config/pull/755) ([bastelfreak](https://github.com/bastelfreak))
+
+## [5.0.0](https://github.com/voxpupuli/modulesync_config/tree/5.0.0) (2021-10-31)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/4.2.0...5.0.0)
 
