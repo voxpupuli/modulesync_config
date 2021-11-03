@@ -38,6 +38,11 @@ Gemfile:
 Rakefile:
   config.user: voxpupuli
   puppet_strings_patterns: []
+.puppet-lint.rc:
+  disabled_lint_checks:
+    - parameter_documentation
+    - parameter_type
+  enabled_lint_checks: []
 spec/default_facts.yml:
   delete: true
 spec/classes/coverage_spec.rb:
