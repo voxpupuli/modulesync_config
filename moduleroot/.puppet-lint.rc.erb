@@ -1,3 +1,4 @@
+--fail-on-warnings
 <% checks = @configs['disabled_lint_checks'] - @configs['enabled_lint_checks'] -%>
 <% checks.each do |check| -%>
 --no-<%= check.sub(/^disable_/, '') %>-check
