@@ -41,7 +41,7 @@ Rakefile:
 .puppet-lint.rc:
   disabled_lint_checks:
     - parameter_documentation
-    - parameter_type
+    - parameter_types
   enabled_lint_checks: []
 spec/default_facts.yml:
   delete: true
