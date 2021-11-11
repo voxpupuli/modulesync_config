@@ -107,5 +107,13 @@ CONTRIBUTING.md:
   delete: true
 .yardopts:
   delete: true
+.gitlab-ci.yml:
+  delete: true
+.pdkignore:
+  delete: true
+appveyor.yml:
+  delete: true
+pdk.yaml:
+  delete: true
 ...
 # vim: syntax=yaml
