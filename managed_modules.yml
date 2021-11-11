@@ -104,6 +104,7 @@
 - puppet-puppet_summary
 - puppet-pxe
 - puppet-python
+- puppet-rclocal
 - puppet-r10k
 - puppet-rabbitmq
 - puppet-redis
