@@ -71,6 +71,7 @@
 - puppet-mlocate
 - puppet-module
 - puppet-mongodb
+- puppet-monit
 - puppet-mosquitto
 - puppet-mrepo
 - puppet-msoffice
