@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0](https://github.com/voxpupuli/modulesync_config/tree/5.1.0) (2021-11-26)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.0.1...5.1.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-test: Require 5.x [\#766](https://github.com/voxpupuli/modulesync_config/pull/766) ([bastelfreak](https://github.com/bastelfreak))
+- implement modulespecific puppet-lint plugins [\#758](https://github.com/voxpupuli/modulesync_config/pull/758) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- swap puppet-lint-param-types with puppet-lint-parameter\_type-check [\#760](https://github.com/voxpupuli/modulesync_config/pull/760) ([bastelfreak](https://github.com/bastelfreak))
+- puppet-lint: fail on warnings [\#759](https://github.com/voxpupuli/modulesync_config/pull/759) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Fix typo in comment [\#765](https://github.com/voxpupuli/modulesync_config/pull/765) ([nbarrientos](https://github.com/nbarrientos))
+- Add  puppet-monit module [\#764](https://github.com/voxpupuli/modulesync_config/pull/764) ([FlorentPoinsaut](https://github.com/FlorentPoinsaut))
+- Add more files to our deletion list [\#762](https://github.com/voxpupuli/modulesync_config/pull/762) ([bastelfreak](https://github.com/bastelfreak))
+- Add rclocal module [\#761](https://github.com/voxpupuli/modulesync_config/pull/761) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [5.0.1](https://github.com/voxpupuli/modulesync_config/tree/5.0.1) (2021-11-01)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.0.0...5.0.1)
