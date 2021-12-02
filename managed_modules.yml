@@ -40,6 +40,8 @@
 - puppet-drbd
 - puppet-dropbear
 - puppet-earlyoom
+- puppet-elastic-stack
+- puppet-elasticsearch
 - puppet-epel
 - puppet-erlang
 - puppet-etherpad
@@ -73,6 +75,7 @@
 - puppet-jolokia
 - puppet-kafka
 - puppet-keepalived
+- puppet-kibana
 - puppet-kmod
 - puppet-ldapquery
 - puppet-letsencrypt
