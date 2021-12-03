@@ -40,7 +40,7 @@
 - puppet-drbd
 - puppet-dropbear
 - puppet-earlyoom
-- puppet-elastic-stack
+- puppet-elastic_stack
 - puppet-elasticsearch
 - puppet-epel
 - puppet-erlang
