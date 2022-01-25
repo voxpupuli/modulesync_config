@@ -4,3 +4,6 @@
 
 inherit_gem:
   voxpupuli-test: rubocop.yml
+<% if @configs['extra'] -%>
+<%= @configs['extra'].to_yaml.sub(/\A---\n/, '') -%>
+<% end -%>
