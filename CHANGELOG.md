@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.2.0](https://github.com/voxpupuli/modulesync_config/tree/5.2.0) (2022-01-28)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.1.0...5.2.0)
+
+**Implemented enhancements:**
+
+- Add support for local rubocop overrides [\#773](https://github.com/voxpupuli/modulesync_config/pull/773) ([smortex](https://github.com/smortex))
+- Use shared workflows in modules [\#771](https://github.com/voxpupuli/modulesync_config/pull/771) ([ekohl](https://github.com/ekohl))
+
+**Fixed bugs:**
+
+- Switch to github.ref\_name for concurrency group [\#763](https://github.com/voxpupuli/modulesync_config/pull/763) ([root-expert](https://github.com/root-expert))
+
+**Merged pull requests:**
+
+- CONTRIBUTING.md: correct example, update OSes [\#772](https://github.com/voxpupuli/modulesync_config/pull/772) ([kenyon](https://github.com/kenyon))
+- Correct elastic\_stack repository name [\#770](https://github.com/voxpupuli/modulesync_config/pull/770) ([smortex](https://github.com/smortex))
+- Add elasticsearch modules [\#769](https://github.com/voxpupuli/modulesync_config/pull/769) ([smortex](https://github.com/smortex))
+- Add Augeas modules [\#768](https://github.com/voxpupuli/modulesync_config/pull/768) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [5.1.0](https://github.com/voxpupuli/modulesync_config/tree/5.1.0) (2021-11-26)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.0.1...5.1.0)
