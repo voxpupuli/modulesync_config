@@ -21,7 +21,6 @@
 - puppet-autofs
 - puppet-bareos
 - puppet-bird
-- puppet-boolean
 - puppet-borg
 - puppet-caddy
 - puppet-cassandra
