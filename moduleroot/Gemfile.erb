@@ -1,7 +1,7 @@
 # Managed by modulesync - DO NOT EDIT
 # https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
 
-source ENV['GEM_SOURCE'] || "https://rubygems.org"
+source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 <% groups = {} -%>
 <% (@configs['required'].keys + ((@configs['optional'] || {}).keys)).uniq.each do |key| -%>
