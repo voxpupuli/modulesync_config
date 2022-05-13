@@ -5,6 +5,8 @@
   excludes: []
   pidfile_workaround: false
   timeout_minutes: 40
+.rubocop.yml:
+  use_rubocop_todo: false
 .travis.yml:
   delete: true
 Jenkinsfile:
