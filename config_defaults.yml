@@ -3,6 +3,7 @@
 .github/workflows/ci.yml:
   excludes: []
   pidfile_workaround: false
+  additional_packages: ''
 .travis.yml:
   delete: true
 Jenkinsfile:

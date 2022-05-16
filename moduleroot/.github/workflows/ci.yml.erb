@@ -17,6 +17,13 @@ jobs:
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v1
     with:
       pidfile_workaround: '<%= @configs['pidfile_workaround'] %>'
+<%- unless @configs['additional_packages'].empty? -%>
+      additional_packages: '<%= @configs['additional_packages'] %>'
+<%- end -%>
 <%- else -%>
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
+<%- unless @configs['additional_packages'].empty? -%>
+    with:
+      additional_packages: '<%= @configs['additional_packages'] %>'
+<%- end -%>
 <%- end -%>
