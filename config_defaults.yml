@@ -1,10 +1,9 @@
 ---
 # yamllint disable rule:line-length
 .github/workflows/ci.yml:
-  beaker_fact_matrix: {}
   excludes: []
   pidfile_workaround: false
-  timeout_minutes: 40
+  additional_packages: ''
 .travis.yml:
   delete: true
 Jenkinsfile:
