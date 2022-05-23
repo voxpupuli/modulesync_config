@@ -47,6 +47,7 @@
 - puppet-example
 - puppet-extlib
 - puppet-fail2ban
+- puppet-falco
 - puppet-ferm
 - puppet-fetchcrl
 - puppet-filemapper
