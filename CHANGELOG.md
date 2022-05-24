@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.0](https://github.com/voxpupuli/modulesync_config/tree/5.3.0) (2022-05-24)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.2.0...5.3.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-test: Pull in 5.4 or newer [\#782](https://github.com/voxpupuli/modulesync_config/pull/782) ([bastelfreak](https://github.com/bastelfreak))
+- Add additional\_packages config option [\#780](https://github.com/voxpupuli/modulesync_config/pull/780) ([ekohl](https://github.com/ekohl))
+- make rubocop\_todop.yml usage configureable [\#778](https://github.com/voxpupuli/modulesync_config/pull/778) ([bastelfreak](https://github.com/bastelfreak))
+- CONTRIBUTING.md: recommend puppet 6 testing [\#777](https://github.com/voxpupuli/modulesync_config/pull/777) ([bastelfreak](https://github.com/bastelfreak))
+
+**Closed issues:**
+
+- Create mechanism for auto-pushing generated docs [\#397](https://github.com/voxpupuli/modulesync_config/issues/397)
+
+**Merged pull requests:**
+
+- Adding puppet-falco to the list of managed modules [\#781](https://github.com/voxpupuli/modulesync_config/pull/781) ([genebean](https://github.com/genebean))
+- Gemfile: use singlequotes for Strings [\#776](https://github.com/voxpupuli/modulesync_config/pull/776) ([bastelfreak](https://github.com/bastelfreak))
+- Drop puppet-boolean [\#775](https://github.com/voxpupuli/modulesync_config/pull/775) ([ekohl](https://github.com/ekohl))
+
 ## [5.2.0](https://github.com/voxpupuli/modulesync_config/tree/5.2.0) (2022-01-28)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.1.0...5.2.0)
