@@ -24,6 +24,7 @@
 - puppet-borg
 - puppet-caddy
 - puppet-cassandra
+- puppet-catalog-diff
 - puppet-check_mk
 - puppet-chrony
 - puppet-collectd
