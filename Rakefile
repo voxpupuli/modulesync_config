@@ -8,6 +8,7 @@ end
 
 begin
   require 'github_changelog_generator/task'
+  require 'yaml'
 
   GitHubChangelogGenerator::RakeTask.new :changelog do |config|
     config.header = "# Changelog\n\nAll notable changes to this project will be documented in this file."
