@@ -114,5 +114,9 @@ appveyor.yml:
   delete: true
 pdk.yaml:
   delete: true
+.ruby-version:
+  delete: true
+.tool-versions:
+  delete: true
 ...
 # vim: syntax=yaml
