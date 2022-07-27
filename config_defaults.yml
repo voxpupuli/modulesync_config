@@ -32,11 +32,11 @@ Gemfile:
         ruby-version: '2.5'
         ruby-operator: '>='
       - gem: voxpupuli-release
-        version: '>= 1.2.0'
-      - gem: puppet-strings
-        version: '>= 2.2'
+        version: '~> 2.0'
 Rakefile:
-  puppet_strings_patterns: []
+  # config.user: USER
+  # config.project: PROJECT
+  # config.tag_pattern: 'v%s'
 .puppet-lint.rc:
   disabled_lint_checks:
     - parameter_documentation
