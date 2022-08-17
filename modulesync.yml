@@ -1,6 +1,6 @@
 ---
 git_base: 'git@github.com:'
-namespace: voxpupuli
+namespace: lsst-it
 branch: modulesync
 message: "Update from voxpupuli modulesync_config"
 ...
