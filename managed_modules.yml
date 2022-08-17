@@ -1,3 +1,19 @@
 ---
+- puppet-ccs_daq
+- puppet-ccs_database
+- puppet-ccs_hcu
+- puppet-ccs_monit
+- puppet-ccs_mrtg
+- puppet-ccs_sal
+- puppet-ccs_software
+- puppet-cni
+- puppet-daq
+- puppet-dellperc
+- puppet-helm_binary
+- puppet-java_artisanal
+- puppet-kubectl
+- puppet-maven
+- puppet-rke
+- puppet-smee
 ...
 # vim: syntax=yaml
