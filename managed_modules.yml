@@ -31,6 +31,7 @@
 - puppet-community_kickstarts
 - puppet-confluence
 - puppet-conntrackd
+- puppet-consul
 - puppet-corosync
 - puppet-cron
 - puppet-cvmfs
