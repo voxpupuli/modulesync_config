@@ -9,6 +9,7 @@
 - puppet-cni
 - puppet-daq
 - puppet-dellperc
+- puppet-foreman_envsync
 - puppet-helm_binary
 - puppet-java_artisanal
 - puppet-kubectl
