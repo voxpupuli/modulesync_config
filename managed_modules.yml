@@ -169,6 +169,7 @@
 - puppet-xmlfile
 - puppet-yum
 - puppet-zabbix
+- puppet-zram_generator
 - puppet-zypprepo
 ...
 # vim: syntax=yaml
