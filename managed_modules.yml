@@ -19,6 +19,7 @@
 - puppet-augeasproviders_nagios
 - puppet-augeasproviders_apache
 - puppet-autofs
+- puppet-bacula
 - puppet-bareos
 - puppet-bird
 - puppet-borg
