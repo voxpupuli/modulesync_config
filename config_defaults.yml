@@ -35,7 +35,6 @@ Gemfile:
       - gem: puppet-strings
         version: '>= 2.2'
 Rakefile:
-  config.user: voxpupuli
   puppet_strings_patterns: []
 .puppet-lint.rc:
   disabled_lint_checks:
