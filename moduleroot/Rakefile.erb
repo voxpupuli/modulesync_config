@@ -51,7 +51,7 @@ begin
     config.future_release = "v#{metadata.version}" if metadata.version =~ /^\d+\.\d+.\d+$/
     config.header = "# Changelog\n\nAll notable changes to this project will be documented in this file.\nEach new release typically also includes the latest modulesync defaults.\nThese should not affect the functionality of the module."
     config.exclude_labels = %w{duplicate question invalid wontfix wont-fix modulesync skip-changelog}
-    config.user = '<%= @configs['config.user'] -%>'
+    config.user = '<%= @configs['config.user'] || @configs[:namespace] %>'
     config.project = '<%= @configs['config.project'] || @configs[:puppet_module] %>'
   end
 
