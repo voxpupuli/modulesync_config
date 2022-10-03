@@ -4,6 +4,7 @@
   excludes: []
   pidfile_workaround: false
   additional_packages: ''
+  acceptance_tests: true
 .travis.yml:
   delete: true
 Jenkinsfile:
