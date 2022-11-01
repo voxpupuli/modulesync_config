@@ -123,6 +123,7 @@
 - puppet-prosody
 - puppet-puppetboard
 - puppet-puppetwebhook
+- puppet-puppet_certificate
 - puppet-puppet_summary
 - puppet-pxe
 - puppet-python
