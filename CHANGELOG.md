@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.4.0](https://github.com/voxpupuli/modulesync_config/tree/5.4.0) (2022-12-20)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.3.0...5.4.0)
+
+**Implemented enhancements:**
+
+- puppet\_metadata: Use 2.x [\#801](https://github.com/voxpupuli/modulesync_config/pull/801) ([bastelfreak](https://github.com/bastelfreak))
+- Allow opting-out of GitHub Action acceptance tests [\#798](https://github.com/voxpupuli/modulesync_config/pull/798) ([smortex](https://github.com/smortex))
+- Add puppet-conntrackd [\#790](https://github.com/voxpupuli/modulesync_config/pull/790) ([bastelfreak](https://github.com/bastelfreak))
+- Set add\_mocked\_facts [\#693](https://github.com/voxpupuli/modulesync_config/pull/693) ([ekohl](https://github.com/ekohl))
+
+**Fixed bugs:**
+
+- Explicitly require YAML in Rakefile [\#786](https://github.com/voxpupuli/modulesync_config/pull/786) ([ekohl](https://github.com/ekohl))
+
+**Merged pull requests:**
+
+- Add puppet-puppet\_certificate [\#799](https://github.com/voxpupuli/modulesync_config/pull/799) ([alexjfisher](https://github.com/alexjfisher))
+- delete legacy default nodeset [\#797](https://github.com/voxpupuli/modulesync_config/pull/797) ([bastelfreak](https://github.com/bastelfreak))
+- add Rakefile config.project to set changelog project name [\#796](https://github.com/voxpupuli/modulesync_config/pull/796) ([jhoblitt](https://github.com/jhoblitt))
+- Add puppet-bacula [\#795](https://github.com/voxpupuli/modulesync_config/pull/795) ([smortex](https://github.com/smortex))
+- Addition of puppet-zram\_generator [\#794](https://github.com/voxpupuli/modulesync_config/pull/794) ([traylenator](https://github.com/traylenator))
+- delete legacy nodesets [\#793](https://github.com/voxpupuli/modulesync_config/pull/793) ([bastelfreak](https://github.com/bastelfreak))
+- add puppet-consul [\#792](https://github.com/voxpupuli/modulesync_config/pull/792) ([bastelfreak](https://github.com/bastelfreak))
+- Delete .ruby-version and .tool-versions by default [\#787](https://github.com/voxpupuli/modulesync_config/pull/787) ([root-expert](https://github.com/root-expert))
+- Add puppet-catalog-diff [\#785](https://github.com/voxpupuli/modulesync_config/pull/785) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [5.3.0](https://github.com/voxpupuli/modulesync_config/tree/5.3.0) (2022-05-24)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.2.0...5.3.0)
