@@ -85,6 +85,7 @@
 - puppet-letsencrypt
 - puppet-lldpd
 - puppet-logrotate
+- puppet-logstash
 - puppet-make
 - puppet-metche
 - puppet-minecraft
