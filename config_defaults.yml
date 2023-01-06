@@ -135,5 +135,9 @@ CODE_OF_CONDUCT.md:
   delete: true
 .github/CODE_OF_CONDUCT.md:
   delete: true
+SECURITY.md:
+  delete: true
+.github/SECURITY.md:
+  delete: true
 ...
 # vim: syntax=yaml
