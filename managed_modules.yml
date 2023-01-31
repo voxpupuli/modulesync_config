@@ -3,7 +3,6 @@
 - puppet-ccs_database
 - puppet-ccs_hcu
 - puppet-ccs_monit
-- puppet-ccs_mrtg
 - puppet-ccs_sal
 - puppet-ccs_software
 - puppet-cni
