@@ -80,6 +80,7 @@
 - puppet-jenkins_job_builder
 - puppet-jira
 - puppet-jolokia
+- puppet-k8s
 - puppet-kafka
 - puppet-keepalived
 - puppet-kibana
