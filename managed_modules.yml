@@ -113,6 +113,7 @@
 - puppet-nsclient
 - puppet-nsd
 - puppet-openldap
+- puppet-opensearch
 - puppet-openssl
 - puppet-openvmtools
 - puppet-openvpn
