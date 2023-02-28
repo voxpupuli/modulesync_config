@@ -139,5 +139,7 @@ SECURITY.md:
   delete: true
 .github/SECURITY.md:
   delete: true
+Modulefile:
+  delete: true
 ...
 # vim: syntax=yaml
