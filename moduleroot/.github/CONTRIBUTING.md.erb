@@ -12,6 +12,7 @@
 * [Running the unit tests](#running-the-unit-tests)
 * [Unit tests in docker](#unit-tests-in-docker)
 * [Integration tests](#integration-tests)
+* [Using dev containers](#using-dev-containers)
 
 This module has grown over time based on a range of contributions from
 people using it. If you follow these contributing guidelines your patch
@@ -249,3 +250,28 @@ For more information and tips & tricks, see [voxpupuli-acceptance's documentatio
 
 The source of this file is in our [modulesync_config](https://github.com/voxpupuli/modulesync_config/blob/master/moduleroot/.github/CONTRIBUTING.md.erb)
 repository.
+
+## Using dev containers
+
+[Puppet's dev tools container](https://hub.docker.com/r/puppet/puppet-dev-tools) can be used for development purposes, just run:
+
+```sh
+docker run \
+  --rm -it \
+  --network host \
+  -v $(pwd):/repo \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -e DOCKER_IN_DOCKER=true \
+  puppet/puppet-dev-tools:4.x \
+    /bin/bash -c " \
+      git config --global --add safe.directory /repo; \
+      bundle config set --local path '.vendor/'; \
+      bundle config set --local without 'development release'; \
+      bundle config set --local with 'system_tests': \
+      bundle install --jobs "$(nproc)"; \
+      bundle update; \
+      bundle clean ; \
+      /bin/bash"
+```
+
+The interactive container shell will allow you to launch any available rake task, you can see all of them with `bundle exec rake --all --tasks`
