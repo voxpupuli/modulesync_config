@@ -5,6 +5,9 @@
   pidfile_workaround: false
   additional_packages: ''
   acceptance_tests: true
+# PDK creates this
+.github/workflows/puppet-lint.yml:
+  delete: true
 .travis.yml:
   delete: true
 Jenkinsfile:
