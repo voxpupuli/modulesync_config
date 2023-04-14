@@ -2,6 +2,38 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.5.0](https://github.com/voxpupuli/modulesync_config/tree/5.5.0) (2023-04-14)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.4.0...5.5.0)
+
+**Implemented enhancements:**
+
+- require modulesync 2.6 or newer [\#818](https://github.com/voxpupuli/modulesync_config/pull/818) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-logstash [\#804](https://github.com/voxpupuli/modulesync_config/pull/804) ([h-haaks](https://github.com/h-haaks))
+
+**Fixed bugs:**
+
+- anchor .gitignore paths [\#809](https://github.com/voxpupuli/modulesync_config/pull/809) ([jhoblitt](https://github.com/jhoblitt))
+- anchor most .pmtignore patterns to the root of the module [\#791](https://github.com/voxpupuli/modulesync_config/pull/791) ([jhoblitt](https://github.com/jhoblitt))
+
+**Merged pull requests:**
+
+- Bump actions/checkout from 2 to 3 [\#820](https://github.com/voxpupuli/modulesync_config/pull/820) ([dependabot[bot]](https://github.com/apps/dependabot))
+- dependabot: check for github actions and gems [\#819](https://github.com/voxpupuli/modulesync_config/pull/819) ([bastelfreak](https://github.com/bastelfreak))
+- Drop PDK created puppet-lint GHA workflow [\#817](https://github.com/voxpupuli/modulesync_config/pull/817) ([ekohl](https://github.com/ekohl))
+- Purge legacy Modulefile in modules [\#815](https://github.com/voxpupuli/modulesync_config/pull/815) ([bastelfreak](https://github.com/bastelfreak))
+- Add module puppet-varnish [\#814](https://github.com/voxpupuli/modulesync_config/pull/814) ([voxel01](https://github.com/voxel01))
+- Add puppet-opensearch [\#813](https://github.com/voxpupuli/modulesync_config/pull/813) ([crazymind1337](https://github.com/crazymind1337))
+- Add puppet-k8s [\#812](https://github.com/voxpupuli/modulesync_config/pull/812) ([ananace](https://github.com/ananace))
+- Add puppet-hdm [\#811](https://github.com/voxpupuli/modulesync_config/pull/811) ([bastelfreak](https://github.com/bastelfreak))
+- Allow configuring RuboCop in CI [\#810](https://github.com/voxpupuli/modulesync_config/pull/810) ([ekohl](https://github.com/ekohl))
+- puppet-dnsquery: add dnsquery to modulesync [\#808](https://github.com/voxpupuli/modulesync_config/pull/808) ([b4ldr](https://github.com/b4ldr))
+- Add puppet-format [\#807](https://github.com/voxpupuli/modulesync_config/pull/807) ([ekohl](https://github.com/ekohl))
+- Delete legacy SECURITY.md [\#806](https://github.com/voxpupuli/modulesync_config/pull/806) ([bastelfreak](https://github.com/bastelfreak))
+- Delete old code of conducts [\#805](https://github.com/voxpupuli/modulesync_config/pull/805) ([bastelfreak](https://github.com/bastelfreak))
+- Stop managing staging and tea [\#803](https://github.com/voxpupuli/modulesync_config/pull/803) ([ekohl](https://github.com/ekohl))
+- Rework release preparation tasks [\#789](https://github.com/voxpupuli/modulesync_config/pull/789) ([smortex](https://github.com/smortex))
+
 ## [5.4.0](https://github.com/voxpupuli/modulesync_config/tree/5.4.0) (2022-12-20)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.3.0...5.4.0)
@@ -315,9 +347,9 @@ With the 5.0.0 release of modulesync_config we stopped official support for Pupp
 - State centos8 as working docker container [\#630](https://github.com/voxpupuli/modulesync_config/pull/630) ([traylenator](https://github.com/traylenator))
 - Add module puppet-earlyoom [\#629](https://github.com/voxpupuli/modulesync_config/pull/629) ([dhoppe](https://github.com/dhoppe))
 - update CONTRIBUTING.md with current beaker nodesets [\#628](https://github.com/voxpupuli/modulesync_config/pull/628) ([bastelfreak](https://github.com/bastelfreak))
-- Include more modules for management [\#626](https://github.com/voxpupuli/modulesync_config/pull/626) ([xaque208](https://github.com/xaque208))
-- Include group-ldapquery for management [\#625](https://github.com/voxpupuli/modulesync_config/pull/625) ([xaque208](https://github.com/xaque208))
-- Include group-membership for management [\#624](https://github.com/voxpupuli/modulesync_config/pull/624) ([xaque208](https://github.com/xaque208))
+- Include more modules for management [\#626](https://github.com/voxpupuli/modulesync_config/pull/626) ([zachfi](https://github.com/zachfi))
+- Include group-ldapquery for management [\#625](https://github.com/voxpupuli/modulesync_config/pull/625) ([zachfi](https://github.com/zachfi))
+- Include group-membership for management [\#624](https://github.com/voxpupuli/modulesync_config/pull/624) ([zachfi](https://github.com/zachfi))
 
 ## [2.10.1](https://github.com/voxpupuli/modulesync_config/tree/2.10.1) (2019-12-31)
 
