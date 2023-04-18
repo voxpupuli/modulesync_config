@@ -36,6 +36,10 @@ Gemfile:
         ruby-operator: '>='
       - gem: voxpupuli-release
         version: '~> 2.0'
+      - gem: faraday-retry
+        version: '~> 2.1'
+        ruby-version: '2.6'
+        ruby-operator: '>='
 Rakefile:
   # config.user: USER
   # config.project: PROJECT
