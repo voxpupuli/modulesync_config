@@ -36,6 +36,8 @@ Gemfile:
         version: '~> 2.0'
       - gem: faraday-retry
         version: '~> 2.1'
+      - gem: puppet-strings
+        version: '~> 4.0'
 Rakefile:
   # config.user: USER
   # config.project: PROJECT
