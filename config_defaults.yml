@@ -33,11 +33,9 @@ Gemfile:
       - gem: github_changelog_generator
         version: '>= 1.16.1'
       - gem: voxpupuli-release
-        version: '~> 2.0'
+        version: '~> 3.0'
       - gem: faraday-retry
         version: '~> 2.1'
-      - gem: puppet-strings
-        version: '~> 4.0'
 Rakefile:
   # config.user: USER
   # config.project: PROJECT
