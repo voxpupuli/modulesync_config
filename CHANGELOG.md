@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.0](https://github.com/voxpupuli/modulesync_config/tree/6.0.0) (2023-05-12)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.5.0...6.0.0)
+
+**Breaking changes:**
+
+- voxpupuli-acceptance: Require 2.x [\#830](https://github.com/voxpupuli/modulesync_config/pull/830) ([bastelfreak](https://github.com/bastelfreak))
+- voxpupuli-release: Switch to 3.x [\#829](https://github.com/voxpupuli/modulesync_config/pull/829) ([bastelfreak](https://github.com/bastelfreak))
+- voxpupuli-test: Switch to 6.x [\#828](https://github.com/voxpupuli/modulesync_config/pull/828) ([bastelfreak](https://github.com/bastelfreak))
+- Drop Ruby 2.5/2.6 specific code [\#826](https://github.com/voxpupuli/modulesync_config/pull/826) ([bastelfreak](https://github.com/bastelfreak))
+- puppet\_metadata: switch to 3.x [\#825](https://github.com/voxpupuli/modulesync_config/pull/825) ([bastelfreak](https://github.com/bastelfreak))
+- Gemfile: Pin to Puppet ~\> 7.24 [\#824](https://github.com/voxpupuli/modulesync_config/pull/824) ([bastelfreak](https://github.com/bastelfreak))
+- puppet-strings: require 4.x [\#800](https://github.com/voxpupuli/modulesync_config/pull/800) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Delete broken Dockerfile [\#827](https://github.com/voxpupuli/modulesync_config/pull/827) ([bastelfreak](https://github.com/bastelfreak))
+- Add faraday-retry to release gem group [\#823](https://github.com/voxpupuli/modulesync_config/pull/823) ([bastelfreak](https://github.com/bastelfreak))
+- Remove template for `.yardopts` [\#822](https://github.com/voxpupuli/modulesync_config/pull/822) ([smortex](https://github.com/smortex))
+
 ## [5.5.0](https://github.com/voxpupuli/modulesync_config/tree/5.5.0) (2023-04-14)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.4.0...5.5.0)
