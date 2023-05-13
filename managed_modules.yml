@@ -117,6 +117,7 @@
 - puppet-openssl
 - puppet-openvmtools
 - puppet-openvpn
+- puppet-otelcol
 - puppet-pbuilder
 - puppet-php
 - puppet-pkgng
