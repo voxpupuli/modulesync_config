@@ -67,6 +67,7 @@
 - puppet-googleauthenticator
 - puppet-grafana
 - puppet-graphite_powershell
+- puppet-graylog_api
 - puppet-groupmembership
 - puppet-hashi_stack
 - puppet-hdm
