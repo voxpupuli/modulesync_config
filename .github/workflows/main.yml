@@ -17,3 +17,16 @@ jobs:
           bundler-cache: true
       - name: Run msync --noop
         run: bundle exec msync update --noop --git-base=https://github.com/
+  metadata_json_deps:
+    runs-on: ubuntu-latest
+    name: Run metadata_json_deps on all modules
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - name: Run msync --noop
+        run: bundle exec msync clone --git-base=https://github.com/
+      - run: bundle exec rake metadata_deps
