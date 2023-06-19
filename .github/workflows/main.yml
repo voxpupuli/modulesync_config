@@ -32,3 +32,12 @@ jobs:
       - name: Run msync --noop
         run: bundle exec msync clone --git-base=https://github.com/
       - run: bundle exec rake metadata_deps
+
+  tests:
+    needs:
+      - unit
+      - metadata_json_deps
+    runs-on: ubuntu-latest
+    name: Test suite
+    steps:
+      - run: echo Test suite completed
