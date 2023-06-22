@@ -118,6 +118,8 @@ spec/spec_helper.rb:
   mock_with: false
 spec/spec_helper_acceptance.rb:
   unmanaged: true
+  configure_beaker:
+    modules: ':metadata'
 CONTRIBUTING.md:
   delete: true
 .yardopts:

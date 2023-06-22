@@ -5,6 +5,8 @@
 
 require 'voxpupuli/acceptance/spec_helper_acceptance'
 
-configure_beaker
+<%- unless @configs['configure_beaker'].nil? -%>
+configure_beaker(modules: <%= @configs['configure_beaker']['modules'] || ':metadata' %>)
 
+<%- end -%>
 Dir['./spec/support/acceptance/**/*.rb'].sort.each { |f| require f }
