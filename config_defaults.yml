@@ -20,6 +20,8 @@
   delete: true
 Jenkinsfile:
   delete: true
+Dockerfile:
+  delete: true
 Gemfile:
   openvox_version: ['>= 7', '< 9']
   required:
