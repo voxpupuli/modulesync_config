@@ -35,6 +35,6 @@ jobs:
 <%- if @configs.key?('rubocop') -%>
       rubocop: <%= @configs['rubocop'] %>
 <%- end -%>
-<%- if !Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? && @configs['unit_runs_on'] -%>
+<%- if Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].none? && @configs['unit_runs_on'] -%>
       unit_runs_on: '<%= @configs['unit_runs_on'] %>'
 <%- end -%>
