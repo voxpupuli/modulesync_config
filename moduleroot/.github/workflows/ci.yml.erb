@@ -17,9 +17,15 @@ jobs:
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v1
     with:
       pidfile_workaround: '<%= @configs['pidfile_workaround'] %>'
+<%- if @configs['unit_runs_on'] -%>
+      unit_runs_on: '<%= @configs['unit_runs_on'] %>'
+<%- end -%>
+<%- if @configs['acceptance_runs_on'] -%>
+      acceptance_runs_on: '<%= @configs['acceptance_runs_on'] %>'
+<%- end -%>
 <%- else -%>
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
-<%- if @configs.key?('rubocop') || !@configs['additional_packages'].empty? -%>
+<%- if @configs.key?('rubocop') || !@configs['additional_packages'].empty? || @configs.key?('unit_runs_on') -%>
     with:
 <%- end -%>
 <%- end -%>
@@ -28,4 +34,7 @@ jobs:
 <%- end -%>
 <%- if @configs.key?('rubocop') -%>
       rubocop: <%= @configs['rubocop'] %>
+<%- end -%>
+<%- if Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].none? && @configs['unit_runs_on'] -%>
+      unit_runs_on: '<%= @configs['unit_runs_on'] %>'
 <%- end -%>
