@@ -13,6 +13,7 @@
 - puppet-java_artisanal
 - puppet-kubectl
 - puppet-maven
+- puppet-nm
 - puppet-rke
 - puppet-smee
 ...
