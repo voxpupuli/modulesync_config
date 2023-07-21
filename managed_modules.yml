@@ -149,6 +149,7 @@
 - puppet-splunk
 - puppet-squid
 - puppet-ssh_keygen
+- puppet-sssd
 - puppet-stackify
 - puppet-stash
 - puppet-strongswan
