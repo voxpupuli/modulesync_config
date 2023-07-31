@@ -112,6 +112,7 @@
 - puppet-nsd
 - puppet-openldap
 - puppet-opensearch
+- puppet-opensearch_dashboards
 - puppet-openssl
 - puppet-openvmtools
 - puppet-openvpn
