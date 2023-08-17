@@ -161,6 +161,7 @@
 - puppet-unattended_upgrades
 - puppet-unbound
 - puppet-varnish
+- puppet-vault
 - puppet-vault_lookup
 - puppet-virtualbox
 - puppet-visualstudio
