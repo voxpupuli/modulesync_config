@@ -2,6 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.0](https://github.com/voxpupuli/modulesync_config/tree/7.0.0) (2023-08-17)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/6.0.0...7.0.0)
+
+**Breaking changes:**
+
+- voxpupuli-test: Require 7.x [\#843](https://github.com/voxpupuli/modulesync_config/pull/843) ([bastelfreak](https://github.com/bastelfreak))
+
+**Implemented enhancements:**
+
+- add modules param to spec\_helper\_acceptance.rb.erb [\#837](https://github.com/voxpupuli/modulesync_config/pull/837) ([jhoblitt](https://github.com/jhoblitt))
+
+**Merged pull requests:**
+
+- Add puppet-opensearch\_dashboards [\#842](https://github.com/voxpupuli/modulesync_config/pull/842) ([smortex](https://github.com/smortex))
+- Add management of the newly transfered SSSD module [\#841](https://github.com/voxpupuli/modulesync_config/pull/841) ([jcpunk](https://github.com/jcpunk))
+- CI: Make runners configurable [\#840](https://github.com/voxpupuli/modulesync_config/pull/840) ([bastelfreak](https://github.com/bastelfreak))
+- add spec/support/spec/\*\* dir for symmetry with \_acceptance.rb [\#839](https://github.com/voxpupuli/modulesync_config/pull/839) ([jhoblitt](https://github.com/jhoblitt))
+- CI: Run metadata\_deps on all modules [\#836](https://github.com/voxpupuli/modulesync_config/pull/836) ([bastelfreak](https://github.com/bastelfreak))
+- Deprecate multiple modules [\#835](https://github.com/voxpupuli/modulesync_config/pull/835) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-graylog\_api [\#834](https://github.com/voxpupuli/modulesync_config/pull/834) ([bastelfreak](https://github.com/bastelfreak))
+- Example how to set puppet version [\#833](https://github.com/voxpupuli/modulesync_config/pull/833) ([traylenator](https://github.com/traylenator))
+- Add module puppet-otelcol [\#832](https://github.com/voxpupuli/modulesync_config/pull/832) ([voxel01](https://github.com/voxel01))
+
 ## [6.0.0](https://github.com/voxpupuli/modulesync_config/tree/6.0.0) (2023-05-12)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/5.5.0...6.0.0)
