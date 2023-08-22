@@ -1,0 +1,51 @@
+#!/usr/bin/env ruby
+
+require 'json'
+
+def normalize_name(name)
+  name.tr('-', '/')
+end
+
+def bump_os(filename)
+  metadata = JSON.load(File.read(filename))
+
+  raise Exception.new('Unable to find requirements') unless metadata['requirements'].is_a?(Array)
+
+  old = metadata['requirements']
+  new = [
+    {
+      name: 'puppet',
+      version_requirement: '>= 7.0.0 < 9.0.0'
+    },
+  ]
+
+  metadata['requirements'] = new
+  File.open(filename, 'w') do
+    |file| file.write(JSON.pretty_generate(metadata) + "\n")
+  end
+
+  [old, new]
+end
+
+def main
+  if ARGV.length < 1
+    puts "Usage: #{$PROGRAM_NAME} [metadata_path]"
+    exit 1
+  end
+
+  *paths = ARGV
+  paths.each do |path|
+    begin
+      old, new = bump_os(path)
+      if old != new
+        puts "Updated #{path}: '#{old}' to '#{new}'"
+      else
+        puts "#{path} already matches #{upper_bound}"
+      end
+    rescue Exception => e
+      puts "Failed to update #{path}: #{e}"
+    end
+  end
+end
+
+main

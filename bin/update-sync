@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+def do_stuff(filename)
+  metadata = YAML.load_file(filename)
+
+  #raise Exception.new('Unable to find Gemfile') unless metadata['Gemfile'].is_a?(Hash)
+
+  old = metadata['Gemfile']
+  new = {
+    'optional' => {
+      ':test' => [
+        { 'gem' => 'puppet-lint-package_ensure-check' },
+        { 'gem' => 'puppet-lint-resource_reference_syntax' },
+        { 'gem' => 'puppet-lint-strict_indent-check' },
+        { 'gem' => 'puppet-lint-unquoted_string-check' },
+        { 'gem' => 'puppet-lint-variable_contains_upcase' },
+      ],
+    },
+  }
+
+  metadata['Gemfile'] = new
+  File.open(filename, 'w') do
+    |file| file.write(YAML.dump(metadata).chomp + "\n")
+  end
+
+  [old, new]
+end
+
+def main
+  if ARGV.length < 1
+    puts "Usage: #{$PROGRAM_NAME} [metadata_path]"
+    exit 1
+  end
+
+  *paths = ARGV
+  paths.each do |path|
+    begin
+      old, new = do_stuff(path)
+      if old != new
+        puts "Updated #{path}: '#{old}' to '#{new}'"
+      else
+        puts "#{path} already matches #{upper_bound}"
+      end
+    rescue Exception => e
+      puts "Failed to update #{path}: #{e}"
+    end
+  end
+end
+
+main
