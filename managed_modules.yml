@@ -73,6 +73,7 @@
 - puppet-healthcheck
 - puppet-hiera
 - puppet-homeassistant
+- puppet-hosts
 - puppet-hyperglass
 - puppet-ipset
 - puppet-jail
