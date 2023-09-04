@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run msync --noop against all modules
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
@@ -23,7 +23,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Run metadata_json_deps on all modules
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
