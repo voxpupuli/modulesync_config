@@ -28,6 +28,7 @@
 - puppet-catalog-diff
 - puppet-check_mk
 - puppet-chrony
+- puppet-clevis
 - puppet-collectd
 - puppet-community_kickstarts
 - puppet-confluence
@@ -156,6 +157,7 @@
 - puppet-stash
 - puppet-strongswan
 - puppet-systemd
+- puppet-tang
 - puppet-telegraf
 - puppet-trusted_ca
 - puppet-tuned
