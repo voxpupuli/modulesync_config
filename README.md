@@ -51,6 +51,32 @@ export GITHUB_TOKEN=token
 bundle exec msync update --message "modulesync $(git describe)" --pr --pr-labels modulesync --pr-title "modulesync $(git describe)"
 ```
 
+### Create a new module
+
+It is possible to create a new module using msync.
+First add it to the list of modules in `managed_modules.yml`.
+If it's not in the voxpupuli namespace, be sure to include yours by using `mynamespace/puppet-module`.
+Then use an offline update to create the structure:
+
+```bash
+bundle exec msync update --offline -f puppet-mymodule
+```
+
+Now a new directory `modules/mynamespace/puppet-mymodule` will be created.
+
+Initialize git and push it to your location:
+
+```bash
+cd modules/mynamespace/puppet-mymodule
+git init
+git add .
+git commit -m 'Add module skeleton'
+git remote add origin git@github.com:mynamespace/puppet-mymodule
+git push origin HEAD -u
+```
+
+Now proceed with the regular module work, such as creating `metadata.json` and your manifests.
+
 ### Clean up old mess before syncing
 
 ```bash
