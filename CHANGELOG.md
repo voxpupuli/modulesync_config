@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.1.0](https://github.com/voxpupuli/modulesync_config/tree/7.1.0) (2023-10-09)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.0.0...7.1.0)
+
+**Implemented enhancements:**
+
+- Add instructions to create a new module [\#853](https://github.com/voxpupuli/modulesync_config/pull/853) ([ekohl](https://github.com/ekohl))
+- Cleanup release gem group for modules [\#852](https://github.com/voxpupuli/modulesync_config/pull/852) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Add clevis and tang module [\#851](https://github.com/voxpupuli/modulesync_config/pull/851) ([tuxmea](https://github.com/tuxmea))
+- add wildfly [\#850](https://github.com/voxpupuli/modulesync_config/pull/850) ([rwaffen](https://github.com/rwaffen))
+- add puppet-hosts mod [\#848](https://github.com/voxpupuli/modulesync_config/pull/848) ([jhoblitt](https://github.com/jhoblitt))
+- Migrate jcpunk/tuned to voxpupuli [\#847](https://github.com/voxpupuli/modulesync_config/pull/847) ([jcpunk](https://github.com/jcpunk))
+- add puppet-vault module [\#845](https://github.com/voxpupuli/modulesync_config/pull/845) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [7.0.0](https://github.com/voxpupuli/modulesync_config/tree/7.0.0) (2023-08-17)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/6.0.0...7.0.0)
@@ -62,7 +79,6 @@ All notable changes to this project will be documented in this file.
 
 **Merged pull requests:**
 
-- Bump actions/checkout from 2 to 3 [\#820](https://github.com/voxpupuli/modulesync_config/pull/820) ([dependabot[bot]](https://github.com/apps/dependabot))
 - dependabot: check for github actions and gems [\#819](https://github.com/voxpupuli/modulesync_config/pull/819) ([bastelfreak](https://github.com/bastelfreak))
 - Drop PDK created puppet-lint GHA workflow [\#817](https://github.com/voxpupuli/modulesync_config/pull/817) ([ekohl](https://github.com/ekohl))
 - Purge legacy Modulefile in modules [\#815](https://github.com/voxpupuli/modulesync_config/pull/815) ([bastelfreak](https://github.com/bastelfreak))
