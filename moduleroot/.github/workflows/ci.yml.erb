@@ -14,7 +14,7 @@ jobs:
   puppet:
     name: Puppet
 <%- if @configs['acceptance_tests'] && Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
-    uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v1
+    uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v2
     with:
       pidfile_workaround: '<%= @configs['pidfile_workaround'] %>'
 <%- if @configs['unit_runs_on'] -%>
@@ -24,7 +24,7 @@ jobs:
       acceptance_runs_on: '<%= @configs['acceptance_runs_on'] %>'
 <%- end -%>
 <%- else -%>
-    uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v1
+    uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v2
 <%- if @configs.key?('rubocop') || !@configs['additional_packages'].empty? || @configs.key?('unit_runs_on') -%>
     with:
 <%- end -%>
