@@ -10,6 +10,7 @@
 - puppet-dellperc
 - puppet-foreman_envsync
 - puppet-helm_binary
+- puppet-ipa
 - puppet-java_artisanal
 - puppet-kubectl
 - puppet-maven
