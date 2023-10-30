@@ -22,6 +22,9 @@ jobs:
 <%- if @configs['acceptance_tests'] && Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v2
     with:
+<%-   if @configs['with'] -%>
+<%=     @configs['with'].to_yaml.split("\n")[1..-1].join.gsub(/^/, ' ' * 6) %>
+<%-   end -%>
       pidfile_workaround: '<%= @configs['pidfile_workaround'] %>'
 <%- if @configs['unit_runs_on'] -%>
       unit_runs_on: '<%= @configs['unit_runs_on'] %>'
