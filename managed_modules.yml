@@ -15,6 +15,7 @@
 - puppet-kubectl
 - puppet-maven
 - puppet-nm
+- puppet-pi
 - puppet-rke
 - puppet-smee
 ...
