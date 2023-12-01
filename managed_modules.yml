@@ -16,6 +16,7 @@
 - puppet-maven
 - puppet-nm
 - puppet-pi
+- puppet-powertop
 - puppet-rke
 - puppet-smee
 ...
