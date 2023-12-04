@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.2.0](https://github.com/voxpupuli/modulesync_config/tree/7.2.0) (2023-12-04)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.1.0...7.2.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-acceptance: Require 3.x [\#859](https://github.com/voxpupuli/modulesync_config/pull/859) ([bastelfreak](https://github.com/bastelfreak))
+- support setting beaker\_facter in ci.yml [\#856](https://github.com/voxpupuli/modulesync_config/pull/856) ([evgeni](https://github.com/evgeni))
+- Update to gha-puppet v2 [\#855](https://github.com/voxpupuli/modulesync_config/pull/855) ([ekohl](https://github.com/ekohl))
+
+**Fixed bugs:**
+
+- .pmtignore: Ignore HISTORY.md [\#857](https://github.com/voxpupuli/modulesync_config/pull/857) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [7.1.0](https://github.com/voxpupuli/modulesync_config/tree/7.1.0) (2023-10-09)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.0.0...7.1.0)
