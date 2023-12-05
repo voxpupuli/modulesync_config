@@ -112,6 +112,7 @@
 - puppet-nscd
 - puppet-nsclient
 - puppet-nsd
+- puppet-nsswitch
 - puppet-openldap
 - puppet-opensearch
 - puppet-opensearch_dashboards
