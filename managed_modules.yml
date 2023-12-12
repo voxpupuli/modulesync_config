@@ -23,6 +23,7 @@
 - puppet-bareos
 - puppet-bird
 - puppet-borg
+- puppet-boundary
 - puppet-caddy
 - puppet-cassandra
 - puppet-catalog-diff
