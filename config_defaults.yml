@@ -142,5 +142,7 @@ SECURITY.md:
   delete: true
 Modulefile:
   delete: true
+Makefile:
+  delete: true
 ...
 # vim: syntax=yaml
