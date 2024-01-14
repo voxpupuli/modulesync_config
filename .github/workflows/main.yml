@@ -33,6 +33,20 @@ jobs:
       - name: Run msync --noop
         run: bundle exec msync clone --git-base=https://github.com/
       - run: bundle exec rake metadata_deps
+  outdated_module_summary:
+    runs-on: ubuntu-latest
+    name: Prints a list of all modules with outdated modulesync_config version
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7
+          bundler-cache: true
+      - name: Run msync --noop
+        run: bundle exec msync clone --git-base=https://github.com/
+      - name: Generate summary
+        run: bundle exec bin/outdated_modules_and_their_version
 
   tests:
     needs:
