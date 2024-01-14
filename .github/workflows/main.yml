@@ -1,6 +1,7 @@
 name: noop run
 
 on:
+  workflow_dispatch: {}
   pull_request: {}
   push:
     branches:
