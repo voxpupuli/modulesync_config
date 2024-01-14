@@ -19,7 +19,7 @@ jobs:
           ruby-version: 2.7
           bundler-cache: true
       - name: Run msync --noop
-        run: bundle exec msync update --noop --git-base=https://github.com/
+        run: bundle exec msync update --noop --git-base=https://github.com/ --branch foobranch
   metadata_json_deps:
     runs-on: ubuntu-latest
     name: Run metadata_json_deps on all modules
