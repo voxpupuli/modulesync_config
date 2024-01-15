@@ -1,0 +1,17 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'erb'
+
+# the current version in modulesync_config
+version = YAML.load(ERB.new(File.read('moduleroot/.msync.yml.erb')).result)['modulesync_config_version']
+
+puts "current version: #{version}"
+puts '---------------------------------------------'
+puts "| Module\t| modulesync_config version |"
+puts '---------------------------------------------'
+Dir.glob('modules/voxpupuli/puppet-*/.msync.yml').each do|f|
+  version_module = YAML.load_file(f)['modulesync_config_version']
+  mod = f.split('/')[2]
+  puts "| #{mod}\t| #{version_module}\t|" if version != version_module
+end
