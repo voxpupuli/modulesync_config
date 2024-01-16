@@ -7,7 +7,7 @@ require 'erb'
 version = YAML.load(ERB.new(File.read('moduleroot/.msync.yml.erb')).result)['modulesync_config_version']
 
 mod_ary = []
-# min width is with of String "Module"
+# min width is width of String "Module"
 width_modules = 6
 # min width is width of String "modulesync_config version"
 width_version = 25
@@ -15,7 +15,7 @@ Dir.glob('modules/voxpupuli/puppet-*/.msync.yml').each do|f|
   version_module = YAML.load_file(f)['modulesync_config_version']
   mod = f.split('/')[2]
   if version != version_module
-    mod_ary.push([mod,version_module])
+    mod_ary.push([mod, version_module])
     width_modules = [width_modules, mod.length].max
     width_version = [width_version, version_module.length].max
   end
