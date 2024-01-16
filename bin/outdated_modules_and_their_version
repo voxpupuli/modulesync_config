@@ -6,12 +6,30 @@ require 'erb'
 # the current version in modulesync_config
 version = YAML.load(ERB.new(File.read('moduleroot/.msync.yml.erb')).result)['modulesync_config_version']
 
-puts "current version: #{version}"
-puts '---------------------------------------------'
-puts "| Module\t| modulesync_config version |"
-puts '---------------------------------------------'
+mod_ary = Array.new
+# min width is with of Sting "Module"
+width_modules = 6
+# min width is width of String "modulesync_config version"
+width_version = 25
 Dir.glob('modules/voxpupuli/puppet-*/.msync.yml').each do|f|
   version_module = YAML.load_file(f)['modulesync_config_version']
   mod = f.split('/')[2]
-  puts "| #{mod}\t| #{version_module}\t|" if version != version_module
+  if version != version_module
+    mod_ary.push([mod,version_module])
+    width_modules = [width_modules,mod.length].max
+    width_version = [width_version,version_module.length].max
+  end
+end
+
+total_width = width_modules + width_version + 7
+
+puts '-' * total_width
+puts "current version: #{version}"
+puts '-' * total_width
+puts '| Module' + ' '* (width_modules - 6) + ' | modulesync_config version' + ' '*(width_version-25) + ' |'
+puts '-' * total_width
+mod_ary.each do |m|
+  mod = m[0]
+  version_module = m[1] 
+  puts "| #{mod}" + ' '*(width_modules-mod.length) +" | #{version_module}" + ' '*(width_version-version_module.length) +' |'
 end
