@@ -158,6 +158,7 @@
 - puppet-stackify
 - puppet-stash
 - puppet-strongswan
+- puppet-swap_file
 - puppet-systemd
 - puppet-tang
 - puppet-telegraf
