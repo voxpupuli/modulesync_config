@@ -8,8 +8,9 @@ on:
   pull_request: {}
   push:
     branches:
-      - main
-      - master
+<%- @configs['main_branches'].each do |main_branch| -%>
+      - <%= main_branch %>
+<%- end -%>
 
 concurrency:
   group: ${{ github.ref_name }}
