@@ -29,6 +29,9 @@ jobs:
 <%- if @configs['beaker_facter'] -%>
       beaker_facter: '<%= @configs['beaker_facter'] %>'
 <%- end -%>
+<%- if @configs['beaker_hypervisor'] -%>
+      beaker_hypervisor: '<%= @configs['beaker_hypervisor'] %>'
+<%- end -%>
 <%- if @configs['acceptance_runs_on'] -%>
       acceptance_runs_on: '<%= @configs['acceptance_runs_on'] %>'
 <%- end -%>
