@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.3.0](https://github.com/voxpupuli/modulesync_config/tree/7.3.0) (2024-02-06)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.2.0...7.3.0)
+
+**Implemented enhancements:**
+
+- Allow beaker\_hypervisor to be set [\#870](https://github.com/voxpupuli/modulesync_config/pull/870) ([traylenator](https://github.com/traylenator))
+- Addition of puppet-swap\_file [\#869](https://github.com/voxpupuli/modulesync_config/pull/869) ([traylenator](https://github.com/traylenator))
+- add table formatting [\#868](https://github.com/voxpupuli/modulesync_config/pull/868) ([zilchms](https://github.com/zilchms))
+- CI: Print summary for outdated modules [\#866](https://github.com/voxpupuli/modulesync_config/pull/866) ([bastelfreak](https://github.com/bastelfreak))
+- CI: Allow to run CI manually [\#865](https://github.com/voxpupuli/modulesync_config/pull/865) ([bastelfreak](https://github.com/bastelfreak))
+- Also run CI an the main/master branch [\#864](https://github.com/voxpupuli/modulesync_config/pull/864) ([smortex](https://github.com/smortex))
+- adding new puppet-boundary module [\#862](https://github.com/voxpupuli/modulesync_config/pull/862) ([attachmentgenie](https://github.com/attachmentgenie))
+- Add nsswitch to modulesync [\#861](https://github.com/voxpupuli/modulesync_config/pull/861) ([treydock](https://github.com/treydock))
+
+**Fixed bugs:**
+
+- CI: run msync with branch foobranch [\#867](https://github.com/voxpupuli/modulesync_config/pull/867) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Delete legacy Makefile [\#863](https://github.com/voxpupuli/modulesync_config/pull/863) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [7.2.0](https://github.com/voxpupuli/modulesync_config/tree/7.2.0) (2023-12-04)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.1.0...7.2.0)
