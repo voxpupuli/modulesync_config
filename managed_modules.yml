@@ -159,6 +159,7 @@
 - puppet-stash
 - puppet-strongswan
 - puppet-swap_file
+- puppet-sysctl
 - puppet-systemd
 - puppet-tang
 - puppet-telegraf
