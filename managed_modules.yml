@@ -27,6 +27,7 @@
 - puppet-caddy
 - puppet-cassandra
 - puppet-catalog-diff
+- puppet-ca_cert
 - puppet-check_mk
 - puppet-chrony
 - puppet-clevis
