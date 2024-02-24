@@ -60,6 +60,8 @@ spec/acceptance/nodesets/centos-66-x64-pe.yml:
   delete: true
 spec/acceptance/nodesets/centos-7-x64.yml:
   delete: true
+spec/acceptance/nodesets/centos-7.yml:
+  delete: true
 spec/acceptance/nodesets/centos-72-x64.yml:
   delete: true
 spec/acceptance/nodesets/debian-78-x64.yml:
