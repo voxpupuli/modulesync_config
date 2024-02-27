@@ -3,6 +3,7 @@
 - puppet-alternatives
 - puppet-amanda
 - puppet-appd_db_agent
+- puppet-aptly
 - puppet-archive
 - puppet-augeasproviders
 - puppet-augeasproviders_apache
