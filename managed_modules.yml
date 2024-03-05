@@ -38,6 +38,7 @@
 - puppet-conntrackd
 - puppet-consul
 - puppet-corosync
+- puppet-cpanm
 - puppet-cron
 - puppet-cvmfs
 - puppet-dbbackup
