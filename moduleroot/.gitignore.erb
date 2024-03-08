@@ -21,7 +21,9 @@
 .*.sw?
 /.yardoc/
 /Guardfile
-<% if ! @configs['paths'].nil? -%>
+bolt-debug.log
+.rerun.json
+<% unless @configs['paths'].nil? -%>
 <% @configs['paths'].each do |path| -%>
 <%= path %>
 <% end -%>
