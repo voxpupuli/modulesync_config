@@ -147,5 +147,7 @@ Modulefile:
   delete: true
 Makefile:
   delete: true
+Dockerfile:
+  delete: true
 ...
 # vim: syntax=yaml
