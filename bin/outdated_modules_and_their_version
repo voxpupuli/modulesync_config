@@ -11,13 +11,23 @@ mod_ary = []
 width_modules = 6
 # min width is width of String "modulesync_config version"
 width_version = 25
-Dir.glob('modules/voxpupuli/puppet-*/.msync.yml').each do|f|
-  version_module = YAML.load_file(f)['modulesync_config_version']
-  mod = f.split('/')[2]
-  if version != version_module
-    mod_ary.push([mod, version_module])
-    width_modules = [width_modules, mod.length].max
-    width_version = [width_version, version_module.length].max
+Dir.glob('modules/voxpupuli/puppet-*').each do |f|
+  if File.directory?(f)
+    if File.exists?(f + '/.msync.yml')
+      version_module = YAML.load_file(f + '/.msync.yml')['modulesync_config_version']
+      mod = (f + '/.msync.yml').split('/')[2]
+      if version != version_module
+        mod_ary.push([mod, version_module])
+        width_modules = [width_modules, mod.length].max
+        width_version = [width_version, version_module.length].max
+      end
+    else
+      version_module = 'None'
+      mod = (f + '/.msync.yml').split('/')[2]
+      mod_ary.push([mod, version_module])
+      width_modules = [width_modules, mod.length].max
+      width_version = [width_version, version_module.length].max
+    end
   end
 end
 
