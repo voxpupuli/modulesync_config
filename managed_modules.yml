@@ -1,4 +1,5 @@
 ---
+- puppet-anaconda
 - puppet-ccs_daq
 - puppet-ccs_database
 - puppet-ccs_hcu
