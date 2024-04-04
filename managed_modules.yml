@@ -11,6 +11,7 @@
 - puppet-dellperc
 - puppet-foreman_envsync
 - puppet-helm_binary
+- puppet-htcondor
 - puppet-ipa
 - puppet-java_artisanal
 - puppet-kubectl
