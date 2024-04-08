@@ -149,5 +149,7 @@ Makefile:
   delete: true
 Dockerfile:
   delete: true
+.pcci.yml:
+  delete: true
 ...
 # vim: syntax=yaml
