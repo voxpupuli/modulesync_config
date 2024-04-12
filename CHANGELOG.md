@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.4.0](https://github.com/voxpupuli/modulesync_config/tree/7.4.0) (2024-04-12)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.3.0...7.4.0)
+
+**Implemented enhancements:**
+
+- Add missing modules to output [\#884](https://github.com/voxpupuli/modulesync_config/pull/884) ([zilchms](https://github.com/zilchms))
+- Add puppet-collections module [\#883](https://github.com/voxpupuli/modulesync_config/pull/883) ([zilchms](https://github.com/zilchms))
+- Add aptly module [\#877](https://github.com/voxpupuli/modulesync_config/pull/877) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Delete legacy .pcci.yml [\#885](https://github.com/voxpupuli/modulesync_config/pull/885) ([bastelfreak](https://github.com/bastelfreak))
+- Add github labeler to add skip-changelog label automatically to release PRs [\#882](https://github.com/voxpupuli/modulesync_config/pull/882) ([rwaffen](https://github.com/rwaffen))
+- Fix CONTRIBUTING documentation for modules [\#881](https://github.com/voxpupuli/modulesync_config/pull/881) ([stevenpost](https://github.com/stevenpost))
+- Ensure Dockerfile gets deleted [\#880](https://github.com/voxpupuli/modulesync_config/pull/880) ([baurmatt](https://github.com/baurmatt))
+- Add bolt files to .gitignore [\#879](https://github.com/voxpupuli/modulesync_config/pull/879) ([rwaffen](https://github.com/rwaffen))
+- add puppet-cpanm [\#878](https://github.com/voxpupuli/modulesync_config/pull/878) ([h-haaks](https://github.com/h-haaks))
+- Delete legacy CentOS 7 nodeset [\#876](https://github.com/voxpupuli/modulesync_config/pull/876) ([bastelfreak](https://github.com/bastelfreak))
+- Add ca\_cert module [\#875](https://github.com/voxpupuli/modulesync_config/pull/875) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [7.3.0](https://github.com/voxpupuli/modulesync_config/tree/7.3.0) (2024-02-06)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.2.0...7.3.0)
