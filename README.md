@@ -183,5 +183,5 @@ the `modulesync_config` repository.
 ## Do a new release
 
 * Update the version in `moduleroot/.msync.yml.erb`
-* export `GITHUB_CHANGELOG_TOKEN='*your token*'`
-* bundle exec rake changelog
+* `CHANGELOG_GITHUB_TOKEN='*your token*' bundle exec rake changelog`
+
