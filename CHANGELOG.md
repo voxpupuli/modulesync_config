@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.5.0](https://github.com/voxpupuli/modulesync_config/tree/7.5.0) (2024-04-25)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.4.0...7.5.0)
+
+**Implemented enhancements:**
+
+- Support arbitrary inputs to reusable workflow files [\#888](https://github.com/voxpupuli/modulesync_config/pull/888) ([h-haaks](https://github.com/h-haaks))
+
+**Merged pull requests:**
+
+- Correct variable name for changelog github token [\#890](https://github.com/voxpupuli/modulesync_config/pull/890) ([h-haaks](https://github.com/h-haaks))
+
 ## [7.4.0](https://github.com/voxpupuli/modulesync_config/tree/7.4.0) (2024-04-12)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.3.0...7.4.0)
