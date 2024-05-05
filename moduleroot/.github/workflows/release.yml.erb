@@ -16,7 +16,11 @@ jobs:
     with:
 <%- if @configs['with'] -%>
 <%- @configs['with'].each do |k,v| -%>
+<%- if v.is_a?(String) -%>
       <%= k %>: '<%= v %>'
+<%- else -%>
+      <%= k %>: <%= v %>
+<%- end -%>
 <%- end -%>
 <%- end -%>
 <%- if @configs['with'].nil? || !@configs['with'].has_key?('allowed_owner') -%>

@@ -24,7 +24,11 @@ jobs:
 <%- if @configs['with'] -%>
     with:
 <%- @configs['with'].each do |k,v| -%>
+<%- if v.is_a?(String) -%>
       <%= k %>: '<%= v %>'
+<%- else -%>
+      <%= k %>: <%= v %>
+<%- end -%>
 <%- end -%>
 <%- end -%>
 <%- else -%>
@@ -32,7 +36,11 @@ jobs:
 <%- if @configs['with'] -%>
     with:
 <%- @configs['with'].each do |k,v| -%>
+<%- if v.is_a?(String) -%>
       <%= k %>: '<%= v %>'
+<%- else -%>
+      <%= k %>: <%= v %>
+<%- end -%>
 <%- end -%>
 <%- end -%>
 <%- end -%>
