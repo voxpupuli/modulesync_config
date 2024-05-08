@@ -21,18 +21,9 @@ jobs:
     name: Puppet
 <%- if @configs['acceptance_tests'] && Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v2
-<%- if @configs['with'] -%>
-    with:
-<%- @configs['with'].each do |k,v| -%>
-<%- if v.is_a?(String) -%>
-      <%= k %>: '<%= v %>'
-<%- else -%>
-      <%= k %>: <%= v %>
-<%- end -%>
-<%- end -%>
-<%- end -%>
 <%- else -%>
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v2
+<%- end -%>
 <%- if @configs['with'] -%>
     with:
 <%- @configs['with'].each do |k,v| -%>
@@ -40,7 +31,6 @@ jobs:
       <%= k %>: '<%= v %>'
 <%- else -%>
       <%= k %>: <%= v %>
-<%- end -%>
 <%- end -%>
 <%- end -%>
 <%- end -%>
