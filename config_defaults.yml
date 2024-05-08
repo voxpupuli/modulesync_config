@@ -2,8 +2,6 @@
 # yamllint disable rule:line-length
 .github/workflows/ci.yml:
   excludes: []
-  pidfile_workaround: false
-  additional_packages: ''
   acceptance_tests: true
   main_branches: ['main', 'master']
 # PDK creates this

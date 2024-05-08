@@ -16,10 +16,16 @@ jobs:
     with:
 <%- if @configs['with'] -%>
 <%- @configs['with'].each do |k,v| -%>
-      <%= k %>: <%=  v %>
+<%- if v.is_a?(String) -%>
+      <%= k %>: '<%= v %>'
+<%- else -%>
+      <%= k %>: <%= v %>
 <%- end -%>
 <%- end -%>
+<%- end -%>
+<%- unless @configs['with']&.has_key?('allowed_owner') -%>
       allowed_owner: '<%= @configs[:namespace] %>'
+<%- end -%>
     secrets:
       # Configure secrets here:
       #  https://docs.github.com/en/actions/security-guides/encrypted-secrets

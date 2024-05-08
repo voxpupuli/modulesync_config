@@ -21,42 +21,16 @@ jobs:
     name: Puppet
 <%- if @configs['acceptance_tests'] && Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
     uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v2
-    with:
-      pidfile_workaround: '<%= @configs['pidfile_workaround'] %>'
-<%- if @configs['with'] -%>
-<%- @configs['with'].each do |k,v| -%>
-      <%= k %>: <%=  v %>
-<%- end -%>
-<%- end -%>
-<%- if @configs['unit_runs_on'] -%>
-      unit_runs_on: '<%= @configs['unit_runs_on'] %>'
-<%- end -%>
-<%- if @configs['beaker_facter'] -%>
-      beaker_facter: '<%= @configs['beaker_facter'] %>'
-<%- end -%>
-<%- if @configs['beaker_hypervisor'] -%>
-      beaker_hypervisor: '<%= @configs['beaker_hypervisor'] %>'
-<%- end -%>
-<%- if @configs['acceptance_runs_on'] -%>
-      acceptance_runs_on: '<%= @configs['acceptance_runs_on'] %>'
-<%- end -%>
 <%- else -%>
     uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v2
-<%- if @configs.key?('rubocop') || !@configs['additional_packages'].empty? || @configs.key?('unit_runs_on') || @configs.key?('with') -%>
-    with:
 <%- end -%>
 <%- if @configs['with'] -%>
+    with:
 <%- @configs['with'].each do |k,v| -%>
-      <%= k %>: <%=  v %>
+<%- if v.is_a?(String) -%>
+      <%= k %>: '<%= v %>'
+<%- else -%>
+      <%= k %>: <%= v %>
 <%- end -%>
 <%- end -%>
-<%- end -%>
-<%- unless @configs['additional_packages'].empty? -%>
-      additional_packages: '<%= @configs['additional_packages'] %>'
-<%- end -%>
-<%- if @configs.key?('rubocop') -%>
-      rubocop: <%= @configs['rubocop'] %>
-<%- end -%>
-<%- if Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].none? && @configs['unit_runs_on'] -%>
-      unit_runs_on: '<%= @configs['unit_runs_on'] %>'
 <%- end -%>
