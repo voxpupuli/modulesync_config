@@ -20,7 +20,7 @@ Gemfile:
       - gem: coveralls
       - gem: simplecov-console
       - gem: puppet_metadata
-        version: '~> 3.5'
+        version: '~> 4.0'
     ':development':
       - gem: guard-rake
       - gem: overcommit
