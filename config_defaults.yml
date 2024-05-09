@@ -16,7 +16,7 @@ Gemfile:
   required:
     ':test':
       - gem: voxpupuli-test
-        version: '~> 7.0'
+        version: '~> 7.2'
       - gem: coveralls
       - gem: simplecov-console
       - gem: puppet_metadata
@@ -148,6 +148,10 @@ Makefile:
 Dockerfile:
   delete: true
 .pcci.yml:
+  delete: true
+.rspec_parallel:
+  delete: true
+.rspec:
   delete: true
 ...
 # vim: syntax=yaml
