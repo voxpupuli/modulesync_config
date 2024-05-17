@@ -185,5 +185,9 @@
 - puppet-zabbix
 - puppet-zram_generator
 - puppet-zypprepo
+- puppet-icinga
+- puppet-icinga2
+- puppet-icingadb
+- puppet-icingaweb2
 ...
 # vim: syntax=yaml
