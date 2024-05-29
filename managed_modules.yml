@@ -110,6 +110,7 @@
 - puppet-mumble
 - puppet-mysql_java_connector
 - puppet-network
+- puppet-nfs
 - puppet-nftables
 - puppet-nginx
 - puppet-nodejs
