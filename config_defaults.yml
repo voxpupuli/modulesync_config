@@ -117,6 +117,8 @@ spec/spec_helper_acceptance.rb:
   unmanaged: true
   configure_beaker:
     modules: ':metadata'
+spec/spec.opts:
+  delete: true
 CONTRIBUTING.md:
   delete: true
 .yardopts:
