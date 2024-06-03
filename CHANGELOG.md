@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [8.0.1](https://github.com/voxpupuli/modulesync_config/tree/8.0.1) (2024-06-03)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/8.0.0...8.0.1)
+
+**Fixed bugs:**
+
+- spec/spec.opts: ensure the file is absent [\#903](https://github.com/voxpupuli/modulesync_config/pull/903) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [8.0.0](https://github.com/voxpupuli/modulesync_config/tree/8.0.0) (2024-06-03)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.5.0...8.0.0)
