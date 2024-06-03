@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [8.0.0](https://github.com/voxpupuli/modulesync_config/tree/8.0.0) (2024-06-03)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.5.0...8.0.0)
+
+**Breaking changes:**
+
+- puppet\_metadata: Require 4.x [\#894](https://github.com/voxpupuli/modulesync_config/pull/894) ([bastelfreak](https://github.com/bastelfreak))
+- Cleanup workflow templates; require 'with' key in module's .sync.yml [\#893](https://github.com/voxpupuli/modulesync_config/pull/893) ([h-haaks](https://github.com/h-haaks))
+
+**Closed issues:**
+
+- Remove tight coupling to gha-puppet in gha workflow templates [\#887](https://github.com/voxpupuli/modulesync_config/issues/887)
+
+**Merged pull requests:**
+
+- Add puppet-nfs module [\#901](https://github.com/voxpupuli/modulesync_config/pull/901) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-bolt module [\#900](https://github.com/voxpupuli/modulesync_config/pull/900) ([bastelfreak](https://github.com/bastelfreak))
+- Use lint rake task for lint pre-commit check [\#898](https://github.com/voxpupuli/modulesync_config/pull/898) ([wyardley](https://github.com/wyardley))
+- Add icinga modules [\#897](https://github.com/voxpupuli/modulesync_config/pull/897) ([lbetz](https://github.com/lbetz))
+- Dont manage .rspec{,\_parallel} anymore [\#895](https://github.com/voxpupuli/modulesync_config/pull/895) ([bastelfreak](https://github.com/bastelfreak))
+- Stop managing puppet-tvheadend [\#892](https://github.com/voxpupuli/modulesync_config/pull/892) ([ekohl](https://github.com/ekohl))
+
 ## [7.5.0](https://github.com/voxpupuli/modulesync_config/tree/7.5.0) (2024-04-25)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/7.4.0...7.5.0)
