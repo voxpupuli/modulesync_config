@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.0.0](https://github.com/voxpupuli/modulesync_config/tree/9.0.0) (2024-06-12)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/8.0.1...9.0.0)
+
+**Breaking changes:**
+
+- voxpupuli-test: Require 8.0 [\#906](https://github.com/voxpupuli/modulesync_config/pull/906) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Rename labeler.yml-\>labeler.yml.erb [\#905](https://github.com/voxpupuli/modulesync_config/pull/905) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [8.0.1](https://github.com/voxpupuli/modulesync_config/tree/8.0.1) (2024-06-03)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/8.0.0...8.0.1)
