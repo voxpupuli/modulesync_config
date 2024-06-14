@@ -8,9 +8,9 @@
 ENV['COVERAGE'] ||= 'yes' if Dir.exist?(File.expand_path('../lib', __dir__))
 
 require 'voxpupuli/test/spec_helper'
-<%- if @configs['hiera_config'] || @configs['mock_with'] -%>
 
 RSpec.configure do |c|
+  c.facterdb_string_keys = <%= @configs['facterdb_string_keys'] %>
 <%- if @configs['hiera_config'] -%>
   c.hiera_config = <%= @configs['hiera_config'] %>
 <%- end -%>
@@ -18,7 +18,6 @@ RSpec.configure do |c|
   c.mock_with <%= @configs['mock_with'] %>
 <%- end -%>
 end
-<%- end -%>
 <%- if @configs['add_mocked_facts'] -%>
 
 add_mocked_facts!
