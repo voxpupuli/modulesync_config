@@ -2,22 +2,21 @@
 
 # Managed by modulesync - DO NOT EDIT
 # https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
-<%- if @configs['mock_with'] -%>
-
-RSpec.configure do |c|
-  c.mock_with <%= @configs['mock_with'] %>
-end
-<%- end -%>
 
 # puppetlabs_spec_helper will set up coverage if the env variable is set.
 # We want to do this if lib exists and it hasn't been explicitly set.
 ENV['COVERAGE'] ||= 'yes' if Dir.exist?(File.expand_path('../lib', __dir__))
 
 require 'voxpupuli/test/spec_helper'
-<%- if @configs['hiera_config'] -%>
+<%- if @configs['hiera_config'] || @configs['mock_with'] -%>
 
 RSpec.configure do |c|
+<%- if @configs['hiera_config'] -%>
   c.hiera_config = <%= @configs['hiera_config'] %>
+<%- end -%>
+<%- if @configs['mock_with'] -%>
+  c.mock_with <%= @configs['mock_with'] %>
+<%- end -%>
 end
 <%- end -%>
 <%- if @configs['add_mocked_facts'] -%>
