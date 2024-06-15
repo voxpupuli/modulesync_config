@@ -112,6 +112,7 @@ spec/acceptance/nodesets/ec2/windows-2016-base-x64.yml:
   delete: true
 spec/spec_helper.rb:
   add_mocked_facts: true
+  facterdb_string_keys: false
   mock_with: false
 spec/spec_helper_acceptance.rb:
   unmanaged: true
