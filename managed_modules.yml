@@ -20,6 +20,7 @@
 - puppet-pi
 - puppet-powertop
 - puppet-rke
+- puppet-rke2
 - puppet-smee
 ...
 # vim: syntax=yaml
