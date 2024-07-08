@@ -2,6 +2,28 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.1.0](https://github.com/voxpupuli/modulesync_config/tree/9.1.0) (2024-07-08)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.0.0...9.1.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-test: Require 9.0 [\#916](https://github.com/voxpupuli/modulesync_config/pull/916) ([bastelfreak](https://github.com/bastelfreak))
+- Also create a GitHub release page upon doing a release [\#913](https://github.com/voxpupuli/modulesync_config/pull/913) ([rwaffen](https://github.com/rwaffen))
+- Add archlinux beaker example [\#912](https://github.com/voxpupuli/modulesync_config/pull/912) ([traylenator](https://github.com/traylenator))
+- Support fact stringyfication [\#908](https://github.com/voxpupuli/modulesync_config/pull/908) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- spec\_helper.rb: add missing `=` [\#910](https://github.com/voxpupuli/modulesync_config/pull/910) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- add hint that these files are managed by modulesync [\#915](https://github.com/voxpupuli/modulesync_config/pull/915) ([rwaffen](https://github.com/rwaffen))
+- Addition of new puppet-quadlets module [\#914](https://github.com/voxpupuli/modulesync_config/pull/914) ([traylenator](https://github.com/traylenator))
+- Add puppet-augeas module [\#911](https://github.com/voxpupuli/modulesync_config/pull/911) ([bastelfreak](https://github.com/bastelfreak))
+- Move mock\_with to a single RSpec.configure block [\#909](https://github.com/voxpupuli/modulesync_config/pull/909) ([ekohl](https://github.com/ekohl))
+
 ## [9.0.0](https://github.com/voxpupuli/modulesync_config/tree/9.0.0) (2024-06-12)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/8.0.1...9.0.0)
