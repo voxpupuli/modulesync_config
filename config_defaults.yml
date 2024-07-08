@@ -16,7 +16,7 @@ Gemfile:
   required:
     ':test':
       - gem: voxpupuli-test
-        version: '~> 8.0'
+        version: '~> 9.0'
       - gem: coveralls
       - gem: simplecov-console
       - gem: puppet_metadata
