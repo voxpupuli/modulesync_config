@@ -15,7 +15,7 @@ RSpec.configure do |c|
   c.hiera_config = <%= @configs['hiera_config'] %>
 <%- end -%>
 <%- if @configs['mock_with'] -%>
-  c.mock_with = <%= @configs['mock_with'] %>
+  c.mock_with <%= @configs['mock_with'] %>
 <%- end -%>
 end
 <%- if @configs['add_mocked_facts'] -%>
