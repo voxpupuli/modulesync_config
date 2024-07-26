@@ -50,13 +50,11 @@
 - puppet-dotnet
 - puppet-download_file
 - puppet-drbd
-- puppet-dropbear
 - puppet-earlyoom
 - puppet-elastic_stack
 - puppet-elasticsearch
 - puppet-epel
 - puppet-erlang
-- puppet-etherpad
 - puppet-example
 - puppet-extlib
 - puppet-fail2ban
@@ -67,7 +65,6 @@
 - puppet-firewalld
 - puppet-format
 - puppet-gerrit
-- puppet-ghost
 - puppet-gitlab
 - puppet-gitlab_ci_runner
 - puppet-gluster
@@ -86,7 +83,6 @@
 - puppet-ipset
 - puppet-jail
 - puppet-jenkins
-- puppet-jenkins_job_builder
 - puppet-jira
 - puppet-jolokia
 - puppet-k8s
@@ -142,7 +138,6 @@
 - puppet-puppet_summary
 - puppet-puppetboard
 - puppet-puppetwebhook
-- puppet-pxe
 - puppet-python
 - puppet-quadlets
 - puppet-r10k
