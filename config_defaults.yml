@@ -156,5 +156,9 @@ Dockerfile:
   delete: true
 .rspec:
   delete: true
+.devcontainer/Dockerfile:
+  delete: true
+.devcontainer/devcontainer.json:
+  delete: true
 ...
 # vim: syntax=yaml
