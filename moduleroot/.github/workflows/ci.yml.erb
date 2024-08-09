@@ -20,9 +20,9 @@ jobs:
   puppet:
     name: Puppet
 <%- if @configs['acceptance_tests'] && Dir[File.join(@metadata[:workdir], 'spec', 'acceptance', '**', '*_spec.rb')].any? -%>
-    uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v2
+    uses: voxpupuli/gha-puppet/.github/workflows/beaker.yml@v3
 <%- else -%>
-    uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v2
+    uses: voxpupuli/gha-puppet/.github/workflows/basic.yml@v3
 <%- end -%>
 <%- if @configs['with'] -%>
     with:
