@@ -66,6 +66,7 @@
 - puppet-format
 - puppet-gerrit
 - puppet-gitlab
+- puppet-github_actions_runner
 - puppet-gitlab_ci_runner
 - puppet-gluster
 - puppet-googleauthenticator
