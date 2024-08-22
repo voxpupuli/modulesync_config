@@ -20,6 +20,7 @@
 - puppet-augeasproviders_ssh
 - puppet-augeasproviders_sysctl
 - puppet-augeasproviders_syslog
+- puppet-authselect
 - puppet-autofs
 - puppet-bacula
 - puppet-bareos
