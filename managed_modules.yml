@@ -21,6 +21,7 @@
 - puppet-powertop
 - puppet-rke
 - puppet-rke2
+- puppet-s3daemon
 - puppet-smee
 ...
 # vim: syntax=yaml
