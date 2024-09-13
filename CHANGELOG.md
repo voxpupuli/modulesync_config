@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.2.0](https://github.com/voxpupuli/modulesync_config/tree/9.2.0) (2024-09-13)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.1.0...9.2.0)
+
+**Implemented enhancements:**
+
+- Delete CONTRIBUTING.md [\#929](https://github.com/voxpupuli/modulesync_config/pull/929) ([bastelfreak](https://github.com/bastelfreak))
+- Gemfile: Allow Puppet 7 and 8 [\#925](https://github.com/voxpupuli/modulesync_config/pull/925) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- spec\_helper.rb: Fix typo in template [\#918](https://github.com/voxpupuli/modulesync_config/pull/918) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Ignore yamllint warning about truthy value "on" [\#927](https://github.com/voxpupuli/modulesync_config/pull/927) ([wyardley](https://github.com/wyardley))
+- Add authselect module migrated from private repo [\#924](https://github.com/voxpupuli/modulesync_config/pull/924) ([jcpunk](https://github.com/jcpunk))
+- Add puppet-github\_actions\_runner module [\#923](https://github.com/voxpupuli/modulesync_config/pull/923) ([bastelfreak](https://github.com/bastelfreak))
+- gha-puppet: Switch from v2-\>v3 [\#922](https://github.com/voxpupuli/modulesync_config/pull/922) ([bastelfreak](https://github.com/bastelfreak))
+- .pmtignore: Add Puppetfile [\#921](https://github.com/voxpupuli/modulesync_config/pull/921) ([bastelfreak](https://github.com/bastelfreak))
+- Purge devcontainer configs [\#920](https://github.com/voxpupuli/modulesync_config/pull/920) ([bastelfreak](https://github.com/bastelfreak))
+- Deprecate multiple modules [\#919](https://github.com/voxpupuli/modulesync_config/pull/919) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [9.1.0](https://github.com/voxpupuli/modulesync_config/tree/9.1.0) (2024-07-08)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.0.0...9.1.0)
@@ -1645,8 +1668,8 @@ With the 5.0.0 release of modulesync_config we stopped official support for Pupp
 - remove rubocop from our gemlist [\#154](https://github.com/voxpupuli/modulesync_config/pull/154) ([bastelfreak](https://github.com/bastelfreak))
 - This cop is useless for Puppet [\#153](https://github.com/voxpupuli/modulesync_config/pull/153) ([jyaworski](https://github.com/jyaworski))
 - Enable rubocop-rspec [\#152](https://github.com/voxpupuli/modulesync_config/pull/152) ([jyaworski](https://github.com/jyaworski))
-- Remove some redundant requires from Rakefile [\#148](https://github.com/voxpupuli/modulesync_config/pull/148) ([alexharv074](https://github.com/alexharv074))
-- Remove redundant gem, reorder [\#146](https://github.com/voxpupuli/modulesync_config/pull/146) ([alexharv074](https://github.com/alexharv074))
+- Remove some redundant requires from Rakefile [\#148](https://github.com/voxpupuli/modulesync_config/pull/148) ([alex-harvey-z3q](https://github.com/alex-harvey-z3q))
+- Remove redundant gem, reorder [\#146](https://github.com/voxpupuli/modulesync_config/pull/146) ([alex-harvey-z3q](https://github.com/alex-harvey-z3q))
 - add puppet-network [\#144](https://github.com/voxpupuli/modulesync_config/pull/144) ([bastelfreak](https://github.com/bastelfreak))
 - add puppet-puppetserver [\#142](https://github.com/voxpupuli/modulesync_config/pull/142) ([bastelfreak](https://github.com/bastelfreak))
 - add puppet-zabbix [\#134](https://github.com/voxpupuli/modulesync_config/pull/134) ([bastelfreak](https://github.com/bastelfreak))
