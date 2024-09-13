@@ -160,5 +160,7 @@ Dockerfile:
   delete: true
 .devcontainer/devcontainer.json:
   delete: true
+.devcontainer/README.md:
+  delete: true
 ...
 # vim: syntax=yaml
