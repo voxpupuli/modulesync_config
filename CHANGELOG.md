@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.3.0](https://github.com/voxpupuli/modulesync_config/tree/9.3.0) (2024-09-16)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.2.0...9.3.0)
+
+**Implemented enhancements:**
+
+- bump release.yml workflow to v3 to fix compat. with puppet8 [\#931](https://github.com/voxpupuli/modulesync_config/pull/931) ([jhoblitt](https://github.com/jhoblitt))
+
+**Fixed bugs:**
+
+- Delete .devcontainer/README.md [\#930](https://github.com/voxpupuli/modulesync_config/pull/930) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [9.2.0](https://github.com/voxpupuli/modulesync_config/tree/9.2.0) (2024-09-13)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.1.0...9.2.0)
