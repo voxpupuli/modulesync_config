@@ -28,10 +28,10 @@
 - puppet-bolt
 - puppet-borg
 - puppet-boundary
+- puppet-ca_cert
 - puppet-caddy
 - puppet-cassandra
-- puppet-catalog-diff
-- puppet-ca_cert
+- puppet-catalog_diff
 - puppet-check_mk
 - puppet-chrony
 - puppet-clevis
