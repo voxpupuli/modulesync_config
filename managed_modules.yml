@@ -49,7 +49,6 @@
 - puppet-dhcp
 - puppet-dnsquery
 - puppet-dotnet
-- puppet-download_file
 - puppet-drbd
 - puppet-earlyoom
 - puppet-elastic_stack
