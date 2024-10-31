@@ -162,5 +162,7 @@ Dockerfile:
   delete: true
 .devcontainer/README.md:
   delete: true
+.vscode/extensions.json:
+  delete: true
 ...
 # vim: syntax=yaml
