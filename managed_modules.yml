@@ -160,7 +160,6 @@
 - puppet-ssh_keygen
 - puppet-sssd
 - puppet-stackify
-- puppet-stash
 - puppet-strongswan
 - puppet-swap_file
 - puppet-systemd
