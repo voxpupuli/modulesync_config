@@ -173,7 +173,6 @@
 - puppet-vault
 - puppet-vault_lookup
 - puppet-virtualbox
-- puppet-visualstudio
 - puppet-wildfly
 - puppet-windows_firewall
 - puppet-windowsfeature
