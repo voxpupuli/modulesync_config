@@ -164,5 +164,9 @@ Dockerfile:
   delete: true
 .vscode/extensions.json:
   delete: true
+.nodeset.yml:
+  delete: true
+.kitchen.yml:
+  delete: true
 ...
 # vim: syntax=yaml
