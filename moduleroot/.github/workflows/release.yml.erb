@@ -12,30 +12,26 @@ on:
 
 jobs:
   release:
-    name: Release
-    uses: voxpupuli/gha-puppet/.github/workflows/release.yml@v3
-    with:
-<%- if @configs['with'] -%>
-<%- @configs['with'].each do |k,v| -%>
-<%- if v.is_a?(String) -%>
-      <%= k %>: '<%= v %>'
-<%- else -%>
-      <%= k %>: <%= v %>
-<%- end -%>
-<%- end -%>
-<%- end -%>
-<%- unless @configs['with']&.has_key?('allowed_owner') -%>
-      allowed_owner: '<%= @configs[:namespace] %>'
-<%- end -%>
-    secrets:
-      # Configure secrets here:
-      #  https://docs.github.com/en/actions/security-guides/encrypted-secrets
-      username: ${{ secrets.PUPPET_FORGE_USERNAME }}
-      api_key: ${{ secrets.PUPPET_FORGE_API_KEY }}
-
-  create-github-release:
-    name: Create GitHub Release
-    runs-on: ubuntu-latest
     steps:
+      - name: Release
+        uses: voxpupuli/gha-puppet/.github/workflows/release.yml@v3
+        with:
+    <%- if @configs['with'] -%>
+    <%- @configs['with'].each do |k,v| -%>
+    <%- if v.is_a?(String) -%>
+          <%= k %>: '<%= v %>'
+    <%- else -%>
+          <%= k %>: <%= v %>
+    <%- end -%>
+    <%- end -%>
+    <%- end -%>
+    <%- unless @configs['with']&.has_key?('allowed_owner') -%>
+          allowed_owner: '<%= @configs[:namespace] %>'
+    <%- end -%>
+        secrets:
+          # Configure secrets here:
+          #  https://docs.github.com/en/actions/security-guides/encrypted-secrets
+          username: ${{ secrets.PUPPET_FORGE_USERNAME }}
+          api_key: ${{ secrets.PUPPET_FORGE_API_KEY }}
       - name: Create GitHub release
         uses: voxpupuli/gha-create-a-github-release@v1
