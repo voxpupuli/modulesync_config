@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.4.0](https://github.com/voxpupuli/modulesync_config/tree/9.4.0) (2025-02-05)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.3.0...9.4.0)
+
+**Merged pull requests:**
+
+- Add release prep action [\#943](https://github.com/voxpupuli/modulesync_config/pull/943) ([bastelfreak](https://github.com/bastelfreak))
+- Cleanup release action [\#942](https://github.com/voxpupuli/modulesync_config/pull/942) ([bastelfreak](https://github.com/bastelfreak))
+- Update metadata\_json\_deps requirement from \>= 0.2.0, \< 2 to \>= 0.2.0, \< 3 [\#940](https://github.com/voxpupuli/modulesync_config/pull/940) ([dependabot[bot]](https://github.com/apps/dependabot))
+- Purge unused .nodeset.yml/.kitchen.yml [\#939](https://github.com/voxpupuli/modulesync_config/pull/939) ([bastelfreak](https://github.com/bastelfreak))
+- Disable puppet-visualstudio [\#938](https://github.com/voxpupuli/modulesync_config/pull/938) ([bastelfreak](https://github.com/bastelfreak))
+- Deprecate puppet-stash [\#937](https://github.com/voxpupuli/modulesync_config/pull/937) ([bastelfreak](https://github.com/bastelfreak))
+- Delete .vscode/extensions.json [\#936](https://github.com/voxpupuli/modulesync_config/pull/936) ([jay7x](https://github.com/jay7x))
+- Deprecate download\_file [\#935](https://github.com/voxpupuli/modulesync_config/pull/935) ([bastelfreak](https://github.com/bastelfreak))
+- puppet-catalog-diff: the module was renamed [\#934](https://github.com/voxpupuli/modulesync_config/pull/934) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [9.3.0](https://github.com/voxpupuli/modulesync_config/tree/9.3.0) (2024-09-16)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.2.0...9.3.0)
