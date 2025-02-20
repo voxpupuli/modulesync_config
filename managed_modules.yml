@@ -125,6 +125,7 @@
 - puppet-openvmtools
 - puppet-openvpn
 - puppet-otelcol
+- puppet-patching_as_code
 - puppet-pbuilder
 - puppet-php
 - puppet-pkgng
