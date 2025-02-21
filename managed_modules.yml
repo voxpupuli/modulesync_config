@@ -55,6 +55,7 @@
 - puppet-elasticsearch
 - puppet-epel
 - puppet-erlang
+- puppet-etcd
 - puppet-example
 - puppet-extlib
 - puppet-fail2ban
@@ -130,6 +131,7 @@
 - puppet-openvpn
 - puppet-otelcol
 - puppet-patching_as_code
+- puppet-patroni
 - puppet-pbuilder
 - puppet-php
 - puppet-pkgng
