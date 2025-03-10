@@ -79,6 +79,7 @@
 - puppet-hdm
 - puppet-healthcheck
 - puppet-hiera
+- puppet-hiera_vault
 - puppet-homeassistant
 - puppet-hosts
 - puppet-hyperglass
