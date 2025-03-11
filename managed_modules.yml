@@ -139,6 +139,7 @@
 - puppet-posix_acl
 - puppet-postfix
 - puppet-poudriere
+- puppet-powerdns
 - puppet-prometheus
 - puppet-prometheus_reporter
 - puppet-prosody
