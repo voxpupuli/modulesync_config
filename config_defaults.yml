@@ -144,6 +144,8 @@ SECURITY.md:
   delete: true
 .github/SECURITY.md:
   delete: true
+.github/stale.yml:
+  delete: true
 Modulefile:
   delete: true
 Makefile:
