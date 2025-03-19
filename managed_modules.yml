@@ -145,6 +145,7 @@
 - puppet-prosody
 - puppet-proxysql
 - puppet-puppet_certificate
+- puppet-puppet_run_scheduler
 - puppet-puppet_summary
 - puppet-puppetboard
 - puppet-puppetwebhook
