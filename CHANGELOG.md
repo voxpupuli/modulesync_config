@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.5.0](https://github.com/voxpupuli/modulesync_config/tree/9.5.0) (2025-03-19)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.4.0...9.5.0)
+
+**Implemented enhancements:**
+
+- Add new puppet-puppet\_run\_scheduler module [\#951](https://github.com/voxpupuli/modulesync_config/pull/951) ([bastelfreak](https://github.com/bastelfreak))
+- Add GitHub Action to run modulesync [\#950](https://github.com/voxpupuli/modulesync_config/pull/950) ([bastelfreak](https://github.com/bastelfreak))
+- Add powerdns module [\#948](https://github.com/voxpupuli/modulesync_config/pull/948) ([saz](https://github.com/saz))
+- Add puppet-hiera\_vault module [\#947](https://github.com/voxpupuli/modulesync_config/pull/947) ([bastelfreak](https://github.com/bastelfreak))
+- Add etcd/patroni modules [\#946](https://github.com/voxpupuli/modulesync_config/pull/946) ([bastelfreak](https://github.com/bastelfreak))
+- Add puppet-patching\_as\_code [\#945](https://github.com/voxpupuli/modulesync_config/pull/945) ([binford2k](https://github.com/binford2k))
+
+**Merged pull requests:**
+
+- Require puppet\_metadata 5.x & voxpupuli-acceptance 3.5 [\#952](https://github.com/voxpupuli/modulesync_config/pull/952) ([bastelfreak](https://github.com/bastelfreak))
+- Purge .github/stale.yml [\#949](https://github.com/voxpupuli/modulesync_config/pull/949) ([bastelfreak](https://github.com/bastelfreak))
+- managed\_modules.yml: sort modules alphabetically [\#933](https://github.com/voxpupuli/modulesync_config/pull/933) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [9.4.0](https://github.com/voxpupuli/modulesync_config/tree/9.4.0) (2025-02-05)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.3.0...9.4.0)
