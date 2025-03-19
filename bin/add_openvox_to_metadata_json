@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'json'
+
+def clone_or_update(repo)
+  if Dir.exist?(repo)
+    system("cd #{repo}; git pull; cd ..")
+  else
+    system("git clone git@github.com:voxpupuli/#{repo}.git")
+  end
+end
+
+
+clone_or_update('modulesync_config')
+
+yd = YAML.load_file('modulesync_config/managed_modules.yml')
+yd.each do |module_|
+  clone_or_update(module_)
+  filepath = "#{module_}/metadata.json"
+  if !File.exist?(filepath)
+    puts "#{filepath} doesn't exist, skipping"
+    next
+  end
+  # load whole metadata.json file
+  metadata = JSON.load_file(filepath)
+
+  # extract the `puppet` requirements
+  puppet = metadata['requirements'].detect{|requirement| requirement['name'] == 'puppet'}
+
+  # generate `openvox` requirements with same versions as `puppet`
+  openvox = {'name'=>'openvox', 'version_requirement'=>puppet['version_requirement']}
+
+  # write everything back to the file
+  File.write(filepath, JSON.pretty_generate(metadata.merge({'requirements'=>[puppet, openvox]})) + "\n")
+end
+
+# Once this runs, all the changes will exist, you'll then want to commit / make PRs with something like:
+# gh auth login
+# for x in $(ls -d puppet*); do
+#   pushd $x
+#   git switch -c add-openvox
+#   git commit metadata.json -m "Add openvox to metadata.json"
+#   git push origin add-openvox
+#   gh repo set-default voxpupuli/$x
+#   gh pr create --label enhancement --title 'metadata.json: Add OpenVox' --body ''
+#   popd
+# done
