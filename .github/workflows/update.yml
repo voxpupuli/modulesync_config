@@ -1,0 +1,60 @@
+---
+name: Update all Puppet modules
+
+on:
+  workflow_dispatch: {}
+  push:
+    tags:
+      - '*'
+
+env:
+  GIT_AUTHOR_NAME: pccibot
+  GIT_AUTHOR_EMAIL: 12855858+pccibot@users.noreply.github.com
+  GIT_COMMITTER_NAME: pccibot
+  GIT_COMMITTER_EMAIL: 12855858+pccibot@users.noreply.github.com
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  GITHUB_BASE_URL: https://api.github.com
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    name: Run msync against all modules
+    if: github.repository_owner == voxpupuli
+    steps:
+      - name: checkout code
+        # the action has a ssh-key option.
+        # when provided, it configures the ssh/git config to authenticate automatically with that key to the source repo
+        # the authentication won't be used for other repos (which we need for msync), so we cannot use the option
+        # that's the reason for the 'Add SSH key' step
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.4
+          bundler-cache: true
+      - name: Add SSH key
+        run: |
+            mkdir -p ~/.ssh
+            echo "${{ secrets.PCCI_SSH_PRIVATE_KEY }}" > ~/.ssh/github_actions
+            chmod 600 ~/.ssh/github_actions
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+            ssh-add ~/.ssh/github_actions
+      - name: set git user & email & commit signing
+        run: |
+          git config --global user.email "$GIT_AUTHOR_EMAIL"
+          git config --global user.name "$GIT_AUTHOR_NAME"
+          git config --global gpg.format ssh
+          git config --global user.signingkey ~/.ssh/github_actions
+          git config --global commit.gpgsign true
+      - name: Run msync
+        env:
+          # https://github.com/voxpupuli/modulesync?tab=readme-ov-file#submitting-prsmrs-to-github-or-gitlab
+          GITHUB_TOKEN: '${{ secrets.PCCI_PAT_MODULESYNC_PR }}'
+        run: |
+          bundle exec msync update --verbose \
+            --pr \
+            --pr-labels modulesync \
+            --pr-title "modulesync $(git describe)" \
+            --message "modulesync $(git describe)"
