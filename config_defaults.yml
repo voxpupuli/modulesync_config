@@ -20,14 +20,14 @@ Gemfile:
       - gem: coveralls
       - gem: simplecov-console
       - gem: puppet_metadata
-        version: '~> 4.0'
+        version: '~> 5.0'
     ':development':
       - gem: guard-rake
       - gem: overcommit
         version: '>= 0.39.1'
     ':system_tests':
       - gem: voxpupuli-acceptance
-        version: '~> 3.0'
+        version: '~> 3.5'
     ':release':
       - gem: voxpupuli-release
         version: '~> 3.0'
