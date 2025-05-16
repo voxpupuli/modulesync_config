@@ -180,6 +180,7 @@
 - puppet-tuned
 - puppet-unattended_upgrades
 - puppet-unbound
+- puppet-usbguard
 - puppet-varnish
 - puppet-vault
 - puppet-vault_lookup
