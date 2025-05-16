@@ -130,6 +130,7 @@
 - puppet-opensearch_dashboards
 - puppet-openssl
 - puppet-openvmtools
+- puppet-openvox_bootstrap
 - puppet-openvpn
 - puppet-otelcol
 - puppet-patching_as_code
