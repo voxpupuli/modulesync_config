@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.7.0](https://github.com/voxpupuli/modulesync_config/tree/9.7.0) (2025-05-28)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.6.0...9.7.0)
+
+**Merged pull requests:**
+
+- Add GitHub action to create GitHub releases [\#963](https://github.com/voxpupuli/modulesync_config/pull/963) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [9.6.0](https://github.com/voxpupuli/modulesync_config/tree/9.6.0) (2025-05-28)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.5.0...9.6.0)
