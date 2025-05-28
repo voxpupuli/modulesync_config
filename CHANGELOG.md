@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file.
 
+## [9.6.0](https://github.com/voxpupuli/modulesync_config/tree/9.6.0) (2025-05-28)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.5.0...9.6.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-test: Update 9.x -\> 10.x [\#961](https://github.com/voxpupuli/modulesync_config/pull/961) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- Fix typos in modulesync CI action [\#954](https://github.com/voxpupuli/modulesync_config/pull/954) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Add puppet-openvox\_bootstrap to the list of managed modules [\#960](https://github.com/voxpupuli/modulesync_config/pull/960) ([jpartlow](https://github.com/jpartlow))
+- Add puppet-usbguard to the list of managed modules [\#959](https://github.com/voxpupuli/modulesync_config/pull/959) ([kenyon](https://github.com/kenyon))
+- add puppet-grafana\_alloy to the list of modules [\#958](https://github.com/voxpupuli/modulesync_config/pull/958) ([evgeni](https://github.com/evgeni))
+- Add a script to modify metadata.json across all modules [\#956](https://github.com/voxpupuli/modulesync_config/pull/956) ([jstraw](https://github.com/jstraw))
+
 ## [9.5.0](https://github.com/voxpupuli/modulesync_config/tree/9.5.0) (2025-03-19)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.4.0...9.5.0)
