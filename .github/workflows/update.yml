@@ -7,6 +7,9 @@ on:
     tags:
       - '*'
 
+permissions:
+  contents: read
+
 env:
   GIT_AUTHOR_NAME: pccibot
   GIT_AUTHOR_EMAIL: 12855858+pccibot@users.noreply.github.com
