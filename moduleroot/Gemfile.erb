@@ -33,7 +33,6 @@ end
 
 <% end -%>
 gem 'rake', :require => false
-gem 'facter', ENV['FACTER_GEM_VERSION'], :require => false, :groups => [:test]
 
 gem 'openvox', ENV.fetch('OPENVOX_GEM_VERSION', <%= @configs['openvox_version'].inspect %>), :require => false, :groups => [:test]
 
