@@ -33,9 +33,7 @@ end
 
 <% end -%>
 gem 'rake', :require => false
-gem 'facter', ENV['FACTER_GEM_VERSION'], :require => false, :groups => [:test]
 
-puppetversion = ENV['PUPPET_GEM_VERSION'] || <%= @configs['puppet_version'].inspect %>
-gem 'puppet', puppetversion, :require => false, :groups => [:test]
+gem 'openvox', ENV.fetch('OPENVOX_GEM_VERSION', <%= @configs['openvox_version'].inspect %>), :require => false, :groups => [:test]
 
 # vim: syntax=ruby
