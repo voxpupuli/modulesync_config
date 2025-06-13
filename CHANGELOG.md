@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.0.0](https://github.com/voxpupuli/modulesync_config/tree/10.0.0) (2025-06-13)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.7.0...10.0.0)
+
+**Breaking changes:**
+
+- Update voxpupuli-release/voxpupuli-test to use openvox gems [\#967](https://github.com/voxpupuli/modulesync_config/pull/967) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- CI jobs: Add explicit token permissions [\#966](https://github.com/voxpupuli/modulesync_config/pull/966) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [9.7.0](https://github.com/voxpupuli/modulesync_config/tree/9.7.0) (2025-05-28)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.6.0...9.7.0)
