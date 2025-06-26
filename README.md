@@ -174,7 +174,7 @@ To work with the forked module, you will need to do the following:
 
 We currently require all commits to be signed with GPG, so please configure
 your git client properly. Let us know if you need some help. We're also
-reachable via our IRC channel `#voxpupuli` on [freenode](https://freenode.net/).
+reachable via IRC, email, and Slack, as documented at [connect with us](https://voxpupuli.org/connect/).
 
 If you provide a patch that effects our modules, please test it on a single
 module and link the pull request from that specific module to the PR on
