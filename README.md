@@ -10,11 +10,21 @@ Module sync configurations for Vox Pupuli Modules
 git clone https://github.com/voxpupuli/modulesync_config.git
 cd modulesync_config
 git checkout $(git tag --list | sort -V | tail -n1) # checkout latest tag
+bundle config set --local path '.vendor'
 bundle install
 bundle exec msync help update
 ```
 
 ## Examples
+
+### Clone all modules
+
+This will clone all modules into `modules/$namespace`.
+The namespace is set in modulesync.yml and defaults to `voxpupuli`.
+
+```bash
+bundle exec msync clone --verbose
+```
 
 ### module sync one specific module
 
