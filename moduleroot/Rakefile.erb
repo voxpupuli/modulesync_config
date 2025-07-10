@@ -7,19 +7,16 @@ rescue LoadError
   # only available if gem group test is installed
 end
 
-# load optional tasks for acceptance
-# only available if gem group releases is installed
 begin
   require 'voxpupuli/acceptance/rake'
 rescue LoadError
+  # only available if gem group acceptance is installed
 end
 
-# load optional tasks for releases
-# only available if gem group releases is installed
 begin
   require 'voxpupuli/release/rake_tasks'
 rescue LoadError
-  # voxpupuli-release not present
+  # only available if gem group releases is installed
 else
   GCGConfig.user = '<%= @configs['config.user'] || @configs[:namespace] %>'
   GCGConfig.project = '<%= @configs['config.project'] || @configs[:puppet_module] %>'
