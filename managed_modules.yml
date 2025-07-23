@@ -131,6 +131,7 @@
 - puppet-openssl
 - puppet-openvmtools
 - puppet-openvox_bootstrap
+- puppet-openvoxview
 - puppet-openvpn
 - puppet-otelcol
 - puppet-patching_as_code
