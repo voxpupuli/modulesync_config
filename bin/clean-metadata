@@ -1,9 +1,12 @@
 #!/usr/bin/env python3
 import glob
 import json
+import os
+from posixpath import dirname
+import argparse
 
 # Note range is exclusive so the last number is not in the list
-PUPPET_VERSION = '>= 6.1.0 < 8.0.0'
+OPENVOX_VERSION = '>= 8.19.0 < 9.0.0'
 UNSUPPORTED_EL = {str(i) for i in range(3, 7)}
 UNSUPPORTED = {
     'CentOS': UNSUPPORTED_EL,
@@ -16,6 +19,18 @@ UNSUPPORTED = {
     'Scientific': UNSUPPORTED_EL,
     'Ubuntu': {str(i) + m for i in range(4, 18) for m in ('.04', '.10')},
 }
+CHANGED_MODULES_PATH='tmp/changed_modules.txt'
+
+parser = argparse.ArgumentParser(description='Manage metadata updates for requirements or operatingsystem_support.')
+parser.add_argument('--no-requirements', action='store_true', help='Do not update the requirements section.')
+parser.add_argument('--no-os', action='store_true', help='Do not update the operatingsystem_support section.')
+args = parser.parse_args()
+
+if not os.path.exists('tmp'):
+    os.makedirs('tmp')
+if os.path.exists(CHANGED_MODULES_PATH):
+    os.remove(CHANGED_MODULES_PATH)
+changed_modules = open(CHANGED_MODULES_PATH, 'a+')
 
 for filename in glob.glob('modules/*/*/metadata.json'):
     print('Reading {}'.format(filename))
@@ -25,24 +40,36 @@ for filename in glob.glob('modules/*/*/metadata.json'):
 
     updated = False
 
-    for req in metadata.get('requirements', []):
-        if req['name'] == 'puppet' and req['version_requirement'] != PUPPET_VERSION:
-            req['version_requirement'] = PUPPET_VERSION
-            updated = True
+    if not args.no_requirements:
+        updated_requirements = []
+        for req in metadata.get('requirements', []):
+            if req['name'] == 'openvox' and req['version_requirement'] != OPENVOX_VERSION:
+                print('Updating openvox version requirement from {} to {}'.format(req['version_requirement'], OPENVOX_VERSION))
+                req['version_requirement'] = OPENVOX_VERSION
+                updated = True
+            if req['name'] != 'puppet':
+                updated_requirements.append(req)
+            else:
+                updated = True
+        metadata['requirements'] = updated_requirements
 
-    for operatingsystem in metadata.get('operatingsystem_support', []):
-        releases = set(operatingsystem.get('operatingsystemrelease', []))
-        for release in releases & UNSUPPORTED.get(operatingsystem['operatingsystem'], set()):
-            print('Removing {}-{}'.format(operatingsystem['operatingsystem'], release))
-            operatingsystem['operatingsystemrelease'].remove(release)
-            updated = True
+    if not args.no_os:
+        for operatingsystem in metadata.get('operatingsystem_support', []):
+            releases = set(operatingsystem.get('operatingsystemrelease', []))
+            for release in releases & UNSUPPORTED.get(operatingsystem['operatingsystem'], set()):
+                print('Removing {}-{}'.format(operatingsystem['operatingsystem'], release))
+                operatingsystem['operatingsystemrelease'].remove(release)
+                updated = True
 
-        if operatingsystem.get('operatingsystemrelease') == []:
-            print('Removing {}'.format(operatingsystem['operatingsystem']))
-            metadata['operatingsystem_support'].remove(operatingsystem)
-            updated = True
+            if operatingsystem.get('operatingsystemrelease') == []:
+                print('Removing {}'.format(operatingsystem['operatingsystem']))
+                metadata['operatingsystem_support'].remove(operatingsystem)
+                updated = True
 
     if updated:
         print('Writing {}'.format(filename))
         with open(filename, 'w') as fp:
             fp.write(json.dumps(metadata, indent=2) + "\n")
+        changed_modules.write(dirname(filename) + "\n")
+
+changed_modules.close()
