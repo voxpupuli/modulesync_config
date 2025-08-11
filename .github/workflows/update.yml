@@ -29,7 +29,7 @@ jobs:
         # when provided, it configures the ssh/git config to authenticate automatically with that key to the source repo
         # the authentication won't be used for other repos (which we need for msync), so we cannot use the option
         # that's the reason for the 'Add SSH key' step
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
       - name: Setup ruby
