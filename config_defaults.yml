@@ -120,6 +120,8 @@ spec/spec.opts:
   delete: true
 CONTRIBUTING.md:
   delete: true
+.github/CONTRIBUTING.md:
+  delete: true
 .yardopts:
   delete: true
 .gitlab-ci.yml:
