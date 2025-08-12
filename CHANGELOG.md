@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.1.0](https://github.com/voxpupuli/modulesync_config/tree/10.1.0) (2025-08-12)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.0.0...10.1.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-acceptance: Require 4.x [\#980](https://github.com/voxpupuli/modulesync_config/pull/980) ([bastelfreak](https://github.com/bastelfreak))
+- feat: set minimum version for openvox/puppet to 8.19.0 [\#978](https://github.com/voxpupuli/modulesync_config/pull/978) ([TheMeier](https://github.com/TheMeier))
+- Add puppet-openvoxview [\#977](https://github.com/voxpupuli/modulesync_config/pull/977) ([sebastianrakel](https://github.com/sebastianrakel))
+- feat: add VoxBox as devcontainer [\#976](https://github.com/voxpupuli/modulesync_config/pull/976) ([rwaffen](https://github.com/rwaffen))
+
+**Fixed bugs:**
+
+- Drop puppetlabs spec helper mention [\#972](https://github.com/voxpupuli/modulesync_config/pull/972) ([ekohl](https://github.com/ekohl))
+
 ## [10.0.0](https://github.com/voxpupuli/modulesync_config/tree/10.0.0) (2025-06-13)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/9.7.0...10.0.0)
