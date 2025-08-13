@@ -27,7 +27,6 @@
 - puppet-bird
 - puppet-bolt
 - puppet-borg
-- puppet-boundary
 - puppet-ca_cert
 - puppet-caddy
 - puppet-cassandra
