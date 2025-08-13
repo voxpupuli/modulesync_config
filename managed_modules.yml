@@ -37,7 +37,6 @@
 - puppet-clevis
 - puppet-collectd
 - puppet-collections
-- puppet-community_kickstarts
 - puppet-confluence
 - puppet-conntrackd
 - puppet-consul
