@@ -103,7 +103,6 @@
 - puppet-logrotate
 - puppet-logstash
 - puppet-make
-- puppet-metche
 - puppet-minecraft
 - puppet-misp
 - puppet-mlocate
