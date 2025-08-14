@@ -150,7 +150,6 @@
 - puppet-puppet_run_scheduler
 - puppet-puppet_summary
 - puppet-puppetboard
-- puppet-puppetwebhook
 - puppet-python
 - puppet-quadlets
 - puppet-r10k
