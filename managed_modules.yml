@@ -81,7 +81,6 @@
 - puppet-hiera_vault
 - puppet-homeassistant
 - puppet-hosts
-- puppet-hyperglass
 - puppet-icinga
 - puppet-icinga2
 - puppet-icingadb
