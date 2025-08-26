@@ -42,6 +42,7 @@
 - puppet-corosync
 - puppet-cpanm
 - puppet-cron
+- puppet-cups
 - puppet-cvmfs
 - puppet-dbbackup
 - puppet-dhcp
