@@ -7,6 +7,15 @@
 # PDK creates this
 .github/workflows/puppet-lint.yml:
   delete: true
+# Perforce used those
+.github/workflows/release_without.yml:
+  delete: true
+.github/workflows/release_prep.yml:
+  delete: true
+.github/workflows/nightly.yml:
+  delete: true
+.github/workflows/mend.yml:
+  delete: true
 .travis.yml:
   delete: true
 Jenkinsfile:
