@@ -16,7 +16,7 @@ Gemfile:
   required:
     ':test':
       - gem: voxpupuli-test
-        version: '~> 11.0'
+        version: '~> 12.0'
       - gem: puppet_metadata
         version: '~> 5.0'
     ':development':
