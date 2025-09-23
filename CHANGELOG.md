@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.2.0](https://github.com/voxpupuli/modulesync_config/tree/10.2.0) (2025-09-23)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.1.0...10.2.0)
+
+**Implemented enhancements:**
+
+- Add puppet-openvoxdb module [\#993](https://github.com/voxpupuli/modulesync_config/pull/993) ([bastelfreak](https://github.com/bastelfreak))
+- voxpupuli-test: Require 12.x [\#992](https://github.com/voxpupuli/modulesync_config/pull/992) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- CI: Fetch all tags when running modulesync [\#994](https://github.com/voxpupuli/modulesync_config/pull/994) ([bastelfreak](https://github.com/bastelfreak))
+- Purge PDK leftovers in modules [\#991](https://github.com/voxpupuli/modulesync_config/pull/991) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- CI: Optimize release workflow [\#995](https://github.com/voxpupuli/modulesync_config/pull/995) ([bastelfreak](https://github.com/bastelfreak))
+- Add the puppet-cups module [\#990](https://github.com/voxpupuli/modulesync_config/pull/990) ([smortex](https://github.com/smortex))
+- Remove puppet-puppetwebhook [\#987](https://github.com/voxpupuli/modulesync_config/pull/987) ([smortex](https://github.com/smortex))
+- Remove puppet-puppet\_summary [\#986](https://github.com/voxpupuli/modulesync_config/pull/986) ([smortex](https://github.com/smortex))
+- Remove puppet-metche [\#985](https://github.com/voxpupuli/modulesync_config/pull/985) ([smortex](https://github.com/smortex))
+- Remove puppet-community\_kickstarts [\#984](https://github.com/voxpupuli/modulesync_config/pull/984) ([smortex](https://github.com/smortex))
+- Remove puppet-boundary [\#983](https://github.com/voxpupuli/modulesync_config/pull/983) ([smortex](https://github.com/smortex))
+- Purge .github/CONTRIBUTING.md in modules [\#982](https://github.com/voxpupuli/modulesync_config/pull/982) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [10.1.0](https://github.com/voxpupuli/modulesync_config/tree/10.1.0) (2025-08-12)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.0.0...10.1.0)
