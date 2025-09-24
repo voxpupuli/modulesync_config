@@ -29,10 +29,14 @@ jobs:
         # when provided, it configures the ssh/git config to authenticate automatically with that key to the source repo
         # the authentication won't be used for other repos (which we need for msync), so we cannot use the option
         # that's the reason for the 'Add SSH key' step
+        #
+        # the "ref: github.ref" is required for the tag to be properly checked out, as a workaround
+        # for https://github.com/actions/checkout/issues/1638
         uses: actions/checkout@v5
         with:
           fetch-depth: 0
           fetch-tags: true
+          ref: ${{ github.ref }}
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
