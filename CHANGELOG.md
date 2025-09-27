@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.3.0](https://github.com/voxpupuli/modulesync_config/tree/10.3.0) (2025-09-27)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.2.0...10.3.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-test: Switch to 13.x [\#999](https://github.com/voxpupuli/modulesync_config/pull/999) ([bastelfreak](https://github.com/bastelfreak))
+- voxpupuli-release: Require 5.x [\#998](https://github.com/voxpupuli/modulesync_config/pull/998) ([bastelfreak](https://github.com/bastelfreak))
+
+**Fixed bugs:**
+
+- explicitly checkout ${{ github.ref }} when doing a release [\#997](https://github.com/voxpupuli/modulesync_config/pull/997) ([evgeni](https://github.com/evgeni))
+
 ## [10.2.0](https://github.com/voxpupuli/modulesync_config/tree/10.2.0) (2025-09-23)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.1.0...10.2.0)
