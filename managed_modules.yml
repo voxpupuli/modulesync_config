@@ -132,6 +132,7 @@
 - puppet-openvox_bootstrap
 - puppet-openvoxview
 - puppet-openvpn
+- puppet-os_patching
 - puppet-otelcol
 - puppet-patching_as_code
 - puppet-patroni
