@@ -17,6 +17,7 @@
 - puppet-kubectl
 - puppet-maven
 - puppet-nm
+- puppet-openvpnas
 - puppet-pi
 - puppet-powertop
 - puppet-rke
