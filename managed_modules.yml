@@ -5,6 +5,7 @@
 - puppet-appd_db_agent
 - puppet-aptly
 - puppet-archive
+- puppet-artifactory
 - puppet-augeas
 - puppet-augeasproviders
 - puppet-augeasproviders_apache
