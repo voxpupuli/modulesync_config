@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #  Copyright 2016 Vox Pupuli
 #
 #  Licensed under the Apache License, Version 2.0 (the "License");
@@ -23,8 +25,8 @@ group :release do
   gem 'github_changelog_generator', '~> 1.16.4', require: false
 end
 
-gem 'puppet_forge', '>= 2.2.9'
 gem 'metadata_json_deps', '>= 0.2.0', '< 3'
 gem 'modulesync', '>= 2.6.0'
-gem "octokit", "~> 4.0"
+gem 'octokit', '~> 4.0'
+gem 'puppet_forge', '>= 2.2.9'
 # vim: syntax=ruby
