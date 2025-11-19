@@ -23,6 +23,7 @@
 - puppet-augeasproviders_syslog
 - puppet-authselect
 - puppet-autofs
+- puppet-autosign
 - puppet-bacula
 - puppet-bareos
 - puppet-bird
