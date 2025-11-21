@@ -32,7 +32,7 @@ jobs:
         #
         # the "ref: github.ref" is required for the tag to be properly checked out, as a workaround
         # for https://github.com/actions/checkout/issues/1638
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
           fetch-tags: true
