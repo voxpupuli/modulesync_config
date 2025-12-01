@@ -28,7 +28,7 @@ jobs:
 <%- end -%>
 <%- end -%>
 <%- unless @configs['with']&.has_key?('allowed_owner') -%>
-      allowed_owner: '<%= @configs[:namespace] %>'
+      allowed_owner: '<%= @configs['allowed_owner'] || @configs[:namespace] %>'
 <%- end -%>
     secrets:
       # Configure secrets here:
