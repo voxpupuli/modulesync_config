@@ -52,6 +52,7 @@
 - puppet-dotnet
 - puppet-drbd
 - puppet-earlyoom
+- puppet-eduvpn
 - puppet-elastic_stack
 - puppet-elasticsearch
 - puppet-epel
