@@ -127,6 +127,7 @@
 - puppet-nsd
 - puppet-nsswitch
 - puppet-openldap
+- puppet-openproject
 - puppet-opensearch
 - puppet-opensearch_dashboards
 - puppet-openssl
