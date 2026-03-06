@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.6.0](https://github.com/voxpupuli/modulesync_config/tree/10.6.0) (2026-03-06)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.5.0...10.6.0)
+
+**Implemented enhancements:**
+
+- voxpupuli-test: Require 14.x & voxpupuli-release: Require 5.3 [\#1019](https://github.com/voxpupuli/modulesync_config/pull/1019) ([bastelfreak](https://github.com/bastelfreak))
+
+**Merged pull requests:**
+
+- Add puppet-openproject [\#1018](https://github.com/voxpupuli/modulesync_config/pull/1018) ([NeatNerdPrime](https://github.com/NeatNerdPrime))
+- Add puppet-eduvpn module [\#1017](https://github.com/voxpupuli/modulesync_config/pull/1017) ([traylenator](https://github.com/traylenator))
+- Remove comment from `devcontainer.json` [\#1016](https://github.com/voxpupuli/modulesync_config/pull/1016) ([bwitt](https://github.com/bwitt))
+
 ## [10.5.0](https://github.com/voxpupuli/modulesync_config/tree/10.5.0) (2025-12-29)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.4.0...10.5.0)
