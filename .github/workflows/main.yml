@@ -19,7 +19,7 @@ jobs:
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: ruby
           bundler-cache: true
       - name: Run msync --noop
         run: bundle exec msync update --noop --git-base=https://github.com/ --branch foobranch
@@ -31,7 +31,7 @@ jobs:
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: ruby
           bundler-cache: true
       - name: Run msync --noop
         run: bundle exec msync clone --git-base=https://github.com/
@@ -44,7 +44,7 @@ jobs:
       - name: Setup ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.7
+          ruby-version: ruby
           bundler-cache: true
       - name: Run msync --noop
         run: bundle exec msync clone --git-base=https://github.com/
