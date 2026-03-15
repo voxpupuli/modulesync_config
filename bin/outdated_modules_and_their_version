@@ -12,7 +12,7 @@ width_modules = 6
 # min width is width of String "modulesync_config version"
 width_version = 25
 Dir.glob('modules/voxpupuli/puppet-*').sort.each do |f|
-  if File.exists?(f + '/.msync.yml')
+  if File.exist?(f + '/.msync.yml')
     version_module = YAML.load_file(f + '/.msync.yml')['modulesync_config_version']
     mod = (f).split('/')[2]
     if version != version_module
