@@ -22,7 +22,7 @@ end
 
 group :release do
   gem 'faraday-retry', '~> 2.1', require: false
-  gem 'github_changelog_generator', '~> 1.17.0', require: false
+  gem 'github_changelog_generator', '~> 1.18.0', require: false
 end
 
 gem 'metadata_json_deps', '>= 0.2.0', '< 3'
