@@ -27,7 +27,18 @@ DEBUG = (ENV['DEBUG'] || false)
 # get all modules we own from github
 # use poor mans pagination solution
 puts "get data from the github API" if DEBUG
-client = Octokit::Client.new
+
+puts "Insert a GitHub access token (Enter to skip)"
+access_token = gets.chomp
+
+if access_token.nil? || access_token.empty?
+  puts "No GitHub access token" if DEBUG
+  client = Octokit::Client.new
+else
+  puts "GitHub access token: #{access_token}" if DEBUG
+  client = Octokit::Client.new(access_token: access_token)
+end
+
 client.auto_paginate = true
 gh_repos = client.repos('voxpupuli')
 repos = []
