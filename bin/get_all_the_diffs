@@ -18,6 +18,9 @@ CENTOS_SUPPORT_RANGE = ['9', '10']
 DEBIAN_SUPPORT_RANGE = ['11', '12', '13']
 UBUNTU_SUPPORT_RANGE = ['22.04', '24.04']
 
+# Manually set latest release tag (eg when running from a fork)
+MANUAL_LATEST_RELEASE = '9.7.0'
+
 # Do you want debug output?
 DEBUG = (ENV['DEBUG'] || false)
 
@@ -61,7 +64,13 @@ really_need_an_inital_release = really_unreleased_modules.reject{|repo| FILTERED
 # update git and get the latest release
 `git fetch --all --prune`
 tags = `git tag -l`
-latest_release  = tags.lines.last.strip
+# Workaround to run in forks where there are no tags
+if tags.nil? || tags.empty?
+  puts "WARNING: using manually set latest release tag"
+  latest_release = MANUAL_LATEST_RELEASE
+else
+  latest_release  = tags.lines.last.strip
+end
 
 # get all the content of all .msync.yml, .sync.yml and metadata.json files
 modules_that_were_added_but_never_synced = []
