@@ -8,31 +8,50 @@ require 'octokit'
 
 # we removed the following modules from our modulesync_config / hide it because they are not Puppet modules but match the puppet- pattern
 # The modules in the list are broken, unfinished or got migrated (yes, that really happens from time to time)
-# ToDo: extend this list with repos that are archived on github
 # ToDo: Archive repos that we migrate away
-LEGACY_OR_BROKEN_NOBODY_KNOWS = ['puppet-bacula', 'puppet-nagios_providers', 'puppet-iis', 'puppet-syntax', 'puppet-blacksmith', 'puppet-mode']
+FILTERED_MODULES = ['puppet-blacksmith', 'puppet-mode', 'puppet-nagios_providers', 'puppet-syntax']
 
 # define some versions that we want to match against
-PUPPET_SUPPORT_RANGE = '>= 5.5.8 < 7.0.0'
-# Ubuntu 18.04 got released, but Puppet doesn't work yet on it
-# https://tickets.puppetlabs.com/browse/PA-1869
-# https://github.com/camptocamp/facterdb/pull/82#event-1600066178
-UBUNTU_SUPPORT_RANGE = ['16.04', '18.04']
-DEBIAN_SUPPORT_RANGE = ['8', '9', '10']
-CENTOS_SUPPORT_RANGE = ['6', '7']
+PUPPET_SUPPORT_RANGE = '>= 8.19.0 < 9.0.0'
+
+CENTOS_SUPPORT_RANGE = ['9', '10']
+DEBIAN_SUPPORT_RANGE = ['11', '12', '13']
+EL_SUPPORT_RANGE = ['8', '9', '10'] # RHEL and clones
+FEDORA_SUPPORT_RANGE = ['43']
+FREEBSD_SUPPORT_RANGE = ['14', '15']
+NETBSD_SUPPORT_RANGE = ['9', '10']
+OPENBSD_SUPPORT_RANGE = ['7']
+OPENSUSE_SUPPORT_RANGE = ['15', '16']
+UBUNTU_SUPPORT_RANGE = ['22.04', '24.04']
+
+# Manually set latest release tag (eg when running from a fork)
+MANUAL_LATEST_RELEASE = '9.7.0'
 
 # Do you want debug output?
-DEBUG = ENV['DEBUG'] ||= false
+DEBUG = (ENV['DEBUG'] || false)
 
 # get all modules we own from github
 # use poor mans pagination solution
 puts "get data from the github API" if DEBUG
-client = Octokit::Client.new
+
+puts "Insert a GitHub access token (Enter to skip)"
+access_token = gets.chomp
+
+if access_token.nil? || access_token.empty?
+  puts "No GitHub access token" if DEBUG
+  client = Octokit::Client.new
+else
+  puts "GitHub access token: #{access_token}" if DEBUG
+  client = Octokit::Client.new(access_token: access_token)
+end
+
 client.auto_paginate = true
 gh_repos = client.repos('voxpupuli')
 repos = []
-gh_repos.each{|repo| repos << repo[:name] if repo[:name] =~ /^puppet-(?!lint)/}
-repos -= LEGACY_OR_BROKEN_NOBODY_KNOWS
+# Filter out linting and archived repositories
+gh_repos.each{|repo| repos << repo[:name] if (repo[:name] =~ /^puppet-(?!lint)/ && repo[:archived] == false) }
+# Filter out manually selected modules
+repos -= FILTERED_MODULES
 
 # get all managed modules from our modulesync_config
 puts "get all manged modules" if DEBUG
@@ -54,15 +73,21 @@ unreleased_modules = modulesync_repos.reject{|repo| forge_releases.include?(repo
 really_unreleased_modules = repos.reject{|repo| forge_releases.include?(repo)}
 
 # get all modules that require a modulesync
-really_need_an_initial_modulesync = not_synced_repos.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+really_need_an_initial_modulesync = not_synced_repos.reject{|repo| FILTERED_MODULES.include?(repo)}
 
 # get all modules that really need an initial release
-really_need_an_inital_release = really_unreleased_modules.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+really_need_an_inital_release = really_unreleased_modules.reject{|repo| FILTERED_MODULES.include?(repo)}
 
 # update git and get the latest release
 `git fetch --all --prune`
 tags = `git tag -l`
-latest_release  = tags.lines.last.strip
+# Workaround to run in forks where there are no tags
+if tags.nil? || tags.empty?
+  puts "WARNING: using manually set latest release tag"
+  latest_release = MANUAL_LATEST_RELEASE
+else
+  latest_release  = tags.lines.last.strip
+end
 
 # get all the content of all .msync.yml, .sync.yml and metadata.json files
 modules_that_were_added_but_never_synced = []
@@ -72,6 +97,7 @@ syncs = {}
 metadatas = {}
 modulesync_repos.each do |repo|
   begin
+    puts "opening https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
     response = URI.open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml")
   rescue OpenURI::HTTPError
     puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
@@ -80,6 +106,7 @@ modulesync_repos.each do |repo|
   end
   msyncs[repo] = YAML.load(response)
   begin
+    puts "opening https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
     response = URI.open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml")
   rescue OpenURI::HTTPError
     puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
@@ -88,6 +115,7 @@ modulesync_repos.each do |repo|
   end
   syncs[repo] = YAML.load(response)
   begin
+    puts "opening https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json" if DEBUG
     response = URI.open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json")
   rescue OpenURI::HTTPError
     puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json"
@@ -108,12 +136,20 @@ end
 modules_without_puppet_version_range = []
 modules_with_incorrect_puppet_version_range = []
 modules_without_operatingsystems_support = []
-supports_eol_ubuntu = []
-supports_eol_debian = []
+operating_systems = []
+supports_eol_almalinux = []
 supports_eol_centos = []
-doesnt_support_latest_ubuntu = []
-doesnt_support_latest_debian = []
+supports_eol_debian = []
+supports_eol_rhel = []
+supports_eol_rockylinux = []
+supports_eol_scientific = []
+supports_eol_ubuntu = []
+doesnt_support_latest_almalinux = []
 doesnt_support_latest_centos = []
+doesnt_support_latest_debian = []
+doesnt_support_latest_rhel = []
+doesnt_support_latest_rockylinux = []
+doesnt_support_latest_ubuntu = []
 
 metadatas.each do |repo, metadata|
   # check if Puppet version range is correct
@@ -128,28 +164,43 @@ metadatas.each do |repo, metadata|
     modules_without_puppet_version_range << repo
   end
 
-  # check Ubuntu range
   begin
   metadata['operatingsystem_support'].each do |os|
+    # List all OSes mentioned in modules
+    os['operatingsystemrelease'].each do |release|
+      unless operating_systems.include?("#{os['operatingsystem']} #{release}")
+        operating_systems << "#{os['operatingsystem']} #{release}"
+      end
+    end
+
+    # Check support ranges
     case os['operatingsystem']
-    when 'Ubuntu'
-      supports_eol_ubuntu << repo if os['operatingsystemrelease'].min < UBUNTU_SUPPORT_RANGE.min
-      doesnt_support_latest_ubuntu << repo if os['operatingsystemrelease'].max < UBUNTU_SUPPORT_RANGE.max
+    when 'Almalinux'
+      supports_eol_almalinux << repo if os['operatingsystemrelease'].min <  EL_SUPPORT_RANGE.min
+      doesnt_support_latest_almalinux << repo if os['operatingsystemrelease'].max <  EL_SUPPORT_RANGE.max
+    when 'CentOS'
+      supports_eol_centos << repo if os['operatingsystemrelease'].min <  CENTOS_SUPPORT_RANGE.min
+      doesnt_support_latest_centos << repo if os['operatingsystemrelease'].max <  CENTOS_SUPPORT_RANGE.max
     when 'Debian'
       supports_eol_debian << repo if os['operatingsystemrelease'].min < DEBIAN_SUPPORT_RANGE.min
       doesnt_support_latest_debian << repo if os['operatingsystemrelease'].max < DEBIAN_SUPPORT_RANGE.max
-    when 'CentOS', 'RedHat'
-      supports_eol_centos << repo if os['operatingsystemrelease'].min <  CENTOS_SUPPORT_RANGE.min
-      doesnt_support_latest_centos << repo if os['operatingsystemrelease'].max <  CENTOS_SUPPORT_RANGE.max
+    when 'RedHat'
+      supports_eol_rhel << repo if os['operatingsystemrelease'].min <  EL_SUPPORT_RANGE.min
+      doesnt_support_latest_rhel << repo if os['operatingsystemrelease'].max <  EL_SUPPORT_RANGE.max
+    when 'Rocky'
+      supports_eol_rockylinux << repo if os['operatingsystemrelease'].min <  EL_SUPPORT_RANGE.min
+      doesnt_support_latest_rockylinux << repo if os['operatingsystemrelease'].max <  EL_SUPPORT_RANGE.max
+    when 'Scientific'
+      supports_eol_scientific << repo
+    when 'Ubuntu'
+      supports_eol_ubuntu << repo if os['operatingsystemrelease'].min < UBUNTU_SUPPORT_RANGE.min
+      doesnt_support_latest_ubuntu << repo if os['operatingsystemrelease'].max < UBUNTU_SUPPORT_RANGE.max
     end
   end
   rescue NoMethodError
     modules_without_operatingsystems_support << repo
   end
 end
-# we have a list of CentOS and RedHat in this array, we need to clean it up
-supports_eol_centos.sort!.uniq!
-doesnt_support_latest_centos.sort!.uniq!
 
 # get all repos that are on an outdated version of modulesync_config
 need_another_sync = []
@@ -168,19 +219,27 @@ puts "The following modules are missing in our modulesync config: #{not_synced_r
 puts "The following modules are in modulesync config but not released to the forge: #{unreleased_modules.join(', ')}" if unreleased_modules.count > 0
 puts "The following modules are in our github org but unreleased: #{really_unreleased_modules.join(', ')}" if really_unreleased_modules.count > 0
 puts "the following modules got added to our modulesync config but were never synced: #{modules_that_were_added_but_never_synced.join(', ')}" if modules_that_were_added_but_never_synced.count > 0
-puts '==============================================================================================================================================================' if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
-puts "We don't care about #{LEGACY_OR_BROKEN_NOBODY_KNOWS.join(', ')}" if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
+puts '==============================================================================================================================================================' if FILTERED_MODULES.count > 0
+puts "We don't care about #{FILTERED_MODULES.join(', ')}" if FILTERED_MODULES.count > 0
 puts '=============================================================================================================================================================='
 puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
 puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}" if need_another_sync.count > 0
 puts "We need to check Puppets version_requirement on these modules because it is not equal to #{PUPPET_SUPPORT_RANGE}: #{modules_with_incorrect_puppet_version_range.join(', ')}" if modules_with_incorrect_puppet_version_range.count > 0
 puts "We need to add Puppets version_requirement to: #{modules_without_puppet_version_range.join(', ')}" if modules_without_puppet_version_range.count > 0
-puts "We need to remove EOL Debian on: #{supports_eol_debian.join(', ')}" if supports_eol_debian.count > 0
-puts "We need to remove EOL Ubuntu on: #{supports_eol_ubuntu.join(', ')}" if supports_eol_ubuntu.count > 0
+puts '=============================================================================================================================================================='
+puts "Operating systems mentioned in modules: #{operating_systems.sort}"
+puts '=============================================================================================================================================================='
 puts "We need to remove EOL CentOS on: #{supports_eol_centos.join(', ')}" if supports_eol_centos.count > 0
-puts "We need to add support for Ubuntu #{UBUNTU_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_debian.count > 0
-puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_ubuntu.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
+puts "We need to remove EOL Debian on: #{supports_eol_debian.join(', ')}" if supports_eol_debian.count > 0
+puts "We need to remove EOL RHEL on: #{supports_eol_rhel.join(', ')}" if supports_eol_rhel.count > 0
+puts "We need to remove Scientific Linux on: #{supports_eol_scientific.join(', ')}" if supports_eol_scientific.count > 0
+puts "We need to remove EOL Ubuntu on: #{supports_eol_ubuntu.join(', ')}" if supports_eol_ubuntu.count > 0
+puts "We need to add support for AlmaLinux #{EL_SUPPORT_RANGE.max} to: #{doesnt_support_latest_almalinux.join(', ')}" if doesnt_support_latest_almalinux.count > 0
 puts "We need to add support for CentOS #{CENTOS_SUPPORT_RANGE.max} to: #{doesnt_support_latest_centos.join(', ')}" if doesnt_support_latest_centos.count > 0
+puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_ubuntu.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
+puts "We need to add support for Rocky Linux #{EL_SUPPORT_RANGE.max} to: #{doesnt_support_latest_rockylinux.join(', ')}" if doesnt_support_latest_rockylinux.count > 0
+puts "We need to add support for Ubuntu #{UBUNTU_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_debian.count > 0
+puts '=============================================================================================================================================================='
 puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
 puts '=============================================================================================================================================================='
 puts 'Note: You can cleanup EOL operating systems with our ./bin/clean-metadata script'
