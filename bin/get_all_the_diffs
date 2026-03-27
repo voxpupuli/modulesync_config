@@ -16,9 +16,12 @@ PUPPET_SUPPORT_RANGE = '>= 8.19.0 < 9.0.0'
 
 CENTOS_SUPPORT_RANGE = ['9', '10']
 DEBIAN_SUPPORT_RANGE = ['11', '12', '13']
-# RHEL and clones
-EL_SUPPORT_RANGE = ['8', '9', '10']
+EL_SUPPORT_RANGE = ['8', '9', '10'] # RHEL and clones
+FEDORA_SUPPORT_RANGE = ['43']
 FREEBSD_SUPPORT_RANGE = ['14', '15']
+NETBSD_SUPPORT_RANGE = ['9', '10']
+OPENBSD_SUPPORT_RANGE = ['7']
+OPENSUSE_SUPPORT_RANGE = ['15', '16']
 UBUNTU_SUPPORT_RANGE = ['22.04', '24.04']
 
 # Manually set latest release tag (eg when running from a fork)
@@ -134,11 +137,18 @@ modules_without_puppet_version_range = []
 modules_with_incorrect_puppet_version_range = []
 modules_without_operatingsystems_support = []
 operating_systems = []
+supports_eol_almalinux = []
 supports_eol_centos = []
 supports_eol_debian = []
+supports_eol_rhel = []
+supports_eol_rockylinux = []
+supports_eol_scientific = []
 supports_eol_ubuntu = []
+doesnt_support_latest_almalinux = []
 doesnt_support_latest_centos = []
 doesnt_support_latest_debian = []
+doesnt_support_latest_rhel = []
+doesnt_support_latest_rockylinux = []
 doesnt_support_latest_ubuntu = []
 
 metadatas.each do |repo, metadata|
@@ -165,24 +175,32 @@ metadatas.each do |repo, metadata|
 
     # Check support ranges
     case os['operatingsystem']
-    when 'Ubuntu'
-      supports_eol_ubuntu << repo if os['operatingsystemrelease'].min < UBUNTU_SUPPORT_RANGE.min
-      doesnt_support_latest_ubuntu << repo if os['operatingsystemrelease'].max < UBUNTU_SUPPORT_RANGE.max
+    when 'Almalinux'
+      supports_eol_almalinux << repo if os['operatingsystemrelease'].min <  EL_SUPPORT_RANGE.min
+      doesnt_support_latest_almalinux << repo if os['operatingsystemrelease'].max <  EL_SUPPORT_RANGE.max
+    when 'CentOS'
+      supports_eol_centos << repo if os['operatingsystemrelease'].min <  CENTOS_SUPPORT_RANGE.min
+      doesnt_support_latest_centos << repo if os['operatingsystemrelease'].max <  CENTOS_SUPPORT_RANGE.max
     when 'Debian'
       supports_eol_debian << repo if os['operatingsystemrelease'].min < DEBIAN_SUPPORT_RANGE.min
       doesnt_support_latest_debian << repo if os['operatingsystemrelease'].max < DEBIAN_SUPPORT_RANGE.max
-    when 'CentOS', 'RedHat'
-      supports_eol_centos << repo if os['operatingsystemrelease'].min <  CENTOS_SUPPORT_RANGE.min
-      doesnt_support_latest_centos << repo if os['operatingsystemrelease'].max <  CENTOS_SUPPORT_RANGE.max
+    when 'RedHat'
+      supports_eol_rhel << repo if os['operatingsystemrelease'].min <  EL_SUPPORT_RANGE.min
+      doesnt_support_latest_rhel << repo if os['operatingsystemrelease'].max <  EL_SUPPORT_RANGE.max
+    when 'Rocky'
+      supports_eol_rockylinux << repo if os['operatingsystemrelease'].min <  EL_SUPPORT_RANGE.min
+      doesnt_support_latest_rockylinux << repo if os['operatingsystemrelease'].max <  EL_SUPPORT_RANGE.max
+    when 'Scientific'
+      supports_eol_scientific << repo
+    when 'Ubuntu'
+      supports_eol_ubuntu << repo if os['operatingsystemrelease'].min < UBUNTU_SUPPORT_RANGE.min
+      doesnt_support_latest_ubuntu << repo if os['operatingsystemrelease'].max < UBUNTU_SUPPORT_RANGE.max
     end
   end
   rescue NoMethodError
     modules_without_operatingsystems_support << repo
   end
 end
-# we have a list of CentOS and RedHat in this array, we need to clean it up
-supports_eol_centos.sort!.uniq!
-doesnt_support_latest_centos.sort!.uniq!
 
 # get all repos that are on an outdated version of modulesync_config
 need_another_sync = []
@@ -213,9 +231,13 @@ puts "Operating systems mentioned in modules: #{operating_systems.sort}"
 puts '=============================================================================================================================================================='
 puts "We need to remove EOL CentOS on: #{supports_eol_centos.join(', ')}" if supports_eol_centos.count > 0
 puts "We need to remove EOL Debian on: #{supports_eol_debian.join(', ')}" if supports_eol_debian.count > 0
+puts "We need to remove EOL RHEL on: #{supports_eol_rhel.join(', ')}" if supports_eol_rhel.count > 0
+puts "We need to remove Scientific Linux on: #{supports_eol_scientific.join(', ')}" if supports_eol_scientific.count > 0
 puts "We need to remove EOL Ubuntu on: #{supports_eol_ubuntu.join(', ')}" if supports_eol_ubuntu.count > 0
+puts "We need to add support for AlmaLinux #{EL_SUPPORT_RANGE.max} to: #{doesnt_support_latest_almalinux.join(', ')}" if doesnt_support_latest_almalinux.count > 0
 puts "We need to add support for CentOS #{CENTOS_SUPPORT_RANGE.max} to: #{doesnt_support_latest_centos.join(', ')}" if doesnt_support_latest_centos.count > 0
 puts "We need to add support for Debian #{DEBIAN_SUPPORT_RANGE.max} to: #{doesnt_support_latest_ubuntu.join(', ')}" if doesnt_support_latest_ubuntu.count > 0
+puts "We need to add support for Rocky Linux #{EL_SUPPORT_RANGE.max} to: #{doesnt_support_latest_rockylinux.join(', ')}" if doesnt_support_latest_rockylinux.count > 0
 puts "We need to add support for Ubuntu #{UBUNTU_SUPPORT_RANGE.max} to: #{doesnt_support_latest_debian.join(', ')}" if doesnt_support_latest_debian.count > 0
 puts '=============================================================================================================================================================='
 puts "Afterwards we really need to release: #{really_need_an_inital_release.join(', ')}" if really_need_an_inital_release.count > 0
