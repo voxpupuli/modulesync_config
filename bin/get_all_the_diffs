@@ -71,6 +71,7 @@ syncs = {}
 metadatas = {}
 modulesync_repos.each do |repo|
   begin
+    puts "opening https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
     response = URI.open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml")
   rescue OpenURI::HTTPError
     puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.msync.yml" if DEBUG
@@ -79,6 +80,7 @@ modulesync_repos.each do |repo|
   end
   msyncs[repo] = YAML.load(response)
   begin
+    puts "opening https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
     response = URI.open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml")
   rescue OpenURI::HTTPError
     puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/.sync.yml" if DEBUG
@@ -87,6 +89,7 @@ modulesync_repos.each do |repo|
   end
   syncs[repo] = YAML.load(response)
   begin
+    puts "opening https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json" if DEBUG
     response = URI.open("https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json")
   rescue OpenURI::HTTPError
     puts "something is broken with #{repo} and https://raw.githubusercontent.com/voxpupuli/#{repo}/master/metadata.json"
