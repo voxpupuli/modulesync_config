@@ -13,13 +13,11 @@ require 'octokit'
 LEGACY_OR_BROKEN_NOBODY_KNOWS = ['puppet-bacula', 'puppet-nagios_providers', 'puppet-iis', 'puppet-syntax', 'puppet-blacksmith', 'puppet-mode']
 
 # define some versions that we want to match against
-PUPPET_SUPPORT_RANGE = '>= 5.5.8 < 7.0.0'
-# Ubuntu 18.04 got released, but Puppet doesn't work yet on it
-# https://tickets.puppetlabs.com/browse/PA-1869
-# https://github.com/camptocamp/facterdb/pull/82#event-1600066178
-UBUNTU_SUPPORT_RANGE = ['16.04', '18.04']
-DEBIAN_SUPPORT_RANGE = ['8', '9', '10']
-CENTOS_SUPPORT_RANGE = ['6', '7']
+PUPPET_SUPPORT_RANGE = '>= 8.19.0 < 9.0.0'
+
+CENTOS_SUPPORT_RANGE = ['9', '10']
+DEBIAN_SUPPORT_RANGE = ['11', '12', '13']
+UBUNTU_SUPPORT_RANGE = ['22.04', '24.04']
 
 # Do you want debug output?
 DEBUG = (ENV['DEBUG'] || false)
