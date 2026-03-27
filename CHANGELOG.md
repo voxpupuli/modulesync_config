@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.7.0](https://github.com/voxpupuli/modulesync_config/tree/10.7.0) (2026-03-27)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.6.0...10.7.0)
+
+**Implemented enhancements:**
+
+- Add workflows to create module git tags [\#1025](https://github.com/voxpupuli/modulesync_config/pull/1025) ([bastelfreak](https://github.com/bastelfreak))
+- CI: Update gha-puppet branch v3-\>v4 [\#1024](https://github.com/voxpupuli/modulesync_config/pull/1024) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [10.6.0](https://github.com/voxpupuli/modulesync_config/tree/10.6.0) (2026-03-06)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.5.0...10.6.0)
