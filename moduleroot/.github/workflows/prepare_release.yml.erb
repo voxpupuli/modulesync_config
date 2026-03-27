@@ -23,7 +23,10 @@ jobs:
 <%- unless @configs['with']&.has_key?('allowed_owner') -%>
       allowed_owner: '<%= @configs['allowed_owner'] || @configs[:namespace] %>'
 <%- end -%>
+      git_name: '<%= @configs['git_name'] %>'
+      git_email: '<%= @configs['git_email'] %>'
     secrets:
       # Configure secrets here:
       #  https://docs.github.com/en/actions/security-guides/encrypted-secrets
       github_pat: '${{ secrets.PCCI_PAT_RELEASE_PREP }}'
+      ssh_private_key: '${{ secrets.PCCI_SSH_PRIVATE_KEY }}'
