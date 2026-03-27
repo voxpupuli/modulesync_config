@@ -8,9 +8,8 @@ require 'octokit'
 
 # we removed the following modules from our modulesync_config / hide it because they are not Puppet modules but match the puppet- pattern
 # The modules in the list are broken, unfinished or got migrated (yes, that really happens from time to time)
-# ToDo: extend this list with repos that are archived on github
 # ToDo: Archive repos that we migrate away
-LEGACY_OR_BROKEN_NOBODY_KNOWS = ['puppet-bacula', 'puppet-nagios_providers', 'puppet-iis', 'puppet-syntax', 'puppet-blacksmith', 'puppet-mode']
+FILTERED_MODULES = ['puppet-blacksmith', 'puppet-mode', 'puppet-nagios_providers', 'puppet-syntax']
 
 # define some versions that we want to match against
 PUPPET_SUPPORT_RANGE = '>= 8.19.0 < 9.0.0'
@@ -29,8 +28,10 @@ client = Octokit::Client.new
 client.auto_paginate = true
 gh_repos = client.repos('voxpupuli')
 repos = []
-gh_repos.each{|repo| repos << repo[:name] if repo[:name] =~ /^puppet-(?!lint)/}
-repos -= LEGACY_OR_BROKEN_NOBODY_KNOWS
+# Filter out linting and archived repositories
+gh_repos.each{|repo| repos << repo[:name] if (repo[:name] =~ /^puppet-(?!lint)/ && repo[:archived] == false) }
+# Filter out manually selected modules
+repos -= FILTERED_MODULES
 
 # get all managed modules from our modulesync_config
 puts "get all manged modules" if DEBUG
@@ -52,10 +53,10 @@ unreleased_modules = modulesync_repos.reject{|repo| forge_releases.include?(repo
 really_unreleased_modules = repos.reject{|repo| forge_releases.include?(repo)}
 
 # get all modules that require a modulesync
-really_need_an_initial_modulesync = not_synced_repos.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+really_need_an_initial_modulesync = not_synced_repos.reject{|repo| FILTERED_MODULES.include?(repo)}
 
 # get all modules that really need an initial release
-really_need_an_inital_release = really_unreleased_modules.reject{|repo| LEGACY_OR_BROKEN_NOBODY_KNOWS.include?(repo)}
+really_need_an_inital_release = really_unreleased_modules.reject{|repo| FILTERED_MODULES.include?(repo)}
 
 # update git and get the latest release
 `git fetch --all --prune`
@@ -166,8 +167,8 @@ puts "The following modules are missing in our modulesync config: #{not_synced_r
 puts "The following modules are in modulesync config but not released to the forge: #{unreleased_modules.join(', ')}" if unreleased_modules.count > 0
 puts "The following modules are in our github org but unreleased: #{really_unreleased_modules.join(', ')}" if really_unreleased_modules.count > 0
 puts "the following modules got added to our modulesync config but were never synced: #{modules_that_were_added_but_never_synced.join(', ')}" if modules_that_were_added_but_never_synced.count > 0
-puts '==============================================================================================================================================================' if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
-puts "We don't care about #{LEGACY_OR_BROKEN_NOBODY_KNOWS.join(', ')}" if LEGACY_OR_BROKEN_NOBODY_KNOWS.count > 0
+puts '==============================================================================================================================================================' if FILTERED_MODULES.count > 0
+puts "We don't care about #{FILTERED_MODULES.join(', ')}" if FILTERED_MODULES.count > 0
 puts '=============================================================================================================================================================='
 puts "We need to do an initial modulesync on: #{really_need_an_initial_modulesync.join(', ')}" if really_need_an_initial_modulesync.count > 0
 puts "we need to do a normal modulesync on: #{need_another_sync.join(', ')}" if need_another_sync.count > 0
