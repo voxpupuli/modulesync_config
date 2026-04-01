@@ -33,14 +33,14 @@ Gemfile:
       - gem: voxpupuli-test
         version: '~> 14.0'
       - gem: puppet_metadata
-        version: '~> 6.0'
+        version: '~> 6.1'
     ':development':
       - gem: guard-rake
       - gem: overcommit
         version: '>= 0.39.1'
     ':system_tests':
       - gem: voxpupuli-acceptance
-        version: '~> 4.0'
+        version: '~> 4.4'
     ':release':
       - gem: voxpupuli-release
         version: '~> 5.3'
