@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.8.0](https://github.com/voxpupuli/modulesync_config/tree/10.8.0) (2026-04-14)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.7.0...10.8.0)
+
+**Merged pull requests:**
+
+- Implement support for installing staging packages [\#1028](https://github.com/voxpupuli/modulesync_config/pull/1028) ([bastelfreak](https://github.com/bastelfreak))
+
 ## [10.7.0](https://github.com/voxpupuli/modulesync_config/tree/10.7.0) (2026-03-27)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.6.0...10.7.0)
