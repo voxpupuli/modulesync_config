@@ -188,6 +188,7 @@
 - puppet-varnish
 - puppet-vault
 - puppet-vault_lookup
+- puppet-victorialogs
 - puppet-virtualbox
 - puppet-wildfly
 - puppet-windows_firewall
