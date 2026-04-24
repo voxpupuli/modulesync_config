@@ -18,6 +18,7 @@ source ENV['GEM_SOURCE'] || 'https://rubygems.org'
 
 group :development do
   gem 'pry'
+  gem 'rubocop'
 end
 
 group :release do
