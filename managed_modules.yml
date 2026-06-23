@@ -116,6 +116,7 @@
 - puppet-mumble
 - puppet-mysql_java_connector
 - puppet-network
+- puppet-networkmanager
 - puppet-nfs
 - puppet-nftables
 - puppet-nginx
