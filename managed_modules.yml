@@ -2,6 +2,7 @@
 - puppet-allknowingdns
 - puppet-alternatives
 - puppet-amanda
+- puppet-anubis
 - puppet-appd_db_agent
 - puppet-aptly
 - puppet-archive
