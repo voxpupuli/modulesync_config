@@ -7,5 +7,10 @@
     "managerFilePatterns": [
       "/^moduleroot\\/\\.github\\/workflows\\/.+\\.ya?ml\\.erb$/"
     ]
-  }
+  },
+  "addLabels": [
+    "dependencies",
+    "renovate"
+  ],
+  "assigneesFromCodeOwners": true
 }
