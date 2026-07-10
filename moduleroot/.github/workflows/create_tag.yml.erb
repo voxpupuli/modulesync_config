@@ -11,7 +11,7 @@ permissions: {}
 
 jobs:
   create_tag:
-    uses: 'voxpupuli/gha-puppet/.github/workflows/create_tag.yml@v4'
+    uses: 'voxpupuli/gha-puppet/.github/workflows/create_tag.yml@b3f32179c62bfa8b50e2fe7a9911c07f7dc86eca' # 2.0.0
     with:
       allowed_owner: '<%= @configs[:namespace] %>'
       git_name: '<%= @configs['git_name'] %>'

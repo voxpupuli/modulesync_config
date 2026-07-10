@@ -18,7 +18,7 @@ permissions:
 jobs:
   release:
     name: Release
-    uses: voxpupuli/gha-puppet/.github/workflows/release.yml@v4
+    uses: voxpupuli/gha-puppet/.github/workflows/release.yml@b3f32179c62bfa8b50e2fe7a9911c07f7dc86eca # 2.0.0
     with:
 <%- if @configs['with'] -%>
 <%- @configs['with'].each do |k,v| -%>

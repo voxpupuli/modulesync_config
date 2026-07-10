@@ -17,7 +17,7 @@ permissions:
 
 jobs:
   release_prep:
-    uses: 'voxpupuli/gha-puppet/.github/workflows/prepare_release.yml@v4'
+    uses: 'voxpupuli/gha-puppet/.github/workflows/prepare_release.yml@b3f32179c62bfa8b50e2fe7a9911c07f7dc86eca' # 2.0.0
     with:
       version: ${{ github.event.inputs.version }}
 <%- unless @configs['with']&.has_key?('allowed_owner') -%>

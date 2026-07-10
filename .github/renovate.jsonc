@@ -1,0 +1,20 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  // use the recommended config preset as a base
+  "extends": [
+    "config:recommended"
+  ],
+  // scans for GitHub Actions workflow files in the moduleroot/.github/workflows ERB templates
+  "github-actions": {
+    "managerFilePatterns": [
+      "/^moduleroot\\/\\.github\\/workflows\\/.+\\.ya?ml\\.erb$/"
+    ]
+  },
+  // add labels to all renovate PRs
+  "addLabels": [
+    "dependencies",
+    "renovate"
+  ],
+  // assign PRs to code owners
+  "assigneesFromCodeOwners": true
+}
