@@ -32,13 +32,13 @@ jobs:
         #
         # the "ref: github.ref" is required for the tag to be properly checked out, as a workaround
         # for https://github.com/actions/checkout/issues/1638
-        uses: actions/checkout@v7
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0
           fetch-tags: true
           ref: ${{ github.ref }}
       - name: Setup ruby
-        uses: ruby/setup-ruby@v1
+        uses: ruby/setup-ruby@d45b1a4e94b71acab930e56e79c6aa188764e7f9 # v1.316.0
         with:
           ruby-version: ruby
           bundler-cache: true
