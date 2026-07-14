@@ -194,6 +194,7 @@
 - puppet-virtualbox
 - puppet-wildfly
 - puppet-windows_firewall
+- puppet-windows_power
 - puppet-windowsfeature
 - puppet-winlogbeat
 - puppet-wireguard
