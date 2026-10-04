@@ -6,7 +6,7 @@ from posixpath import dirname
 import argparse
 
 # Note range is exclusive so the last number is not in the list
-OPENVOX_VERSION = '>= 8.19.0 < 9.0.0'
+OPENVOX_VERSION = '>= 8.19.0 < 10.0.0'
 UNSUPPORTED_EL = {str(i) for i in range(3, 7)}
 UNSUPPORTED = {
     'CentOS': UNSUPPORTED_EL,
