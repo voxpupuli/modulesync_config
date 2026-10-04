@@ -65,4 +65,7 @@ jobs:
             --pr \
             --pr-labels modulesync \
             --pr-title "modulesync $(git describe)" \
-            --message "modulesync $(git describe)"
+            --message "modulesync $(git describe)" \
+            --rebase \
+            --sign \
+            --signoff
