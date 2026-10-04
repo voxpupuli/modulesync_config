@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+## [10.9.0](https://github.com/voxpupuli/modulesync_config/tree/10.9.0) (2026-10-04)
+
+[Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.8.0...10.9.0)
+
+**Implemented enhancements:**
+
+- Add OpenVox 9 support [\#1056](https://github.com/voxpupuli/modulesync_config/pull/1056) ([bastelfreak](https://github.com/bastelfreak))
+- feat: update GitHub Actions workflows / configurations [\#1038](https://github.com/voxpupuli/modulesync_config/pull/1038) ([rwaffen](https://github.com/rwaffen))
+
+**Fixed bugs:**
+
+- revert: rollback wrong diggest to tag/branchname [\#1039](https://github.com/voxpupuli/modulesync_config/pull/1039) ([rwaffen](https://github.com/rwaffen))
+
+**Merged pull requests:**
+
+- Update ruby/setup-ruby action to v1.327.0 [\#1055](https://github.com/voxpupuli/modulesync_config/pull/1055) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.326.0 [\#1054](https://github.com/voxpupuli/modulesync_config/pull/1054) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.325.0 [\#1053](https://github.com/voxpupuli/modulesync_config/pull/1053) ([renovate[bot]](https://github.com/apps/renovate))
+- Update dependency ubuntu to v26 [\#1052](https://github.com/voxpupuli/modulesync_config/pull/1052) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.324.0 [\#1051](https://github.com/voxpupuli/modulesync_config/pull/1051) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.323.0 [\#1050](https://github.com/voxpupuli/modulesync_config/pull/1050) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.321.0 [\#1047](https://github.com/voxpupuli/modulesync_config/pull/1047) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.320.0 [\#1046](https://github.com/voxpupuli/modulesync_config/pull/1046) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/labeler action to v7 [\#1045](https://github.com/voxpupuli/modulesync_config/pull/1045) ([renovate[bot]](https://github.com/apps/renovate))
+- Update actions/checkout action to v7.0.1 [\#1044](https://github.com/voxpupuli/modulesync_config/pull/1044) ([renovate[bot]](https://github.com/apps/renovate))
+- Update ruby/setup-ruby action to v1.319.0 [\#1041](https://github.com/voxpupuli/modulesync_config/pull/1041) ([renovate[bot]](https://github.com/apps/renovate))
+- Add puppet-windows\_power [\#1040](https://github.com/voxpupuli/modulesync_config/pull/1040) ([Lightning-](https://github.com/Lightning-))
+- enable auto-merge [\#1037](https://github.com/voxpupuli/modulesync_config/pull/1037) ([rwaffen](https://github.com/rwaffen))
+- ci: add labels and assign to codeowners [\#1036](https://github.com/voxpupuli/modulesync_config/pull/1036) ([rwaffen](https://github.com/rwaffen))
+- add puppet-anubis to msync config [\#1035](https://github.com/voxpupuli/modulesync_config/pull/1035) ([evgeni](https://github.com/evgeni))
+- feat: add renovate configuration file [\#1034](https://github.com/voxpupuli/modulesync_config/pull/1034) ([rwaffen](https://github.com/rwaffen))
+- feat: add networkmanager module [\#1033](https://github.com/voxpupuli/modulesync_config/pull/1033) ([rwaffen](https://github.com/rwaffen))
+- Add puppet-victorialogs module [\#1030](https://github.com/voxpupuli/modulesync_config/pull/1030) ([jay7x](https://github.com/jay7x))
+
 ## [10.8.0](https://github.com/voxpupuli/modulesync_config/tree/10.8.0) (2026-04-14)
 
 [Full Changelog](https://github.com/voxpupuli/modulesync_config/compare/10.7.0...10.8.0)
