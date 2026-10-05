@@ -69,3 +69,9 @@ jobs:
 <%- end -%>
 <%- end -%>
 <%- end -%>
+<%- if @configs['secrets'] -%>
+    secrets:
+<%- @configs['secrets'].each do |k,v| -%>
+      <%= k %>: <%= v %>
+<%- end -%>
+<%- end -%>
