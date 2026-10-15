@@ -11,6 +11,14 @@ begin
   require 'voxpupuli/acceptance/rake'
 rescue LoadError
   # only available if gem group acceptance is installed
+<%- if @configs['acceptance_uses_fixtures'] -%>
+else
+  task beaker: 'fixtures:prep'
+
+  Rake::Task[:beaker].enhance do
+    Rake::Task['fixtures:clean'].invoke
+  end
+<%- end -%>
 end
 
 begin
