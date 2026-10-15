@@ -1,0 +1,99 @@
+---
+name: Manage metadata.json operatingsystem_support
+
+on:
+  workflow_dispatch:
+    inputs:
+      labels:
+        default: 'Enhancement'
+        description: 'Comma-separated list of labels to add to the PR'
+        required: false
+        type: string
+      message:
+        default: 'Add missing operatingsystem_support entries.'
+        description: 'Message of the PR'
+        required: true
+        type: string
+      mode:
+        default: add-missing
+        description: 'Add or remove operatingsystem_support entries.'
+        options:
+          - add-missing
+          - remove-eol
+        required: true
+        type: choice
+      repositories:
+        default: 'puppet-example'
+        description: 'A regex to filter the repositories to run the workflow on.'
+        required: false
+        type: string
+      title:
+        default: 'Add missing operatingsystem_support entries.'
+        description: 'Title of the PR'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+env:
+  GIT_AUTHOR_NAME: pccibot
+  GIT_AUTHOR_EMAIL: 12855858+pccibot@users.noreply.github.com
+  GIT_COMMITTER_NAME: pccibot
+  GIT_COMMITTER_EMAIL: 12855858+pccibot@users.noreply.github.com
+  SSH_AUTH_SOCK: /tmp/ssh_agent.sock
+  GITHUB_BASE_URL: https://api.github.com
+
+jobs:
+  os:
+    runs-on: ubuntu-latest
+    name: Update metadata.json operatingsystem_support for modules
+    if: ${{ github.repository_owner == 'voxpupuli' }}
+    steps:
+      - name: checkout code
+        # the action has a ssh-key option.
+        # when provided, it configures the ssh/git config to authenticate automatically with that key to the source repo
+        # the authentication won't be used for other repos (which we need for msync), so we cannot use the option
+        # that's the reason for the 'Add SSH key' step
+        #
+        # the "ref: github.ref" is required for the tag to be properly checked out, as a workaround
+        # for https://github.com/actions/checkout/issues/1638
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          fetch-tags: true
+          ref: ${{ github.ref }}
+      - name: Setup ruby
+        uses: ruby/setup-ruby@de492cf36cbab201753d720ce4f4e336cd688c94 # v1.336.0
+        with:
+          ruby-version: ruby
+          bundler-cache: true
+      - name: Add SSH key
+        run: |
+            mkdir -p ~/.ssh
+            echo "${{ secrets.PCCI_SSH_PRIVATE_KEY }}" > ~/.ssh/github_actions
+            chmod 600 ~/.ssh/github_actions
+            ssh-agent -a $SSH_AUTH_SOCK > /dev/null
+            ssh-add ~/.ssh/github_actions
+      - name: set git user & email & commit signing
+        run: |
+          git config --global user.email "$GIT_AUTHOR_EMAIL"
+          git config --global user.name "$GIT_AUTHOR_NAME"
+          git config --global gpg.format ssh
+          git config --global user.signingkey ~/.ssh/github_actions
+          git config --global commit.gpgsign true
+      - name: Run msync
+        env:
+          # https://github.com/voxpupuli/modulesync?tab=readme-ov-file#submitting-prsmrs-to-github-or-gitlab
+          GITHUB_TOKEN: '${{ secrets.PCCI_PAT_MODULESYNC_PR }}'
+        run: |
+          bundle exec msync exec --verbose \
+            --filter ${{ inputs.repositories }} \
+            --pr \
+            --pr-labels ${{ inputs.labels }} \
+            --pr-title ${{ inputs.title }} \
+            --message ${{ inputs.message }} \
+            --rebase \
+            --sign \
+            --signoff \
+            -- bundle exec puppet-metadata os-versions --${{ inputs.mode }}
