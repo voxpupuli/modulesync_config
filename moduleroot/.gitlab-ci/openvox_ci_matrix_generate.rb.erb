@@ -1,0 +1,41 @@
+# frozen_string_literal: true
+
+# Managed by modulesync - DO NOT EDIT
+# https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
+
+require 'puppet_metadata'
+require 'yaml'
+
+metadata = PuppetMetadata.read('metadata.json')
+gha_matrix = metadata.github_actions({
+                                       domain: nil,
+                                       minimum_major_puppet_version: nil,
+                                       beaker_fact: nil,
+                                       beaker_hosts: nil,
+                                     }).outputs
+pipeline_config = {}
+{
+  unit: gha_matrix[:puppet_unit_test_matrix],
+  acceptance: gha_matrix[:puppet_beaker_test_matrix].map { _1[:env] }.compact,
+}.each do |stage, matrix|
+  matrix.map! { |hash| hash.each_with_object({}) { |(k, v), h| h[k.to_s] = Array(v).map(&:to_s) } }
+  template_path = ".gitlab-ci/openvox_#{stage}.yml"
+
+  unless File.exist?(template_path)
+    puts "Skipping: Template file #{template_path} does not exist."
+    next
+  end
+
+  pipeline_config.merge!(YAML.load_file(template_path)) do |_key, old_val, new_val|
+    if old_val.is_a?(Hash) && new_val.is_a?(Hash)
+      old_val.merge(new_val)
+    elsif old_val.is_a?(Array) && new_val.is_a?(Array)
+      (old_val + new_val).uniq
+    else
+      new_val
+    end
+  end
+  pipeline_config["OpenVox / #{stage}"] ||= {}
+  pipeline_config["OpenVox / #{stage}"]['parallel'] = { 'matrix' => matrix }
+end
+File.write('.generated_ci_matrix.yml', pipeline_config.to_yaml)

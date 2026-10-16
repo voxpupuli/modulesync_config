@@ -1,0 +1,38 @@
+---
+# Managed by modulesync - DO NOT EDIT
+# https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
+
+'OpenVox / validation':
+  stage: test
+  image: <%= @configs['image'] %>
+  cache:
+    key: "${CI_JOB_IMAGE}-OpenVox without ${BUNDLE_WITHOUT}"
+    paths:
+      - vendor/bundle
+  variables:
+    BUNDLE_WITHOUT: development:system_tests:release
+  before_script:
+    - rm -f Gemfile.lock || true
+    - ruby --version
+    - gem --version
+    - bundle -v
+    - bundle config set --local path 'vendor/bundle'
+    - bundle config set --local jobs $(nproc)
+    - bundle install
+    - bundle clean
+    - bundle env
+  script:
+    - bundle exec rake validate lint check rubocop
+    - bundle exec ruby .gitlab-ci/openvox_ci_matrix_generate.rb
+  artifacts:
+    paths:
+      - '.generated_ci_matrix.yml'
+
+trigger-matrix:
+  stage: test
+  needs: ['OpenVox / validation']
+  trigger:
+    include:
+      - artifact: '.generated_ci_matrix.yml'
+        job: 'OpenVox / validation'
+    strategy: depend

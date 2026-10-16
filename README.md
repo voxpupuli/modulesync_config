@@ -153,6 +153,27 @@ done
 Of course you can expand the loop with commands like `git push origin HEAD -u`
 and `hub pull-request --no-edit` to create bulk pull requests.
 
+### GitLab-CI support
+
+Note: The community contributed GitLab-CI support based on `voxpupuli/gha-puppet` and wrapped around `voxpupuli/puppet_metadata`. As for now voxpupuli itself is working only in GitHub with `voxpupuli/gha-puppet`. Community contribution is welcome in case something broke.
+
+Adjust your `.sync.yml`:
+
+```yaml
+.gitlab-ci.yml:
+  delete: false
+.gitlab-ci/openvox_validation.yml:
+  delete: false
+.gitlab-ci/openvox_ci_matrix_generate.rb:
+  delete: false
+.gitlab-ci/openvox_unit.yml:
+  delete: false
+.gitlab-ci/openvox_acceptance.yml:
+  delete: true  # support not there yet
+```
+
+You can also keep `.gitlab-ci.yml` `unmaintained: true` and include only the start point `.gitlab-ci/openvox_validation.yml` by using [`include:local`](https://docs.gitlab.com/ci/yaml/#includelocal) and [`include:rules`](https://docs.gitlab.com/ci/yaml/#includerules).
+
 ## Tips for External Contributors
 
 If you are used to a traditional GitHub Fork and PR model, then you may run into
