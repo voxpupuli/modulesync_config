@@ -34,6 +34,10 @@ end
 <% end -%>
 gem 'rake', :require => false
 
+<%- if groups.has_key?(':system_tests') && @configs['acceptance_uses_fixtures'] -%>
+gem 'openvox', ENV.fetch('OPENVOX_GEM_VERSION', <%= @configs['openvox_version'].inspect %>), :require => false, :groups => [:test, :system_tests]
+<% else -%>
 gem 'openvox', ENV.fetch('OPENVOX_GEM_VERSION', <%= @configs['openvox_version'].inspect %>), :require => false, :groups => [:test]
+<%- end -%>
 
 # vim: syntax=ruby
