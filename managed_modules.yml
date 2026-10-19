@@ -31,6 +31,7 @@
 - puppet-bolt
 - puppet-borg
 - puppet-ca_cert
+- puppet-ca_utils
 - puppet-caddy
 - puppet-cassandra
 - puppet-catalog_diff
