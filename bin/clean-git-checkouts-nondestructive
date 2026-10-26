@@ -5,7 +5,7 @@ for module in modules/*/* ; do
   cd "${module}" || exit
   echo "${module}"
   git status
-  git checkout master
+  git checkout master || git checkout main
   git fetch --all --prune
   git branch --delete modulesync || true
   git pull || true
