@@ -51,10 +51,26 @@ jobs:
       - name: Generate summary
         run: bundle exec bin/outdated_modules_and_their_version
 
+  check_os_support:
+    runs-on: ubuntu-26.04
+    name: prints all EoL/supported OS versions per module
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Setup ruby
+        uses: ruby/setup-ruby@7f797815d8adceb1c412e7abefdd1ab4abc47a5f # v1.335.0
+        with:
+          ruby-version: ruby
+          bundler-cache: true
+      - name: Run msync --noop
+        run: bundle exec msync clone --git-base=https://github.com/
+      - name: Generate summary
+        run: for file in modules/voxpupuli/*/metadata.json; do bundle exec puppet-metadata --filename $file os-versions; done
+
   tests:
     needs:
       - unit
       - metadata_json_deps
+      - check_os_support
     runs-on: ubuntu-latest
     name: Test suite
     steps:
