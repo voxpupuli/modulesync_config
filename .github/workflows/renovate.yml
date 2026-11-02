@@ -1,0 +1,40 @@
+---
+name: renovate
+
+on:
+  workflow_dispatch:
+    inputs:
+      repositories:
+        description: 'space-separated list of repositories'
+        default: 'voxpupuli/puppet-example'
+        required: false
+        type: string
+  workflow_call:
+    inputs:
+      repositories:
+        description: 'space-separated list of repositories'
+        default: 'voxpupuli/puppet-example'
+        required: false
+        type: string
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v7
+      - name: renovate
+        uses: docker://ghcr.io/voxpupuli/renovate:latest
+        with:
+          entrypoint: /bin/bash
+          args: -c "renovate --platform=github ${{ inputs.repositories }}"
+        env:
+          RENOVATE_GIT_PRIVATE_KEY: '${{ secrets.PCCI_SSH_PRIVATE_KEY }}'
+          RENOVATE_TOKEN: '${{ secrets.PCCI_PAT_MODULESYNC_PR }}'
+          RENOVATE_CONFIG_FILE: renovate.js
+          LOG_LEVEL: debug
+          RENOVATE_GIT_AUTHOR: 'pccibot <12855858+pccibot@users.noreply.github.com>'
+          GIT_AUTHOR_NAME: pccibot
+          GIT_AUTHOR_EMAIL: 12855858+pccibot@users.noreply.github.com
+          GIT_COMMITTER_NAME: pccibot
+          GIT_COMMITTER_EMAIL: 12855858+pccibot@users.noreply.github.com
