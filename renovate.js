@@ -9,11 +9,8 @@ export default {
     requireConfig: "ignored",
     // recreates all closed or blocking PRs
     recreateWhen: "always",
-    // base updates on main or master branch
-    baseBranchPatterns: [
-        "main",
-        "master"
-    ],
+    // base updates on default branch
+    baseBranchPatterns: ["$default"],
     // only scan for Puppetfile and metadata.json files
     enabledManagers: ["puppet"],
     // add labels to all renovate PRs
