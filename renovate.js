@@ -19,6 +19,8 @@ export default {
         "enhancement",
         "renovate"
     ],
+    // pin the Dependency Dashboard issue
+    dependencyDashboardPinned: true,
     // assign PRs to code owners
     assigneesFromCodeOwners: true
 }
