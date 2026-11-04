@@ -4,16 +4,14 @@ name: renovate
 on:
   workflow_dispatch:
     inputs:
-      repositories:
-        description: 'space-separated list of repositories'
-        default: 'voxpupuli/puppet-example'
+      modules:
+        description: 'space-separated list of modules'
         required: false
         type: string
   workflow_call:
     inputs:
-      repositories:
-        description: 'space-separated list of repositories'
-        default: 'voxpupuli/puppet-example'
+      modules:
+        description: 'space-separated list of modules'
         required: false
         type: string
 
@@ -51,4 +49,10 @@ jobs:
             git config --global gpg.format ssh
             git config --global user.signingkey /root/.ssh/id_ed25519
             git config --global commit.gpgsign true
-            renovate ${{ inputs.repositories }}
+            repositories=""
+            if [[ -z "${{ inputs.modules }}" ]]; then
+              repositories=$(yq -r 'to_entries[] | "voxpupuli/"+.value' managed_modules.yml)
+            else
+              repositories=$(for repo in ${{ inputs.modules }}; do echo voxpupuli/$repo; done)
+            fi
+            renovate $repositories
