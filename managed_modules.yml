@@ -108,6 +108,7 @@
 - puppet-logrotate
 - puppet-logstash
 - puppet-make
+- puppet-matterbridge
 - puppet-minecraft
 - puppet-misp
 - puppet-mlocate
