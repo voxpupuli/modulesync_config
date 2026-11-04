@@ -4,6 +4,20 @@
   excludes: []
   acceptance_tests: true
   main_branches: ['main', 'master']
+# GitLab-CI support - community support only
+.gitlab-ci.yml:
+  delete: true
+.gitlab-ci/openvox_ci_matrix_generate.rb:
+  delete: true
+.gitlab-ci/openvox_acceptance.yml:
+  image: ruby:3.2
+  delete: true
+.gitlab-ci/openvox_unit.yml:
+  image: ruby:${ruby}
+  delete: true
+.gitlab-ci/openvox_test.yml:
+  image: ruby:3.2
+  delete: true
 # PDK creates this
 .github/workflows/puppet-lint.yml:
   delete: true
@@ -138,8 +152,6 @@ CONTRIBUTING.md:
 .github/CONTRIBUTING.md:
   delete: true
 .yardopts:
-  delete: true
-.gitlab-ci.yml:
   delete: true
 .pdkignore:
   delete: true
