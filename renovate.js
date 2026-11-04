@@ -11,6 +11,10 @@ export default {
     recreateWhen: "always",
     // base updates on default branch
     baseBranchPatterns: ["$default"],
+    // don't limit creation of PRs
+    prHourlyLimit: 0,
+    prConcurrentLimit: 0,
+    branchConcurrentLimit: 0,
     // only scan for Puppetfile and metadata.json files
     enabledManagers: ["puppet"],
     // add labels to all renovate PRs
