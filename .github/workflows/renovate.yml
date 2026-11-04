@@ -19,7 +19,7 @@ env:
   RENOVATE_PLATFORM: github
   RENOVATE_GIT_URL: ssh
   RENOVATE_GIT_PRIVATE_KEY: '${{ secrets.PCCI_SSH_PRIVATE_KEY }}'
-  RENOVATE_TOKEN: '${{ secrets.PCCI_PAT_MODULESYNC_PR }}'
+  RENOVATE_TOKEN: '${{ secrets.PCCI_PAT_RENOVATE_PR }}'
   RENOVATE_CONFIG_FILE: renovate.js
   LOG_LEVEL: debug
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
