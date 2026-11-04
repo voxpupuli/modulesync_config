@@ -8,6 +8,18 @@ on:
         description: 'space-separated list of modules'
         required: false
         type: string
+      log_level:
+        description: 'log level'
+        required: false
+        default: info
+        options:
+          - info
+          - trace
+          - debug
+          - warn
+          - error
+          - fatal
+        type: choice
   workflow_call:
     inputs:
       modules:
@@ -21,7 +33,7 @@ env:
   RENOVATE_GIT_PRIVATE_KEY: '${{ secrets.PCCI_SSH_PRIVATE_KEY }}'
   RENOVATE_TOKEN: '${{ secrets.PCCI_PAT_RENOVATE_PR }}'
   RENOVATE_CONFIG_FILE: renovate.js
-  LOG_LEVEL: debug
+  LOG_LEVEL: '${{ inputs.log_level }}'
   SSH_AUTH_SOCK: /tmp/ssh_agent.sock
   RENOVATE_GIT_AUTHOR: 'pccibot <12855858+pccibot@users.noreply.github.com>'
   GIT_AUTHOR_NAME: pccibot
