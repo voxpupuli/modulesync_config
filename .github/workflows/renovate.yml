@@ -2,6 +2,9 @@
 name: renovate
 
 on:
+  schedule:
+    - cron: '0 9 * * *'
+      timezone: 'Europe/Berlin'
   workflow_dispatch:
     inputs:
       modules:
