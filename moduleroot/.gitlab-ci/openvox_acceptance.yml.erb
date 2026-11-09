@@ -1,0 +1,29 @@
+---
+# Managed by modulesync - DO NOT EDIT
+# https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
+
+'OpenVox / acceptance':
+  stage: test
+  image: <%= @configs['image'] %>
+  cache:
+    key: "${CI_JOB_IMAGE}-OpenVox without ${BUNDLE_WITHOUT}"
+    paths:
+      - vendor/bundle
+  variables:
+    BUNDLE_WITHOUT: development:test:release
+  before_script:
+    - rm -f Gemfile.lock || true
+    - ruby --version
+    - gem --version
+    - bundle -v
+    - bundle config set --local path 'vendor/bundle'
+    - bundle config set --local jobs $(nproc)
+    - bundle install
+    - bundle clean
+    - bundle env
+    # TODO: PODMAN setup and setting DOCKER_HOST
+  script:
+    - git config --global url."${CI_SERVER_PROTOCOL}://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_FQDN}/".insteadOf "git@${CI_SERVER_SHELL_SSH_HOST}:"
+    - bundle exec rake beaker
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "parent_pipeline"
