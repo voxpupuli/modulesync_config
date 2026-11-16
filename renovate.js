@@ -26,7 +26,7 @@ export default {
     dependencyDashboard: {
         // pin the Dependency Dashboard issue
         pinned: true
-    }
+    },
     // assign PRs to code owners
     assigneesFromCodeOwners: true
 }
