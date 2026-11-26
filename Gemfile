@@ -27,7 +27,7 @@ end
 
 gem 'metadata_json_deps', '>= 0.2.0', '< 3'
 gem 'modulesync', '>= 2.6.0'
-gem 'octokit', '~> 4.0'
+gem 'octokit', '~> 10.0'
 gem 'puppet_forge', '>= 2.2.9'
 gem 'puppet_metadata', '~> 6.4'
 # vim: syntax=ruby
