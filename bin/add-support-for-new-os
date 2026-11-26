@@ -1,0 +1,151 @@
+#!/usr/bin/env ruby
+#
+# Add support for a newer version of an Operating System if the previous
+# version is supported.  Update metadata.json, create a feature branch, commit,
+# and open a PR automatically.
+# If the previous version was not supported but older version are, prompt the
+# user interactively for what to do.
+# If the OS is not supported at all, do nothing.
+#
+# Typical usage (when Debian 13 is released):
+#
+#     bundle exec msync execute -B -- git pull
+#     bundle exec msync execute -B -- $PWD/bin/add-support-for-new-os -o Debian -v 13
+
+require 'json'
+require 'optparse'
+
+require 'tty-prompt'
+
+class Options
+  attr_accessor :os, :version
+  attr_writer :noop, :interactive
+
+  def initialize
+    @noop = false
+  end
+
+  def branch_name
+    @branch_name ||= "#{os.downcase}-#{version}"
+  end
+
+  def noop?
+    @noop
+  end
+
+  def interactive?
+    @interactive
+  end
+
+  def previous_version
+    (version.to_i - 1).to_s
+  end
+end
+
+pastel = Pastel.new
+
+options = Options.new
+
+OptionParser.new do |opts|
+  opts.banner = "Usage: #{$PROGRAM_NAME} -o <os> -v <version>"
+
+  opts.on("-o", "--operating-system=VALUE", "The name of the Operating System to operate on (e.g. Debian)") do |os|
+    options.os = os
+  end
+
+  opts.on("-v", "--version=VALUE", "The version of the Operating System to add (e.g. 12)") do |version|
+    options.version = version
+  end
+
+  opts.on("--interactive", "Ask before doing an update") do |interactive|
+    options.interactive = interactive
+  end
+
+  opts.on("--noop", "Do not perform anything, show what would be done") do |noop|
+    options.noop = noop
+  end
+end.parse!
+
+if !options.os || !options.version
+  puts(pastel.red("An Operating System name and a version must be provided"))
+  exit 1
+end
+
+if !File.exist?('metadata.json')
+  puts(pastel.cyan("No metadata file.  Nothing to do."))
+  exit 0
+end
+
+metadata = JSON.parse(File.read('metadata.json'))
+
+os_metadata = metadata['operatingsystem_support']
+unless os_metadata
+  puts(pastel.cyan("Module does not claim any operating system support.  Nothing to do."))
+  exit 0
+end
+
+os_metadata = os_metadata.select { |os| os['operatingsystem'] == options.os }.first
+
+unless os_metadata
+  puts(pastel.cyan("Module does not support #{options.os}.  Nothing to do."))
+  exit 0
+end
+
+if os_metadata['operatingsystemrelease'].nil? || os_metadata['operatingsystemrelease'].empty?
+  puts(pastel.cyan("Module support #{options.os} but does not define versions.  Nothing to do."))
+  exit 0
+end
+
+if os_metadata['operatingsystemrelease'].include?(options.version)
+  puts(pastel.cyan("Module already support #{options.os} #{options.version}.  Nothing to do."))
+  exit 0
+end
+
+if os_metadata['operatingsystemrelease'].all? { |v| options.version.to_i < v.to_i }
+  puts(pastel.cyan("Module support only newer versions of #{options.os} (#{os_metadata['operatingsystemrelease'].join(', ')}).  Ignoring."))
+  exit 0
+end
+
+puts(pastel.cyan("Module does not support #{options.os} #{options.version} (it supports #{os_metadata['operatingsystemrelease'].join(', ')})."))
+
+if options.interactive?
+  $stdout.write pastel.yellow("\nAdd support for #{options.os} #{options.version} [yN]")
+  unless TTY::Prompt.new.read_keypress == 'y'
+    puts
+    puts(pastel.cyan("Nothing to do."))
+    exit 0
+  end
+  puts
+end
+
+unless os_metadata['operatingsystemrelease'].include?(options.previous_version)
+  puts(pastel.red("Module does not support #{options.os} #{options.previous_version} neither!"))
+  $stdout.write pastel.yellow("Does it make sense to add support for #{options.os} #{options.version} [yN]")
+  unless TTY::Prompt.new.read_keypress == 'y'
+    puts
+    puts(pastel.cyan("Nothing to do."))
+    exit 0
+  end
+  puts
+end
+
+puts(pastel.green("Adding support for #{options.os} #{options.version}..."))
+
+os_index = metadata['operatingsystem_support'].map { |os| os['operatingsystem'] }.index(options.os)
+
+metadata['operatingsystem_support'][os_index]['operatingsystemrelease'] << options.version
+
+pp_metadata = JSON.pretty_generate(metadata)
+
+if options.noop?
+  r, w = IO.pipe
+  w.puts(pp_metadata)
+  w.close
+  system "diff", "-u", "metadata.json", "-", in: r
+else
+  system "git", "checkout", "-b", options.branch_name
+  File.write('metadata.json', "#{pp_metadata}\n")
+  system "git", "add", "metadata.json"
+  system "git", "commit", "-m", "Add support for #{options.os} #{options.version}"
+  system "gh", "pr", "create", "--fill", "--draft", "--label", "enhancement"
+end
