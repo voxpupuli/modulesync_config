@@ -1,0 +1,29 @@
+---
+# Managed by modulesync - DO NOT EDIT
+# https://voxpupuli.org/docs/updating-files-managed-with-modulesync/
+
+'OpenVox / unit':
+  stage: test
+  image: <%= @configs['image'] %>
+  cache:
+    key: "${CI_JOB_IMAGE}-OpenVox ${puppet} without ${BUNDLE_WITHOUT}"
+    paths:
+      - vendor/bundle
+  variables:
+    BUNDLE_WITHOUT: development:system_tests:release
+    OPENVOX_GEM_VERSION: "~> ${puppet}.0"
+  before_script:
+    - rm -f Gemfile.lock || true
+    - ruby --version
+    - gem --version
+    - bundle -v
+    - bundle config set --local path 'vendor/bundle'
+    - bundle config set --local jobs $(nproc)
+    - bundle install
+    - bundle clean
+    - bundle env
+  script:
+    - git config --global url."${CI_SERVER_PROTOCOL}://gitlab-ci-token:${CI_JOB_TOKEN}@${CI_SERVER_FQDN}/".insteadOf "git@${CI_SERVER_SHELL_SSH_HOST}:"
+    - bundle exec rake parallel_spec
+  rules:
+    - if: $CI_PIPELINE_SOURCE == "parent_pipeline"
