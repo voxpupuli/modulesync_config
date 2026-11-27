@@ -47,6 +47,7 @@ env:
 jobs:
   renovate:
     runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'voxpupuli' }}
     container: ghcr.io/voxpupuli/renovate:latest
     steps:
       - name: checkout
